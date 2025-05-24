@@ -92,82 +92,82 @@
 			{
 				"label": "M Tech Pro Icons",
 				"id": "M Tech Pro Icons",
-				"path": "./icon-themes/M Tech Pro icon-theme.json"
+				"path": "./icon-themes/m-tech Pro icon-theme.json"
 			},
 			{
 				"label": "M Tech Pro Monochrome Icons",
 				"id": "M Tech Pro Monochrome Icons",
-				"path": "./icon-themes/M Tech Pro monochrome icon-theme.json"
+				"path": "./icon-themes/m-tech Pro monochrome icon-theme.json"
 			},
 			{
 				"label": "M Tech Pro (Filter Octagon) Icons",
 				"id": "M Tech Pro (Filter Octagon) Icons",
-				"path": "./icon-themes/M Tech Pro (Filter Octagon) icon-theme.json"
+				"path": "./icon-themes/m-tech Pro (Filter Octagon) icon-theme.json"
 			},
 			{
 				"label": "M Tech Pro (Filter Octagon) Monochrome Icons",
 				"id": "M Tech Pro (Filter Octagon) Monochrome Icons",
-				"path": "./icon-themes/M Tech Pro (Filter Octagon) monochrome icon-theme.json"
+				"path": "./icon-themes/m-tech Pro (Filter Octagon) monochrome icon-theme.json"
 			},
 			{
 				"label": "M Tech Pro (Filter Ristretto) Icons",
 				"id": "M Tech Pro (Filter Ristretto) Icons",
-				"path": "./icon-themes/M Tech Pro (Filter Ristretto) icon-theme.json"
+				"path": "./icon-themes/m-tech Pro (Filter Ristretto) icon-theme.json"
 			},
 			{
 				"label": "M Tech Pro (Filter Ristretto) Monochrome Icons",
 				"id": "M Tech Pro (Filter Ristretto) Monochrome Icons",
-				"path": "./icon-themes/M Tech Pro (Filter Ristretto) monochrome icon-theme.json"
+				"path": "./icon-themes/m-tech Pro (Filter Ristretto) monochrome icon-theme.json"
 			},
 			{
 				"label": "M Tech Pro (Filter Spectrum) Icons",
 				"id": "M Tech Pro (Filter Spectrum) Icons",
-				"path": "./icon-themes/M Tech Pro (Filter Spectrum) icon-theme.json"
+				"path": "./icon-themes/m-tech Pro (Filter Spectrum) icon-theme.json"
 			},
 			{
 				"label": "M Tech Pro (Filter Spectrum) Monochrome Icons",
 				"id": "M Tech Pro (Filter Spectrum) Monochrome Icons",
-				"path": "./icon-themes/M Tech Pro (Filter Spectrum) monochrome icon-theme.json"
+				"path": "./icon-themes/m-tech Pro (Filter Spectrum) monochrome icon-theme.json"
 			},
 			{
 				"label": "M Tech Pro (Filter Machine) Icons",
 				"id": "M Tech Pro (Filter Machine) Icons",
-				"path": "./icon-themes/M Tech Pro (Filter Machine) icon-theme.json"
+				"path": "./icon-themes/m-tech Pro (Filter Machine) icon-theme.json"
 			},
 			{
 				"label": "M Tech Pro (Filter Machine) Monochrome Icons",
 				"id": "M Tech Pro (Filter Machine) Monochrome Icons",
-				"path": "./icon-themes/M Tech Pro (Filter Machine) monochrome icon-theme.json"
+				"path": "./icon-themes/m-tech Pro (Filter Machine) monochrome icon-theme.json"
 			},
 			{
 				"label": "M Tech Pro Light Icons",
 				"id": "M Tech Pro Light Icons",
-				"path": "./icon-themes/M Tech Pro Light icon-theme.json"
+				"path": "./icon-themes/m-tech Pro Light icon-theme.json"
 			},
 			{
 				"label": "M Tech Pro Light Monochrome Icons",
 				"id": "M Tech Pro Light Monochrome Icons",
-				"path": "./icon-themes/M Tech Pro Light monochrome icon-theme.json"
+				"path": "./icon-themes/m-tech Pro Light monochrome icon-theme.json"
 			},
 			{
 				"label": "M Tech Pro Light (Filter Sun) Icons",
 				"id": "M Tech Pro Light (Filter Sun) Icons",
-				"path": "./icon-themes/M Tech Pro Light (Filter Sun) icon-theme.json"
+				"path": "./icon-themes/m-tech Pro Light (Filter Sun) icon-theme.json"
 			},
 			{
 				"label": "M Tech Pro Light (Filter Sun) Monochrome Icons",
 				"id": "M Tech Pro Light (Filter Sun) Monochrome Icons",
-				"path": "./icon-themes/M Tech Pro Light (Filter Sun) monochrome icon-theme.json"
+				"path": "./icon-themes/m-tech Pro Light (Filter Sun) monochrome icon-theme.json"
 			},
 			{
 				"label": "M Tech Classic Icons",
 				"id": "M Tech Classic Icons",
-				"path": "./icon-themes/M Tech Classic icon-theme.json"
+				"path": "./icon-themes/m-tech Classic icon-theme.json"
 			},
 			{
 				"label": "M Tech Classic Monochrome Icons",
 				"id": "M Tech Classic Monochrome Icons",
-				"path": "./icon-themes/M Tech Classic monochrome icon-theme.json"
+				"path": "./icon-themes/m-tech Classic monochrome icon-theme.json"
 			}
 		],
 		"configuration": {

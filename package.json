@@ -1,0 +1,224 @@
+{
+	"name": "theme-m-tech-pro-vscode",
+	"displayName": "M Tech Pro",
+	"description": "✨ Professional dark & light theme + icon pack, from the author of the original M Tech color scheme.",
+	"publisher": "mtech",
+	"version": "2.1.0",
+	"pricing": "Free",
+	"engines": {
+		"vscode": "^1.90.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"capabilities": {
+		"untrustedWorkspaces": {
+			"supported": true
+		}
+	},
+	"contributes": {
+		"commands": [
+			{
+				"command": "tech_pro.enter_license",
+				"title": "M Tech Pro: enter license"
+			},
+			{
+				"command": "tech_pro.select_theme",
+				"title": "M Tech Pro: select theme"
+			},
+			{
+				"command": "tech_pro.activate_icons",
+				"title": "M Tech Pro: activate icons"
+			}
+		],
+		"themes": [
+			{
+				"label": "M Tech Pro",
+				"uiTheme": "vs-dark",
+				"path": "./themes/M Tech.json"
+			},
+			{
+				"label": "M Tech Pro (Filter Octagon)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/M Tech  (Filter Octagon).json"
+			},
+			{
+				"label": "M Tech Pro (Filter Ristretto)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/M Tech  (Filter Ristretto).json"
+			},
+			{
+				"label": "M Tech Pro (Filter Spectrum)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/M Tech  (Filter Spectrum).json"
+			},
+			{
+				"label": "M Tech Pro (Filter Machine)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/M Tech  (Filter Machine).json"
+			},
+			{
+				"label": "M Tech Pro Light",
+				"uiTheme": "vs",
+				"path": "./themes/M Tech  Light.json"
+			},
+			{
+				"label": "M Tech Pro Light (Filter Sun)",
+				"uiTheme": "vs",
+				"path": "./themes/M Tech  Light (Filter Sun).json"
+			},
+			{
+				"label": "M Tech Classic",
+				"uiTheme": "vs-dark",
+				"path": "./themes/M Tech Classic.json"
+			},
+			{
+				"label": "M Tech Pro (Cyberpunk Neon)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/M Tech  (Cyberpunk Neon).json"
+			},
+			{
+				"label": "M Tech Pro (Tokyo Night)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/M Tech  (Tokyo Night).json"
+			},
+			{
+				"label": "M Tech Pro (Arctic Nord)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/M Tech  (Arctic Nord).json"
+			}
+		],
+		"iconThemes": [
+			{
+				"label": "M Tech Pro Icons",
+				"id": "M Tech Pro Icons",
+				"path": "./icon-themes/M Tech Pro icon-theme.json"
+			},
+			{
+				"label": "M Tech Pro Monochrome Icons",
+				"id": "M Tech Pro Monochrome Icons",
+				"path": "./icon-themes/M Tech Pro monochrome icon-theme.json"
+			},
+			{
+				"label": "M Tech Pro (Filter Octagon) Icons",
+				"id": "M Tech Pro (Filter Octagon) Icons",
+				"path": "./icon-themes/M Tech Pro (Filter Octagon) icon-theme.json"
+			},
+			{
+				"label": "M Tech Pro (Filter Octagon) Monochrome Icons",
+				"id": "M Tech Pro (Filter Octagon) Monochrome Icons",
+				"path": "./icon-themes/M Tech Pro (Filter Octagon) monochrome icon-theme.json"
+			},
+			{
+				"label": "M Tech Pro (Filter Ristretto) Icons",
+				"id": "M Tech Pro (Filter Ristretto) Icons",
+				"path": "./icon-themes/M Tech Pro (Filter Ristretto) icon-theme.json"
+			},
+			{
+				"label": "M Tech Pro (Filter Ristretto) Monochrome Icons",
+				"id": "M Tech Pro (Filter Ristretto) Monochrome Icons",
+				"path": "./icon-themes/M Tech Pro (Filter Ristretto) monochrome icon-theme.json"
+			},
+			{
+				"label": "M Tech Pro (Filter Spectrum) Icons",
+				"id": "M Tech Pro (Filter Spectrum) Icons",
+				"path": "./icon-themes/M Tech Pro (Filter Spectrum) icon-theme.json"
+			},
+			{
+				"label": "M Tech Pro (Filter Spectrum) Monochrome Icons",
+				"id": "M Tech Pro (Filter Spectrum) Monochrome Icons",
+				"path": "./icon-themes/M Tech Pro (Filter Spectrum) monochrome icon-theme.json"
+			},
+			{
+				"label": "M Tech Pro (Filter Machine) Icons",
+				"id": "M Tech Pro (Filter Machine) Icons",
+				"path": "./icon-themes/M Tech Pro (Filter Machine) icon-theme.json"
+			},
+			{
+				"label": "M Tech Pro (Filter Machine) Monochrome Icons",
+				"id": "M Tech Pro (Filter Machine) Monochrome Icons",
+				"path": "./icon-themes/M Tech Pro (Filter Machine) monochrome icon-theme.json"
+			},
+			{
+				"label": "M Tech Pro Light Icons",
+				"id": "M Tech Pro Light Icons",
+				"path": "./icon-themes/M Tech Pro Light icon-theme.json"
+			},
+			{
+				"label": "M Tech Pro Light Monochrome Icons",
+				"id": "M Tech Pro Light Monochrome Icons",
+				"path": "./icon-themes/M Tech Pro Light monochrome icon-theme.json"
+			},
+			{
+				"label": "M Tech Pro Light (Filter Sun) Icons",
+				"id": "M Tech Pro Light (Filter Sun) Icons",
+				"path": "./icon-themes/M Tech Pro Light (Filter Sun) icon-theme.json"
+			},
+			{
+				"label": "M Tech Pro Light (Filter Sun) Monochrome Icons",
+				"id": "M Tech Pro Light (Filter Sun) Monochrome Icons",
+				"path": "./icon-themes/M Tech Pro Light (Filter Sun) monochrome icon-theme.json"
+			},
+			{
+				"label": "M Tech Classic Icons",
+				"id": "M Tech Classic Icons",
+				"path": "./icon-themes/M Tech Classic icon-theme.json"
+			},
+			{
+				"label": "M Tech Classic Monochrome Icons",
+				"id": "M Tech Classic Monochrome Icons",
+				"path": "./icon-themes/M Tech Classic monochrome icon-theme.json"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "M Tech Pro Settings",
+			"properties": {
+				"techPro.fileIconsMonochrome": {
+					"type": "boolean",
+					"default": false,
+					"description": "makes the file icons monochrome"
+				}
+			}
+		}
+	},
+	"extensionKind": [
+		"ui",
+		"workspace"
+	],
+	"homepage": "https://mtech.pro",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mtech-pro/vscode.git"
+	},
+	"bugs": {
+		"url": "https://github.com/mtech-pro/vscode"
+	},
+	"sponsor": {
+		"url": "https://mtech.pro/vscode"
+	},
+	"galleryBanner": {
+		"color": "#fdf9f3",
+		"theme": "light"
+	},
+	"icon": "icon.png",
+	"keywords": [
+		"beautiful functionality",
+		"focus",
+		"icons",
+		"dark",
+		"light"
+	],
+	"main": "./js/main",
+	"browser": "./js/browser",
+	"license": "SEE LICENSE IN LICENSE",
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"qna": false,
+	"__metadata": {
+		"installedTimestamp": 1748106711171,
+		"targetPlatform": "undefined",
+		"size": 719356
+	}
+}

@@ -16,16 +16,11 @@ tsconfig.json
 webpack.config.js
 .eslintrc.json
 
-# Documentation (keeping README.md but excluding others)
-CHANGELOG.md
-
-# Package files (will be generated)
-*.vsix
-
 # Temporary files
 .tmp/
 temp/
 *.tmp
+temp-extract/
 
 # OS generated files
 Thumbs.db

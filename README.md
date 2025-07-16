@@ -12,33 +12,35 @@ Every pixel has been meticulously crafted to create an uncompromising, distracti
 
 M Tech Themes is distributed exclusively via GitHub releases as a VSIX file for easy installation in VS Code or Cursor.
 
-### **Download & Install:**
+### **Step 1: Download**
+1. **Go to [Releases](https://github.com/ChrisMcKee1/mtech-pro-vscode-themes/releases/latest)**
+2. **Download** `theme-m-tech-vscode-0.1.0.vsix` (latest version)
+3. **Save** to your Downloads folder or desktop
 
-1. **Download** the latest VSIX from the [Releases page](https://github.com/ChrisMcKee1/mtech-pro-vscode-themes/releases/latest) 
-   - Look for `theme-m-tech-vscode-*.vsix` (the latest version)
-
-### **Installing in VS Code**
-2. Open VS Code
-3. Press `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (macOS) to open Command Palette
-4. Type and select **Extensions: Install from VSIX...**
-5. Browse to and select the downloaded VSIX file
-6. VS Code will install the extension and prompt to reload
-7. After reloading, press `Ctrl+Shift+P` again and select **M Tech Themes: Select Theme**
+### **Step 2: Install Using VS Code UI (Recommended)**
+1. **Open VS Code**
+2. **Click the Extensions icon** in the left sidebar (or press `Ctrl+Shift+X`)
+3. **Click the three dots menu (⋯)** at the top of the Extensions panel
+4. **Select "Install from VSIX..."** from the dropdown
+5. **Browse and select** the downloaded `.vsix` file
+6. **Click "Install"** - VS Code will install and reload automatically
+7. **Open theme selector**: Press `Ctrl+Shift+P` → **"M Tech Themes: Select Theme"**
 
 ### **Installing in Cursor**
-Cursor is VS Code-based, so the installation process is identical:
+Same process as VS Code (Cursor is VS Code-based):
+1. Open Cursor → Extensions panel → Three dots menu → "Install from VSIX..."
+2. Select your downloaded file and install
 
-2. Open Cursor
-3. Press `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (macOS)
-4. Type and select **Extensions: Install from VSIX...**
-5. Browse to and select the downloaded VSIX file
-6. Cursor will install and prompt to reload
-7. Use Command Palette to select **M Tech Themes: Select Theme**
+### **Alternative Methods**
+- **Drag & Drop**: Drag the VSIX file directly onto VS Code/Cursor window
+- **Command Palette**: `Ctrl+Shift+P` → **"Extensions: Install from VSIX..."**
 
-### **Alternative Installation (Direct File Method)**
-- Download the VSIX file
-- Drag and drop it directly onto the VS Code or Cursor window
-- Follow the installation prompts
+### **⚠️ Troubleshooting**
+If you get "package.json not found" error:
+- **Re-download** the VSIX file (ensure complete download)
+- **Restart VS Code** completely before installing
+- **Check antivirus** - ensure the file isn't blocked
+- **Use the UI method** (Extensions panel → three dots) rather than Command Palette
 
 ---
 

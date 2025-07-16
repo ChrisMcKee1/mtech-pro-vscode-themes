@@ -33,156 +33,231 @@
 		],
 		"themes": [
 			{
-				"label": "M Tech Pro",
+				"label": "Classic",
 				"uiTheme": "vs-dark",
-				"path": "./themes/M Tech.json"
+				"path": "./themes/Classic.json"
 			},
 			{
-				"label": "M Tech Pro (Filter Octagon)",
+				"label": "Filter Octagon",
 				"uiTheme": "vs-dark",
-				"path": "./themes/M Tech  (Filter Octagon).json"
+				"path": "./themes/Filter Octagon.json"
 			},
 			{
-				"label": "M Tech Pro (Filter Ristretto)",
+				"label": "Filter Ristretto",
 				"uiTheme": "vs-dark",
-				"path": "./themes/M Tech  (Filter Ristretto).json"
+				"path": "./themes/Filter Ristretto.json"
 			},
 			{
-				"label": "M Tech Pro (Filter Spectrum)",
+				"label": "Filter Spectrum",
 				"uiTheme": "vs-dark",
-				"path": "./themes/M Tech  (Filter Spectrum).json"
+				"path": "./themes/Filter Spectrum.json"
 			},
 			{
-				"label": "M Tech Pro (Filter Machine)",
+				"label": "Filter Machine",
 				"uiTheme": "vs-dark",
-				"path": "./themes/M Tech  (Filter Machine).json"
+				"path": "./themes/Filter Machine.json"
 			},
 			{
-				"label": "M Tech Pro Light",
+				"label": "Light",
 				"uiTheme": "vs",
-				"path": "./themes/M Tech  Light.json"
+				"path": "./themes/Light.json"
 			},
 			{
-				"label": "M Tech Pro Light (Filter Sun)",
+				"label": "Filter Sun",
 				"uiTheme": "vs",
-				"path": "./themes/M Tech  Light (Filter Sun).json"
+				"path": "./themes/Filter Sun.json"
 			},
 			{
-				"label": "M Tech Classic",
+				"label": "Cyberpunk Neon",
 				"uiTheme": "vs-dark",
-				"path": "./themes/M Tech Classic.json"
+				"path": "./themes/Cyberpunk Neon.json"
 			},
 			{
-				"label": "M Tech Pro (Cyberpunk Neon)",
+				"label": "Tokyo Night",
 				"uiTheme": "vs-dark",
-				"path": "./themes/M Tech  (Cyberpunk Neon).json"
+				"path": "./themes/Tokyo Night.json"
 			},
 			{
-				"label": "M Tech Pro (Tokyo Night)",
-				"uiTheme": "vs-dark",
-				"path": "./themes/M Tech  (Tokyo Night).json"
-			},
-			{
-				"label": "M Tech Pro (Arctic Nord)",
-				"uiTheme": "vs-dark",
-				"path": "./themes/M Tech  (Arctic Nord).json"
-			},
-			{
-				"label": "M Tech Pro (Feisty Fusion)",
-				"uiTheme": "vs-dark",
-				"path": "./themes/M Tech  (Feisty Fusion).json"
-			},
-			{
-				"label": "M Tech Pro (Cosmic Void)",
-				"uiTheme": "vs-dark",
-				"path": "./themes/M Tech Pro (Cosmic Void).json"
-			},
-			{
-				"label": "M Tech Pro (Enchanted Grove)",
+				"label": "Tokyo Day",
 				"uiTheme": "vs",
-				"path": "./themes/M Tech Pro (Enchanted Grove).json"
+				"path": "./themes/Tokyo Day.json"
+			},
+			{
+				"label": "Arctic Nord",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Arctic Nord.json"
+			},
+			{
+				"label": "Feisty Fusion",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Feisty Fusion.json"
+			},
+			{
+				"label": "Cosmic Void",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Cosmic Void.json"
+			},
+			{
+				"label": "Enchanted Grove",
+				"uiTheme": "vs",
+				"path": "./themes/Enchanted Grove.json"
+			},
+			{
+				"label": "Enchanted Grove Dark",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Enchanted Grove Dark.json"
+			},
+			{
+				"label": "Filter Moon",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Filter Moon.json"
 			}
 		],
 		"iconThemes": [
 			{
-				"label": "M Tech Pro Icons",
-				"id": "M Tech Pro Icons",
-				"path": "./icon-themes/m-tech Pro icon-theme.json"
+				"label": "Classic Icons",
+				"id": "Classic Icons",
+				"path": "./icon-themes/Classic icon-theme.json"
 			},
 			{
-				"label": "M Tech Pro Monochrome Icons",
-				"id": "M Tech Pro Monochrome Icons",
-				"path": "./icon-themes/m-tech Pro monochrome icon-theme.json"
+				"label": "Classic Monochrome Icons",
+				"id": "Classic Monochrome Icons",
+				"path": "./icon-themes/Classic monochrome icon-theme.json"
 			},
 			{
-				"label": "M Tech Pro (Filter Octagon) Icons",
-				"id": "M Tech Pro (Filter Octagon) Icons",
-				"path": "./icon-themes/m-tech Pro (Filter Octagon) icon-theme.json"
+				"label": "Filter Octagon Icons",
+				"id": "Filter Octagon Icons",
+				"path": "./icon-themes/Filter Octagon icon-theme.json"
 			},
 			{
-				"label": "M Tech Pro (Filter Octagon) Monochrome Icons",
-				"id": "M Tech Pro (Filter Octagon) Monochrome Icons",
-				"path": "./icon-themes/m-tech Pro (Filter Octagon) monochrome icon-theme.json"
+				"label": "Filter Octagon Monochrome Icons",
+				"id": "Filter Octagon Monochrome Icons",
+				"path": "./icon-themes/Filter Octagon monochrome icon-theme.json"
 			},
 			{
-				"label": "M Tech Pro (Filter Ristretto) Icons",
-				"id": "M Tech Pro (Filter Ristretto) Icons",
-				"path": "./icon-themes/m-tech Pro (Filter Ristretto) icon-theme.json"
+				"label": "Filter Ristretto Icons",
+				"id": "Filter Ristretto Icons",
+				"path": "./icon-themes/Filter Ristretto icon-theme.json"
 			},
 			{
-				"label": "M Tech Pro (Filter Ristretto) Monochrome Icons",
-				"id": "M Tech Pro (Filter Ristretto) Monochrome Icons",
-				"path": "./icon-themes/m-tech Pro (Filter Ristretto) monochrome icon-theme.json"
+				"label": "Filter Ristretto Monochrome Icons",
+				"id": "Filter Ristretto Monochrome Icons",
+				"path": "./icon-themes/Filter Ristretto monochrome icon-theme.json"
 			},
 			{
-				"label": "M Tech Pro (Filter Spectrum) Icons",
-				"id": "M Tech Pro (Filter Spectrum) Icons",
-				"path": "./icon-themes/m-tech Pro (Filter Spectrum) icon-theme.json"
+				"label": "Filter Spectrum Icons",
+				"id": "Filter Spectrum Icons",
+				"path": "./icon-themes/Filter Spectrum icon-theme.json"
 			},
 			{
-				"label": "M Tech Pro (Filter Spectrum) Monochrome Icons",
-				"id": "M Tech Pro (Filter Spectrum) Monochrome Icons",
-				"path": "./icon-themes/m-tech Pro (Filter Spectrum) monochrome icon-theme.json"
+				"label": "Filter Spectrum Monochrome Icons",
+				"id": "Filter Spectrum Monochrome Icons",
+				"path": "./icon-themes/Filter Spectrum monochrome icon-theme.json"
 			},
 			{
-				"label": "M Tech Pro (Filter Machine) Icons",
-				"id": "M Tech Pro (Filter Machine) Icons",
-				"path": "./icon-themes/m-tech Pro (Filter Machine) icon-theme.json"
+				"label": "Filter Machine Icons",
+				"id": "Filter Machine Icons",
+				"path": "./icon-themes/Filter Machine icon-theme.json"
 			},
 			{
-				"label": "M Tech Pro (Filter Machine) Monochrome Icons",
-				"id": "M Tech Pro (Filter Machine) Monochrome Icons",
-				"path": "./icon-themes/m-tech Pro (Filter Machine) monochrome icon-theme.json"
+				"label": "Filter Machine Monochrome Icons",
+				"id": "Filter Machine Monochrome Icons",
+				"path": "./icon-themes/Filter Machine monochrome icon-theme.json"
 			},
 			{
-				"label": "M Tech Pro Light Icons",
-				"id": "M Tech Pro Light Icons",
-				"path": "./icon-themes/m-tech Pro Light icon-theme.json"
+				"label": "Light Icons",
+				"id": "Light Icons",
+				"path": "./icon-themes/Light icon-theme.json"
 			},
 			{
-				"label": "M Tech Pro Light Monochrome Icons",
-				"id": "M Tech Pro Light Monochrome Icons",
-				"path": "./icon-themes/m-tech Pro Light monochrome icon-theme.json"
+				"label": "Light Monochrome Icons",
+				"id": "Light Monochrome Icons",
+				"path": "./icon-themes/Light monochrome icon-theme.json"
 			},
 			{
-				"label": "M Tech Pro Light (Filter Sun) Icons",
-				"id": "M Tech Pro Light (Filter Sun) Icons",
-				"path": "./icon-themes/m-tech Pro Light (Filter Sun) icon-theme.json"
+				"label": "Filter Sun Icons",
+				"id": "Filter Sun Icons",
+				"path": "./icon-themes/Filter Sun icon-theme.json"
 			},
 			{
-				"label": "M Tech Pro Light (Filter Sun) Monochrome Icons",
-				"id": "M Tech Pro Light (Filter Sun) Monochrome Icons",
-				"path": "./icon-themes/m-tech Pro Light (Filter Sun) monochrome icon-theme.json"
+				"label": "Filter Sun Monochrome Icons",
+				"id": "Filter Sun Monochrome Icons",
+				"path": "./icon-themes/Filter Sun monochrome icon-theme.json"
 			},
 			{
-				"label": "M Tech Classic Icons",
-				"id": "M Tech Classic Icons",
-				"path": "./icon-themes/m-tech Classic icon-theme.json"
+				"label": "Arctic Nord Icons",
+				"id": "Arctic Nord Icons",
+				"path": "./icon-themes/Arctic Nord icon-theme.json"
 			},
 			{
-				"label": "M Tech Classic Monochrome Icons",
-				"id": "M Tech Classic Monochrome Icons",
-				"path": "./icon-themes/m-tech Classic monochrome icon-theme.json"
+				"label": "Arctic Nord Monochrome Icons",
+				"id": "Arctic Nord Monochrome Icons",
+				"path": "./icon-themes/Arctic Nord monochrome icon-theme.json"
+			},
+			{
+				"label": "Cyberpunk Neon Icons",
+				"id": "Cyberpunk Neon Icons",
+				"path": "./icon-themes/Cyberpunk Neon icon-theme.json"
+			},
+			{
+				"label": "Cyberpunk Neon Monochrome Icons",
+				"id": "Cyberpunk Neon Monochrome Icons",
+				"path": "./icon-themes/Cyberpunk Neon monochrome icon-theme.json"
+			},
+			{
+				"label": "Tokyo Night Icons",
+				"id": "Tokyo Night Icons",
+				"path": "./icon-themes/Tokyo Night icon-theme.json"
+			},
+			{
+				"label": "Tokyo Night Monochrome Icons",
+				"id": "Tokyo Night Monochrome Icons",
+				"path": "./icon-themes/Tokyo Night monochrome icon-theme.json"
+			},
+			{
+				"label": "Tokyo Day Icons",
+				"id": "Tokyo Day Icons",
+				"path": "./icon-themes/Tokyo Day icon-theme.json"
+			},
+			{
+				"label": "Feisty Fusion Icons",
+				"id": "Feisty Fusion Icons",
+				"path": "./icon-themes/Feisty Fusion icon-theme.json"
+			},
+			{
+				"label": "Feisty Fusion Monochrome Icons",
+				"id": "Feisty Fusion Monochrome Icons",
+				"path": "./icon-themes/Feisty Fusion monochrome icon-theme.json"
+			},
+			{
+				"label": "Cosmic Void Icons",
+				"id": "Cosmic Void Icons",
+				"path": "./icon-themes/Cosmic Void icon-theme.json"
+			},
+			{
+				"label": "Cosmic Void Monochrome Icons",
+				"id": "Cosmic Void Monochrome Icons",
+				"path": "./icon-themes/Cosmic Void monochrome icon-theme.json"
+			},
+			{
+				"label": "Enchanted Grove Icons",
+				"id": "Enchanted Grove Icons",
+				"path": "./icon-themes/Enchanted Grove icon-theme.json"
+			},
+			{
+				"label": "Enchanted Grove Monochrome Icons",
+				"id": "Enchanted Grove Monochrome Icons",
+				"path": "./icon-themes/Enchanted Grove monochrome icon-theme.json"
+			},
+			{
+				"label": "Enchanted Grove Dark Icons",
+				"id": "Enchanted Grove Dark Icons",
+				"path": "./icon-themes/Enchanted Grove Dark icon-theme.json"
+			},
+			{
+				"label": "Filter Moon Icons",
+				"id": "Filter Moon Icons",
+				"path": "./icon-themes/Filter Moon icon-theme.json"
 			}
 		],
 		"configuration": {

@@ -3,7 +3,7 @@
 	"displayName": "M Tech Pro",
 	"description": "✨ Professional dark & light theme + icon pack, from the author of the original M Tech color scheme.",
 	"publisher": "mtech",
-	"version": "2.1.0",
+	"version": "2.2.0",
 	"pricing": "Free",
 	"engines": {
 		"vscode": "^1.90.0"
@@ -86,6 +86,21 @@
 				"label": "M Tech Pro (Arctic Nord)",
 				"uiTheme": "vs-dark",
 				"path": "./themes/M Tech  (Arctic Nord).json"
+			},
+			{
+				"label": "M Tech Pro (Feisty Fusion)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/M Tech  (Feisty Fusion).json"
+			},
+			{
+				"label": "M Tech Pro (Cosmic Void)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/M Tech Pro (Cosmic Void).json"
+			},
+			{
+				"label": "M Tech Pro (Enchanted Grove)",
+				"uiTheme": "vs",
+				"path": "./themes/M Tech Pro (Enchanted Grove).json"
 			}
 		],
 		"iconThemes": [

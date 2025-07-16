@@ -13,10 +13,13 @@ const THEME_CONFIG = {
         "M Tech Pro (Filter Machine)",
         "M Tech Pro Light",
         "M Tech Pro Light (Filter Sun)",
-        "tech Classic",
+        "M Tech Classic",
         "M Tech Pro (Cyberpunk Neon)",
         "M Tech Pro (Tokyo Night)",
-        "M Tech Pro (Arctic Nord)"
+        "M Tech Pro (Arctic Nord)",
+        "M Tech Pro (Feisty Fusion)",
+        "M Tech Pro (Cosmic Void)",
+        "M Tech Pro (Enchanted Grove)"
     ],
     description: "M Tech Pro theme and color scheme for Visual Studio Code",
     version: "2.0.6",

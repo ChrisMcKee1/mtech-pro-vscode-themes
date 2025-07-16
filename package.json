@@ -273,9 +273,9 @@
 		],
 		"configuration": {
 			"type": "object",
-			"title": "M Tech Theme Settings",
+			"title": "M Tech Themes Settings",
 			"properties": {
-				"techPro.fileIconsMonochrome": {
+				"techThemes.fileIconsMonochrome": {
 					"type": "boolean",
 					"default": false,
 					"description": "makes the file icons monochrome"

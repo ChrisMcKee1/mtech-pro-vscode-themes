@@ -74,7 +74,7 @@ class ThemeManager {
         this.currentColorTheme = workbenchConfig.colorTheme;
         this.currentIconTheme = workbenchConfig.iconTheme;
 
-        const techConfig = this.vscode.workspace.getConfiguration("techPro");
+        const techConfig = this.vscode.workspace.getConfiguration("techThemes");
         this.fileIconsMonochrome = techConfig.get("fileIconsMonochrome", false);
         this.minimal = techConfig.get("minimal", false);
     }
@@ -235,7 +235,7 @@ class ExtensionManager {
         this.vscode.workspace.onDidChangeConfiguration((event) => {
             if (event.affectsConfiguration("workbench.colorTheme") || 
                 event.affectsConfiguration("workbench.iconTheme") ||
-                event.affectsConfiguration("techPro")) {
+                event.affectsConfiguration("techThemes")) {
                 
                 const previousState = this.themeManager.getState();
                 const currentState = this.themeManager.init();
@@ -404,7 +404,7 @@ class ExtensionManager {
     }
 
     openWebsite() {
-        this.vscode.env.openExternal(this.vscode.Uri.parse("https://mtech.pro"));
+        this.vscode.env.openExternal(this.vscode.Uri.parse("https://github.com/ChrisMcKee1/mtech-pro-vscode-themes"));
     }
 
     deactivate() {

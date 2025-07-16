@@ -17,10 +17,13 @@ const THEME_CONFIG = {
         "Tokyo Night",
         "Tokyo Day",
         "Arctic Nord",
+        "Arctic Nord Light",
         "Feisty Fusion",
         "Cosmic Void",
+        "Cosmic Void Light",
         "Enchanted Grove",
         "Enchanted Grove Dark",
+        "Cyberpunk Light",
         "Filter Moon"
     ],
     iconThemes: [
@@ -35,10 +38,13 @@ const THEME_CONFIG = {
         "Tokyo Night Icons",
         "Tokyo Day Icons",
         "Arctic Nord Icons",
+        "Arctic Nord Light Icons",
         "Feisty Fusion Icons",
         "Cosmic Void Icons",
+        "Cosmic Void Light Icons",
         "Enchanted Grove Icons",
         "Enchanted Grove Dark Icons",
+        "Cyberpunk Light Icons",
         "Filter Moon Icons"
     ],
     description: "M Tech Pro theme and color scheme for Visual Studio Code",
@@ -153,18 +159,25 @@ class ThemeManager {
 
     // Get theme categories for better organization
     getThemeCategories() {
+        const lightThemes = [
+            "Light", "Filter Sun", "Tokyo Day", "Enchanted Grove",
+            "Arctic Nord Light", "Cosmic Void Light", "Cyberpunk Light"
+        ];
+        
         return {
-            "Dark Themes": THEME_CONFIG.themes.filter(theme => 
-                !theme.includes("Light") && 
-                !theme.includes("Sun") && 
-                !theme.includes("Day") &&
-                theme !== "Enchanted Grove"
-            ),
             "Light Themes": THEME_CONFIG.themes.filter(theme => 
+                lightThemes.includes(theme) ||
                 theme.includes("Light") || 
                 theme.includes("Sun") || 
                 theme.includes("Day") ||
                 theme === "Enchanted Grove"
+            ),
+            "Dark Themes": THEME_CONFIG.themes.filter(theme => 
+                !lightThemes.includes(theme) &&
+                !theme.includes("Light") && 
+                !theme.includes("Sun") && 
+                !theme.includes("Day") &&
+                theme !== "Enchanted Grove"
             )
         };
     }

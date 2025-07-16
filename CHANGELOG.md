@@ -1,8 +1,15 @@
-# M Tech Pro for Visual Studio Code Changelog
+# M Tech Themes for Visual Studio Code Changelog
 
 ## Changelog
 
-### 2.2.0 - Theme Revolution & Enhanced Experience
+### 0.1.0 - Fresh Start & New Brand
+
+**🚀 Brand New Release - M Tech Themes**
+- **Rebranded**: Complete rebrand from M Tech Pro to M Tech Themes
+- **Fresh Start**: Reset to version 0.1.0 for a new beginning
+- **Simplified Package**: New package name `theme-m-tech-vscode`
+
+### 2.2.0 - Theme Revolution & Enhanced Experience (Legacy)
 
 **🎨 Major Theme Naming Simplification**
 - **BREAKING**: Simplified all theme names by removing redundant "M Tech Pro" prefix

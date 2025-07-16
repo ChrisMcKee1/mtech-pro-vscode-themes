@@ -1,9 +1,9 @@
 {
-	"name": "theme-m-tech-pro-vscode",
-	"displayName": "M Tech Pro",
+	"name": "theme-m-tech-vscode",
+	"displayName": "M Tech Themes",
 	"description": "✨ Professional dark & light theme + icon pack, from the author of the original M Tech color scheme.",
 	"publisher": "mtech",
-	"version": "2.2.0",
+	"version": "0.1.0",
 	"pricing": "Free",
 	"engines": {
 		"vscode": "^1.90.0"
@@ -20,11 +20,11 @@
 		"commands": [			
 			{
 				"command": "tech_pro.select_theme",
-				"title": "M Tech Pro: select theme"
+				"title": "M Tech Themes: select theme"
 			},
 			{
 				"command": "tech_pro.activate_icons",
-				"title": "M Tech Pro: activate icons"
+				"title": "M Tech Themes: activate icons"
 			}
 		],
 		"themes": [
@@ -273,7 +273,7 @@
 		],
 		"configuration": {
 			"type": "object",
-			"title": "M Tech Pro Settings",
+			"title": "M Tech Theme Settings",
 			"properties": {
 				"techPro.fileIconsMonochrome": {
 					"type": "boolean",

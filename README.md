@@ -1,20 +1,12 @@
-M Tech Pro for Visual Studio Code
+M Tech Themes for Visual Studio Code
 ==================================
 
 🚀 Where code meets artistry
 ----------------------------
 
-**M Tech Pro** isn't just another theme—it's a visual revolution for your development environment. Born from two decades of color science and developer obsession, this isn't just beautiful; it's **beautiful functionality** engineered to perfection.
+**M Tech Themes** isn't just another theme—it's a visual revolution for your development environment. Born from two decades of color science and developer obsession, this isn't just beautiful; it's **beautiful functionality** engineered to perfection.
 
 Every pixel has been meticulously crafted to create an uncompromising, distraction-free coding sanctuary where your mind can flow freely through complex logic and creative solutions.
-
-### ⚡ Quick Install - Transform Your VS Code in Seconds:
-
-```
-1. Extensions ‣ Search for 'M Tech Pro' ‣ Install
-2. Command Palette ‣ M Tech Pro: select theme
-3. Command Palette ‣ M Tech Pro: activate icons
-```
 
 🌐 **Discover more:** [mtech.pro](https://github.com/ChrisMcKee1/mtech-pro-vscode-themes)
 
@@ -66,8 +58,6 @@ Energetic warm colors adapted for light backgrounds - maintain that creative spa
 ### **Cyberpunk Neon Light**
 Electric rebellion meets daylight productivity - neon energy without the eye strain.
 
-
-
 🎨 Icon Universe - Every File Deserves Recognition
 -------------------------------------------------
 
@@ -98,7 +88,7 @@ Every theme comes with perfectly matched icon sets:
 **Monochrome Collections:**
 Every colored icon theme includes a monochrome variant for ultimate minimalism.
 
-✨ Why Developers Choose M Tech Pro
+✨ Why Developers Choose M Tech Themes
 ----------------------------------
 
 🎯 **21 Masterfully Crafted Themes** - Complete spectrum from midnight coding to sunrise debugging  
@@ -132,29 +122,3 @@ Three powerful new light themes bring beloved dark aesthetics to bright environm
 
 *Ready to upgrade your coding experience? The future of development environments is here.*
 
-## Installing the Extension from VSIX
-
-M Tech Pro is distributed via GitHub Releases as a VSIX file for easy installation in VS Code or Cursor. Follow these steps:
-
-1. Download the latest VSIX from the [Releases page](https://github.com/ChrisMcKee1/mtech-pro-vscode-themes/releases/latest) (look for `m-tech-pro-vscode.vsix`).
-
-### Installing in VS Code
-2. Open VS Code.
-3. Press `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (macOS) to open the Command Palette.
-4. Type and select **Extensions: Install from VSIX...**
-5. Browse to and select the downloaded `m-tech-pro-vscode.vsix` file.
-6. VS Code will install the extension and prompt to reload.
-7. After reloading, use the Command Palette to select "M Tech Pro: select theme" and "M Tech Pro: activate icons".
-
-### Installing in Cursor
-Cursor is a VS Code-based editor, so the process is similar:
-2. Open Cursor.
-3. Press `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (macOS) to open the Command Palette.
-4. Type and select **Extensions: Install from VSIX...** (if not available, ensure extension support is enabled).
-5. Browse to and select the downloaded `m-tech-pro-vscode.vsix` file.
-6. Cursor will install the extension and may prompt to reload.
-7. After installation, use the Command Palette to select "M Tech Pro: select theme" and "M Tech Pro: activate icons".
-
-**Note:** If "Install from VSIX" isn't available in Cursor, manually extract the VSIX contents to Cursor's extensions directory (typically `~/.cursor/extensions/`) and restart. Refer to Cursor's documentation for details.
-
-Once installed, browse themes via the Command Palette or status bar.

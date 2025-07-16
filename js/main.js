@@ -4,7 +4,7 @@ const vscode = require("vscode");
 
 // Theme configuration with simplified names
 const THEME_CONFIG = {
-    name: "techPro-VSCode",
+    name: "techThemes-VSCode",
     themes: [
         "Classic",
         "Filter Octagon",
@@ -49,8 +49,8 @@ const THEME_CONFIG = {
         "Enchanted Grove Dark Icons",
         "Filter Moon Icons"
     ],
-    description: "M Tech Pro theme and color scheme for Visual Studio Code",
-    version: "2.2.0",
+    description: "M Tech Themes and color scheme for Visual Studio Code",
+    version: "0.1.0",
     author: "tech"
 };
 
@@ -189,15 +189,15 @@ class ThemeManager {
 // Enhanced update messages with new themes
 const UPDATE_MESSAGES = {
     install: {
-        title: "🎨 Thanks for installing M Tech Pro — Enjoy the refreshed themes!",
+        title: "🎨 Thanks for installing M Tech Themes — Enjoy the refreshed themes!",
         actions: [
             { label: "browse themes", id: "SELECT-THEME" },
             { label: "learn more", id: "OPEN-WEBSITE" }
         ]
     },
-    "2.2.0": {
-        title: "✨ M Tech Pro 2.2.0: New themes & improved naming!",
-        detail: "Featuring simplified names, new Filter Moon/Tokyo Day themes, and enhanced accessibility.",
+    "0.1.0": {
+        title: "✨ M Tech Themes 0.1.0: New brand, new beginning!",
+        detail: "Featuring simplified names, comprehensive theme collection, and enhanced accessibility.",
         actions: [
             { label: "browse themes", id: "SELECT-THEME" },
             { label: "learn more", id: "OPEN-WEBSITE" }
@@ -262,7 +262,7 @@ class ExtensionManager {
             100
         );
         this.statusBarItem.command = "tech_pro.select_theme";
-        this.statusBarItem.tooltip = "Click to change M Tech Pro theme";
+        this.statusBarItem.tooltip = "Click to change M Tech Themes";
     }
 
     updateStatusBarItem() {
@@ -297,7 +297,7 @@ class ExtensionManager {
         });
 
         const selection = await this.vscode.window.showQuickPick(allThemes, {
-            placeHolder: "Select M Tech Pro theme",
+            placeHolder: "Select M Tech Theme",
             matchOnDescription: true,
             matchOnDetail: true
         });
@@ -310,7 +310,7 @@ class ExtensionManager {
 
     getThemeDescription(themeName) {
         const descriptions = {
-            "Classic": "Original M Tech Pro theme",
+            "Classic": "Original M Tech Theme",
             "Arctic Nord": "Cool Nordic-inspired colors",
             "Cyberpunk Neon": "Vibrant cyber colors",
             "Cyberpunk Neon Light": "Vibrant cyber colors for light environments",
@@ -350,7 +350,7 @@ class ExtensionManager {
         const currentTheme = this.themeManager.currentColorTheme;
         const message = this.themeManager.istechTheme 
             ? `Current theme: ${currentTheme}\nVersion: ${THEME_CONFIG.version}`
-            : "M Tech Pro themes are available! Use the theme selector to switch.";
+            : "M Tech Themes are available! Use the theme selector to switch.";
             
         vscode.window.showInformationMessage(message, "Browse Themes").then(selection => {
             if (selection === "Browse Themes") {

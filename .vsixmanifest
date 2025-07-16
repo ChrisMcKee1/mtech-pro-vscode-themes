@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 	<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
 		<Metadata>
-			<Identity Language="en-US" Id="theme-tech-pro-vscode" Version="2.0.6" Publisher="tech" />
-			<DisplayName>M Tech Pro</DisplayName>
+			<Identity Language="en-US" Id="theme-m-tech-vscode" Version="0.1.0" Publisher="tech" />
+			<DisplayName>M Tech Themes</DisplayName>
 			<Description xml:space="preserve">✨ Professional dark &amp; light theme + icon pack, from the author of the original tech color scheme.</Description>
 			<Tags>beautiful functionality,focus,icons,dark,light,theme,color-theme,icon-theme,__web_extension,__sponsor_extension</Tags>
 			<Categories>Themes</Categories>

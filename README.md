@@ -16,7 +16,7 @@ Every pixel has been meticulously crafted to create an uncompromising, distracti
 3. Command Palette ‣ M Tech Pro: activate icons
 ```
 
-🌐 **Discover more:** [mtech.pro](https://mtech.pro)
+🌐 **Discover more:** [mtech.pro](https://github.com/ChrisMcKee1/mtech-pro-vscode-themes)
 
 🌙 Dark Theme Collection - Code in the Shadows
 ----------------------------------------------
@@ -129,13 +129,5 @@ Three powerful new light themes bring beloved dark aesthetics to bright environm
 - Workspace-aware preferences
 - Improved accessibility and contrast ratios
 
-The M Tech Legacy - Twenty Years in the Making
-----------------------------------------------
-
-M Tech Pro carries the DNA of the legendary M Tech color palette that revolutionized developer environments back in 2006. While countless themes have tried to capture that magic, M Tech Pro is the official evolution—refined by time, perfected by passion, and trusted by professionals worldwide.
-
-This isn't just a theme update; it's the culmination of twenty years of understanding what developers really need: **beauty that works as hard as you do.**
-
----
 
 *Ready to upgrade your coding experience? The future of development environments is here.*

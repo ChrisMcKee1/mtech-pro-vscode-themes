@@ -1,124 +1,183 @@
 M Tech Themes for Visual Studio Code
-==================================
+====================================
 
 🚀 Where code meets artistry
 ----------------------------
 
-**M Tech Themes** isn't just another theme—it's a visual revolution for your development environment. Born from two decades of color science and developer obsession, this isn't just beautiful; it's **beautiful functionality** engineered to perfection.
+**M Tech Themes** isn't just another theme package—it's a visual revolution for your development environment. Born from two decades of color science and developer obsession, this isn't just beautiful; it's **beautiful functionality** engineered to perfection.
 
 Every pixel has been meticulously crafted to create an uncompromising, distraction-free coding sanctuary where your mind can flow freely through complex logic and creative solutions.
 
-🌐 **Discover more:** [mtech.pro](https://github.com/ChrisMcKee1/mtech-pro-vscode-themes)
+## 📦 Installation
 
-🌙 Dark Theme Collection - Code in the Shadows
-----------------------------------------------
+M Tech Themes is distributed exclusively via GitHub releases as a VSIX file for easy installation in VS Code or Cursor.
 
-### **Classic** 
-The crown jewel. Pure sophistication meets cutting-edge functionality - where it all began.
+### **Download & Install:**
 
-### **Filter Series - Express Your Coding Mood**
-- **Filter Octagon** - Geometric precision with angular elegance
-- **Filter Ristretto** - Rich, coffee-inspired warmth for late-night coding sessions  
-- **Filter Spectrum** - Full-spectrum brilliance that adapts to your energy
-- **Filter Machine** - Industrial strength with cybernetic edge
-- **Filter Moon** - Cool moonlit tones for peaceful coding sessions
+1. **Download** the latest VSIX from the [Releases page](https://github.com/ChrisMcKee1/mtech-pro-vscode-themes/releases/latest) 
+   - Look for `theme-m-tech-vscode-*.vsix` (the latest version)
 
-### **Urban Editions - City-Inspired Atmosphere**
-- **Tokyo Night** - Neon-soaked streets and midnight innovation
-- **Tokyo Day** - Bright urban daytime energy meets professional focus
+### **Installing in VS Code**
+2. Open VS Code
+3. Press `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (macOS) to open Command Palette
+4. Type and select **Extensions: Install from VSIX...**
+5. Browse to and select the downloaded VSIX file
+6. VS Code will install the extension and prompt to reload
+7. After reloading, press `Ctrl+Shift+P` again and select **M Tech Themes: Select Theme**
 
-### **Cosmic & Nature Themes - Draw Inspiration from the Universe**
-- **Cosmic Void** - Deep space theme for interstellar coding journeys
-- **Arctic Nord** - Cool minimalism inspired by Nordic design philosophy
-- **Enchanted Grove** - Nature-inspired forest theme for organic coding
-- **Enchanted Grove Dark** - Dark forest atmosphere for deeper immersion
+### **Installing in Cursor**
+Cursor is VS Code-based, so the installation process is identical:
 
-### **Neon Power - Electric Energy for Modern Development**
-- **Cyberpunk Neon** - Electric dreams and digital rebellion
-- **Feisty Fusion** - Energetic warm colors that fuel creative coding
+2. Open Cursor
+3. Press `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (macOS)
+4. Type and select **Extensions: Install from VSIX...**
+5. Browse to and select the downloaded VSIX file
+6. Cursor will install and prompt to reload
+7. Use Command Palette to select **M Tech Themes: Select Theme**
 
-☀️ Light Theme Collection - Bright Minds, Bright Code
-----------------------------------------------------
+### **Alternative Installation (Direct File Method)**
+- Download the VSIX file
+- Drag and drop it directly onto the VS Code or Cursor window
+- Follow the installation prompts
 
-### **Light**
-Crystalline clarity that doesn't compromise on style. The perfect foundation for daytime coding warriors.
+---
 
-### **Filter Sun**
-Golden hour vibes meet professional productivity. Coding has never felt this warm and inviting.
+## 🎨 The Complete Collection
 
-### **Arctic Nord Light**
-Cool Nordic minimalism optimized for bright environments without losing its sophisticated edge.
+### **🌙 Dark Themes - Professional Power**
 
-### **Cosmic Void Light**
-Deep space aesthetics reimagined for light environments - stellar coding in brilliant clarity.
+#### **Filter Series** - *Precision Engineering*
+- **Classic** - The timeless original that started it all
+- **Filter Octagon** - Sharp, geometric precision
+- **Filter Ristretto** - Rich, coffee-inspired warmth  
+- **Filter Spectrum** - Full-spectrum brilliance
+- **Filter Machine** - Industrial strength focus
+- **Filter Moon** - Cool moonlit tones
+- **Filter Sun** - Energetic brightness
 
-### **Feisty Fusion Light**
-Energetic warm colors adapted for light backgrounds - maintain that creative spark in any lighting.
+#### **Urban Editions** - *Metropolitan Sophistication*
+- **Tokyo Night** - Neon-soaked urban atmosphere
+- **Tokyo Day** - Bright urban daytime energy
 
-### **Cyberpunk Neon Light**
-Electric rebellion meets daylight productivity - neon energy without the eye strain.
+#### **Cosmic & Nature** - *Organic Harmony*
+- **Cosmic Void** - Deep space exploration
+- **Arctic Nord** - Nordic minimalist elegance
+- **Enchanted Grove** - Nature's verdant sanctuary
+- **Enchanted Grove Dark** - Deep forest mystique
 
-🎨 Icon Universe - Every File Deserves Recognition
--------------------------------------------------
+#### **Neon Power** - *Electric Creativity*
+- **Cyberpunk Neon** - High-voltage cyber aesthetics
+- **Feisty Fusion** - Energetic warm color fusion
 
-Our icons aren't just pretty pictures—they're visual landmarks in your codebase. Hand-crafted at the pixel level, each icon tells a story and guides your eye exactly where it needs to go.
+### **☀️ Light Themes - Brilliant Clarity**
 
-### **Complete Icon Collections**
-Every theme comes with perfectly matched icon sets:
+#### **Professional Light Variants**
+- **Light** - Clean, professional brightness
+- **Arctic Nord Light** - Nordic clarity and focus
+- **Cosmic Void Light** - Stellar brightness for day coding
 
-**Dark Theme Icons:**
-- **Classic Icons** - Flagship collection in living color
-- **Cyberpunk Neon Icons** - Electric file recognition
-- **Tokyo Night Icons** - Urban-inspired file markers
-- **Arctic Nord Icons** - Cool Nordic file aesthetics
-- **Feisty Fusion Icons** - Energetic file identification
-- **Cosmic Void Icons** - Stellar file navigation
-- **Enchanted Grove Icons** - Nature-inspired file beauty
-- **Filter Series Icons** - Octagon, Ristretto, Spectrum, Machine, Moon variants
+#### **Energetic Light Modes**
+- **Feisty Fusion Light** - Warm, energetic light mode
+- **Cyberpunk Neon Light** - Bright cyber aesthetics
 
-**Light Theme Icons:**
-- **Light Icons** - Optimized brilliance for bright environments
-- **Filter Sun Icons** - Golden-hour file markers
-- **Arctic Nord Light Icons** - Nordic clarity for light themes
-- **Cosmic Void Light Icons** - Stellar aesthetics in bright mode
-- **Feisty Fusion Light Icons** - Energetic colors for light backgrounds
-- **Cyberpunk Neon Light Icons** - Electric energy meets daylight clarity
+---
 
+## 🎯 Icon Themes - Perfect Harmony
 
-**Monochrome Collections:**
-Every colored icon theme includes a monochrome variant for ultimate minimalism.
+Every theme comes with **meticulously matched icon sets**:
 
-✨ Why Developers Choose M Tech Themes
-----------------------------------
+### **Regular Icon Collections**
+- **Classic Icons** - Timeless, professional symbols
+- **Filter Series Icons** - Precision-crafted for each Filter theme
+- **Urban Icons** - Modern metropolitan aesthetics  
+- **Cosmic Icons** - Space-age file representations
+- **Nature Icons** - Organic, earth-inspired symbols
+- **Neon Icons** - Electric, high-energy file symbols
 
-🎯 **21 Masterfully Crafted Themes** - Complete spectrum from midnight coding to sunrise debugging  
-🔮 **40+ Icon Theme Variations** - Every file type gets the VIP treatment with perfect theme matching  
-⚡ **Zero Distraction Design** - Your code is the star, everything else fades away  
-🎨 **Color Science Engineering** - Two decades of refinement in every shade  
-🧠 **Flow State Optimization** - Designed to keep you in the zone longer  
-🚀 **Instant Transformation** - One install, endless inspiration  
-🌈 **Light & Dark Mastery** - Seamless experience whether you code in shadows or sunshine  
-📱 **Status Bar Integration** - Quick theme switching without breaking your flow
+### **Monochrome Variants**
+For ultimate focus and minimalism:
+- **Tokyo Night Monochrome Icons** - Unified monochrome elegance
+- **Arctic Nord Monochrome Icons** - Nordic monochrome precision
+- **Cosmic Void Monochrome Icons** - Deep space minimalism
+- And more monochrome variants for distraction-free coding
 
-🆕 What's New in 2.2.0
-----------------------
+---
 
-### **🎨 Simplified Theme Names**
-Clean, intuitive naming without redundant prefixes - find your perfect theme faster.
+## ⚡ Quick Theme Switching
 
-### **✨ New Light Variants**
-Three powerful new light themes bring beloved dark aesthetics to bright environments:
-- **Feisty Fusion Light** - Energetic warmth for daylight coding
-- **Cyberpunk Neon Light** - Electric rebellion meets professional brightness  
-- **Cosmic Void Light** - Deep space beauty in brilliant clarity
+**M Tech Themes** includes powerful commands for instant theme management:
 
-### **🔧 Enhanced Experience**
-- Status bar integration showing current theme
+- **`M Tech Themes: Select Theme`** - Browse and preview all themes instantly
+- **`M Tech Themes: Activate Icons`** - Auto-match icons to your current theme
+- **Smart Categories** - Themes organized by Dark/Light for easy browsing
+- **Status Bar Integration** - Always know which theme you're using
+
+---
+
+## 🔥 Why M Tech Themes?
+
+### **🧠 Cognitive Science**
+- **Reduced Eye Strain** - Carefully calibrated contrast ratios
+- **Enhanced Focus** - Colors scientifically chosen to minimize distraction
+- **Improved Readability** - Syntax highlighting optimized for code comprehension
+
+### **🎨 Visual Excellence**
+- **Professional Polish** - Every pixel deliberately placed
+- **Consistent Design Language** - Unified aesthetic across all variants
+- **Adaptive Icons** - File icons that enhance rather than distract
+
+### **⚡ Developer Experience**
+- **Instant Switching** - Change themes without breaking your flow  
+- **Smart Defaults** - Icons automatically match your theme choice
+- **Non-Intrusive** - Beautiful without being distracting
+
+---
+
+## 🚀 Advanced Features
+
+### **Smart Theme Management**
 - Categorized theme picker (Dark/Light organization)
-- Enhanced theme descriptions and quick switching
-- Workspace-aware preferences
-- Improved accessibility and contrast ratios
+- Enhanced theme descriptions with preview hints
+- Workspace-aware theme preferences
+- Improved error handling and notifications
 
+### **Icon Intelligence**
+- Automatic icon theme matching with fallback logic
+- Monochrome support for distraction-free coding
+- Comprehensive file type coverage
+- Custom icon mappings for popular frameworks
 
-*Ready to upgrade your coding experience? The future of development environments is here.*
+### **Status Integration**
+- Current theme display in status bar
+- Quick theme switching via status bar click
+- Visual confirmation of active theme and icons
+
+---
+
+## 💡 Pro Tips
+
+- **Keyboard Shortcut**: Assign a hotkey to "M Tech Themes: Select Theme" for instant switching
+- **Icon Matching**: Icons automatically coordinate with your theme selection  
+- **Workspace Themes**: Different themes can be set per workspace for context switching
+- **Light/Dark Toggle**: Easily switch between light and dark variants of the same theme family
+
+---
+
+## 🔄 Version History
+
+**Current Version: 0.1.0** - Fresh start with M Tech Themes branding
+
+This represents a complete rebrand and fresh beginning for the theme collection, with simplified naming, enhanced functionality, and a focus on GitHub-based distribution.
+
+---
+
+## ⚖️ License
+
+**MIT License** - Use freely in personal and commercial projects.
+
+---
+
+**Transform your coding environment. Download M Tech Themes today.**
+
+*From the creator of the original M Tech color science - where functionality meets artistry.*
 

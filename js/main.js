@@ -25,7 +25,6 @@ const THEME_CONFIG = {
         "Cosmic Void Light",
         "Enchanted Grove",
         "Enchanted Grove Dark",
-        "Cyberpunk Light",
         "Filter Moon"
     ],
     iconThemes: [
@@ -48,7 +47,6 @@ const THEME_CONFIG = {
         "Cosmic Void Light Icons",
         "Enchanted Grove Icons",
         "Enchanted Grove Dark Icons",
-        "Cyberpunk Light Icons",
         "Filter Moon Icons"
     ],
     description: "M Tech Pro theme and color scheme for Visual Studio Code",
@@ -165,7 +163,7 @@ class ThemeManager {
     getThemeCategories() {
         const lightThemes = [
             "Light", "Filter Sun", "Tokyo Day", "Enchanted Grove",
-            "Arctic Nord Light", "Cosmic Void Light", "Cyberpunk Light",
+            "Arctic Nord Light", "Cosmic Void Light",
             "Feisty Fusion Light", "Cyberpunk Neon Light"
         ];
         

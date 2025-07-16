@@ -66,8 +66,7 @@ Energetic warm colors adapted for light backgrounds - maintain that creative spa
 ### **Cyberpunk Neon Light**
 Electric rebellion meets daylight productivity - neon energy without the eye strain.
 
-### **Cyberpunk Light**
-Professional cyberpunk aesthetics designed for bright coding sessions.
+
 
 🎨 Icon Universe - Every File Deserves Recognition
 -------------------------------------------------
@@ -94,7 +93,7 @@ Every theme comes with perfectly matched icon sets:
 - **Cosmic Void Light Icons** - Stellar aesthetics in bright mode
 - **Feisty Fusion Light Icons** - Energetic colors for light backgrounds
 - **Cyberpunk Neon Light Icons** - Electric energy meets daylight clarity
-- **Cyberpunk Light Icons** - Professional cyber aesthetics for bright coding
+
 
 **Monochrome Collections:**
 Every colored icon theme includes a monochrome variant for ultimate minimalism.

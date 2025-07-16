@@ -16,6 +16,9 @@
 - **New**: `Tokyo Day` - Bright urban daytime counterpart to Tokyo Night
 - **New**: `Filter Moon` - Cool moonlit dark theme counterpart to Filter Sun
 - **New**: `Enchanted Grove Dark` - Dark forest atmosphere variant
+- **New**: `Feisty Fusion Light` - Light mode variant of the energetic Feisty Fusion theme
+- **New**: `Cyberpunk Neon Light` - Light mode variant of the vibrant Cyberpunk Neon theme
+- **New**: `Cosmic Void Light` - Light mode variant of the deep space Cosmic Void theme
 - **Enhanced**: Improved comment accessibility in Arctic Nord theme
 
 **🔧 Enhanced Extension Capabilities**
@@ -25,6 +28,7 @@
 - **New**: Workspace-aware theme preferences
 - **New**: Improved error handling and user notifications
 - **New**: Better icon theme matching logic with monochrome support
+- **New**: Matching icon themes for all new light variants (Feisty Fusion Light Icons, Cyberpunk Neon Light Icons, Cosmic Void Light Icons)
 
 **♿ Accessibility Improvements**
 - Enhanced comment contrast in Arctic Nord theme (`#81a1c1` vs previous `#4c566a`)

@@ -17,11 +17,7 @@
 		}
 	},
 	"contributes": {
-		"commands": [
-			{
-				"command": "tech_pro.enter_license",
-				"title": "M Tech Pro: enter license"
-			},
+		"commands": [			
 			{
 				"command": "tech_pro.select_theme",
 				"title": "M Tech Pro: select theme"
@@ -111,6 +107,21 @@
 				"label": "Filter Moon",
 				"uiTheme": "vs-dark",
 				"path": "./themes/Filter Moon.json"
+			},
+			{
+				"label": "Feisty Fusion Light",
+				"uiTheme": "vs",
+				"path": "./themes/Feisty Fusion Light.json"
+			},
+			{
+				"label": "Cyberpunk Neon Light",
+				"uiTheme": "vs",
+				"path": "./themes/Cyberpunk Neon Light.json"
+			},
+			{
+				"label": "Cosmic Void Light",
+				"uiTheme": "vs",
+				"path": "./themes/Cosmic Void Light.json"
 			}
 		],
 		"iconThemes": [
@@ -276,16 +287,16 @@
 		"ui",
 		"workspace"
 	],
-	"homepage": "https://mtech.pro",
+	"homepage": "https://github.com/ChrisMcKee1/mtech-pro-vscode-themes",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/mtech-pro/vscode.git"
+		"url": "https://github.com/ChrisMcKee1/mtech-pro-vscode-themes.git"
 	},
 	"bugs": {
-		"url": "https://github.com/mtech-pro/vscode"
+		"url": "https://github.com/ChrisMcKee1/mtech-pro-vscode-themes/issues"
 	},
 	"sponsor": {
-		"url": "https://mtech.pro/vscode"
+		"url": "https://github.com/ChrisMcKee1"
 	},
 	"galleryBanner": {
 		"color": "#fdf9f3",

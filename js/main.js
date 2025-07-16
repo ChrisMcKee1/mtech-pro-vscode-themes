@@ -14,11 +14,13 @@ const THEME_CONFIG = {
         "Light",
         "Filter Sun",
         "Cyberpunk Neon",
+        "Cyberpunk Neon Light",
         "Tokyo Night",
         "Tokyo Day",
         "Arctic Nord",
         "Arctic Nord Light",
         "Feisty Fusion",
+        "Feisty Fusion Light",
         "Cosmic Void",
         "Cosmic Void Light",
         "Enchanted Grove",
@@ -35,11 +37,13 @@ const THEME_CONFIG = {
         "Light Icons",
         "Filter Sun Icons",
         "Cyberpunk Neon Icons",
+        "Cyberpunk Neon Light Icons",
         "Tokyo Night Icons",
         "Tokyo Day Icons",
         "Arctic Nord Icons",
         "Arctic Nord Light Icons",
         "Feisty Fusion Icons",
+        "Feisty Fusion Light Icons",
         "Cosmic Void Icons",
         "Cosmic Void Light Icons",
         "Enchanted Grove Icons",
@@ -161,7 +165,8 @@ class ThemeManager {
     getThemeCategories() {
         const lightThemes = [
             "Light", "Filter Sun", "Tokyo Day", "Enchanted Grove",
-            "Arctic Nord Light", "Cosmic Void Light", "Cyberpunk Light"
+            "Arctic Nord Light", "Cosmic Void Light", "Cyberpunk Light",
+            "Feisty Fusion Light", "Cyberpunk Neon Light"
         ];
         
         return {
@@ -310,12 +315,15 @@ class ExtensionManager {
             "Classic": "Original M Tech Pro theme",
             "Arctic Nord": "Cool Nordic-inspired colors",
             "Cyberpunk Neon": "Vibrant cyber colors",
+            "Cyberpunk Neon Light": "Vibrant cyber colors for light environments",
             "Tokyo Night": "Urban night atmosphere",
             "Tokyo Day": "Bright urban daytime",
             "Enchanted Grove": "Nature-inspired forest theme",
             "Enchanted Grove Dark": "Dark forest atmosphere",
             "Cosmic Void": "Deep space theme",
+            "Cosmic Void Light": "Deep space theme for light environments",
             "Feisty Fusion": "Energetic warm colors",
+            "Feisty Fusion Light": "Energetic warm colors for light environments",
             "Filter Moon": "Cool moonlit tones",
             "Filter Sun": "Bright sunny atmosphere"
         };

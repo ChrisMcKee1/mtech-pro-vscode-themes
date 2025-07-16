@@ -18,7 +18,8 @@ const THEME_CONFIG = {
         "Tokyo Night",
         "Tokyo Day",
         "Arctic Nord",
-        "Arctic Nord Light",
+        "OGE Dark",
+        "OGE Light",
         "Feisty Fusion",
         "Feisty Fusion Light",
         "Cosmic Void",
@@ -41,6 +42,9 @@ const THEME_CONFIG = {
         "Tokyo Day Icons",
         "Arctic Nord Icons",
         "Arctic Nord Light Icons",
+        "OGE Icons",
+        "OGE Dark Icons",
+        "OGE Light Icons",
         "Feisty Fusion Icons",
         "Feisty Fusion Light Icons",
         "Cosmic Void Icons",
@@ -50,7 +54,7 @@ const THEME_CONFIG = {
         "Filter Moon Icons"
     ],
     description: "M Tech Themes and color scheme for Visual Studio Code",
-    version: "0.1.0",
+    version: "0.2.0",
     author: "tech"
 };
 
@@ -94,13 +98,13 @@ class ThemeManager {
         const currentIconTheme = workbenchConfig.iconTheme;
 
         try {
-            // Update color theme if it changed
-            if (themeName !== previousState.colorTheme) {
+        // Update color theme if it changed
+        if (themeName !== previousState.colorTheme) {
                 await workbenchConfig.update("colorTheme", themeName, vscode.ConfigurationTarget.Global);
                 
                 // Show notification for successful theme change
                 vscode.window.showInformationMessage(`✨ Applied ${themeName} theme!`);
-            }
+        }
 
             // Update icon theme if needed and user has tech icons
             if (this.isTechIconTheme(currentIconTheme) && iconThemeName !== previousState.iconTheme) {
@@ -157,7 +161,7 @@ class ThemeManager {
 
     get istechIcons() {
         return this.isTechIconTheme(this.currentIconTheme);
-    }
+}
 
     // Get theme categories for better organization
     getThemeCategories() {
@@ -202,6 +206,15 @@ const UPDATE_MESSAGES = {
             { label: "browse themes", id: "SELECT-THEME" },
             { label: "learn more", id: "OPEN-WEBSITE" }
         ]
+    },
+    "0.2.0": {
+        title: "🚀 M Tech Themes 0.2.0: Enhanced Theme & Icon Management!",
+        detail: "New 'Set Theme and Icons' command, complete OGE theme support, and improved theme-to-icon mapping system.",
+        actions: [
+            { label: "try new command", id: "SELECT-THEME" },
+            { label: "browse themes", id: "SELECT-THEME" },
+            { label: "learn more", id: "OPEN-WEBSITE" }
+        ]
     }
 };
 
@@ -223,6 +236,7 @@ class ExtensionManager {
         const commands = {
             "tech_pro.select_theme": () => this.selectTheme(),
             "tech_pro.activate_icons": () => this.activateIcons(),
+            "tech_pro.set_theme_and_icons": () => this.setThemeAndIcons(),
             "tech_pro.enter_license": () => this.showThemeInfo() // Repurposed for theme info
         };
 
@@ -237,11 +251,11 @@ class ExtensionManager {
                 event.affectsConfiguration("workbench.iconTheme") ||
                 event.affectsConfiguration("techThemes")) {
                 
-                const previousState = this.themeManager.getState();
-                const currentState = this.themeManager.init();
-                
-                if (this.themeManager.istechTheme) {
-                    this.themeManager.applyTheme(currentState.colorTheme, previousState);
+            const previousState = this.themeManager.getState();
+            const currentState = this.themeManager.init();
+            
+            if (this.themeManager.istechTheme) {
+                this.themeManager.applyTheme(currentState.colorTheme, previousState);
                 }
                 
                 this.updateStatusBarItem();
@@ -293,7 +307,7 @@ class ExtensionManager {
                     description: isCurrentTheme ? "$(check) Current" : "",
                     detail: this.getThemeDescription(theme)
                 });
-            });
+        });
         });
 
         const selection = await this.vscode.window.showQuickPick(allThemes, {
@@ -305,7 +319,7 @@ class ExtensionManager {
         if (selection && selection.label !== this.themeManager.currentColorTheme) {
             await this.themeManager.applyTheme(selection.label);
             this.updateStatusBarItem();
-        }
+            }
     }
 
     getThemeDescription(themeName) {
@@ -323,7 +337,9 @@ class ExtensionManager {
             "Feisty Fusion": "Energetic warm colors",
             "Feisty Fusion Light": "Energetic warm colors for light environments",
             "Filter Moon": "Cool moonlit tones",
-            "Filter Sun": "Bright sunny atmosphere"
+            "Filter Sun": "Bright sunny atmosphere",
+            "OGE Dark": "Oil, Gas & Energy industry theme - dark mode",
+            "OGE Light": "Oil, Gas & Energy industry theme - light mode"
         };
         return descriptions[themeName] || "Professional theme variant";
     }
@@ -343,6 +359,58 @@ class ExtensionManager {
             vscode.window.showInformationMessage(`✨ Applied ${iconTheme}!`);
         } catch (error) {
             vscode.window.showErrorMessage(`Failed to apply icons: ${error.message}`);
+        }
+    }
+
+    async setThemeAndIcons() {
+        const categories = this.themeManager.getThemeCategories();
+        const allThemes = [];
+        
+        // Add category headers and themes
+        Object.entries(categories).forEach(([category, themes]) => {
+            allThemes.push({
+                label: `--- ${category} ---`,
+                kind: this.vscode.QuickPickItemKind.Separator
+            });
+            
+            themes.forEach(theme => {
+                const isCurrentTheme = theme === this.themeManager.currentColorTheme;
+                const matchingIconTheme = this.themeManager.getMatchingIconTheme(theme);
+                allThemes.push({
+                    label: theme,
+                    description: isCurrentTheme ? "$(check) Current" : "",
+                    detail: `${this.getThemeDescription(theme)} • Icons: ${matchingIconTheme}`
+                });
+            });
+        });
+
+        const selection = await this.vscode.window.showQuickPick(allThemes, {
+            placeHolder: "Select M Tech Theme and Icons",
+            matchOnDescription: true,
+            matchOnDetail: true
+        });
+
+        if (selection && selection.label !== this.themeManager.currentColorTheme) {
+            const workbenchConfig = this.vscode.workspace.getConfiguration("workbench");
+            const iconTheme = this.themeManager.getMatchingIconTheme(selection.label);
+            
+            try {
+                // Apply both theme and icons together
+                await Promise.all([
+                    workbenchConfig.update("colorTheme", selection.label, this.vscode.ConfigurationTarget.Global),
+                    workbenchConfig.update("iconTheme", iconTheme, this.vscode.ConfigurationTarget.Global)
+                ]);
+                
+                this.vscode.window.showInformationMessage(`✨ Applied ${selection.label} theme and ${iconTheme}!`);
+                this.updateStatusBarItem();
+                
+                // Save theme preference for workspace
+                this.themeManager.workspaceState.update("preferredTheme", selection.label);
+                this.themeManager.init();
+                
+            } catch (error) {
+                this.vscode.window.showErrorMessage(`Failed to apply theme and icons: ${error.message}`);
+            }
         }
     }
 

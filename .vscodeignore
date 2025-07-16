@@ -4,6 +4,9 @@
 .git/
 .DS_Store
 
+# Test files
+tests/
+
 # Log files
 logs/
 *.log

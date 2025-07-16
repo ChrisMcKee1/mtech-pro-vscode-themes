@@ -14,7 +14,7 @@ M Tech Themes is distributed exclusively via GitHub releases as a VSIX file for 
 
 ### **Step 1: Download**
 1. **Go to [Releases](https://github.com/ChrisMcKee1/mtech-pro-vscode-themes/releases/latest)**
-2. **Download** `theme-m-tech-vscode-0.1.0.vsix` (latest version)
+2. **Download** the latest `theme-m-tech-vscode-*.vsix` file
 3. **Save** to your Downloads folder or desktop
 
 ### **Step 2: Install Using VS Code UI (Recommended)**
@@ -71,12 +71,16 @@ If you get "package.json not found" error:
 - **Cyberpunk Neon** - High-voltage cyber aesthetics
 - **Feisty Fusion** - Energetic warm color fusion
 
+#### **Industry Professional** - *Energy Sector Focus*
+- **OGE Dark** - Professional oil, gas & energy dark theme
+
 ### **☀️ Light Themes - Brilliant Clarity**
 
 #### **Professional Light Variants**
 - **Light** - Clean, professional brightness
 - **Arctic Nord Light** - Nordic clarity and focus
 - **Cosmic Void Light** - Stellar brightness for day coding
+- **OGE Light** - Professional energy industry light theme
 
 #### **Energetic Light Modes**
 - **Feisty Fusion Light** - Warm, energetic light mode
@@ -167,9 +171,13 @@ For ultimate focus and minimalism:
 
 ## 🔄 Version History
 
-**Current Version: 0.1.0** - Fresh start with M Tech Themes branding
+**Current Version: 0.2.0** - Enhanced with professional OGE Dark & Light themes
 
-This represents a complete rebrand and fresh beginning for the theme collection, with simplified naming, enhanced functionality, and a focus on GitHub-based distribution.
+This version introduces two new energy industry themes:
+- **OGE Dark**: Professional dark theme with earth foundations and energy accents
+- **OGE Light**: Clean light theme with warm earth tones and accessible contrast
+- **Industry Focus**: Designed specifically for oil, gas, and energy sector development
+- **Accessibility**: All colors meet professional development contrast standards
 
 ---
 

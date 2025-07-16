@@ -3,7 +3,7 @@
 	"displayName": "M Tech Themes",
 	"description": "✨ Professional dark & light theme + icon pack, from the author of the original M Tech color scheme.",
 	"publisher": "mtech",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"pricing": "Free",
 	"engines": {
 		"vscode": "^1.90.0"
@@ -17,7 +17,7 @@
 		}
 	},
 	"contributes": {
-		"commands": [			
+		"commands": [
 			{
 				"command": "tech_pro.select_theme",
 				"title": "M Tech Themes: select theme"
@@ -25,6 +25,10 @@
 			{
 				"command": "tech_pro.activate_icons",
 				"title": "M Tech Themes: activate icons"
+			},
+			{
+				"command": "tech_pro.set_theme_and_icons",
+				"title": "M Tech Themes: set theme and icons"
 			}
 		],
 		"themes": [
@@ -82,6 +86,16 @@
 				"label": "Arctic Nord",
 				"uiTheme": "vs-dark",
 				"path": "./themes/Arctic Nord.json"
+			},
+			{
+				"label": "OGE Dark",
+				"uiTheme": "vs-dark",
+				"path": "./themes/OGE Dark.json"
+			},
+			{
+				"label": "OGE Light",
+				"uiTheme": "vs",
+				"path": "./themes/OGE Light.json"
 			},
 			{
 				"label": "Feisty Fusion",
@@ -206,6 +220,21 @@
 				"path": "./icon-themes/Arctic Nord monochrome icon-theme.json"
 			},
 			{
+				"label": "OGE Icons",
+				"id": "OGE Icons",
+				"path": "./icon-themes/OGE icon-theme.json"
+			},
+			{
+				"label": "OGE Dark Icons",
+				"id": "OGE Dark Icons",
+				"path": "./icon-themes/OGE Dark icon-theme.json"
+			},
+			{
+				"label": "OGE Light Icons",
+				"id": "OGE Light Icons",
+				"path": "./icon-themes/OGE Light icon-theme.json"
+			},
+			{
 				"label": "Cyberpunk Neon Icons",
 				"id": "Cyberpunk Neon Icons",
 				"path": "./icon-themes/Cyberpunk Neon icon-theme.json"
@@ -236,6 +265,11 @@
 				"path": "./icon-themes/Feisty Fusion icon-theme.json"
 			},
 			{
+				"label": "Feisty Fusion Light Icons",
+				"id": "Feisty Fusion Light Icons",
+				"path": "./icon-themes/Feisty Fusion Light icon-theme.json"
+			},
+			{
 				"label": "Feisty Fusion Monochrome Icons",
 				"id": "Feisty Fusion Monochrome Icons",
 				"path": "./icon-themes/Feisty Fusion monochrome icon-theme.json"
@@ -244,6 +278,11 @@
 				"label": "Cosmic Void Icons",
 				"id": "Cosmic Void Icons",
 				"path": "./icon-themes/Cosmic Void icon-theme.json"
+			},
+			{
+				"label": "Cosmic Void Light Icons",
+				"id": "Cosmic Void Light Icons",
+				"path": "./icon-themes/Cosmic Void Light icon-theme.json"
 			},
 			{
 				"label": "Cosmic Void Monochrome Icons",

@@ -131,3 +131,30 @@ Three powerful new light themes bring beloved dark aesthetics to bright environm
 
 
 *Ready to upgrade your coding experience? The future of development environments is here.*
+
+## Installing the Extension from VSIX
+
+M Tech Pro is provided as a local VSIX file (`m-tech-pro-vscode.vsix`) for installation. Follow these steps to install it in VS Code or Cursor (which is based on VS Code and uses similar installation methods).
+
+### Installing in VS Code
+1. Download or locate the `m-tech-pro-vscode.vsix` file in your project directory.
+2. Open VS Code.
+3. Press `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (macOS) to open the Command Palette.
+4. Type and select **Extensions: Install from VSIX...**
+5. Browse to and select the `m-tech-pro-vscode.vsix` file.
+6. VS Code will install the extension and prompt to reload.
+7. After reloading, use the Command Palette to select "M Tech Pro: select theme" and "M Tech Pro: activate icons".
+
+### Installing in Cursor
+Cursor is a VS Code-based editor, so the installation process is nearly identical:
+1. Download or locate the `m-tech-pro-vscode.vsix` file.
+2. Open Cursor.
+3. Press `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (macOS) to open the Command Palette.
+4. Type and select **Extensions: Install from VSIX...** (if not available, ensure Cursor's extension support is enabled).
+5. Browse to and select the `m-tech-pro-vscode.vsix` file.
+6. Cursor will install the extension and may prompt to reload.
+7. After installation, use the Command Palette to select "M Tech Pro: select theme" and "M Tech Pro: activate icons".
+
+**Note:** If the "Install from VSIX" command is not available in Cursor, you may need to manually place the VSIX in Cursor's extensions directory (typically `~/.cursor/extensions/`) and restart Cursor. Check Cursor's documentation for the exact path on your system.
+
+Once installed, you can browse and select themes via the Command Palette or the status bar indicator.

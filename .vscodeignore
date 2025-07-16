@@ -1,0 +1,38 @@
+# Development files
+.vscode/
+.gitignore
+.git/
+.DS_Store
+
+# Log files
+logs/
+*.log
+
+# Development and build artifacts
+node_modules/
+out/
+src/
+tsconfig.json
+webpack.config.js
+.eslintrc.json
+
+# Documentation (keeping README.md but excluding others)
+CHANGELOG.md
+
+# Package files (will be generated)
+*.vsix
+
+# Temporary files
+.tmp/
+temp/
+*.tmp
+
+# OS generated files
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE files
+.idea/
+*.code-workspace 

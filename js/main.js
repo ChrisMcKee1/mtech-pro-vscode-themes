@@ -54,7 +54,7 @@ const THEME_CONFIG = {
         "Filter Moon Icons"
     ],
     description: "M Tech Themes and color scheme for Visual Studio Code",
-    version: "0.2.0",
+    version: "0.2.1",
     author: "tech"
 };
 
@@ -205,6 +205,15 @@ const UPDATE_MESSAGES = {
         actions: [
             { label: "browse themes", id: "SELECT-THEME" },
             { label: "learn more", id: "OPEN-WEBSITE" }
+        ]
+    },
+    "0.2.1": {
+        title: "🔧 M Tech Themes 0.2.1: Chat Interface Polish & Build Scripts!",
+        features: [
+            "✅ **Validated All Themes**: Confirmed all 21 themes have proper chat interface properties",
+            "🛠️ **Added Build Scripts**: New npm scripts for easier extension building",
+            "🎨 **Chat Interface**: Perfect integration with Cursor AI and GitHub Copilot",
+            "📦 **Build Tools**: Multiple build options (npm run build, build-extension, package, vsce-package)"
         ]
     },
     "0.2.0": {

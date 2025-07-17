@@ -171,7 +171,7 @@ For ultimate focus and minimalism:
 
 ## 🔄 Version History
 
-**Current Version: 0.2.1** - Enhanced with professional OGE Dark & Light themes
+**Current Version: 0.2.2** - Enhanced with professional OGE Dark & Light themes
 
 This version introduces two new energy industry themes:
 - **OGE Dark**: Professional dark theme with earth foundations and energy accents

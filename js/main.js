@@ -54,7 +54,7 @@ const THEME_CONFIG = {
         "Filter Moon Icons"
     ],
     description: "M Tech Themes and color scheme for Visual Studio Code",
-    version: "0.2.1",
+    version: "0.2.2",
     author: "tech"
 };
 
@@ -205,6 +205,16 @@ const UPDATE_MESSAGES = {
         actions: [
             { label: "browse themes", id: "SELECT-THEME" },
             { label: "learn more", id: "OPEN-WEBSITE" }
+        ]
+    },
+    "0.2.2": {
+        title: "🎨 M Tech Themes 0.2.2: Perfect Light Theme Highlighting!",
+        features: [
+            "🎯 **Fixed All Light Themes**: Perfect contrast and readability for all 8 light themes",
+            "🔍 **Tokyo Day**: Added complete missing list selection properties with sky blue theme",
+            "💡 **Bright Color Fixes**: Fixed yellow, magenta, cyan, and gold highlighting issues",
+            "🚫 **Cosmic Void**: Eliminated red inactive selection bug with proper color opacity",
+            "🌲 **Enhanced Grove Dark**: Improved highlighting visibility for better UX"
         ]
     },
     "0.2.1": {

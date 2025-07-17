@@ -129,6 +129,16 @@
     "inputOption.hoverBackground": "#BDC3C7",
     "quickInput.background": "#E0E0E0",
     "quickInput.foreground": "#95A5A6",
+    "list.activeSelectionBackground": "#87CEEB40",
+    "list.activeSelectionForeground": "#2C3E50",
+    "list.focusBackground": "#87CEEB30",
+    "list.focusForeground": "#2C3E50",
+    "list.highlightForeground": "#1F4E79",
+    "list.hoverBackground": "#87CEEB20",
+    "list.hoverForeground": "#2C3E50",
+    "list.inactiveFocusBackground": "#E0E0E0",
+    "list.inactiveSelectionBackground": "#BDC3C720",
+    "list.inactiveSelectionForeground": "#34495E",
     "widget.shadow": "#E0E0E0"
   },
   "tokenColors": [

@@ -265,7 +265,7 @@
 		"keybindingLabel.bottomBorder": "#334155",
 		"keybindingLabel.foreground": "#E0E7FF",
 		"list.activeSelectionBackground": "#0F16290C",
-		"list.activeSelectionForeground": "#7DD3FC",
+		"list.activeSelectionForeground": "#1E293B",
 		"list.dropBackground": "#1E293Bbf",
 		"list.errorForeground": "#EF4444",
 		"list.focusBackground": "#020617",

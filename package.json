@@ -58,11 +58,6 @@
 				"path": "./themes/Filter Machine.json"
 			},
 			{
-				"label": "Light",
-				"uiTheme": "vs",
-				"path": "./themes/Light.json"
-			},
-			{
 				"label": "Filter Sun",
 				"uiTheme": "vs",
 				"path": "./themes/Filter Sun.json"

@@ -11,7 +11,6 @@ const THEME_CONFIG = {
         "Filter Ristretto", 
         "Filter Spectrum",
         "Filter Machine",
-        "Light",
         "Filter Sun",
         "Cyberpunk Neon",
         "Cyberpunk Neon Light",
@@ -34,7 +33,6 @@ const THEME_CONFIG = {
         "Filter Ristretto Icons", 
         "Filter Spectrum Icons",
         "Filter Machine Icons",
-        "Light Icons",
         "Filter Sun Icons",
         "Cyberpunk Neon Icons",
         "Cyberpunk Neon Light Icons",
@@ -166,7 +164,7 @@ class ThemeManager {
     // Get theme categories for better organization
     getThemeCategories() {
         const lightThemes = [
-            "Light", "Filter Sun", "Tokyo Day", "Enchanted Grove",
+            "Filter Sun", "Tokyo Day", "Enchanted Grove",
             "Arctic Nord Light", "Cosmic Void Light",
             "Feisty Fusion Light", "Cyberpunk Neon Light"
         ];
@@ -335,10 +333,10 @@ class ExtensionManager {
             matchOnDetail: true
         });
 
-        if (selection && selection.label !== this.themeManager.currentColorTheme) {
+        if (selection && selection.label && !selection.label.startsWith("---")) {
             await this.themeManager.applyTheme(selection.label);
             this.updateStatusBarItem();
-            }
+        }
     }
 
     getThemeDescription(themeName) {

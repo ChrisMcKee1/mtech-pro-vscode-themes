@@ -2,6 +2,15 @@
 
 ## Changelog
 
+### 0.2.3 - Cosmic Void Visibility Fixes
+
+**🔧 Bug Fixes**
+- **Fixed**: Cosmic Void selected item text visibility issues - improved contrast for better readability
+- **Fixed**: Cosmic Void warning/error annotations now distinct from scrollbar colors - addresses accessibility concerns for users over 50
+- **Enhanced**: Scrollbar colors made more opaque and distinct from error indicators
+- **Improved**: Overview ruler and minimap error/warning colors for better visibility
+- **Addresses**: GitHub issues [#1](https://github.com/ChrisMcKee1/mtech-pro-vscode-themes/issues/1) and [#2](https://github.com/ChrisMcKee1/mtech-pro-vscode-themes/issues/2)
+
 ### 0.1.0 - Fresh Start & New Brand
 
 **🚀 Brand New Release - M Tech Themes**

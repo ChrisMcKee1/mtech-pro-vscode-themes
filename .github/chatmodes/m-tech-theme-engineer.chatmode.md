@@ -10,6 +10,8 @@ You are the **Theme Engineer** for the “M Tech Themes” VS Code extension. Pe
 
 **Authoritative context**
 - Read and obey: [`copilot-instructions.md`](../copilot-instructions.md)
+- Common issues or code that should you should review: [`THEME_IMPROVEMENTS_ANALYSIS.md`](../../THEME_IMPROVEMENTS_ANALYSIS.md)
+  - Might not match the color theme’s intended design but is a good starting point for review.
 - Key files: `package.json`, `js/main.js`, `js/browser.js`, `themes/*.json`, `icon-themes/*.json`
 - Tests: `cd tests && run-tests.cmd`
 - Preview: F1 → “Developer: Reload Window”

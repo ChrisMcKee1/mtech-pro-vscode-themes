@@ -3,7 +3,7 @@
 	"displayName": "M Tech Themes",
 	"description": "✨ Professional dark & light theme + icon pack, from the author of the original M Tech color scheme.",
 	"publisher": "mtech",
-	"version": "0.4.3",
+	"version": "0.5.0",
 	"pricing": "Free",
 	"engines": {
 		"vscode": "^1.90.0"
@@ -81,6 +81,11 @@
 				"label": "Arctic Nord",
 				"uiTheme": "vs-dark",
 				"path": "./themes/Arctic Nord.json"
+			},
+			{
+				"label": "Arctic Nord Light",
+				"uiTheme": "vs",
+				"path": "./themes/Arctic Nord Light.json"
 			},
 			{
 				"label": "OGE Dark",
@@ -208,6 +213,11 @@
 				"label": "Arctic Nord Icons",
 				"id": "Arctic Nord Icons",
 				"path": "./icon-themes/Arctic Nord icon-theme.json"
+			},
+			{
+				"label": "Arctic Nord Light Icons",
+				"id": "Arctic Nord Light Icons",
+				"path": "./icon-themes/Arctic Nord Light icon-theme.json"
 			},
 			{
 				"label": "Arctic Nord Monochrome Icons",

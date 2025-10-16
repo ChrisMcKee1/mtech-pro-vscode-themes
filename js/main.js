@@ -17,6 +17,7 @@ const THEME_CONFIG = {
         "Tokyo Night",
         "Tokyo Day",
         "Arctic Nord",
+        "Arctic Nord Light",
         "OGE Dark",
         "OGE Light",
         "Feisty Fusion",

@@ -90,18 +90,18 @@
 		"debugView.valueChangedHighlight": "#DAA520",
 		"descriptionForeground": "#4D4D4D",
 		"diffEditor.diagonalFill": "#C0D8C0",
-		"diffEditor.insertedLineBackground": "#228B2219",
-		"diffEditor.insertedTextBackground": "#228B2219",
+		"diffEditor.insertedLineBackground": "#228B22C0",
+		"diffEditor.insertedTextBackground": "#228B22D9",
 		"diffEditor.move.border": "",
 		"diffEditor.moveActive.border": "",
-		"diffEditor.removedLineBackground": "#B2222219",
-		"diffEditor.removedTextBackground": "#B2222219",
+		"diffEditor.removedLineBackground": "#B22222A6",
+		"diffEditor.removedTextBackground": "#B22222A6",
 		"diffEditor.unchangedCodeBackground": "#E0EEE0",
 		"diffEditor.unchangedRegionBackground": "#E0EEE0",
 		"diffEditor.unchangedRegionForeground": "#2F4F4F",
 		"diffEditor.unchangedRegionShadow": "#F0F7EE",
-		"diffEditorGutter.insertedLineBackground": "#228B2219",
-		"diffEditorGutter.removedLineBackground": "#B2222219",
+		"diffEditorGutter.insertedLineBackground": "#228B22C0",
+		"diffEditorGutter.removedLineBackground": "#B22222A6",
 		"diffEditorOverview.insertedForeground": "#228B22a5",
 		"diffEditorOverview.removedForeground": "#B22222a5",
 		"dropdown.background": "#C0D8C0",
@@ -109,11 +109,11 @@
 		"dropdown.foreground": "#4D4D4D",
 		"dropdown.listBackground": "#C0D8C0",
 		"editor.background": "#F0F7EE",
-		"editor.findMatchBackground": "#00640040",
+		"editor.findMatchBackground": "#00640080",
 		"editor.findMatchBorder": "#228B22",
-		"editor.findMatchHighlightBackground": "#00640040",
+		"editor.findMatchHighlightBackground": "#00640066",
 		"editor.findMatchHighlightBorder": "#00000000",
-		"editor.findRangeHighlightBackground": "#0000000c",
+		"editor.findRangeHighlightBackground": "#0064004D",
 		"editor.findRangeHighlightBorder": "#00000000",
 		"editor.focusedStackFrameHighlightBackground": "#2F4F4F26",
 		"editor.foldBackground": "#0000000c",
@@ -127,16 +127,16 @@
 		"editor.linkedEditingBackground": "#C0D8C0",
 		"editor.rangeHighlightBackground": "#C0D8C0",
 		"editor.rangeHighlightBorder": "#C0D8C0",
-		"editor.selectionBackground": "#00640040",
-		"editor.selectionHighlightBackground": "#00640040",
+		"editor.selectionBackground": "#006400A1",
+		"editor.selectionHighlightBackground": "#00640080",
 		"editor.stackFrameHighlightBackground": "#2F4F4F26",
-		"editor.wordHighlightBackground": "#00640040",
+		"editor.wordHighlightBackground": "#00640066",
 		"editor.wordHighlightBorder": "#00000000",
-		"editor.wordHighlightStrongBackground": "#00640040",
+		"editor.wordHighlightStrongBackground": "#00640073",
 		"editor.wordHighlightStrongBorder": "#00000000",
 		"editorBracketHighlight.foreground1": "#B22222",
 		"editorBracketHighlight.foreground2": "#8B4513",
-		"editorBracketHighlight.foreground3": "#DAA520",
+		"editorBracketHighlight.foreground3": "#7D6519",
 		"editorBracketHighlight.foreground4": "#228B22",
 		"editorBracketHighlight.foreground5": "#556B2F",
 		"editorBracketHighlight.foreground6": "#4B0082",
@@ -381,9 +381,9 @@
 		"scmGraph.historyItemHoverDefaultLabelForeground": "#F0F7EE",
 		"scmGraph.historyItemHoverDefaultLabelBackground": "#A0A0A0",
 		"scrollbar.shadow": "#F0F7EE",
-		"scrollbarSlider.activeBackground": "#00000059",
-		"scrollbarSlider.background": "#2F4F4F26",
-		"scrollbarSlider.hoverBackground": "#00000026",
+		"scrollbarSlider.activeBackground": "#2F4F4F80",
+		"scrollbarSlider.background": "#2F4F4F40",
+		"scrollbarSlider.hoverBackground": "#2F4F4F59",
 		"selection.background": "#2F4F4F26",
 		"settings.checkboxBackground": "#C0D8C0",
 		"settings.checkboxBorder": "#A0C0A0",
@@ -567,14 +567,14 @@
 			"settings": {
 				"name": "Comments and overrides inside comments",
 				"fontStyle": "italic",
-				"foreground": "#A0A0A0"
+				"foreground": "#6B6B6B"
 			}
 		},
 		{
 			"scope": "comment storage.type",
 			"settings": {
 				"name": "JSDoc storage type",
-				"foreground": "#A0A0A0"
+				"foreground": "#6B6B6B"
 			}
 		},
 		{
@@ -630,7 +630,7 @@
 			"scope": "comment.other.git-status.head",
 			"settings": {
 				"name": "Git status remote",
-				"foreground": "#000000"
+				"foreground": "#1A1A1A"
 			}
 		},
 		{
@@ -752,14 +752,14 @@
 			"scope": "constant.numeric.line-number.match.find-in-files",
 			"settings": {
 				"name": "Search result matched line numbes",
-				"foreground": "#DAA520"
+				"foreground": "#7D6519"
 			}
 		},
 		{
 			"scope": "entity.name.section",
 			"settings": {
 				"name": "Sections",
-				"foreground": "#DAA520"
+				"foreground": "#7D6519"
 			}
 		},
 		{
@@ -770,7 +770,7 @@
 			],
 			"settings": {
 				"name": "Functions",
-				"foreground": "#228B22"
+				"foreground": "#1F7A1F"
 			}
 		},
 		{
@@ -802,7 +802,7 @@
 			"scope": "entity.name",
 			"settings": {
 				"name": "Entity name",
-				"foreground": "#228B22"
+				"foreground": "#1F7A1F"
 			}
 		},
 		{
@@ -838,7 +838,7 @@
 			"scope": "entity.name.function",
 			"settings": {
 				"name": "Function name",
-				"foreground": "#228B22"
+				"foreground": "#1F7A1F"
 			}
 		},
 		{
@@ -906,7 +906,7 @@
 			],
 			"settings": {
 				"name": "CSS class",
-				"foreground": "#228B22"
+				"foreground": "#1F7A1F"
 			}
 		},
 		{
@@ -935,14 +935,14 @@
 			],
 			"settings": {
 				"name": "Function names / calls",
-				"foreground": "#228B22"
+				"foreground": "#1F7A1F"
 			}
 		},
 		{
 			"scope": "support.macro",
 			"settings": {
 				"name": "support macro",
-				"foreground": "#228B22"
+				"foreground": "#1F7A1F"
 			}
 		},
 		{
@@ -1002,7 +1002,7 @@
 			],
 			"settings": {
 				"name": "comment support",
-				"foreground": "#A0A0A0"
+				"foreground": "#6B6B6B"
 			}
 		},
 		{
@@ -1109,7 +1109,7 @@
 			"scope": "variable.function",
 			"settings": {
 				"name": "Function and method names should be scoped using the following, but only when they are being invoked. When defined, they should use entity.name.function.",
-				"foreground": "#228B22"
+				"foreground": "#1F7A1F"
 			}
 		},
 		{
@@ -1133,7 +1133,7 @@
 			"scope": "source.jinja2 variable.other.jinja2.block",
 			"settings": {
 				"name": "jinja2 variable block",
-				"foreground": "#228B22"
+				"foreground": "#1F7A1F"
 			}
 		},
 		{

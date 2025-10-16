@@ -53,15 +53,53 @@ Theme lists MUST stay synchronized across THREE locations:
 ## Key Workflows
 
 ### Testing Theme Consistency
+
+The test suite provides automated validation and accessibility analysis:
+
 ```bash
 cd tests
-run-tests.cmd  # Validates theme-icon mappings + package.json consistency
+
+# Quick structure validation (DEFAULT) - 2-3 seconds
+.\run-tests.cmd --quick
+
+# Full accessibility analysis - 5-10 seconds
+.\run-tests.cmd --contrast
+
+# Refactor progress dashboard - 1 second
+.\run-tests.cmd --status
+
+# Run all tests - 10-15 seconds
+.\run-tests.cmd --full
+
+# Show available modes
+.\run-tests.cmd --help
 ```
 
-Tests verify:
-- All themes in `THEME_CONFIG` exist as JSON files
-- Icon theme name mappings work correctly
-- No orphaned files or missing entries
+**Test Modes**:
+
+- **`--quick`** (default): Fast structure validation
+  - Theme-icon pairing correctness
+  - File existence verification
+  - Triple Source of Truth synchronization
+  - Orphaned file detection
+  - Command functionality simulation
+
+- **`--contrast`**: Automated WCAG accessibility analysis
+  - Calculates contrast ratios for syntax highlighting (4.5:1 minimum)
+  - Validates UI elements (selection, diffs, brackets - 3:1 minimum)
+  - Detects low-opacity overlays (invisible selections/diffs)
+  - Identifies missing visual hierarchy (find system, scrollbars)
+  - Prioritizes themes by refactor urgency (URGENT/HIGH/MEDIUM/LOW/CLEAN)
+
+- **`--status`**: Refactor progress tracking
+  - Parses THEME_IMPROVEMENTS_ANALYSIS.md for completed refactors
+  - Shows grade improvements (D- → A-, percentage points gained)
+  - Lists pending themes needing work
+  - Estimates remaining effort
+
+- **`--full`**: Comprehensive pre-release validation
+  - Runs all tests sequentially
+  - Use before packaging VSIX
 
 ### Building VSIX
 No build step required for theme JSON. Manual VSIX creation via:
@@ -95,13 +133,20 @@ Example scope pattern from `Classic.json`:
 5. **Semi-transparent overlays** - use alpha channels for find matches, line highlights (e.g., `#FFCC0033`)
 6. **High contrast mode** - use `editorUnnecessaryCode.border` instead of opacity reduction
 
-**Testing Checklist**:
-- Run contrast checker on all text/background pairs
-- Verify selection highlighting in multiple scenarios
-- Test in bright room (light themes) and dark room (dark themes)
+**Automated Testing Workflow**:
+1. **Before refactoring**: Run `.\run-tests.cmd --contrast` to identify all accessibility issues
+2. **During development**: Run `.\run-tests.cmd --quick` for fast validation (2-3s)
+3. **After refactoring**: Run `.\run-tests.cmd --contrast` to verify fixes
+4. **Track progress**: Run `.\run-tests.cmd --status` to see completed vs pending themes
+5. **Pre-release**: Run `.\run-tests.cmd --full` for comprehensive validation
+
+**Manual Verification** (after automated tests pass):
+- Reload window (F1 → Developer: Reload Window)
+- Activate refactored theme
+- Test in TypeScript/JavaScript/Python files
 - Use `Developer: Inspect Editor Tokens` to verify syntax coloring
 - Check diff views, terminal ANSI colors, and all UI panels
-- Validate scrollbar visibility against all backgrounds
+- Validate scrollbar visibility in all states (rest/hover/active)
 
 ## Common Modifications
 
@@ -115,7 +160,14 @@ Example scope pattern from `Classic.json`:
    ```
 4. Add `"New Theme"` to `THEME_CONFIG.themes` in **both** `js/main.js` and `js/browser.js`
 5. Add `"New Theme Icons"` to `THEME_CONFIG.iconThemes` in both files
-6. Run `tests/run-tests.cmd` to validate
+6. **Validate with automated tests**:
+   ```bash
+   cd tests
+   .\run-tests.cmd --quick      # Verify structure (2-3s)
+   .\run-tests.cmd --contrast   # Check accessibility (5-10s)
+   ```
+7. Fix any issues identified by contrast analysis
+8. Manual verification: Reload window, test in multiple languages
 
 ### Updating Theme Colors
 Edit JSON directly in `themes/*.json`. Changes apply immediately on reload (F1 → "Developer: Reload Window").
@@ -178,11 +230,22 @@ Always test themes across:
 ### Incremental Color Changes
 
 When adjusting existing themes:
-1. Change one color family at a time (e.g., all string colors)
-2. Test in real code files, not just samples
-3. Verify related UI elements (status bar, tabs, panels)
-4. Check both active/inactive states
-5. Run contrast validation before committing
+1. **Identify issues**: Run `.\run-tests.cmd --contrast` to see all accessibility problems
+2. **Prioritize fixes**: Focus on URGENT/HIGH priority issues first
+3. Change one color family at a time (e.g., all string colors)
+4. **Quick validation**: Run `.\run-tests.cmd --quick` after each change (2-3s)
+5. Test in real code files, not just samples
+6. Verify related UI elements (status bar, tabs, panels)
+7. Check both active/inactive states
+8. **Verify fixes**: Run `.\run-tests.cmd --contrast` to confirm all issues resolved
+9. **Track progress**: Run `.\run-tests.cmd --status` to update refactor tracking
+
+**Common fixes identified by automated analysis**:
+- Low-contrast comments: 2.3-2.8:1 → darken by 30-40%
+- Invisible selections: 10-15% opacity → increase to 30-40%
+- Invisible diffs: 10% opacity → increase to 30%
+- Missing find hierarchy: all identical → use 50%/40%/30%/35% tiers
+- Bracket invisibility: adjust saturated colors for light themes
 
 ## Project-Specific Conventions
 

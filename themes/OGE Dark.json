@@ -90,18 +90,18 @@
         "debugView.valueChangedHighlight": "#FBBF24",
         "descriptionForeground": "#9CA3AF",
         "diffEditor.diagonalFill": "#374151",
-        "diffEditor.insertedLineBackground": "#10B98119",
-        "diffEditor.insertedTextBackground": "#10B98119",
+        "diffEditor.insertedLineBackground": "#10B981cc",
+        "diffEditor.insertedTextBackground": "#10B98180",
         "diffEditor.move.border": "",
         "diffEditor.moveActive.border": "",
-        "diffEditor.removedLineBackground": "#EF444419",
-        "diffEditor.removedTextBackground": "#EF444419",
+        "diffEditor.removedLineBackground": "#EF4444cc",
+        "diffEditor.removedTextBackground": "#EF444480",
         "diffEditor.unchangedCodeBackground": "#111827",
         "diffEditor.unchangedRegionBackground": "#111827",
         "diffEditor.unchangedRegionForeground": "#B8BCC8",
         "diffEditor.unchangedRegionShadow": "#0A0F1C",
-        "diffEditorGutter.insertedLineBackground": "#10B98119",
-        "diffEditorGutter.removedLineBackground": "#EF444419",
+        "diffEditorGutter.insertedLineBackground": "#10B98166",
+        "diffEditorGutter.removedLineBackground": "#EF444466",
         "diffEditorOverview.insertedForeground": "#10B981A5",
         "diffEditorOverview.removedForeground": "#EF4444A5",
         "dropdown.background": "#374151",
@@ -109,13 +109,13 @@
         "dropdown.foreground": "#9CA3AF",
         "dropdown.listBackground": "#374151",
         "editor.background": "#1C1512",
-        "editor.findMatchBackground": "#FFB84D26",
+        "editor.findMatchBackground": "#FFB84D66",
         "editor.findMatchBorder": "#FFB84D",
-        "editor.findMatchHighlightBackground": "#FFB84D26",
+        "editor.findMatchHighlightBackground": "#FFB84D66",
         "editor.findMatchHighlightBorder": "#00000000",
         "editor.findRangeHighlightBackground": "#F9FAFB0C",
         "editor.findRangeHighlightBorder": "#00000000",
-        "editor.focusedStackFrameHighlightBackground": "#B8BCC826",
+        "editor.focusedStackFrameHighlightBackground": "#B8BCC866",
         "editor.foldBackground": "#F9FAFB0C",
         "editor.foreground": "#F9FAFB",
         "editor.hoverHighlightBackground": "#F9FAFB0C",
@@ -127,13 +127,13 @@
         "editor.linkedEditingBackground": "#374151",
         "editor.rangeHighlightBackground": "#374151",
         "editor.rangeHighlightBorder": "#374151",
-        "editor.selectionBackground": "#0F766E40",
-        "editor.selectionHighlightBackground": "#F9FAFB26",
+        "editor.selectionBackground": "#14B8A6B3",
+        "editor.selectionHighlightBackground": "#F9FAFB66",
         "editor.selectionHighlightBorder": "#00000000",
-        "editor.stackFrameHighlightBackground": "#B8BCC826",
-        "editor.wordHighlightBackground": "#F9FAFB26",
+        "editor.stackFrameHighlightBackground": "#B8BCC866",
+        "editor.wordHighlightBackground": "#F9FAFB66",
         "editor.wordHighlightBorder": "#00000000",
-        "editor.wordHighlightStrongBackground": "#F9FAFB26",
+        "editor.wordHighlightStrongBackground": "#F9FAFB66",
         "editor.wordHighlightStrongBorder": "#00000000",
         "editorBracketHighlight.foreground1": "#EF4444",
         "editorBracketHighlight.foreground2": "#FF8C42",
@@ -187,15 +187,15 @@
         "editorOverviewRuler.currentContentForeground": "#374151",
         "editorOverviewRuler.deletedForeground": "#EF4444",
         "editorOverviewRuler.errorForeground": "#EF4444",
-        "editorOverviewRuler.findMatchForeground": "#F9FAFB26",
+        "editorOverviewRuler.findMatchForeground": "#F9FAFB66",
         "editorOverviewRuler.incomingContentForeground": "#374151",
         "editorOverviewRuler.infoForeground": "#22D3EE",
         "editorOverviewRuler.modifiedForeground": "#FF8C42",
-        "editorOverviewRuler.rangeHighlightForeground": "#F9FAFB26",
-        "editorOverviewRuler.selectionHighlightForeground": "#F9FAFB26",
+        "editorOverviewRuler.rangeHighlightForeground": "#F9FAFB66",
+        "editorOverviewRuler.selectionHighlightForeground": "#F9FAFB66",
         "editorOverviewRuler.warningForeground": "#FF8C42",
-        "editorOverviewRuler.wordHighlightForeground": "#F9FAFB26",
-        "editorOverviewRuler.wordHighlightStrongForeground": "#F9FAFB26",
+        "editorOverviewRuler.wordHighlightForeground": "#F9FAFB66",
+        "editorOverviewRuler.wordHighlightStrongForeground": "#F9FAFB66",
         "editorPane.background": "#090B0F",
         "editorRuler.foreground": "#4B5563",
         "editorStickyScroll.background": "#1F2937",
@@ -240,8 +240,8 @@
         "inlineChat.background": "#1F2937",
         "inlineChat.border": "#111827",
         "inlineChat.shadow": "#0A0F1C",
-        "inlineChatDiff.inserted": "#10B98119",
-        "inlineChatDiff.removed": "#10B98119",
+        "inlineChatDiff.inserted": "#10B98166",
+        "inlineChatDiff.removed": "#10B98166",
         "input.background": "#2A1F18",
         "input.border": "#8B5A2B",
         "input.foreground": "#F9FAFB",
@@ -291,14 +291,14 @@
         "menubar.selectionBackground": "#2A1F18",
         "menubar.selectionForeground": "#FFB84D",
         "merge.border": "#1F2937",
-        "merge.commonContentBackground": "#F9FAFB19",
-        "merge.commonHeaderBackground": "#F9FAFB26",
-        "merge.currentContentBackground": "#EF444419",
-        "merge.currentHeaderBackground": "#EF444426",
-        "merge.incomingContentBackground": "#10B98119",
-        "merge.incomingHeaderBackground": "#10B98126",
-        "mergeEditor.change.background": "#F9FAFB19",
-        "mergeEditor.change.word.background": "#F9FAFB19",
+        "merge.commonContentBackground": "#F9FAFB66",
+        "merge.commonHeaderBackground": "#F9FAFB66",
+        "merge.currentContentBackground": "#EF444466",
+        "merge.currentHeaderBackground": "#EF444466",
+        "merge.incomingContentBackground": "#10B98166",
+        "merge.incomingHeaderBackground": "#10B98166",
+        "mergeEditor.change.background": "#F9FAFB66",
+        "mergeEditor.change.word.background": "#F9FAFB66",
         "mergeEditor.conflict.handled.minimapOverViewRuler": "#10B981",
         "mergeEditor.conflict.handledFocused.border": "#10B981",
         "mergeEditor.conflict.handledUnfocused.border": "#10B981",
@@ -384,8 +384,8 @@
         "scmGraph.historyItemHoverDefaultLabelBackground": "#6B7280",
         "scrollbar.shadow": "#1C1512",
         "scrollbarSlider.activeBackground": "#D4A57459",
-        "scrollbarSlider.background": "#8B5A2B26",
-        "scrollbarSlider.hoverBackground": "#D4A57426",
+        "scrollbarSlider.background": "#8B5A2B66",
+        "scrollbarSlider.hoverBackground": "#D4A57466",
         "selection.background": "#0F766E40",
         "settings.checkboxBackground": "#374151",
         "settings.checkboxBorder": "#4B5563",
@@ -527,9 +527,9 @@
         "testing.iconSkipped": "#FF8C42",
         "testing.iconUnset": "#D4A574",
         "testing.message.error.decorationForeground": "#EF4444",
-        "testing.message.error.lineBackground": "#EF444419",
+        "testing.message.error.lineBackground": "#EF444466",
         "testing.message.info.decorationForeground": "#F9FAFB",
-        "testing.message.info.lineBackground": "#F9FAFB19",
+        "testing.message.info.lineBackground": "#F9FAFB66",
         "testing.runAction": "#FBBF24",
         "textBlockQuote.background": "#374151",
         "textBlockQuote.border": "#374151",
@@ -611,7 +611,7 @@
             "scope": "comment keyword.codetag.notation",
             "settings": {
                 "name": "Comment TODO / FIXME (at least in VSCode Python)",
-                "foreground": "#8B5CF6"
+                "foreground": "#A78BFA"
             }
         },
         {
@@ -649,7 +649,7 @@
             "scope": "constant",
             "settings": {
                 "name": "Constant",
-                "foreground": "#8B5CF6"
+                "foreground": "#A78BFA"
             }
         },
         {
@@ -663,7 +663,7 @@
             "scope": "constant.other.caps",
             "settings": {
                 "name": "Constant",
-                "foreground": "#8B5CF6"
+                "foreground": "#A78BFA"
             }
         },
         {
@@ -677,35 +677,35 @@
             "scope": "constant.other.property",
             "settings": {
                 "name": "Constant as property",
-                "foreground": "#8B5CF6"
+                "foreground": "#A78BFA"
             }
         },
         {
             "scope": "constant.other.citation.latex",
             "settings": {
                 "name": "Constant in latex",
-                "foreground": "#8B5CF6"
+                "foreground": "#A78BFA"
             }
         },
         {
             "scope": "constant.other.color",
             "settings": {
                 "name": "Constant as color (in css / sass)",
-                "foreground": "#8B5CF6"
+                "foreground": "#A78BFA"
             }
         },
         {
             "scope": "constant.other.character-class.escape",
             "settings": {
                 "name": "Constant as character class escape (e.g. in regex)",
-                "foreground": "#8B5CF6"
+                "foreground": "#A78BFA"
             }
         },
         {
             "scope": "constant.other.key",
             "settings": {
                 "name": "Constant as key (e.g. in puppet manifests)",
-                "foreground": "#8B5CF6"
+                "foreground": "#A78BFA"
             }
         },
         {
@@ -726,21 +726,21 @@
             "scope": "constant.numeric",
             "settings": {
                 "name": "Number",
-                "foreground": "#8B5CF6"
+                "foreground": "#A78BFA"
             }
         },
         {
             "scope": "constant.language",
             "settings": {
                 "name": "Constant",
-                "foreground": "#8B5CF6"
+                "foreground": "#A78BFA"
             }
         },
         {
             "scope": "constant.character.escape",
             "settings": {
                 "name": "Character escape",
-                "foreground": "#8B5CF6"
+                "foreground": "#A78BFA"
             }
         },
         {
@@ -790,7 +790,7 @@
             "scope": "entity.name.label",
             "settings": {
                 "name": "label",
-                "foreground": "#8B5CF6"
+                "foreground": "#A78BFA"
             }
         },
         {
@@ -818,7 +818,7 @@
             "scope": "entity.name.constant",
             "settings": {
                 "name": "Constant name",
-                "foreground": "#8B5CF6"
+                "foreground": "#A78BFA"
             }
         },
         {
@@ -944,7 +944,7 @@
             "scope": "entity.other.git-status.hex",
             "settings": {
                 "name": "git status commit hex",
-                "foreground": "#8B5CF6"
+                "foreground": "#A78BFA"
             }
         },
         {
@@ -972,7 +972,7 @@
             "scope": "entity.name.operator.custom-literal.number",
             "settings": {
                 "name": "custom literal number",
-                "foreground": "#8B5CF6"
+                "foreground": "#A78BFA"
             }
         },
         {
@@ -1300,7 +1300,7 @@
             ],
             "settings": {
                 "name": "Preprocessor",
-                "foreground": "#8B5CF6"
+                "foreground": "#A78BFA"
             }
         },
         {
@@ -1340,7 +1340,7 @@
             ],
             "settings": {
                 "name": "type annotation",
-                "foreground": "#8B5CF6"
+                "foreground": "#A78BFA"
             }
         },
         {
@@ -1498,7 +1498,7 @@
             "scope": "region.purplish",
             "settings": {
                 "name": "region purple color",
-                "foreground": "#8B5CF6",
+                "foreground": "#A78BFA",
                 "background": "#8B5CF659"
             }
         },
@@ -1557,7 +1557,7 @@
             "scope": "source.git-show.commit.sha",
             "settings": {
                 "name": "git",
-                "foreground": "#8B5CF6"
+                "foreground": "#A78BFA"
             }
         },
         {
@@ -1580,7 +1580,7 @@
             ],
             "settings": {
                 "name": "git diff header hash",
-                "foreground": "#8B5CF6"
+                "foreground": "#A78BFA"
             }
         },
         {
@@ -1646,7 +1646,7 @@
             "scope": "storage.class.restructuredtext.ref",
             "settings": {
                 "name": "refs (Restructured text)",
-                "foreground": "#8B5CF6"
+                "foreground": "#A78BFA"
             }
         },
         {
@@ -1860,7 +1860,7 @@
             "scope": "support.constant.core.rust",
             "settings": {
                 "name": "rust specific",
-                "foreground": "#8B5CF6"
+                "foreground": "#A78BFA"
             }
         },
         {
@@ -1870,7 +1870,7 @@
             ],
             "settings": {
                 "name": "comment support",
-                "foreground": "#6B7280"
+                "foreground": "#8B92A0"
             }
         },
         {
@@ -1924,7 +1924,7 @@
             "scope": "variable.language.arguments",
             "settings": {
                 "name": "Reserved variable names: 'arguments'",
-                "foreground": "#8B5CF6"
+                "foreground": "#A78BFA"
             }
         },
         {
@@ -1938,7 +1938,7 @@
             "scope": "variable.other.constant",
             "settings": {
                 "name": "Immutable variables, often via a const modifier, should receive the following scope. Depending on the language and semantics, entity.name.constant may be a better choice.",
-                "foreground": "#8B5CF6"
+                "foreground": "#A78BFA"
             }
         },
         {
@@ -1959,7 +1959,7 @@
             "scope": "variable.other.enummember",
             "settings": {
                 "name": "Enum member",
-                "foreground": "#8B5CF6"
+                "foreground": "#A78BFA"
             }
         },
         {
@@ -1994,7 +1994,7 @@
             ],
             "settings": {
                 "name": "Ruby instance variables",
-                "foreground": "#8B5CF6"
+                "foreground": "#A78BFA"
             }
         },
         {

@@ -29,6 +29,78 @@ You are the **Theme Engineer** for the “M Tech Themes” VS Code extension. Pe
   - Files: `themes/Theme Name.json`, `icon-themes/Theme Name icon-theme.json` (lowercase `icon-theme`).  
   - Icon theme ID in `package.json`: `"Theme Name Icons"` (capitalized, no hyphen).
 - **Accessibility (WCAG‑aligned)**: editor text ≥ **4.5:1** vs background; UI ≥ **3:1**; critical or high‑contrast text aim **7:1**. Selection must keep text legible. Scrollbars must be visible in all states. Prefer off‑black/off‑white over pure `#000000`/`#FFFFFF`.
+  - **Design Trade-offs**: Some themes intentionally use lower contrast for minimalist aesthetics (e.g., Arctic Nord's 2.46:1 keywords match official Nord spec). Document such choices as "intentional design decision" and explain the artistic rationale.
+
+---
+
+## Understanding Theme Identity (CRITICAL - Read First)
+
+**Before making any color changes**, understand the theme's artistic vision and conceptual identity. Colors must match the theme's persona, not just be "readable."
+
+### Theme Persona Examples
+
+**Established Palette Themes** (strict color compliance required):
+- **Arctic Nord**: Nordic winter minimalism
+  - Palette: Nord 0-15 specification (Polar Night, Snow Storm, Frost, Aurora)
+  - Identity: Icy blues (#88C0D0, #81A1C1), cool Nordic red (#BF616A), muted greens (#A3BE8C)
+  - Philosophy: Minimalist, low-saturation, intentionally softer contrast
+  - **Rule**: ONLY use Nord 0-15 colors; no arbitrary pinks, oranges, or non-Nord hues
+  
+**Thematic Identity Themes** (color palette serves the concept):
+- **Enchanted Grove**: Mystical forest fairy tale
+  - Identity: "Light Elves (light mode) vs Dark Elves (dark mode)" in magical forest
+  - Colors: Earthy forest greens (#228B22), mystical purples (#B48EAD), wood browns (#CD5C5C)
+  - Philosophy: Natural, organic, NOT dirt/soil browns but vibrant forest life
+  - **Rule**: All colors must feel "enchanted forest at night/day" - no generic reds/corals
+
+- **Cyberpunk Neon**: High-voltage cyber aesthetics
+  - Identity: Electric, futuristic, neon-soaked cityscapes
+  - Colors: Neon cyan (#00ff99), hot pink (#ff3366), deep purples (#4d1a4d)
+  - Philosophy: Maximum vibrancy, electric contrast
+  - **Rule**: Must preserve neon colors; opacity adjustments OK but never mute the neon
+
+**Custom Palette Themes** (consistent internal logic):
+- **Filter Series**: Industrial precision engineering
+  - Each variant (Octagon, Ristretto, Spectrum, Machine, Moon, Sun) has distinct personality
+  - Common thread: Professional, balanced, not overly saturated
+
+### Research Checklist (Before Refactoring)
+
+1. **Identify Theme Type**:
+   - [ ] Does it reference established palette? (Nord, Dracula, Gruvbox, Solarized, etc.)
+   - [ ] Does name suggest concept? (Forest, Night, Ocean, Cyberpunk, Industrial, etc.)
+   - [ ] Check `copilot-instructions.md` for documented theme vision
+
+2. **Palette Research**:
+   - [ ] Established themes: Find official color specification (Nord 0-15, Dracula palette, etc.)
+   - [ ] Thematic themes: List 8-12 colors that embody the concept
+   - [ ] Check existing theme JSON for color frequency (which hues dominate?)
+
+3. **Design Philosophy**:
+   - [ ] Minimalist (softer contrast, muted saturation) or High-contrast (vivid, bold)?
+   - [ ] Warm (oranges, yellows, reds) or Cool (blues, cyans, purples)?
+   - [ ] Natural (earth tones) or Synthetic (neons, electric)?
+
+4. **Ask User When Unclear**:
+   - "What is the artistic vision for [Theme Name]?"
+   - "Should [Theme Name] prioritize accessibility or aesthetic consistency?"
+   - "Are there official palette colors I should respect?"
+
+### Color Replacement Rules
+
+**Syntax Tokens vs UI Elements**:
+- **Syntax tokens** (in `tokenColors[]` array): Carefully selective replacement
+  - Example: Change `string` scope foreground but keep `charts.green` UI property
+  - Use grep: `"foreground": "#a3be8c"` to find token definitions
+  
+- **UI elements** (in `colors{}` object): Often should stay within palette
+  - Example: Arctic Nord `charts.green: #a3be8c` should stay Nord 14 green
+  - Only change if color is non-palette (like `#FF8FA3` pink in Arctic Nord)
+
+**Bulk Replacement Danger**:
+- ❌ **NEVER** do blanket find/replace without understanding color usage
+- ✅ **DO** targeted replacements: syntax tokens separately from UI elements
+- ✅ **DO** verify each color serves the theme's identity before changing
 
 ---
 
@@ -76,17 +148,34 @@ When unclear, produce a plan first and ask for confirmation. Do not edit files u
 **Goal:** Fix readability, contrast, pairing, or synchronization issues with **minimal diffs**.
 
 **Plan**
-1. Inventory the target theme(s): locate theme JSON, icon JSON, `package.json` registrations, and `THEME_CONFIG` entries in both JS files. List any drift against the Triple Source of Truth.
-2. Identify issues precisely:  
-   - Low‑contrast tokens or UI elements  
+1. **Understand Theme Identity** (MANDATORY FIRST STEP):
+   - [ ] Research theme concept (Nordic winter, mystical forest, cyberpunk, etc.)
+   - [ ] Identify official palette (Nord, Dracula, custom) or thematic color rules
+   - [ ] Document design philosophy (minimalist vs high-contrast, warm vs cool)
+   - [ ] Ask user to clarify vision if theme name/colors don't reveal clear identity
+
+2. Inventory the target theme(s): locate theme JSON, icon JSON, `package.json` registrations, and `THEME_CONFIG` entries in both JS files. List any drift against the Triple Source of Truth.
+
+3. Identify issues precisely:  
+   - Low‑contrast tokens or UI elements (**unless intentional design choice** - check theme philosophy)
    - Invisible or low‑contrast selection  
    - Unstyled or indistinct scrollbars  
    - Incorrect pairing or naming (case, spacing, hyphens)  
    - Missing registrations or orphaned files
+   - **Non-palette colors** in established palette themes (e.g., `#FF8FA3` pink in Arctic Nord)
+   - **Thematically inconsistent colors** (e.g., coral red in forest theme)
 
 **Propose**
-- Generate exact, minimal patches per file. For each change include a short “why” referencing readability, accessibility ratios, or invariant alignment.
-- Provide a Before/After color table summarizing hex changes for tokens and UI surfaces.
+- Generate exact, minimal patches per file. For each change include a short "why" referencing:
+  - **Theme identity alignment**: "Changed to Nord Frost blue (#88C0D0) to match Nordic winter aesthetic"
+  - **Palette compliance**: "Replaced non-Nord pink (#FF8FA3) with official Nord 11 red (#BF616A)"
+  - **Readability**: Only cite WCAG ratios when NOT conflicting with intentional design
+  - **Thematic consistency**: "Changed coral to earthy brown (#CD5C5C) for enchanted forest theme"
+- Provide a Before/After color table with **theme identity rationale** for each change.
+
+**Design Trade-off Documentation**:
+- If accepting lower contrast for aesthetic: Document as "Intentional design decision: [Theme] uses [ratio] contrast for [reason - minimalist aesthetic, official spec, etc.]"
+- Example: "Arctic Nord keywords (#BF616A) at 2.46:1 is intentional Nord specification for minimalist aesthetic"
 
 **Apply (guarded)**
 - Use `edits` only for the following scopes:  
@@ -167,10 +256,51 @@ If terminal is unavailable, print the exact commands for the user to run locally
 
 ## Style & palette guardrails
 
+### Background & Foreground
 - **Dark themes**: off‑black backgrounds (for example, `#1e1e1e`, `#272822`), softened saturation; bright but not pure‑white foregrounds.
 - **Light themes**: off‑white backgrounds to reduce glare; use stronger accents to avoid wash‑out.
-- **Token palette**: keep 4–6 core hues applied consistently across tokens; do not rely on red/green alone—ensure differences in lightness or shape cues.
-- **Overlays**: use alpha for highlights (for example, find matches, line highlight) so you do not obscure syntax or diagnostics.
+
+### Palette Strategy
+- **Established Palette Themes** (Nord, Dracula, Gruvbox, etc.):
+  - **CRITICAL**: Research official color specification BEFORE making changes
+  - **RULE**: ONLY use palette-defined colors; document any deviations with strong rationale
+  - Example: Arctic Nord must use ONLY Nord 0-15 colors (no arbitrary pinks, greens outside spec)
+  - If non-palette color found: Replace with nearest palette equivalent
+
+- **Thematic Palette Themes** (Forest, Ocean, Cyberpunk, etc.):
+  - **RULE**: All colors must serve the theme's conceptual identity
+  - Example: "Enchanted forest" must use earthy greens/browns, not generic reds/corals
+  - Example: "Cyberpunk" must preserve neon electric colors, not mute them
+  - If color doesn't match theme: Replace with thematically appropriate alternative
+
+- **Custom Palette Themes**:
+  - **Token palette**: keep 4–6 core hues applied consistently across tokens
+  - Do not rely on red/green alone—ensure differences in lightness or shape cues
+  - Maintain internal color logic (warm vs cool, saturated vs muted)
+
+### Opacity Strategy (CRITICAL - Prevents Double-Layer Obscurity)
+
+**The 30/40/50 Rule for Diff Backgrounds**:
+- **30% line backgrounds** (`4D` hex): Base diff highlight, prevents text obscurity when find highlights layer on top
+- **40% text backgrounds** (`66` hex): Emphasize changed words without overwhelming syntax colors
+- **50% gutter backgrounds** (`80` hex): Clearly mark diff lines in sidebar without being distracting
+
+**Why NOT 75-80% opacity?**:
+- High opacity (75-80%) causes **double-layer obscurity**: when diff highlight + find highlight layer, text becomes unreadable
+- Example: 75% diff + 50% find = ~87% combined opacity = text nearly invisible
+- Solution: 30% diff + 50% find = ~65% combined = text remains readable
+
+**Overlay Guidelines**:
+- **Find matches**: 30-40% (`4D`-`66` hex) for primary match, 20-30% (`33`-`4D`) for secondary
+- **Line highlight**: 15-20% (`26`-`33` hex) subtle background, never obscure syntax
+- **Selection**: 80% (`CC` hex) - needs high visibility, text must remain readable
+- **Word highlights**: 25-30% (`40`-`4D` hex) for find-all-references
+
+**Color + Opacity Testing**:
+1. Test diff background alone (should see subtle tint)
+2. Add find highlight on same line (text should remain 100% readable)
+3. Add selection on same line (text should remain 100% readable)
+4. If any combination obscures text: reduce base diff opacity by 10-20%
 
 ---
 
@@ -226,11 +356,17 @@ Provide unified diffs for each file edited or created. Include context lines for
 
 ## Verification
 - `.\run-tests.cmd --quick`: pass/fail with one-paragraph summary
-- `.\run-tests.cmd --contrast`: before/after issue count, confirm all CRITICAL/HIGH issues resolved
+- `.\run-tests.cmd --contrast`: before/after issue count, **document any intentional design trade-offs** (low-contrast for aesthetic)
 - `.\run-tests.cmd --status`: refactor progress updated (if applicable)
 - Manual checks: list key contrast ratios verified (editor text, selection, scrollbars, diagnostics, terminal)
+- **Theme Identity Validation**:
+  - [ ] Do all colors match theme's conceptual identity?
+  - [ ] Are palette rules respected (Nord 0-15, forest earth tones, neon preservation)?
+  - [ ] Do syntax token colors serve the theme's artistic vision?
+  - [ ] Are UI element colors consistent with theme's design philosophy?
 
 ## Follow-ups
 - Optional recommendations for variants (light, dark, high‑contrast) or additional token tuning based on feedback.
 - Suggest next themes to refactor based on `--contrast` priority queue
+- **Document Design Decisions**: If accepting lower contrast for aesthetic, explain in THEME_IMPROVEMENTS_ANALYSIS.md
 ```

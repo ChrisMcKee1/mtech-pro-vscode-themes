@@ -129,21 +129,37 @@
     "inputOption.hoverBackground": "#BDC3C7",
     "quickInput.background": "#E0E0E0",
     "quickInput.foreground": "#2C3E50",
-    "list.activeSelectionBackground": "#87CEEB40",
+    "list.activeSelectionBackground": "#A9D7EC",
     "list.activeSelectionForeground": "#1B2838",
     "list.focusBackground": "#87CEEB30",
     "list.focusForeground": "#2C3E50",
     "list.highlightForeground": "#1F4E79",
-    "list.hoverBackground": "#87CEEB20",
+    "list.hoverBackground": "#C8E6F5",
     "list.hoverForeground": "#2C3E50",
     "list.inactiveFocusBackground": "#E0E0E0",
     "list.inactiveSelectionBackground": "#BDC3C720",
     "list.inactiveSelectionForeground": "#34495E",
-    "widget.shadow": "#E0E0E0"
+    "widget.shadow": "#E0E0E0",
+    "menu.selectionBackground": "#87CEEB",
+    "menu.selectionForeground": "#1B2838",
+    "menubar.selectionForeground": "#87CEEB",
+    "list.focusOutline": "#2ECC71",
+    "list.focusAndSelectionOutline": "#2ECC71",
+    "list.inactiveFocusOutline": "#95A5A6",
+    "list.activeSelectionIconForeground": "#1B2838",
+    "list.inactiveSelectionIconForeground": "#7F8C8D"
   },
   "tokenColors": [
     {
-      "scope": ["comment", "comment keyword", "comment markup.underline.link", "comment string", "comment punctuation.definition", "comment punctuation", "comment text"],
+      "scope": [
+        "comment",
+        "comment keyword",
+        "comment markup.underline.link",
+        "comment string",
+        "comment punctuation.definition",
+        "comment punctuation",
+        "comment text"
+      ],
       "settings": {
         "name": "Comments and overrides inside comments",
         "fontStyle": "italic",
@@ -158,14 +174,21 @@
       }
     },
     {
-      "scope": ["comment variable", "comment variable.other"],
+      "scope": [
+        "comment variable",
+        "comment variable.other"
+      ],
       "settings": {
         "name": "JSDoc variable",
         "foreground": "#2C3E50"
       }
     },
     {
-      "scope": ["comment keyword", "comment entity.name.tag", "entity.name.tag.documentation"],
+      "scope": [
+        "comment keyword",
+        "comment entity.name.tag",
+        "entity.name.tag.documentation"
+      ],
       "settings": {
         "name": "PHPDoc keyword",
         "foreground": "#2C3E50"
@@ -186,4 +209,4 @@
       }
     }
   ]
-} 
+}

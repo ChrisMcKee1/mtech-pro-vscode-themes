@@ -13,7 +13,7 @@ const THEME_CONFIG = {
         "Filter Machine",
         "Filter Sun",
         "Cyberpunk Neon",
-        "Cyberpunk Neon Light",
+        "Neon Pink Light",
         "Tokyo Night",
         "Tokyo Day",
         "Arctic Nord",
@@ -36,7 +36,7 @@ const THEME_CONFIG = {
         "Filter Machine Icons",
         "Filter Sun Icons",
         "Cyberpunk Neon Icons",
-        "Cyberpunk Neon Light Icons",
+        "Neon Pink Light Icons",
         "Tokyo Night Icons",
         "Tokyo Day Icons",
         "Arctic Nord Icons",
@@ -167,7 +167,7 @@ class ThemeManager {
         const lightThemes = [
             "Filter Sun", "Tokyo Day", "Enchanted Grove",
             "Arctic Nord Light", "Cosmic Void Light",
-            "Feisty Fusion Light", "Cyberpunk Neon Light"
+            "Feisty Fusion Light", "Neon Pink Light"
         ];
         
         return {
@@ -345,7 +345,7 @@ class ExtensionManager {
             "Classic": "Original M Tech Theme",
             "Arctic Nord": "Cool Nordic-inspired colors",
             "Cyberpunk Neon": "Vibrant cyber colors",
-            "Cyberpunk Neon Light": "Vibrant cyber colors for light environments",
+            "Neon Pink Light": "Hot pink neon for light environments",
             "Tokyo Night": "Urban night atmosphere",
             "Tokyo Day": "Bright urban daytime",
             "Enchanted Grove": "Nature-inspired forest theme",

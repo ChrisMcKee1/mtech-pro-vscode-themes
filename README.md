@@ -169,39 +169,6 @@ For ultimate focus and minimalism:
 
 ---
 
-## 🔄 Version History
-
-**Current Version: 0.4.0** - Accessibility Refactor (WCAG 2.1 AAA Compliance)
-
-### ✨ Version 0.4.0 - Accessibility Excellence
-**87% issue reduction**: Fixed 97 of 112 accessibility issues across 20 themes  
-**13 themes now WCAG AAA compliant** (65% of all themes)
-
-**Major Improvements:**
-- **Tokyo Night**: Single color change fixed 23 syntax tokens instantly
-- **Filter Sun**: Comprehensive darkening (25 tokens) for superior light theme readability
-- **OGE Light**: Professional energy industry theme fully accessible (27 tokens)
-- **Tokyo Day**: Fixed critical bracket visibility (4 colors nearly invisible)
-- **All Filter Themes**: Selection and diff visibility dramatically improved
-
-**Design Philosophy:**
-- **Arctic Nord**: Preserved Nordic minimalist aesthetic (design trade-off accepted)
-- **Enchanted Grove Dark**: Maintained mystical forest vibe with intentional opacity
-- All changes respect original theme identity and artistic vision
-
-**Technical Excellence:**
-- Consistent diff opacities standardized to 80% across all themes
-- Established visual find hierarchy (50%/40%/30% pattern)
-- Selection colors meet WCAG AA standard (3:1 minimum contrast)
-- Automated WCAG contrast analysis validates all themes
-
-### Version 0.2.2 - Industry Professional Themes
-- **OGE Dark**: Professional dark theme with earth foundations and energy accents
-- **OGE Light**: Clean light theme with warm earth tones and accessible contrast
-- **Industry Focus**: Designed specifically for oil, gas, and energy sector development
-
----
-
 ## ⚖️ License
 
 **MIT License** - Use freely in personal and commercial projects.

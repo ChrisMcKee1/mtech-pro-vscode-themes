@@ -2,16 +2,19 @@
 
 ## Overview
 
-This VS Code extension provides 20 professional color themes with matching icon packs, distributed as VSIX via GitHub releases. These instructions help AI agents understand the codebase architecture, maintain consistency, and follow accessibility best practices when modifying or creating themes.
+This VS Code extension provides 21 professional color themes with matching icon packs, distributed as VSIX via GitHub releases. These instructions help AI agents understand the codebase architecture, maintain consistency, and follow accessibility best practices when modifying or creating themes.
 
 **Purpose**: Guide AI coding agents to be immediately productive in this codebase by providing essential knowledge about architecture patterns, critical workflows, and project-specific conventions that aren't obvious from file inspection alone.
 
 ## Quick Reference
 
 **Key Files**: `package.json`, `js/main.js`, `js/browser.js`, `themes/*.json`, `icon-themes/*.json`  
-**Test Command**: `cd tests && run-tests.cmd`  
+**Current Version**: 0.5.19  
+**Test Command**: `cd tests && .\run-tests.cmd [--quick|--contrast|--status|--full]`  
 **Theme Preview**: F1 → "Developer: Reload Window"  
-**Repository**: [mtech-pro-vscode-themes](../README.md)
+**Repository**: [mtech-pro-vscode-themes](../README.md)  
+**Test Documentation**: `tests/TEST_SUITE_DOCUMENTATION.md`  
+**Latest Improvements**: `IMPROVEMENTS_v0.5.17.md` (v0.5.17-0.5.19)
 
 ## Critical Architecture Patterns
 
@@ -54,7 +57,7 @@ Theme lists MUST stay synchronized across THREE locations:
 
 ### Testing Theme Consistency
 
-The test suite provides automated validation and accessibility analysis:
+The test suite provides automated validation and accessibility analysis. **Full documentation**: `tests/TEST_SUITE_DOCUMENTATION.md`
 
 ```bash
 cd tests
@@ -140,6 +143,12 @@ Example scope pattern from `Classic.json`:
 4. **Track progress**: Run `.\run-tests.cmd --status` to see completed vs pending themes
 5. **Pre-release**: Run `.\run-tests.cmd --full` for comprehensive validation
 
+**Accessibility Tracking**:
+- **THEME_IMPROVEMENTS_ANALYSIS.md**: Comprehensive accessibility framework and theme case studies
+- **THEME_CONTRAST_GUIDELINES.md**: Detailed WCAG contrast requirements and property checklists
+- **tests/ENHANCEMENT_SUMMARY.md**: Test suite capabilities and automation details
+- **IMPROVEMENTS_v0.5.17.md**: Latest improvements documentation (v0.5.17-0.5.19)
+
 **Manual Verification** (after automated tests pass):
 - Reload window (F1 → Developer: Reload Window)
 - Activate refactored theme
@@ -147,6 +156,54 @@ Example scope pattern from `Classic.json`:
 - Use `Developer: Inspect Editor Tokens` to verify syntax coloring
 - Check diff views, terminal ANSI colors, and all UI panels
 - Validate scrollbar visibility in all states (rest/hover/active)
+
+## Recent Improvements (v0.5.17-0.5.19)
+
+### Sidebar Icon Color Strategy
+
+**Key Learning**: Sidebar navigation icons (`activityBar.foreground`/`inactiveForeground`) are critical for theme identity and require careful color selection.
+
+**Successful Patterns**:
+
+1. **Cool/Warm Contrast** (Feisty Fusion v0.5.18):
+   - Active icons: Cyan blue `#9cd1bb` (cool contrast)
+   - Inactive icons: Warm orange `#ff9b5e` (maintains fusion warmth)
+   - **Rationale**: Cool active vs warm inactive creates sophisticated visual hierarchy
+   - Inspired by cyan text colors visible in code
+
+2. **Spectrum Identity** (Filter Spectrum v0.5.17 → v0.5.19):
+   - **v0.5.17**: Initial violet `#aa55ff`/magenta `#ff55dd` (user feedback: "pink doesn't look good")
+   - **v0.5.19**: Refined to cyan `#55ddff`/blue `#5588ff` (core spectrum colors)
+   - **Rationale**: Blue/cyan are fundamental ROYGBIV colors, more professional than pink
+
+**Design Guidelines**:
+- Match sidebar colors to theme's core palette (not arbitrary choices)
+- Consider temperature contrast (cool vs warm) for visual hierarchy
+- User feedback is critical - pink/violet can be polarizing
+- Test visibility against theme's background colors
+
+**Implementation Example** (4 properties to update):
+```json
+{
+  "activityBar.foreground": "#55ddff",           // Active (primary accent)
+  "activityBar.inactiveForeground": "#5588ff",   // Inactive (secondary)
+  "activityBarTop.foreground": "#55ddff",        // Top bar active
+  "activityBarTop.inactiveForeground": "#5588ff" // Top bar inactive
+}
+```
+
+### Filter Spectrum Complete Overhaul (v0.5.17)
+
+**Changes**: 194 color properties - transformed from "very ugly" to professional rainbow theme
+
+**Key Improvements**:
+- Deeper blacks (`#0d0d0d`, `#1a1a1a`, `#252525`) for contrast
+- Full ROYGBIV spectrum progression (Red → Orange → Yellow → Green → Cyan → Blue → Violet → Magenta)
+- Bright cyan accent (`#00d9ff`) for selections replacing jarring orange
+- Complete spectrum ANSI terminal colors
+- Proper 30/40/50% diff opacity hierarchy
+
+**Documentation**: See `IMPROVEMENTS_v0.5.17.md` for complete details
 
 ## Common Modifications
 

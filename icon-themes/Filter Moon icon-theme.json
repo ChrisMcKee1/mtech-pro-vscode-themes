@@ -14,110 +14,422 @@
     }
   ],
   "iconDefinitions": {
-    "_adonisjs": {"fontCharacter": "\\F101", "fontColor": "#4B0082"},
-    "_angular": {"fontCharacter": "\\F102", "fontColor": "#B22222"},
-    "_ansible": {"fontCharacter": "\\F103", "fontColor": "#001F3F"},
-    "_applescript": {"fontCharacter": "\\F104", "fontColor": "#556B2F"},
-    "_archive": {"fontCharacter": "\\F105", "fontColor": "#DAA520"},
-    "_astro": {"fontCharacter": "\\F106", "fontColor": "#4B0082"},
-    "_binary": {"fontCharacter": "\\F107", "fontColor": "#DAA520"},
-    "_blade": {"fontCharacter": "\\F108", "fontColor": "#B22222"},
-    "_bun": {"fontCharacter": "\\F109", "fontColor": "#B22222"},
-    "_c": {"fontCharacter": "\\F10A", "fontColor": "#B22222"},
-    "_clojure": {"fontCharacter": "\\F10B", "fontColor": "#001F3F"},
-    "_coffeescript": {"fontCharacter": "\\F10C", "fontColor": "#001F3F"},
-    "_composer": {"fontCharacter": "\\F10D", "fontColor": "#4B0082"},
-    "_cpp": {"fontCharacter": "\\F10E", "fontColor": "#001F3F"},
-    "_crystal": {"fontCharacter": "\\F10F", "fontColor": "#4B0082"},
-    "_csharp": {"fontCharacter": "\\F110", "fontColor": "#4B0082"},
-    "_css": {"fontCharacter": "\\F111", "fontColor": "#FF4500"},
-    "_csv": {"fontCharacter": "\\F112", "fontColor": "#DAA520"},
-    "_dart": {"fontCharacter": "\\F113", "fontColor": "#001F3F"},
-    "_default": {"fontCharacter": "\\F114", "fontColor": "#DAA520"},
-    "_docker": {"fontCharacter": "\\F115", "fontColor": "#001F3F"},
-    "_elixir": {"fontCharacter": "\\F116", "fontColor": "#4B0082"},
-    "_elm": {"fontCharacter": "\\F117", "fontColor": "#001F3F"},
-    "_env": {"fontCharacter": "\\F118", "fontColor": "#DAA520"},
-    "_erlang": {"fontCharacter": "\\F119", "fontColor": "#B22222"},
-    "_eslint": {"fontCharacter": "\\F11A", "fontColor": "#4B0082"},
-    "_folder": {"fontCharacter": "\\F11B", "fontColor": "#808080"},
-    "_folder-open": {"fontCharacter": "\\F11C", "fontColor": "#808080"},
-    "_folder-root": {"fontCharacter": "\\F11D", "fontColor": "#808080"},
-    "_folder-root-open": {"fontCharacter": "\\F11E", "fontColor": "#808080"},
-    "_folder-selected-open": {"fontCharacter": "\\F11F", "fontColor": "#C0C0C0"},
-    "_folder-selected": {"fontCharacter": "\\F120", "fontColor": "#C0C0C0"},
-    "_font": {"fontCharacter": "\\F121", "fontColor": "#4B0082"},
-    "_fortran": {"fontCharacter": "\\F122", "fontColor": "#B22222"},
-    "_git": {"fontCharacter": "\\F123", "fontColor": "#FF4500"},
-    "_go": {"fontCharacter": "\\F124", "fontColor": "#001F3F"},
-    "_graphql": {"fontCharacter": "\\F125", "fontColor": "#B22222"},
-    "_gruntfile": {"fontCharacter": "\\F126", "fontColor": "#B22222"},
-    "_gulpfile": {"fontCharacter": "\\F127", "fontColor": "#B22222"},
-    "_handlebars": {"fontCharacter": "\\F128", "fontColor": "#FF4500"},
-    "_hare": {"fontCharacter": "\\F129", "fontColor": "#4B0082"},
-    "_haskell": {"fontCharacter": "\\F12A", "fontColor": "#FF4500"},
-    "_haxe": {"fontCharacter": "\\F12B", "fontColor": "#FF4500"},
-    "_haxealt": {"fontCharacter": "\\F12C", "fontColor": "#DAA520"},
-    "_image": {"fontCharacter": "\\F12D", "fontColor": "#DAA520"},
-    "_java": {"fontCharacter": "\\F12E", "fontColor": "#001F3F"},
-    "_js": {"fontCharacter": "\\F12F", "fontColor": "#DAA520"},
-    "_json": {"fontCharacter": "\\F130", "fontColor": "#4B0082"},
-    "_julia": {"fontCharacter": "\\F131", "fontColor": "#4B0082"},
-    "_kotlin": {"fontCharacter": "\\F132", "fontColor": "#4B0082"},
-    "_less": {"fontCharacter": "\\F133", "fontColor": "#4B0082"},
-    "_license": {"fontCharacter": "\\F134", "fontColor": "#556B2F"},
-    "_lisp": {"fontCharacter": "\\F135", "fontColor": "#B22222"},
-    "_lua": {"fontCharacter": "\\F136", "fontColor": "#001F3F"},
-    "_markdown": {"fontCharacter": "\\F137", "fontColor": "#556B2F"},
-    "_markdownx": {"fontCharacter": "\\F138", "fontColor": "#556B2F"},
-    "_markup": {"fontCharacter": "\\F139", "fontColor": "#FF4500"},
-    "_matlab": {"fontCharacter": "\\F13A", "fontColor": "#FF4500"},
-    "_nextjs": {"fontCharacter": "\\F13B", "fontColor": "#4B0082"},
-    "_nginx": {"fontCharacter": "\\F13C", "fontColor": "#556B2F"},
-    "_nodejs": {"fontCharacter": "\\F13D", "fontColor": "#556B2F"},
-    "_npm": {"fontCharacter": "\\F13E", "fontColor": "#B22222"},
-    "_ocaml": {"fontCharacter": "\\F13F", "fontColor": "#FF4500"},
-    "_opengl": {"fontCharacter": "\\F140", "fontColor": "#B22222"},
-    "_perl": {"fontCharacter": "\\F141", "fontColor": "#001F3F"},
-    "_php": {"fontCharacter": "\\F142", "fontColor": "#001F3F"},
-    "_postcss": {"fontCharacter": "\\F143", "fontColor": "#B22222"},
-    "_prolog": {"fontCharacter": "\\F144", "fontColor": "#B22222"},
-    "_pug": {"fontCharacter": "\\F145", "fontColor": "#FF4500"},
-    "_python": {"fontCharacter": "\\F146", "fontColor": "#556B2F"},
-    "_r": {"fontCharacter": "\\F147", "fontColor": "#001F3F"},
-    "_rails": {"fontCharacter": "\\F148", "fontColor": "#B22222"},
-    "_react": {"fontCharacter": "\\F149", "fontColor": "#001F3F"},
-    "_reason": {"fontCharacter": "\\F14A", "fontColor": "#FF4500"},
-    "_restructuredtext": {"fontCharacter": "\\F14B", "fontColor": "#556B2F"},
-    "_rollup": {"fontCharacter": "\\F14C", "fontColor": "#B22222"},
-    "_ruby": {"fontCharacter": "\\F14D", "fontColor": "#B22222"},
-    "_rust": {"fontCharacter": "\\F14E", "fontColor": "#FF4500"},
-    "_sass": {"fontCharacter": "\\F14F", "fontColor": "#B22222"},
-    "_scala": {"fontCharacter": "\\F150", "fontColor": "#B22222"},
-    "_settings": {"fontCharacter": "\\F151", "fontColor": "#4B0082"},
-    "_shell": {"fontCharacter": "\\F152", "fontColor": "#556B2F"},
-    "_source": {"fontCharacter": "\\F153", "fontColor": "#DAA520"},
-    "_sql": {"fontCharacter": "\\F154", "fontColor": "#4B0082"},
-    "_stylelint": {"fontCharacter": "\\F155", "fontColor": "#4B0082"},
-    "_stylus": {"fontCharacter": "\\F156", "fontColor": "#FF4500"},
-    "_sublime": {"fontCharacter": "\\F157", "fontColor": "#DAA520"},
-    "_svelte": {"fontCharacter": "\\F158", "fontColor": "#B22222"},
-    "_svg": {"fontCharacter": "\\F159", "fontColor": "#FF4500"},
-    "_swift": {"fontCharacter": "\\F15A", "fontColor": "#B22222"},
-    "_symbolic-link": {"fontCharacter": "\\F15B", "fontColor": "#808080"},
-    "_tailwind": {"fontCharacter": "\\F15C", "fontColor": "#001F3F"},
-    "_terraform": {"fontCharacter": "\\F15D", "fontColor": "#4B0082"},
-    "_tex": {"fontCharacter": "\\F15E", "fontColor": "#FF4500"},
-    "_text": {"fontCharacter": "\\F15F", "fontColor": "#DAA520"},
-    "_todo": {"fontCharacter": "\\F160", "fontColor": "#556B2F"},
-    "_toml": {"fontCharacter": "\\F161", "fontColor": "#4B0082"},
-    "_twig": {"fontCharacter": "\\F162", "fontColor": "#556B2F"},
-    "_typescript": {"fontCharacter": "\\F163", "fontColor": "#001F3F"},
-    "_visualstudio": {"fontCharacter": "\\F164", "fontColor": "#001F3F"},
-    "_vue": {"fontCharacter": "\\F165", "fontColor": "#556B2F"},
-    "_webpack": {"fontCharacter": "\\F166", "fontColor": "#001F3F"},
-    "_yaml": {"fontCharacter": "\\F167", "fontColor": "#DAA520"},
-    "_yarn": {"fontCharacter": "\\F168", "fontColor": "#4B0082"}
+    "_adonisjs": {
+      "fontCharacter": "\\F101",
+      "fontColor": "#4B0082"
+    },
+    "_angular": {
+      "fontCharacter": "\\F102",
+      "fontColor": "#B22222"
+    },
+    "_ansible": {
+      "fontCharacter": "\\F103",
+      "fontColor": "#001F3F"
+    },
+    "_applescript": {
+      "fontCharacter": "\\F104",
+      "fontColor": "#556B2F"
+    },
+    "_archive": {
+      "fontCharacter": "\\F105",
+      "fontColor": "#DAA520"
+    },
+    "_astro": {
+      "fontCharacter": "\\F106",
+      "fontColor": "#4B0082"
+    },
+    "_binary": {
+      "fontCharacter": "\\F107",
+      "fontColor": "#DAA520"
+    },
+    "_blade": {
+      "fontCharacter": "\\F108",
+      "fontColor": "#B22222"
+    },
+    "_bun": {
+      "fontCharacter": "\\F109",
+      "fontColor": "#B22222"
+    },
+    "_c": {
+      "fontCharacter": "\\F10A",
+      "fontColor": "#B22222"
+    },
+    "_clojure": {
+      "fontCharacter": "\\F10B",
+      "fontColor": "#001F3F"
+    },
+    "_coffeescript": {
+      "fontCharacter": "\\F10C",
+      "fontColor": "#001F3F"
+    },
+    "_composer": {
+      "fontCharacter": "\\F10D",
+      "fontColor": "#4B0082"
+    },
+    "_cpp": {
+      "fontCharacter": "\\F10E",
+      "fontColor": "#001F3F"
+    },
+    "_crystal": {
+      "fontCharacter": "\\F10F",
+      "fontColor": "#4B0082"
+    },
+    "_csharp": {
+      "fontCharacter": "\\F110",
+      "fontColor": "#4B0082"
+    },
+    "_css": {
+      "fontCharacter": "\\F111",
+      "fontColor": "#82AAFF"
+    },
+    "_csv": {
+      "fontCharacter": "\\F112",
+      "fontColor": "#DAA520"
+    },
+    "_dart": {
+      "fontCharacter": "\\F113",
+      "fontColor": "#001F3F"
+    },
+    "_default": {
+      "fontCharacter": "\\F114",
+      "fontColor": "#FFCB6B"
+    },
+    "_docker": {
+      "fontCharacter": "\\F115",
+      "fontColor": "#001F3F"
+    },
+    "_elixir": {
+      "fontCharacter": "\\F116",
+      "fontColor": "#4B0082"
+    },
+    "_elm": {
+      "fontCharacter": "\\F117",
+      "fontColor": "#001F3F"
+    },
+    "_env": {
+      "fontCharacter": "\\F118",
+      "fontColor": "#DAA520"
+    },
+    "_erlang": {
+      "fontCharacter": "\\F119",
+      "fontColor": "#B22222"
+    },
+    "_eslint": {
+      "fontCharacter": "\\F11A",
+      "fontColor": "#4B0082"
+    },
+    "_folder": {
+      "fontCharacter": "\\F11B",
+      "fontColor": "#82AAFF"
+    },
+    "_folder-open": {
+      "fontCharacter": "\\F11C",
+      "fontColor": "#82AAFF"
+    },
+    "_folder-root": {
+      "fontCharacter": "\\F11D",
+      "fontColor": "#C792EA"
+    },
+    "_folder-root-open": {
+      "fontCharacter": "\\F11E",
+      "fontColor": "#C792EA"
+    },
+    "_folder-selected-open": {
+      "fontCharacter": "\\F11F",
+      "fontColor": "#FFCB6B"
+    },
+    "_folder-selected": {
+      "fontCharacter": "\\F120",
+      "fontColor": "#FFCB6B"
+    },
+    "_font": {
+      "fontCharacter": "\\F121",
+      "fontColor": "#4B0082"
+    },
+    "_fortran": {
+      "fontCharacter": "\\F122",
+      "fontColor": "#B22222"
+    },
+    "_git": {
+      "fontCharacter": "\\F123",
+      "fontColor": "#FF4500"
+    },
+    "_go": {
+      "fontCharacter": "\\F124",
+      "fontColor": "#001F3F"
+    },
+    "_graphql": {
+      "fontCharacter": "\\F125",
+      "fontColor": "#B22222"
+    },
+    "_gruntfile": {
+      "fontCharacter": "\\F126",
+      "fontColor": "#B22222"
+    },
+    "_gulpfile": {
+      "fontCharacter": "\\F127",
+      "fontColor": "#B22222"
+    },
+    "_handlebars": {
+      "fontCharacter": "\\F128",
+      "fontColor": "#FF4500"
+    },
+    "_hare": {
+      "fontCharacter": "\\F129",
+      "fontColor": "#4B0082"
+    },
+    "_haskell": {
+      "fontCharacter": "\\F12A",
+      "fontColor": "#FF4500"
+    },
+    "_haxe": {
+      "fontCharacter": "\\F12B",
+      "fontColor": "#FF4500"
+    },
+    "_haxealt": {
+      "fontCharacter": "\\F12C",
+      "fontColor": "#DAA520"
+    },
+    "_image": {
+      "fontCharacter": "\\F12D",
+      "fontColor": "#DAA520"
+    },
+    "_java": {
+      "fontCharacter": "\\F12E",
+      "fontColor": "#001F3F"
+    },
+    "_js": {
+      "fontCharacter": "\\F12F",
+      "fontColor": "#FFCB6B"
+    },
+    "_json": {
+      "fontCharacter": "\\F130",
+      "fontColor": "#C792EA"
+    },
+    "_julia": {
+      "fontCharacter": "\\F131",
+      "fontColor": "#4B0082"
+    },
+    "_kotlin": {
+      "fontCharacter": "\\F132",
+      "fontColor": "#4B0082"
+    },
+    "_less": {
+      "fontCharacter": "\\F133",
+      "fontColor": "#4B0082"
+    },
+    "_license": {
+      "fontCharacter": "\\F134",
+      "fontColor": "#556B2F"
+    },
+    "_lisp": {
+      "fontCharacter": "\\F135",
+      "fontColor": "#B22222"
+    },
+    "_lua": {
+      "fontCharacter": "\\F136",
+      "fontColor": "#001F3F"
+    },
+    "_markdown": {
+      "fontCharacter": "\\F137",
+      "fontColor": "#C3E88D"
+    },
+    "_markdownx": {
+      "fontCharacter": "\\F138",
+      "fontColor": "#556B2F"
+    },
+    "_markup": {
+      "fontCharacter": "\\F139",
+      "fontColor": "#FF4500"
+    },
+    "_matlab": {
+      "fontCharacter": "\\F13A",
+      "fontColor": "#FF4500"
+    },
+    "_nextjs": {
+      "fontCharacter": "\\F13B",
+      "fontColor": "#4B0082"
+    },
+    "_nginx": {
+      "fontCharacter": "\\F13C",
+      "fontColor": "#556B2F"
+    },
+    "_nodejs": {
+      "fontCharacter": "\\F13D",
+      "fontColor": "#556B2F"
+    },
+    "_npm": {
+      "fontCharacter": "\\F13E",
+      "fontColor": "#B22222"
+    },
+    "_ocaml": {
+      "fontCharacter": "\\F13F",
+      "fontColor": "#FF4500"
+    },
+    "_opengl": {
+      "fontCharacter": "\\F140",
+      "fontColor": "#B22222"
+    },
+    "_perl": {
+      "fontCharacter": "\\F141",
+      "fontColor": "#001F3F"
+    },
+    "_php": {
+      "fontCharacter": "\\F142",
+      "fontColor": "#001F3F"
+    },
+    "_postcss": {
+      "fontCharacter": "\\F143",
+      "fontColor": "#B22222"
+    },
+    "_prolog": {
+      "fontCharacter": "\\F144",
+      "fontColor": "#B22222"
+    },
+    "_pug": {
+      "fontCharacter": "\\F145",
+      "fontColor": "#FF4500"
+    },
+    "_python": {
+      "fontCharacter": "\\F146",
+      "fontColor": "#C3E88D"
+    },
+    "_r": {
+      "fontCharacter": "\\F147",
+      "fontColor": "#001F3F"
+    },
+    "_rails": {
+      "fontCharacter": "\\F148",
+      "fontColor": "#B22222"
+    },
+    "_react": {
+      "fontCharacter": "\\F149",
+      "fontColor": "#7FDBCA"
+    },
+    "_reason": {
+      "fontCharacter": "\\F14A",
+      "fontColor": "#FF4500"
+    },
+    "_restructuredtext": {
+      "fontCharacter": "\\F14B",
+      "fontColor": "#556B2F"
+    },
+    "_rollup": {
+      "fontCharacter": "\\F14C",
+      "fontColor": "#B22222"
+    },
+    "_ruby": {
+      "fontCharacter": "\\F14D",
+      "fontColor": "#F07178"
+    },
+    "_rust": {
+      "fontCharacter": "\\F14E",
+      "fontColor": "#FF4500"
+    },
+    "_sass": {
+      "fontCharacter": "\\F14F",
+      "fontColor": "#B22222"
+    },
+    "_scala": {
+      "fontCharacter": "\\F150",
+      "fontColor": "#B22222"
+    },
+    "_settings": {
+      "fontCharacter": "\\F151",
+      "fontColor": "#4B0082"
+    },
+    "_shell": {
+      "fontCharacter": "\\F152",
+      "fontColor": "#556B2F"
+    },
+    "_source": {
+      "fontCharacter": "\\F153",
+      "fontColor": "#DAA520"
+    },
+    "_sql": {
+      "fontCharacter": "\\F154",
+      "fontColor": "#4B0082"
+    },
+    "_stylelint": {
+      "fontCharacter": "\\F155",
+      "fontColor": "#4B0082"
+    },
+    "_stylus": {
+      "fontCharacter": "\\F156",
+      "fontColor": "#FF4500"
+    },
+    "_sublime": {
+      "fontCharacter": "\\F157",
+      "fontColor": "#DAA520"
+    },
+    "_svelte": {
+      "fontCharacter": "\\F158",
+      "fontColor": "#B22222"
+    },
+    "_svg": {
+      "fontCharacter": "\\F159",
+      "fontColor": "#FF4500"
+    },
+    "_swift": {
+      "fontCharacter": "\\F15A",
+      "fontColor": "#B22222"
+    },
+    "_symbolic-link": {
+      "fontCharacter": "\\F15B",
+      "fontColor": "#808080"
+    },
+    "_tailwind": {
+      "fontCharacter": "\\F15C",
+      "fontColor": "#001F3F"
+    },
+    "_terraform": {
+      "fontCharacter": "\\F15D",
+      "fontColor": "#4B0082"
+    },
+    "_tex": {
+      "fontCharacter": "\\F15E",
+      "fontColor": "#FF4500"
+    },
+    "_text": {
+      "fontCharacter": "\\F15F",
+      "fontColor": "#FFCB6B"
+    },
+    "_todo": {
+      "fontCharacter": "\\F160",
+      "fontColor": "#556B2F"
+    },
+    "_toml": {
+      "fontCharacter": "\\F161",
+      "fontColor": "#4B0082"
+    },
+    "_twig": {
+      "fontCharacter": "\\F162",
+      "fontColor": "#556B2F"
+    },
+    "_typescript": {
+      "fontCharacter": "\\F163",
+      "fontColor": "#82AAFF"
+    },
+    "_visualstudio": {
+      "fontCharacter": "\\F164",
+      "fontColor": "#001F3F"
+    },
+    "_vue": {
+      "fontCharacter": "\\F165",
+      "fontColor": "#556B2F"
+    },
+    "_webpack": {
+      "fontCharacter": "\\F166",
+      "fontColor": "#001F3F"
+    },
+    "_yaml": {
+      "fontCharacter": "\\F167",
+      "fontColor": "#FFCB6B"
+    },
+    "_yarn": {
+      "fontCharacter": "\\F168",
+      "fontColor": "#4B0082"
+    }
   },
   "file": "_default",
   "folder": "_folder",
@@ -261,7 +573,6 @@
     "sublime-settings": "_sublime",
     "sublime-theme": "_sublime",
     "sublime-workspace": "_sublime",
-    "sublime-package": "_sublime",
     "sublime-snippet": "_sublime",
     "sublime-syntax": "_sublime",
     "twig": "_twig",
@@ -365,4 +676,4 @@
     "xsl": "_default",
     "yaml": "_yaml"
   }
-} 
+}

@@ -3,7 +3,7 @@
 	"displayName": "M Tech Themes",
 	"description": "✨ Professional dark & light theme + icon pack, from the author of the original M Tech color scheme.",
 	"publisher": "mtech",
-	"version": "0.5.10",
+	"version": "0.5.22",
 	"pricing": "Free",
 	"engines": {
 		"vscode": "^1.90.0"
@@ -128,9 +128,9 @@
 				"path": "./themes/Feisty Fusion Light.json"
 			},
 			{
-				"label": "Cyberpunk Neon Light",
+				"label": "Neon Pink Light",
 				"uiTheme": "vs",
-				"path": "./themes/Cyberpunk Neon Light.json"
+				"path": "./themes/Neon Pink Light.json"
 			},
 			{
 				"label": "Cosmic Void Light",
@@ -248,6 +248,11 @@
 				"label": "Cyberpunk Neon Monochrome Icons",
 				"id": "Cyberpunk Neon Monochrome Icons",
 				"path": "./icon-themes/Cyberpunk Neon monochrome icon-theme.json"
+			},
+			{
+				"label": "Neon Pink Light Icons",
+				"id": "Neon Pink Light Icons",
+				"path": "./icon-themes/Neon Pink Light icon-theme.json"
 			},
 			{
 				"label": "Tokyo Night Icons",

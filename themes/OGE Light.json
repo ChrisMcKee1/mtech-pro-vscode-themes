@@ -127,7 +127,7 @@
     "editor.linkedEditingBackground": "#E2E8F0",
     "editor.rangeHighlightBackground": "#E2E8F0",
     "editor.rangeHighlightBorder": "#E2E8F0",
-    "editor.selectionBackground": "#0D5A52B3",
+    "editor.selectionBackground": "#0D5A5280",
     "editor.selectionHighlightBackground": "#0F172A66",
     "editor.selectionHighlightBorder": "#00000000",
     "editor.stackFrameHighlightBackground": "#47556966",

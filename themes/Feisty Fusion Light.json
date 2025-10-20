@@ -265,14 +265,14 @@
 		"keybindingLabel.border": "#d1d5db",
 		"keybindingLabel.bottomBorder": "#d1d5db",
 		"keybindingLabel.foreground": "#535763",
-		"list.activeSelectionBackground": "#1f293726",
+		"list.activeSelectionBackground": "#e5e7eb",
 		"list.activeSelectionForeground": "#d97706",
 		"list.dropBackground": "#eef0f2bf",
 		"list.errorForeground": "#C4223D",
 		"list.focusBackground": "#fdfaf7",
 		"list.focusForeground": "#1f2937",
 		"list.highlightForeground": "#1f2937",
-		"list.hoverBackground": "#1f293719",
+		"list.hoverBackground": "#e5e7eb",
 		"list.hoverForeground": "#1f2937",
 		"list.inactiveFocusBackground": "#fdfaf7",
 		"list.inactiveSelectionBackground": "#5357630c",
@@ -286,9 +286,9 @@
 		"menu.background": "#fdfaf7",
 		"menu.border": "#eef0f2",
 		"menu.foreground": "#1f2937",
-		"menu.selectionForeground": "#b8860b",
+		"menu.selectionForeground": "#fdfaf7",
 		"menu.separatorBackground": "#e5e7eb",
-		"menubar.selectionForeground": "#1f2937",
+		"menubar.selectionForeground": "#b8860b",
 		"merge.border": "#fdfaf7",
 		"merge.commonContentBackground": "#1f293719",
 		"merge.commonHeaderBackground": "#1f293726",
@@ -552,7 +552,13 @@
 		"welcomePage.tileBackground": "#e5e7eb",
 		"welcomePage.tileHoverBackground": "#d1d5db",
 		"welcomePage.tileShadow": "#faf7f4",
-		"widget.shadow": "#faf7f4"
+		"widget.shadow": "#faf7f4",
+		"menu.selectionBackground": "#b8860b",
+		"list.focusOutline": "#b8860b",
+		"list.focusAndSelectionOutline": "#b8860b",
+		"list.inactiveFocusOutline": "#ff9b5e",
+		"list.activeSelectionIconForeground": "#b8860b",
+		"list.inactiveSelectionIconForeground": "#888d94"
 	},
 	"tokenColors": [
 		{
@@ -2011,11 +2017,4 @@
 			}
 		}
 	]
-} 
-
-
-
-
-
-
-
+}

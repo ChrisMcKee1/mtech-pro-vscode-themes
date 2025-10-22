@@ -3,7 +3,7 @@
 	"displayName": "M Tech Themes",
 	"description": "✨ Professional dark & light theme + icon pack, from the author of the original M Tech color scheme.",
 	"publisher": "M-Tech",
-	"version": "0.5.28",
+	"version": "0.6.0",
 	"pricing": "Free",
 	"engines": {
 		"vscode": "^1.90.0"
@@ -37,34 +37,34 @@
 		],
 		"themes": [
 			{
-				"label": "Classic",
+				"label": "Obsidian Moss",
 				"uiTheme": "vs-dark",
-				"path": "./themes/Classic.json"
+				"path": "./themes/Obsidian Moss.json"
 			},
 			{
-				"label": "Filter Octagon",
+				"label": "Graphite Bay",
 				"uiTheme": "vs-dark",
-				"path": "./themes/Filter Octagon.json"
+				"path": "./themes/Graphite Bay.json"
 			},
 			{
-				"label": "Filter Ristretto",
+				"label": "Copper Bloom",
 				"uiTheme": "vs-dark",
-				"path": "./themes/Filter Ristretto.json"
+				"path": "./themes/Copper Bloom.json"
 			},
 			{
-				"label": "Filter Spectrum",
+				"label": "Chroma Void",
 				"uiTheme": "vs-dark",
-				"path": "./themes/Filter Spectrum.json"
+				"path": "./themes/Chroma Void.json"
 			},
 			{
-				"label": "Filter Machine",
+				"label": "Digital Aqua",
 				"uiTheme": "vs-dark",
-				"path": "./themes/Filter Machine.json"
+				"path": "./themes/Digital Aqua.json"
 			},
 			{
-				"label": "Filter Sun",
+				"label": "Sandstone Light",
 				"uiTheme": "vs",
-				"path": "./themes/Filter Sun.json"
+				"path": "./themes/Sandstone Light.json"
 			},
 			{
 				"label": "Cyberpunk Neon",
@@ -122,9 +122,9 @@
 				"path": "./themes/Enchanted Grove Dark.json"
 			},
 			{
-				"label": "Filter Moon",
+				"label": "Mystic Dusk",
 				"uiTheme": "vs-dark",
-				"path": "./themes/Filter Moon.json"
+				"path": "./themes/Mystic Dusk.json"
 			},
 			{
 				"label": "Feisty Fusion Light",
@@ -144,54 +144,54 @@
 		],
 		"iconThemes": [
 			{
-				"label": "Classic Icons",
-				"id": "Classic Icons",
-				"path": "./icon-themes/Classic icon-theme.json"
+				"label": "Obsidian Moss Icons",
+				"id": "Obsidian Moss Icons",
+				"path": "./icon-themes/Obsidian Moss icon-theme.json"
 			},
 			{
-				"label": "Classic Monochrome Icons",
-				"id": "Classic Monochrome Icons",
-				"path": "./icon-themes/Classic monochrome icon-theme.json"
+				"label": "Obsidian Moss Monochrome Icons",
+				"id": "Obsidian Moss Monochrome Icons",
+				"path": "./icon-themes/Obsidian Moss monochrome icon-theme.json"
 			},
 			{
-				"label": "Filter Octagon Icons",
-				"id": "Filter Octagon Icons",
-				"path": "./icon-themes/Filter Octagon icon-theme.json"
+				"label": "Graphite Bay Icons",
+				"id": "Graphite Bay Icons",
+				"path": "./icon-themes/Graphite Bay icon-theme.json"
 			},
 			{
-				"label": "Filter Octagon Monochrome Icons",
-				"id": "Filter Octagon Monochrome Icons",
-				"path": "./icon-themes/Filter Octagon monochrome icon-theme.json"
+				"label": "Graphite Bay Monochrome Icons",
+				"id": "Graphite Bay Monochrome Icons",
+				"path": "./icon-themes/Graphite Bay monochrome icon-theme.json"
 			},
 			{
-				"label": "Filter Ristretto Icons",
-				"id": "Filter Ristretto Icons",
-				"path": "./icon-themes/Filter Ristretto icon-theme.json"
+				"label": "Copper Bloom Icons",
+				"id": "Copper Bloom Icons",
+				"path": "./icon-themes/Copper Bloom icon-theme.json"
 			},
 			{
-				"label": "Filter Ristretto Monochrome Icons",
-				"id": "Filter Ristretto Monochrome Icons",
-				"path": "./icon-themes/Filter Ristretto monochrome icon-theme.json"
+				"label": "Copper Bloom Monochrome Icons",
+				"id": "Copper Bloom Monochrome Icons",
+				"path": "./icon-themes/Copper Bloom monochrome icon-theme.json"
 			},
 			{
-				"label": "Filter Spectrum Icons",
-				"id": "Filter Spectrum Icons",
-				"path": "./icon-themes/Filter Spectrum icon-theme.json"
+				"label": "Chroma Void Icons",
+				"id": "Chroma Void Icons",
+				"path": "./icon-themes/Chroma Void icon-theme.json"
 			},
 			{
-				"label": "Filter Spectrum Monochrome Icons",
-				"id": "Filter Spectrum Monochrome Icons",
-				"path": "./icon-themes/Filter Spectrum monochrome icon-theme.json"
+				"label": "Chroma Void Monochrome Icons",
+				"id": "Chroma Void Monochrome Icons",
+				"path": "./icon-themes/Chroma Void monochrome icon-theme.json"
 			},
 			{
-				"label": "Filter Machine Icons",
-				"id": "Filter Machine Icons",
-				"path": "./icon-themes/Filter Machine icon-theme.json"
+				"label": "Digital Aqua Icons",
+				"id": "Digital Aqua Icons",
+				"path": "./icon-themes/Digital Aqua icon-theme.json"
 			},
 			{
-				"label": "Filter Machine Monochrome Icons",
-				"id": "Filter Machine Monochrome Icons",
-				"path": "./icon-themes/Filter Machine monochrome icon-theme.json"
+				"label": "Digital Aqua Monochrome Icons",
+				"id": "Digital Aqua Monochrome Icons",
+				"path": "./icon-themes/Digital Aqua monochrome icon-theme.json"
 			},
 			{
 				"label": "Light Icons",
@@ -204,14 +204,14 @@
 				"path": "./icon-themes/Light monochrome icon-theme.json"
 			},
 			{
-				"label": "Filter Sun Icons",
-				"id": "Filter Sun Icons",
-				"path": "./icon-themes/Filter Sun icon-theme.json"
+				"label": "Sandstone Light Icons",
+				"id": "Sandstone Light Icons",
+				"path": "./icon-themes/Sandstone Light icon-theme.json"
 			},
 			{
-				"label": "Filter Sun Monochrome Icons",
-				"id": "Filter Sun Monochrome Icons",
-				"path": "./icon-themes/Filter Sun monochrome icon-theme.json"
+				"label": "Sandstone Light Monochrome Icons",
+				"id": "Sandstone Light Monochrome Icons",
+				"path": "./icon-themes/Sandstone Light monochrome icon-theme.json"
 			},
 			{
 				"label": "Arctic Nord Icons",
@@ -319,9 +319,9 @@
 				"path": "./icon-themes/Enchanted Grove Dark icon-theme.json"
 			},
 			{
-				"label": "Filter Moon Icons",
-				"id": "Filter Moon Icons",
-				"path": "./icon-themes/Filter Moon icon-theme.json"
+				"label": "Mystic Dusk Icons",
+				"id": "Mystic Dusk Icons",
+				"path": "./icon-themes/Mystic Dusk icon-theme.json"
 			}
 		],
 		"configuration": {

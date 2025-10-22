@@ -64,8 +64,8 @@ class ThemeManager {
                 await workbenchConfig.update("colorTheme", themeName, vscode.ConfigurationTarget.Global);
                 this.currentColorTheme = themeName;
                 
-                // Show notification for successful theme change
-                vscode.window.showInformationMessage(`✨ Applied ${themeName} theme!`);
+                // Show auto-dismissing notification for successful theme change
+                vscode.window.setStatusBarMessage(`✨ Applied ${themeName} theme!`, 3000);
             }
 
             // Update icon theme if needed and user has tech icons
@@ -292,7 +292,7 @@ class ExtensionManager {
         
         try {
             await workbenchConfig.update("iconTheme", iconTheme, vscode.ConfigurationTarget.Global);
-            vscode.window.showInformationMessage(`✨ Applied ${iconTheme}!`);
+            vscode.window.setStatusBarMessage(`✨ Applied ${iconTheme}!`, 3000);
         } catch (error) {
             vscode.window.showErrorMessage(`Failed to apply icons: ${error.message}`);
         }
@@ -345,7 +345,7 @@ class ExtensionManager {
                     workbenchConfig.update("iconTheme", iconTheme, this.vscode.ConfigurationTarget.Global)
                 ]);
                 
-                this.vscode.window.showInformationMessage(`✨ Applied ${selection.label} theme and ${iconTheme}!`);
+                this.vscode.window.setStatusBarMessage(`✨ Applied ${selection.label} theme and ${iconTheme}!`, 3000);
                 this.updateStatusBarItem();
                 
                 // Save theme preference for workspace

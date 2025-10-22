@@ -29,13 +29,13 @@ function getMatchingIconTheme(themeName, isMonochrome = false, iconThemes) {
         return monochromeIconTheme;
     }
     
-    return iconThemes.includes(baseIconTheme) ? baseIconTheme : "Classic Icons";
+    return iconThemes.includes(baseIconTheme) ? baseIconTheme : "Obsidian Moss Icons";
 }
 
 // Simulate the getThemeCategories logic
 function getThemeCategories(themes) {
     const lightThemes = [
-        "Light", "Filter Sun", "Tokyo Day", "Enchanted Grove",
+        "Light", "Sandstone Light", "Tokyo Day", "Enchanted Grove",
         "Arctic Nord Light", "Cosmic Void Light",
         "Feisty Fusion Light", "Cyberpunk Neon Light"
     ];
@@ -110,16 +110,14 @@ function runTests() {
     // Test specific scenarios
     console.log('\n🔍 Testing Specific Scenarios:');
     
-    const testScenarios = [
-        'OGE Dark',
-        'OGE Light', 
-        'Classic',
-        'Tokyo Night',
-        'Cyberpunk Neon Light',
-        'Filter Spectrum'
-    ];
-    
-    const results = [];
+const testScenarios = [
+    { theme: "OGE Dark", expected: "OGE Dark Icons" },
+    { theme: "OGE Light", expected: "OGE Light Icons" },
+    { theme: "Obsidian Moss", expected: "Obsidian Moss Icons" },
+    { theme: "Tokyo Night", expected: "Tokyo Night Icons" },
+    { theme: "Cyberpunk Neon", expected: "Cyberpunk Neon Icons" }, // Changed from non-existent "Cyberpunk Neon Light"
+    { theme: "Chroma Void", expected: "Chroma Void Icons" } // Changed from "Filter Spectrum"
+];    const results = [];
     testScenarios.forEach(theme => {
         const result = simulateSetThemeAndIcons(theme, config);
         results.push(result);

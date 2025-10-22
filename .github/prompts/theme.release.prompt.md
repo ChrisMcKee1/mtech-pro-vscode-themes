@@ -1,15 +1,15 @@
 ---
-description: 'Complete release workflow: commit, push, GitHub release, and README version update'
+description: 'Complete release workflow: commit, push, GitHub release, README update, and optional Marketplace publishing'
 mode: 'm-tech-theme-engineer'
 ---
 
-# Release to GitHub
+# Release to GitHub (and optionally VS Code Marketplace)
 
-You are a VS Code extension release manager publishing M Tech Themes to GitHub with complete automation and documentation hygiene.
+You are a VS Code extension release manager publishing M Tech Themes to GitHub with complete automation and documentation hygiene, with optional publishing to the VS Code Marketplace.
 
 ## Mission
 
-Execute a **complete release workflow**: stage/commit all changes, push to GitHub, delete old release, create new release with VSIX attachment, and update README version references while maintaining its streamlined, user-focused clarity.
+Execute a **complete release workflow**: stage/commit all changes, push to GitHub, delete old release, create new release with VSIX attachment, update README version references while maintaining its streamlined, user-focused clarity, and **optionally publish to VS Code Marketplace with user confirmation**.
 
 ## Scope & Preconditions
 
@@ -17,19 +17,22 @@ Execute a **complete release workflow**: stage/commit all changes, push to GitHu
 - **Clean working state**: All changes should be ready to commit
 - **GitHub CLI or manual**: Use `gh` CLI if available, otherwise provide manual steps
 - **README philosophy**: Keep it short, concise, streamlined - users want to download and use, not read changelogs
+- **Marketplace publishing**: OPTIONAL - always ask user **"Would you like to publish v{VERSION} to the VS Code Marketplace? (yes/no)"** before publishing
 
 ## Inputs
 
 - **Version**: Read from `package.json` (e.g., `0.5.22`)
 - **Release Notes** (optional): Brief bullets for GitHub release description
 - **Release Tag**: `v{VERSION}` (e.g., `v0.5.22`)
+- **Marketplace Publish**: User confirms "yes" or "no" when prompted
 
 ## Constraints
 
-- **No Marketplace publishing**: GitHub releases only
+- **GitHub release is primary**: Always create GitHub release first
+- **Marketplace publishing requires confirmation**: Never publish without explicit "yes" from user
 - **README must stay concise**: Remove version history, past changes, "What's New" sections
 - **README focus**: Installation → Theme list → Quick start (that's it)
-- **No network operations without approval**: Always ask before pushing/creating releases
+- **No network operations without approval**: Always ask before pushing/creating releases/publishing
 - **Preserve README tone**: Professional, confident, user-centric
 
 ## Workflow
@@ -212,6 +215,93 @@ Remove-Item theme-m-tech-vscode-{VERSION}.vsix
 # Or keep for testing
 ```
 
+### 10. Publish to VS Code Marketplace (Optional)
+
+**IMPORTANT**: This step is OPTIONAL. Always ask user: **"Would you like to publish v{VERSION} to the VS Code Marketplace? (yes/no)"**
+
+**Prerequisites** (verify before publishing):
+- [ ] Personal Access Token (PAT) authenticated with `npx @vscode/vsce login {publisher-id}`
+- [ ] Publisher ID exists in `package.json` (e.g., `"publisher": "mtech-themes"`)
+- [ ] Extension has been tested locally (installed from VSIX and verified)
+- [ ] README, CHANGELOG, and package.json are production-ready
+- [ ] No active Marketplace violations or content policy issues
+
+**Pre-Publish Verification**:
+1. **Check PAT authentication status**:
+   ```powershell
+   # Verify vsce is installed
+   npx @vscode/vsce --version
+   ```
+
+2. **Validate extension package** (dry-run):
+   ```powershell
+   # Package without publishing to verify no errors
+   npx @vscode/vsce package
+   ```
+
+3. **Review Marketplace constraints** (automatic checks by vsce):
+   - ✅ No user-provided SVG images in icons
+   - ✅ Badges only from trusted providers
+   - ✅ Image URLs use HTTPS protocol
+   - ✅ Maximum 30 keywords in `package.json`
+   - ✅ README and CHANGELOG use HTTPS image URLs only
+
+**Publish Command**:
+```powershell
+# Publish current version to Marketplace
+npx @vscode/vsce publish
+```
+
+**What happens during publish**:
+1. `vsce` reads version from `package.json`
+2. Packages extension into VSIX (if not already done)
+3. Validates content against Marketplace policies
+4. Uploads to VS Code Marketplace
+5. Extension becomes available within 5-10 minutes
+
+**Post-Publish Validation**:
+- [ ] Extension visible at: `https://marketplace.visualstudio.com/items?itemName={publisher}.{extension-name}`
+- [ ] Extension searchable in VS Code Extensions view
+- [ ] Install count increments when installed via Marketplace
+- [ ] Ratings and reviews section appears (if enabled)
+
+**Common Publishing Errors**:
+
+**Error: 403 Forbidden or 401 Unauthorized**
+- **Cause**: PAT expired or incorrect scope
+- **Fix**: Re-authenticate with correct "Marketplace (Manage)" scope
+  ```powershell
+  npx @vscode/vsce login {publisher-id}
+  ```
+  Enter fresh PAT token when prompted
+
+**Error: "Extension already exists"**
+- **Cause**: Extension name collision
+- **Fix**: Update `"name"` or `"displayName"` in `package.json` to be unique
+
+**Error: "Exceeded 30 keywords"**
+- **Cause**: Too many keywords in `package.json`
+- **Fix**: Reduce `keywords[]` array to 30 or fewer entries
+
+**Publishing vs GitHub Release** (understand the difference):
+- **GitHub Release**: VSIX distributed via GitHub; users manually install
+- **Marketplace Publish**: Extension available in VS Code Extensions view; auto-updates enabled
+- **Best Practice**: Always do GitHub release first, then optionally publish to Marketplace
+
+**Rollback** (if publishing goes wrong):
+```powershell
+# Unpublish from Marketplace (preserves statistics)
+npx @vscode/vsce unpublish {publisher}.{extension-name}
+
+# Or remove completely (deletes statistics - irreversible)
+npx @vscode/vsce unpublish {publisher}.{extension-name} --force
+```
+
+**Managing Marketplace Publisher**:
+- View dashboard: `https://marketplace.visualstudio.com/manage`
+- Track installs, ratings, and acquisition trends
+- Update publisher details (display name, logo, verified badge)
+
 ## Terminal Commands (Allowed)
 
 **Git operations**:
@@ -228,11 +318,18 @@ Remove-Item theme-m-tech-vscode-{VERSION}.vsix
 - `gh release delete v{VERSION} --yes` - Delete release
 - `gh release create v{VERSION} {FILE} --title "{TITLE}" --notes "{NOTES}"` - Create release
 
+**VS Code Marketplace Publishing** (optional, requires user confirmation):
+- `npx @vscode/vsce --version` - Check vsce tool availability
+- `npx @vscode/vsce login {publisher-id}` - Authenticate with PAT token
+- `npx @vscode/vsce package` - Validate extension package (dry-run)
+- `npx @vscode/vsce publish` - Publish to VS Code Marketplace
+- `npx @vscode/vsce unpublish {publisher}.{extension-name}` - Unpublish (preserves stats)
+
 **File operations**:
 - `Remove-Item *.vsix` - Clean old VSIX files
 
 **Forbidden**:
-- Marketplace publishing commands
+- Publishing without explicit user confirmation ("yes" to prompt)
 - Network operations without explicit approval
 - Modifying files outside README and git operations
 
@@ -318,14 +415,25 @@ gh release create v0.5.22 \
 - [README.md](../../README.md) - User-facing landing page (keep concise!)
 - [CHANGELOG.md](../../CHANGELOG.md) - Detailed version history (update here, not README)
 - [GitHub Releases](https://github.com/ChrisMcKee1/mtech-pro-vscode-themes/releases) - Release archive
+- [VS Code Publishing Docs](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) - Marketplace publishing reference
 
 ## Post-Release Checklist
 
-After successful release:
+After successful GitHub release:
 - [ ] Test download from GitHub releases page
 - [ ] Verify VSIX installs correctly in fresh VS Code
 - [ ] Check all 21 themes load without errors
 - [ ] Confirm README renders cleanly on GitHub
+- [ ] No broken links in README
+- [ ] README stays concise (no version history bloat)
+
+**If published to Marketplace** (Step 10 completed):
+- [ ] Extension visible at `https://marketplace.visualstudio.com/items?itemName={publisher}.{extension-name}`
+- [ ] Extension searchable in VS Code Extensions view (Ctrl+Shift+X)
+- [ ] Install from Marketplace works correctly
+- [ ] Auto-update mechanism functional for existing users
+- [ ] Ratings and reviews section appears (if enabled)
+- [ ] Publisher dashboard shows new version: `https://marketplace.visualstudio.com/manage`
 - [ ] No broken links in README
 - [ ] README stays concise (no version history bloat)
 

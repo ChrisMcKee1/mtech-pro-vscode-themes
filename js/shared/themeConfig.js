@@ -2,12 +2,12 @@
 
 // Centralized theme metadata shared across Node and web extension hosts.
 const THEMES = Object.freeze([
-    "Classic",
-    "Filter Octagon",
-    "Filter Ristretto",
-    "Filter Spectrum",
-    "Filter Machine",
-    "Filter Sun",
+    "Obsidian Moss",
+    "Graphite Bay",
+    "Copper Bloom",
+    "Chroma Void",
+    "Digital Aqua",
+    "Sandstone Light",
     "Cyberpunk Neon",
     "Neon Pink Light",
     "Tokyo Night",
@@ -22,16 +22,16 @@ const THEMES = Object.freeze([
     "Cosmic Void Light",
     "Enchanted Grove",
     "Enchanted Grove Dark",
-    "Filter Moon"
+    "Mystic Dusk"
 ]);
 
 const ICON_THEMES = Object.freeze([
-    "Classic Icons",
-    "Filter Octagon Icons",
-    "Filter Ristretto Icons",
-    "Filter Spectrum Icons",
-    "Filter Machine Icons",
-    "Filter Sun Icons",
+    "Obsidian Moss Icons",
+    "Graphite Bay Icons",
+    "Copper Bloom Icons",
+    "Chroma Void Icons",
+    "Digital Aqua Icons",
+    "Sandstone Light Icons",
     "Cyberpunk Neon Icons",
     "Neon Pink Light Icons",
     "Tokyo Night Icons",
@@ -47,13 +47,13 @@ const ICON_THEMES = Object.freeze([
     "Cosmic Void Light Icons",
     "Enchanted Grove Icons",
     "Enchanted Grove Dark Icons",
-    "Filter Moon Icons"
+    "Mystic Dusk Icons"
 ]);
 
 const THEME_SET = new Set(THEMES);
 const ICON_THEME_SET = new Set(ICON_THEMES);
 const LIGHT_THEME_HINTS = new Set([
-    "Filter Sun",
+    "Sandstone Light",
     "Tokyo Day",
     "Enchanted Grove",
     "Arctic Nord Light",
@@ -67,7 +67,7 @@ const THEME_CONFIG = Object.freeze({
     themes: THEMES,
     iconThemes: ICON_THEMES,
     description: "M Tech Themes and color scheme for Visual Studio Code",
-    version: "0.5.28",
+    version: "0.6.0",
     author: "tech"
 });
 

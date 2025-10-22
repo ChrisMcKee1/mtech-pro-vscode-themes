@@ -21,31 +21,17 @@ function loadPackageJson() {
 }
 
 /**
- * Load and parse THEME_CONFIG from JavaScript files
- * @param {string} jsFile - Filename ('main.js' or 'browser.js')
+ * Load and parse THEME_CONFIG from the shared configuration module
+ * @param {string} jsFile - Filename ('main.js' or 'browser.js') - parameter kept for compatibility
  * @returns {Object|null} Parsed THEME_CONFIG or null on error
  */
 function loadThemeConfig(jsFile = 'main.js') {
     try {
-        const jsPath = path.join(__dirname, '..', '..', 'js', jsFile);
-        const content = fs.readFileSync(jsPath, 'utf8');
-        
-        // Extract THEME_CONFIG using regex
-        const themeConfigMatch = content.match(/const THEME_CONFIG\s*=\s*({[\s\S]*?});/);
-        if (!themeConfigMatch) {
-            throw new Error(`Could not find THEME_CONFIG in ${jsFile}`);
-        }
-
-        // Parse the extracted config
-        // Convert JavaScript object literal to JSON-compatible format
-        const configString = themeConfigMatch[1]
-            .replace(/(\w+):/g, '"$1":')     // Add quotes to keys
-            .replace(/'/g, '"')              // Convert single quotes to double
-            .replace(/,(\s*[}\]])/g, '$1');  // Remove trailing commas
-        
-        return JSON.parse(configString);
+        // Load from shared configuration module
+        const sharedConfig = require('../../js/shared/themeConfig');
+        return sharedConfig.THEME_CONFIG;
     } catch (error) {
-        console.error(`Failed to load THEME_CONFIG from ${jsFile}: ${error.message}`);
+        console.error(`Failed to load THEME_CONFIG: ${error.message}`);
         return null;
     }
 }

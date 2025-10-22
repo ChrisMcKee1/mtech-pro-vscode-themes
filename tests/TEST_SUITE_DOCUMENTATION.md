@@ -67,7 +67,7 @@ cd tests
 **Purpose**: Refactor progress dashboard and work tracking
 
 **What it checks**:
-- Parses THEME_IMPROVEMENTS_ANALYSIS.md for completed refactors
+- Parses docs/ACCESSIBILITY_FRAMEWORK.md for completed refactors
 - Extracts grade improvements (D- → A-, etc.)
 - Identifies pending themes needing refactor
 - Calculates progress percentage
@@ -178,7 +178,7 @@ Automated WCAG contrast analysis for accessibility compliance.
 - **LOW**: Minor issues only
 
 ### `test-refactor-status.js` (NEW)
-Tracks refactor progress by parsing THEME_IMPROVEMENTS_ANALYSIS.md.
+Tracks refactor progress by parsing docs/ACCESSIBILITY_FRAMEWORK.md.
 
 **Key features**:
 - Regex pattern matching for refactor sections
@@ -236,7 +236,7 @@ node test-refactor-status.js --save
 # 8. Run contrast analysis to verify fixes
 .\run-tests.cmd --contrast
 
-# 9. Update THEME_IMPROVEMENTS_ANALYSIS.md
+# 9. Update docs/ACCESSIBILITY_FRAMEWORK.md
 # 10. Check progress
 .\run-tests.cmd --status
 ```
@@ -375,7 +375,7 @@ this.refactored.push({
 **Fix**: Check `editor.background` and `tokenColors` array format
 
 ### Status tracker shows "Unknown (0%)" grades
-**Cause**: THEME_IMPROVEMENTS_ANALYSIS.md format doesn't match regex  
+**Cause**: docs/ACCESSIBILITY_FRAMEWORK.md format doesn't match regex  
 **Fix**: Ensure grade pattern follows: `D- (45%) → A- (93%)`
 
 ## Performance Notes

@@ -1,6 +1,6 @@
 ---
 description: Theme Engineer for M Tech Themes—ideate, refactor, or create VS Code color themes with strict accessibility and pairing rules.
-model: Claude Sonnet 4
+model: GPT-5-Codex (Preview)
 tools: ['edit', 'search', 'new', 'runCommands', 'runTasks', 'sequential-thinking/*', 'Context7/*', 'microsoftdocs/mcp/*', 'usages', 'vscodeAPI', 'think', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'ms-python.python/getPythonEnvironmentInfo', 'ms-python.python/getPythonExecutableCommand', 'ms-python.python/installPythonPackage', 'ms-python.python/configurePythonEnvironment', 'extensions', 'todos']
 ---
 
@@ -13,7 +13,7 @@ tools: ['edit', 'search', 'new', 'runCommands', 'runTasks', 'sequential-thinking
 ## Quick Reference
 
 **Key Files**: `package.json`, `js/main.js`, `js/browser.js`, `themes/*.json`, `icon-themes/*.json`  
-**Documentation**: [copilot-instructions.md](../copilot-instructions.md) | [THEME_IMPROVEMENTS_ANALYSIS.md](../../THEME_IMPROVEMENTS_ANALYSIS.md)  
+**Documentation**: [copilot-instructions.md](../copilot-instructions.md) | [ACCESSIBILITY_FRAMEWORK.md](../../docs/ACCESSIBILITY_FRAMEWORK.md)  
 **Tests**: `cd tests && .\run-tests.cmd [--quick|--contrast|--status|--full]`  
 **Preview**: F1 → "Developer: Reload Window"
 
@@ -322,7 +322,7 @@ If terminal unavailable, provide commands for user to run manually.
    ```
 6. Fix any issues identified by contrast analysis (prioritize URGENT/HIGH)
 7. Manual validation: selection, scrollbars, diff/diagnostics, terminal ANSI
-8. Update `.\run-tests.cmd --status` tracking by documenting in THEME_IMPROVEMENTS_ANALYSIS.md
+8. Update `.\run-tests.cmd --status` tracking by documenting in docs/ACCESSIBILITY_FRAMEWORK.md
 9. Provide Summary, Automated Analysis Results, Diffs, Verification, Follow‑ups in the response
 
 ---
@@ -360,5 +360,5 @@ Provide unified diffs for each file edited or created. Include context lines for
 ## Follow-ups
 - Optional recommendations for variants (light, dark, high‑contrast) or additional token tuning based on feedback.
 - Suggest next themes to refactor based on `--contrast` priority queue
-- **Document Design Decisions**: If accepting lower contrast for aesthetic, explain in THEME_IMPROVEMENTS_ANALYSIS.md
+- **Document Design Decisions**: If accepting lower contrast for aesthetic, explain in docs/ACCESSIBILITY_FRAMEWORK.md
 ```

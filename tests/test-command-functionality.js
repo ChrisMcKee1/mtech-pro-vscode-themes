@@ -9,22 +9,11 @@
 const fs = require('fs');
 const path = require('path');
 
-// Load the actual THEME_CONFIG from the JavaScript files
+// Load the actual THEME_CONFIG from the shared module
 function loadThemeConfig() {
     try {
-        const content = fs.readFileSync('../js/main.js', 'utf8');
-        const themeConfigMatch = content.match(/const THEME_CONFIG = ({[\s\S]*?});/);
-        
-        if (!themeConfigMatch) {
-            throw new Error('Could not find THEME_CONFIG');
-        }
-
-        // Parse the extracted config
-        const configString = themeConfigMatch[1]
-            .replace(/(\w+):/g, '"$1":')  // Add quotes to keys
-            .replace(/'/g, '"');          // Convert single quotes to double quotes
-        
-        return JSON.parse(configString);
+        const sharedConfig = require('../js/shared/themeConfig');
+        return sharedConfig.THEME_CONFIG;
     } catch (error) {
         console.error('Failed to load THEME_CONFIG:', error.message);
         return null;

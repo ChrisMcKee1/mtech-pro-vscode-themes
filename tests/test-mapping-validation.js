@@ -100,10 +100,11 @@ class ThemeMappingValidator {
         }
 
         // Check if main.js and browser.js have identical configs
-        const mainThemes = JSON.stringify(this.mainJs.themes?.sort());
-        const browserThemes = JSON.stringify(this.browserJs.themes?.sort());
-        const mainIcons = JSON.stringify(this.mainJs.iconThemes?.sort());
-        const browserIcons = JSON.stringify(this.browserJs.iconThemes?.sort());
+        // Create copies to sort since the arrays are frozen
+        const mainThemes = JSON.stringify([...this.mainJs.themes].sort());
+        const browserThemes = JSON.stringify([...this.browserJs.themes].sort());
+        const mainIcons = JSON.stringify([...this.mainJs.iconThemes].sort());
+        const browserIcons = JSON.stringify([...this.browserJs.iconThemes].sort());
 
         if (mainThemes !== browserThemes) {
             printError("Theme lists differ between main.js and browser.js", "Sync THEME_CONFIG.themes array in both files");

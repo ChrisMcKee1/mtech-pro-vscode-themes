@@ -3,7 +3,7 @@
 	"displayName": "M Tech Themes",
 	"description": "✨ Professional dark & light theme + icon pack, from the author of the original M Tech color scheme.",
 	"publisher": "mtech",
-	"version": "0.5.24",
+	"version": "0.5.28",
 	"pricing": "Free",
 	"engines": {
 		"vscode": "^1.90.0"
@@ -29,6 +29,10 @@
 			{
 				"command": "tech_pro.set_theme_and_icons",
 				"title": "M Tech Themes: set theme and icons"
+			},
+			{
+				"command": "tech_pro.report_issue",
+				"title": "M Tech Themes: report an issue"
 			}
 		],
 		"themes": [
@@ -368,9 +372,7 @@
 		"package": "npx @vscode/vsce package",
 		"vsce-package": "vsce package"
 	},
-	"activationEvents": [
-		"onStartupFinished"
-	],
+	"activationEvents": [],
 	"qna": false,
 	"__metadata": {
 		"installedTimestamp": 1748106711171,

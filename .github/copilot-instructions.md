@@ -95,7 +95,7 @@ cd tests
   - Prioritizes themes by refactor urgency (URGENT/HIGH/MEDIUM/LOW/CLEAN)
 
 - **`--status`**: Refactor progress tracking
-  - Parses THEME_IMPROVEMENTS_ANALYSIS.md for completed refactors
+  - Parses docs/ACCESSIBILITY_FRAMEWORK.md for completed refactors
   - Shows grade improvements (D- → A-, percentage points gained)
   - Lists pending themes needing work
   - Estimates remaining effort
@@ -144,9 +144,9 @@ Example scope pattern from `Classic.json`:
 5. **Pre-release**: Run `.\run-tests.cmd --full` for comprehensive validation
 
 **Accessibility Tracking**:
-- **THEME_IMPROVEMENTS_ANALYSIS.md**: Comprehensive accessibility framework and theme case studies
-- **THEME_CONTRAST_GUIDELINES.md**: Detailed WCAG contrast requirements and property checklists
-- **tests/ENHANCEMENT_SUMMARY.md**: Test suite capabilities and automation details
+- **docs/ACCESSIBILITY_FRAMEWORK.md**: Comprehensive accessibility framework and theme case studies
+- **docs/CONTRAST_REFERENCE.md**: Detailed WCAG contrast requirements and property checklists
+- **tests/TEST_SUITE_DOCUMENTATION.md**: Test suite capabilities and automation details
 - **IMPROVEMENTS_v0.5.17.md**: Latest improvements documentation (v0.5.17-0.5.19)
 
 **Manual Verification** (after automated tests pass):
@@ -287,7 +287,7 @@ Always test themes across:
 ### Incremental Color Changes
 
 When adjusting existing themes:
-1. **Identify issues**: Run `.\run-tests.cmd --contrast` to see all accessibility problems
+- **Status**: Run `.\run-tests.cmd --contrast` to see all accessibility problems
 2. **Prioritize fixes**: Focus on URGENT/HIGH priority issues first
 3. Change one color family at a time (e.g., all string colors)
 4. **Quick validation**: Run `.\run-tests.cmd --quick` after each change (2-3s)

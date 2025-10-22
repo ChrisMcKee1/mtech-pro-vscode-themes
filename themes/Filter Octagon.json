@@ -90,18 +90,18 @@
     "debugView.valueChangedHighlight": "#ffd76d",
     "descriptionForeground": "#888d94",
     "diffEditor.diagonalFill": "#3a3d4b",
-    "diffEditor.insertedLineBackground": "#bad761cc",
-    "diffEditor.insertedTextBackground": "#bad76180",
+    "diffEditor.insertedLineBackground": "#bad7614D",
+    "diffEditor.insertedTextBackground": "#bad76166",
     "diffEditor.move.border": "",
     "diffEditor.moveActive.border": "",
-    "diffEditor.removedLineBackground": "#ff657acc",
-    "diffEditor.removedTextBackground": "#ff657a80",
+    "diffEditor.removedLineBackground": "#ff657a4D",
+    "diffEditor.removedTextBackground": "#ff657a66",
     "diffEditor.unchangedCodeBackground": "#1e1f2b",
     "diffEditor.unchangedRegionBackground": "#1e1f2b",
     "diffEditor.unchangedRegionForeground": "#b2b9bd",
     "diffEditor.unchangedRegionShadow": "#161821",
-    "diffEditorGutter.insertedLineBackground": "#bad76166",
-    "diffEditorGutter.removedLineBackground": "#ff657a66",
+    "diffEditorGutter.insertedLineBackground": "#bad76180",
+    "diffEditorGutter.removedLineBackground": "#ff657a80",
     "diffEditorOverview.insertedForeground": "#bad761a5",
     "diffEditorOverview.removedForeground": "#ff657aa5",
     "dropdown.background": "#3a3d4b",
@@ -127,7 +127,7 @@
     "editor.linkedEditingBackground": "#3a3d4b",
     "editor.rangeHighlightBackground": "#3a3d4b",
     "editor.rangeHighlightBorder": "#3a3d4b",
-    "editor.selectionBackground": "#b2b9bdcc",
+    "editor.selectionBackground": "#b2b9bd59",
     "editor.selectionHighlightBackground": "#eaf2f166",
     "editor.selectionHighlightBorder": "#00000000",
     "editor.stackFrameHighlightBackground": "#b2b9bd66",
@@ -752,7 +752,7 @@
       "scope": "constant.numeric.line-number.find-in-files",
       "settings": {
         "name": "Search result line numbers",
-        "foreground": "#535763"
+        "foreground": "#9FA4AB"
       }
     },
     {
@@ -1158,7 +1158,7 @@
       ],
       "settings": {
         "name": "Diff inserted",
-        "foreground": "#bad761"
+        "foreground": "#c9f77d"
       }
     },
     {
@@ -1168,7 +1168,7 @@
       ],
       "settings": {
         "name": "Diff deleted",
-        "foreground": "#ff657a"
+        "foreground": "#ff8fa3"
       }
     },
     {

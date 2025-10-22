@@ -90,12 +90,12 @@
     "debugView.valueChangedHighlight": "#D97706",
     "descriptionForeground": "#64748B",
     "diffEditor.diagonalFill": "#E2E8F0",
-    "diffEditor.insertedLineBackground": "#05966933",
-    "diffEditor.insertedTextBackground": "#0596694D",
+    "diffEditor.insertedLineBackground": "#04704740",
+    "diffEditor.insertedTextBackground": "#05966959",
     "diffEditor.move.border": "",
     "diffEditor.moveActive.border": "",
-    "diffEditor.removedLineBackground": "#B01F5233",
-    "diffEditor.removedTextBackground": "#B01F524D",
+    "diffEditor.removedLineBackground": "#8C164040",
+    "diffEditor.removedTextBackground": "#B01F5259",
     "diffEditor.unchangedCodeBackground": "#F1F5F9",
     "diffEditor.unchangedRegionBackground": "#F1F5F9",
     "diffEditor.unchangedRegionForeground": "#475569",
@@ -127,7 +127,7 @@
     "editor.linkedEditingBackground": "#E2E8F0",
     "editor.rangeHighlightBackground": "#E2E8F0",
     "editor.rangeHighlightBorder": "#E2E8F0",
-    "editor.selectionBackground": "#0D5A5280",
+    "editor.selectionBackground": "#0A40384D",
     "editor.selectionHighlightBackground": "#0F172A66",
     "editor.selectionHighlightBorder": "#00000000",
     "editor.stackFrameHighlightBackground": "#47556966",
@@ -753,7 +753,7 @@
       "scope": "constant.numeric.line-number.find-in-files",
       "settings": {
         "name": "Search result line numbers",
-        "foreground": "#CBD5E1"
+        "foreground": "#5F5758"
       }
     },
     {

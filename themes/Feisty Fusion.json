@@ -90,18 +90,18 @@
     "debugView.valueChangedHighlight": "#ffd76d",
     "descriptionForeground": "#9AA0A8",
     "diffEditor.diagonalFill": "#3a3d4b",
-    "diffEditor.insertedLineBackground": "#bad761cc",
-    "diffEditor.insertedTextBackground": "#bad761cc",
+    "diffEditor.insertedLineBackground": "#bad76133",
+    "diffEditor.insertedTextBackground": "#bad7614D",
     "diffEditor.move.border": "",
     "diffEditor.moveActive.border": "",
-    "diffEditor.removedLineBackground": "#ff657acc",
-    "diffEditor.removedTextBackground": "#ff657acc",
+    "diffEditor.removedLineBackground": "#ff657a33",
+    "diffEditor.removedTextBackground": "#ff657a4D",
     "diffEditor.unchangedCodeBackground": "#1e1f2b",
     "diffEditor.unchangedRegionBackground": "#1e1f2b",
     "diffEditor.unchangedRegionForeground": "#b2b9bd",
     "diffEditor.unchangedRegionShadow": "#161821",
-    "diffEditorGutter.insertedLineBackground": "#bad761cc",
-    "diffEditorGutter.removedLineBackground": "#ff657acc",
+    "diffEditorGutter.insertedLineBackground": "#bad76180",
+    "diffEditorGutter.removedLineBackground": "#ff657a80",
     "diffEditorOverview.insertedForeground": "#bad761a5",
     "diffEditorOverview.removedForeground": "#ff657aa5",
     "dropdown.background": "#3a3d4b",
@@ -127,7 +127,7 @@
     "editor.linkedEditingBackground": "#3a3d4b",
     "editor.rangeHighlightBackground": "#3a3d4b",
     "editor.rangeHighlightBorder": "#3a3d4b",
-    "editor.selectionBackground": "#ffd76d80",
+    "editor.selectionBackground": "#ffd76d59",
     "editor.selectionHighlightBackground": "#ffd76d59",
     "editor.selectionHighlightBorder": "#00000000",
     "editor.stackFrameHighlightBackground": "#ffd76d59",
@@ -176,7 +176,7 @@
     "editorLightBulbAi.foreground": "#ffd76d",
     "editorLightBulbAutoFix.foreground": "#bad761",
     "editorLineNumber.activeForeground": "#b2b9bd",
-    "editorLineNumber.foreground": "#535763",
+    "editorLineNumber.foreground": "#9FA4AB",
     "editorLink.activeForeground": "#9cd1bb",
     "editorMarkerNavigation.background": "#3a3d4b",
     "editorMarkerNavigationError.background": "#ff657a",
@@ -574,7 +574,7 @@
       "settings": {
         "name": "Comments and overrides inside comments",
         "fontStyle": "italic",
-        "foreground": "#A5ABB3"
+        "foreground": "#84898f"
       }
     },
     {
@@ -752,7 +752,7 @@
       "scope": "constant.numeric.line-number.find-in-files",
       "settings": {
         "name": "Search result line numbers",
-        "foreground": "#535763"
+        "foreground": "#9FA4AB"
       }
     },
     {

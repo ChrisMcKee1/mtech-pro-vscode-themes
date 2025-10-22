@@ -1,771 +1,436 @@
 [1m[36m≡ƒö¼ M Tech Themes - Contrast Analysis[0m
 
-Analyzing 20 themes for accessibility issues...
+Analyzing 21 themes for accessibility issues...
 
 
 [1m≡ƒîÖ  Arctic Nord[0m (dark)
 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 
   [1mSYNTAX:[0m
-    Γ¥î [31mSyntax token fails readability: meta.brackets entity.name.function.opera[0m
-       Color: #9BA5B8 | Contrast: 4.06
+    Γ¥î [31mSyntax token fails readability: comment.git-status.header.remote (minimalist design - acceptable if intentional)[0m
+       Color: #D88690 | Contrast: 3.70
        Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.other.substitution[0m
-       Color: #9BA5B8 | Contrast: 4.06
+    Γ¥î [31mSyntax token fails readability: entity.name.tag, entity.name.tag.js.jsx  (minimalist design - acceptable if intentional)[0m
+       Color: #D88690 | Contrast: 3.70
        Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.operator.heading.restructuredtex[0m
-       Color: #9BA5B8 | Contrast: 4.06
+    Γ¥î [31mSyntax token fails readability: entity.name.function.operator (minimalist design - acceptable if intentional)[0m
+       Color: #D88690 | Contrast: 3.70
        Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.other.parenthesis.elm[0m
-       Color: #9BA5B8 | Contrast: 4.06
+    Γ¥î [31mSyntax token fails readability: source.yaml meta.mapping.key string (minimalist design - acceptable if intentional)[0m
+       Color: #D88690 | Contrast: 3.70
        Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: meta.brace.round, meta.brace.square, key[0m
-       Color: #9BA5B8 | Contrast: 4.06
+    Γ¥î [31mSyntax token fails readability: string.other.link.title, string.other.li (minimalist design - acceptable if intentional)[0m
+       Color: #D88690 | Contrast: 3.70
        Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: support.constant.handlebars[0m
-       Color: #9BA5B8 | Contrast: 4.06
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: support.function.delimiter.elm[0m
-       Color: #9BA5B8 | Contrast: 4.06
+    Γ¥î [31mSyntax token fails readability: string.other.git-status.remote (minimalist design - acceptable if intentional)[0m
+       Color: #D88690 | Contrast: 3.70
        Required: 4.5:1
 
   [1mSELECTION:[0m
     ΓÜá∩╕Å [33mSelection invisible (low contrast)[0m
-       Color: #88c0d070 | Contrast: 2.19
-       Opacity: 44%
+       Color: #5E81AC59 | Contrast: 1.39
+       Opacity: 35%
        Required: 3:1
 
   [1mDIFFS:[0m
     ΓÜá∩╕Å [33mInserted lines invisible (recommend 30% opacity)[0m
-       Color: #a3be8c66 | Contrast: 2.04
-       Opacity: 40%
+       Color: #88C0D04D | Contrast: 1.73
+       Opacity: 30%
        Required: 3:1
     ΓÜá∩╕Å [33mRemoved lines invisible (recommend 30% opacity)[0m
-       Color: #FF8FA34d | Contrast: 1.63
+       Color: #BF616A4D | Contrast: 1.28
        Opacity: 30%
        Required: 3:1
 
-[1m≡ƒîÖ  Filter Machine[0m (dark)
+[1mΓÿÇ∩╕Å  Enchanted Grove[0m (light)
 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 
   [1mSYNTAX:[0m
-    Γ¥î [31mSyntax token fails readability: comment, comment keyword, comment markup[0m
-       Color: #6b7678 | Contrast: 2.84
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: comment storage.type[0m
-       Color: #6b7678 | Contrast: 2.84
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: meta.brackets entity.name.function.opera[0m
-       Color: #8b9798 | Contrast: 4.42
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.other.substitution[0m
-       Color: #8b9798 | Contrast: 4.42
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.operator.heading.restructuredtex[0m
-       Color: #8b9798 | Contrast: 4.42
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.other.parenthesis.elm[0m
-       Color: #8b9798 | Contrast: 4.42
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: meta.brace.round, meta.brace.square, key[0m
-       Color: #8b9798 | Contrast: 4.42
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: support.constant.handlebars[0m
-       Color: #8b9798 | Contrast: 4.42
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: support.function.delimiter.elm[0m
-       Color: #8b9798 | Contrast: 4.42
+    Γ¥î [31mSyntax token fails readability: meta.attribute-with-value.id string, met (minimalist design - acceptable if intentional)[0m
+       Color: #CD5C5C | Contrast: 3.64
        Required: 4.5:1
     Γ¥î [31mSyntax token fails readability: comment support, comment support.class[0m
-       Color: #6b7678 | Contrast: 2.84
+       Color: #7D9D7D | Contrast: 2.75
        Required: 4.5:1
 
   [1mSELECTION:[0m
     ΓÜá∩╕Å [33mSelection invisible (low contrast)[0m
-       Color: #b8c4c366 | Contrast: 2.46
-       Opacity: 40%
+       Color: #556B2F59 | Contrast: 1.64
+       Opacity: 35%
        Required: 3:1
 
   [1mDIFFS:[0m
     ΓÜá∩╕Å [33mInserted lines invisible (recommend 30% opacity)[0m
-       Color: #a2e57b66 | Contrast: 2.71
-       Opacity: 40%
+       Color: #556B2F4D | Contrast: 1.52
+       Opacity: 30%
        Required: 3:1
     ΓÜá∩╕Å [33mRemoved lines invisible (recommend 30% opacity)[0m
-       Color: #ff6d7e66 | Contrast: 1.87
-       Opacity: 40%
+       Color: #B222224D | Contrast: 1.68
+       Opacity: 30%
        Required: 3:1
 
   [1mFIND:[0m
-    Γä╣∩╕Å [34mNo visual hierarchy (all 4 properties identical)[0m
-       Color: #f2fffc66 | Contrast: N/A
+    Γä╣∩╕Å [34mFind highlight barely visible (recommend 30-50%)[0m
+       Opacity: 15%
+    Γä╣∩╕Å [34mFind highlight barely visible (recommend 30-50%)[0m
+       Opacity: 19%
 
-[1m≡ƒîÖ  Filter Moon[0m (dark)
+[1mΓÿÇ∩╕Å  Feisty Fusion Light[0m (light)
 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 
   [1mSYNTAX:[0m
-    Γ¥î [31mSyntax token fails readability: comment, comment keyword, comment markup[0m
-       Color: #6366F1 | Contrast: 4.27
+    Γ¥î [31mSyntax token fails readability: constant.numeric.line-number.find-in-fil[0m
+       Color: #d1d5db | Contrast: 1.42
        Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: comment storage.type[0m
-       Color: #6366F1 | Contrast: 4.27
+    Γ¥î [31mSyntax token fails readability: meta.attribute-with-value.id string, met[0m
+       Color: #ff9b5e | Contrast: 2.00
        Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: comment support, comment support.class[0m
-       Color: #6366F1 | Contrast: 4.27
+    Γ¥î [31mSyntax token fails readability: string[0m
+       Color: #b8860b | Contrast: 3.13
        Required: 4.5:1
 
   [1mSELECTION:[0m
     ΓÜá∩╕Å [33mSelection invisible (low contrast)[0m
-       Color: #C084FC66 | Contrast: 2.13
-       Opacity: 40%
+       Color: #805C0899 | Contrast: 2.60
+       Opacity: 60%
        Required: 3:1
 
   [1mDIFFS:[0m
     ΓÜá∩╕Å [33mInserted lines invisible (recommend 30% opacity)[0m
-       Color: #34D39966 | Contrast: 2.46
-       Opacity: 40%
+       Color: #54731633 | Contrast: 1.31
+       Opacity: 20%
        Required: 3:1
     ΓÜá∩╕Å [33mRemoved lines invisible (recommend 30% opacity)[0m
-       Color: #F8717166 | Contrast: 2.02
-       Opacity: 40%
-       Required: 3:1
-
-[1m≡ƒîÖ  Filter Octagon[0m (dark)
-ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
-
-  [1mSYNTAX:[0m
-    Γ¥î [31mSyntax token fails readability: comment, comment keyword, comment markup[0m
-       Color: #696d77 | Contrast: 2.73
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: comment storage.type[0m
-       Color: #696d77 | Contrast: 2.73
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: meta.brackets entity.name.function.opera[0m
-       Color: #888d94 | Contrast: 4.24
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.other.substitution[0m
-       Color: #888d94 | Contrast: 4.24
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.operator.heading.restructuredtex[0m
-       Color: #888d94 | Contrast: 4.24
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.other.parenthesis.elm[0m
-       Color: #888d94 | Contrast: 4.24
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: meta.brace.round, meta.brace.square, key[0m
-       Color: #888d94 | Contrast: 4.24
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: support.constant.handlebars[0m
-       Color: #888d94 | Contrast: 4.24
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: support.function.delimiter.elm[0m
-       Color: #888d94 | Contrast: 4.24
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: comment support, comment support.class[0m
-       Color: #696d77 | Contrast: 2.73
-       Required: 4.5:1
-
-  [1mSELECTION:[0m
-    ΓÜá∩╕Å [33mSelection invisible (low contrast)[0m
-       Color: #b2b9bd66 | Contrast: 2.36
-       Opacity: 40%
-       Required: 3:1
-
-  [1mDIFFS:[0m
-    ΓÜá∩╕Å [33mInserted lines invisible (recommend 30% opacity)[0m
-       Color: #bad76166 | Contrast: 2.63
-       Opacity: 40%
-       Required: 3:1
-    ΓÜá∩╕Å [33mRemoved lines invisible (recommend 30% opacity)[0m
-       Color: #ff657a66 | Contrast: 1.88
-       Opacity: 40%
-       Required: 3:1
-
-  [1mFIND:[0m
-    Γä╣∩╕Å [34mNo visual hierarchy (all 4 properties identical)[0m
-       Color: #eaf2f166 | Contrast: N/A
-
-[1m≡ƒîÖ  Filter Ristretto[0m (dark)
-ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
-
-  [1mSYNTAX:[0m
-    Γ¥î [31mSyntax token fails readability: comment, comment keyword, comment markup[0m
-       Color: #72696a | Contrast: 2.82
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: comment storage.type[0m
-       Color: #72696a | Contrast: 2.82
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: meta.brackets entity.name.function.opera[0m
-       Color: #948a8b | Contrast: 4.48
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.other.substitution[0m
-       Color: #948a8b | Contrast: 4.48
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.operator.heading.restructuredtex[0m
-       Color: #948a8b | Contrast: 4.48
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.other.parenthesis.elm[0m
-       Color: #948a8b | Contrast: 4.48
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: meta.brace.round, meta.brace.square, key[0m
-       Color: #948a8b | Contrast: 4.48
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: support.constant.handlebars[0m
-       Color: #948a8b | Contrast: 4.48
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: support.function.delimiter.elm[0m
-       Color: #948a8b | Contrast: 4.48
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: comment support, comment support.class[0m
-       Color: #72696a | Contrast: 2.82
-       Required: 4.5:1
-
-  [1mSELECTION:[0m
-    ΓÜá∩╕Å [33mSelection invisible (low contrast)[0m
-       Color: #c3b7b866 | Contrast: 2.43
-       Opacity: 40%
-       Required: 3:1
-
-  [1mDIFFS:[0m
-    ΓÜá∩╕Å [33mInserted lines invisible (recommend 30% opacity)[0m
-       Color: #adda7866 | Contrast: 2.70
-       Opacity: 40%
-       Required: 3:1
-    ΓÜá∩╕Å [33mRemoved lines invisible (recommend 30% opacity)[0m
-       Color: #fd688366 | Contrast: 1.97
-       Opacity: 40%
-       Required: 3:1
-
-  [1mFIND:[0m
-    Γä╣∩╕Å [34mNo visual hierarchy (all 4 properties identical)[0m
-       Color: #fff1f366 | Contrast: N/A
-
-[1m≡ƒîÖ  Filter Spectrum[0m (dark)
-ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
-
-  [1mSYNTAX:[0m
-    Γ¥î [31mSyntax token fails readability: comment, comment keyword, comment markup[0m
-       Color: #69676c | Contrast: 2.85
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: comment storage.type[0m
-       Color: #69676c | Contrast: 2.85
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: comment support, comment support.class[0m
-       Color: #69676c | Contrast: 2.85
-       Required: 4.5:1
-
-  [1mSELECTION:[0m
-    ΓÜá∩╕Å [33mSelection invisible (low contrast)[0m
-       Color: #bab6c066 | Contrast: 2.44
-       Opacity: 40%
-       Required: 3:1
-
-  [1mDIFFS:[0m
-    ΓÜá∩╕Å [33mInserted lines invisible (recommend 30% opacity)[0m
-       Color: #7bd88f66 | Contrast: 2.63
-       Opacity: 40%
-       Required: 3:1
-    ΓÜá∩╕Å [33mRemoved lines invisible (recommend 30% opacity)[0m
-       Color: #fc618d66 | Contrast: 1.93
-       Opacity: 40%
-       Required: 3:1
-
-  [1mFIND:[0m
-    Γä╣∩╕Å [34mNo visual hierarchy (all 4 properties identical)[0m
-       Color: #f7f1ff66 | Contrast: N/A
-
-[1mΓÿÇ∩╕Å  Filter Sun[0m (light)
-ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
-
-  [1mSYNTAX:[0m
-    Γ¥î [31mSyntax token fails readability: comment, comment keyword, comment markup[0m
-       Color: #a59c9c | Contrast: 2.36
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: comment storage.type[0m
-       Color: #a59c9c | Contrast: 2.36
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: entity.name.section[0m
-       Color: #b16803 | Contrast: 3.81
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: entity.name.function, entity.name.functi[0m
-       Color: #218871 | Contrast: 3.83
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: entity.name.type.class.templated, entity[0m
-       Color: #2473b6 | Contrast: 4.40
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: entity.name.function.preprocessor[0m
-       Color: #2473b6 | Contrast: 4.40
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: entity.name[0m
-       Color: #218871 | Contrast: 3.83
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: entity.name.class[0m
-       Color: #2473b6 | Contrast: 4.40
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: entity.name.function[0m
-       Color: #218871 | Contrast: 3.83
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: entity.name.tag, entity.name.tag.js.jsx [0m
-       Color: #ce4770 | Contrast: 3.89
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: source.ansible entity.name.tag[0m
-       Color: #2473b6 | Contrast: 4.40
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: entity.name.function.operator[0m
-       Color: #ce4770 | Contrast: 3.89
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: meta.brackets entity.name.function.opera[0m
-       Color: #92898a | Contrast: 3.00
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: entity.name.type, entity.name.type.class[0m
-       Color: #2473b6 | Contrast: 4.40
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: entity.name.function, support.function[0m
-       Color: #218871 | Contrast: 3.83
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: entity.name.operator.custom-literal.stri[0m
-       Color: #b16803 | Contrast: 3.81
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: entity.name.type.rust[0m
-       Color: #2473b6 | Contrast: 4.40
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: entity.name.lifetime.rust[0m
-       Color: #ce4770 | Contrast: 3.89
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword[0m
-       Color: #ce4770 | Contrast: 3.89
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.control[0m
-       Color: #ce4770 | Contrast: 3.89
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.control.directive[0m
-       Color: #ce4770 | Contrast: 3.89
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.operator, keyword.operator.membe[0m
-       Color: #ce4770 | Contrast: 3.89
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.other.substitution[0m
-       Color: #92898a | Contrast: 3.00
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.other.template.begin, keyword.ot[0m
-       Color: #ce4770 | Contrast: 3.89
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.operator.heading.restructuredtex[0m
-       Color: #92898a | Contrast: 3.00
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.other.parenthesis.elm[0m
-       Color: #92898a | Contrast: 3.00
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.other.fn.rust, keyword.other.rus[0m
-       Color: #2473b6 | Contrast: 4.40
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.control.rust, keyword.operator.m[0m
-       Color: #ce4770 | Contrast: 3.89
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.declaration.class.ruby, keyword.[0m
-       Color: #ce4770 | Contrast: 3.89
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: markup.heading[0m
-       Color: #b16803 | Contrast: 3.81
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: meta.function-call.generic.python, suppo[0m
-       Color: #218871 | Contrast: 3.83
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: punctuation.section.embedded, punctuatio[0m
-       Color: #d4572b | Contrast: 3.56
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: meta.brace.round, meta.brace.square, key[0m
-       Color: #92898a | Contrast: 3.00
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: storage[0m
-       Color: #ce4770 | Contrast: 3.89
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: storage.type[0m
-       Color: #2473b6 | Contrast: 4.40
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: storage.type.extends[0m
-       Color: #ce4770 | Contrast: 3.89
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: storage.type.function.arrow[0m
-       Color: #ce4770 | Contrast: 3.89
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: storage.modifier, storage.type.modifier[0m
-       Color: #ce4770 | Contrast: 3.89
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: storage.modifier.visibility.rust, storag[0m
-       Color: #ce4770 | Contrast: 3.89
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: storage.modifier.const.rust, storage.mod[0m
-       Color: #2473b6 | Contrast: 4.40
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: storage.type.rust, storage.modifier.cons[0m
-       Color: #ce4770 | Contrast: 3.89
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: support.constant[0m
-       Color: #2473b6 | Contrast: 4.40
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: support.constant.handlebars[0m
-       Color: #92898a | Contrast: 3.00
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: support.function[0m
-       Color: #218871 | Contrast: 3.83
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: support.macro[0m
-       Color: #218871 | Contrast: 3.83
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: support.function.delimiter.elm[0m
-       Color: #92898a | Contrast: 3.00
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: support.type, entity.name.type.object.co[0m
-       Color: #2473b6 | Contrast: 4.40
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: support.variable, support.variable.prope[0m
-       Color: #2473b6 | Contrast: 4.40
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: support.class[0m
-       Color: #2473b6 | Contrast: 4.40
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: comment support, comment support.class[0m
-       Color: #a59c9c | Contrast: 2.36
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: variable.parameter, parameters variable.[0m
-       Color: #d4572b | Contrast: 3.56
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: variable.function[0m
-       Color: #218871 | Contrast: 3.83
-       Required: 4.5:1
-
-  [1mSELECTION:[0m
-    ΓÜá∩╕Å [33mSelection invisible (low contrast)[0m
-       Color: #72696d66 | Contrast: 1.70
-       Opacity: 40%
-       Required: 3:1
-
-  [1mDIFFS:[0m
-    ΓÜá∩╕Å [33mInserted lines invisible (recommend 30% opacity)[0m
-       Color: #21887166 | Contrast: 1.64
-       Opacity: 40%
-       Required: 3:1
-    ΓÜá∩╕Å [33mRemoved lines invisible (recommend 30% opacity)[0m
-       Color: #ce477066 | Contrast: 1.68
-       Opacity: 40%
-       Required: 3:1
-
-  [1mFIND:[0m
-    Γä╣∩╕Å [34mNo visual hierarchy (all 4 properties identical)[0m
-       Color: #2c232e66 | Contrast: N/A
-
-[1m≡ƒîÖ  OGE Dark[0m (dark)
-ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
-
-  [1mSYNTAX:[0m
-    Γ¥î [31mSyntax token fails readability: comment keyword.codetag.notation[0m
-       Color: #8B5CF6 | Contrast: 4.26
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: entity.name.label[0m
-       Color: #8B5CF6 | Contrast: 4.26
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: entity.name.constant[0m
-       Color: #8B5CF6 | Contrast: 4.26
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: entity.name.operator.custom-literal.numb[0m
-       Color: #8B5CF6 | Contrast: 4.26
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: entity.name.constant.preprocessor, meta.[0m
-       Color: #8B5CF6 | Contrast: 4.26
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: storage.class.restructuredtext.ref[0m
-       Color: #8B5CF6 | Contrast: 4.26
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: support.constant.core.rust[0m
-       Color: #8B5CF6 | Contrast: 4.26
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: comment support, comment support.class[0m
-       Color: #6B7280 | Contrast: 3.73
-       Required: 4.5:1
-
-  [1mSELECTION:[0m
-    ΓÜá∩╕Å [33mSelection invisible (low contrast)[0m
-       Color: #0F766E40 | Contrast: 1.24
-       Opacity: 25%
-       Required: 3:1
-
-  [1mDIFFS:[0m
-    ΓÜá∩╕Å [33mInserted lines invisible (recommend 30% opacity)[0m
-       Color: #10B98166 | Contrast: 2.12
-       Opacity: 40%
-       Required: 3:1
-    ΓÜá∩╕Å [33mRemoved lines invisible (recommend 30% opacity)[0m
-       Color: #EF444466 | Contrast: 1.73
-       Opacity: 40%
-       Required: 3:1
-
-[1mΓÿÇ∩╕Å  OGE Light[0m (light)
-ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
-
-  [1mSYNTAX:[0m
-    Γ¥î [31mSyntax token fails readability: comment, comment keyword, comment markup[0m
-       Color: #94A3B8 | Contrast: 2.44
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: comment storage.type[0m
-       Color: #94A3B8 | Contrast: 2.44
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: entity.name.section[0m
-       Color: #D97706 | Contrast: 3.03
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: entity.name.function, entity.name.functi[0m
-       Color: #059669 | Contrast: 3.59
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: entity.name[0m
-       Color: #059669 | Contrast: 3.59
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: entity.name.function[0m
-       Color: #059669 | Contrast: 3.59
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: entity.name.tag, entity.name.tag.js.jsx [0m
-       Color: #DC2666 | Contrast: 4.43
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: source.ansible entity.name.tag[0m
-       Color: #0EA5E9 | Contrast: 2.64
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: entity.name.function.operator[0m
-       Color: #DC2666 | Contrast: 4.43
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: entity.name.function, support.function[0m
-       Color: #059669 | Contrast: 3.59
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: entity.name.operator.custom-literal.stri[0m
-       Color: #D97706 | Contrast: 3.03
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: entity.name.type.rust[0m
-       Color: #0EA5E9 | Contrast: 2.64
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: entity.name.lifetime.rust[0m
-       Color: #DC2666 | Contrast: 4.43
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword[0m
-       Color: #DC2666 | Contrast: 4.43
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.control[0m
-       Color: #DC2666 | Contrast: 4.43
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.control.directive[0m
-       Color: #DC2666 | Contrast: 4.43
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.operator, keyword.operator.membe[0m
-       Color: #DC2666 | Contrast: 4.43
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.other.template.begin, keyword.ot[0m
-       Color: #DC2666 | Contrast: 4.43
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.other.fn.rust, keyword.other.rus[0m
-       Color: #0EA5E9 | Contrast: 2.64
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.control.rust, keyword.operator.m[0m
-       Color: #DC2666 | Contrast: 4.43
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.declaration.class.ruby, keyword.[0m
-       Color: #DC2666 | Contrast: 4.43
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: markup.heading[0m
-       Color: #D97706 | Contrast: 3.03
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: meta.function-call.generic.python, suppo[0m
-       Color: #059669 | Contrast: 3.59
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: punctuation.section.embedded, punctuatio[0m
-       Color: #EA580C | Contrast: 3.39
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: storage[0m
-       Color: #DC2666 | Contrast: 4.43
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: storage.type[0m
-       Color: #0EA5E9 | Contrast: 2.64
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: storage.type.extends[0m
-       Color: #DC2666 | Contrast: 4.43
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: storage.type.function.arrow[0m
-       Color: #DC2666 | Contrast: 4.43
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: storage.modifier, storage.type.modifier[0m
-       Color: #DC2666 | Contrast: 4.43
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: storage.modifier.visibility.rust, storag[0m
-       Color: #DC2666 | Contrast: 4.43
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: storage.modifier.const.rust, storage.mod[0m
-       Color: #0EA5E9 | Contrast: 2.64
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: storage.type.rust, storage.modifier.cons[0m
-       Color: #DC2666 | Contrast: 4.43
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: support.constant[0m
-       Color: #0EA5E9 | Contrast: 2.64
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: support.function[0m
-       Color: #059669 | Contrast: 3.59
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: support.macro[0m
-       Color: #059669 | Contrast: 3.59
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: support.type, entity.name.type.object.co[0m
-       Color: #0EA5E9 | Contrast: 2.64
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: support.variable, support.variable.prope[0m
-       Color: #0EA5E9 | Contrast: 2.64
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: support.class[0m
-       Color: #0EA5E9 | Contrast: 2.64
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: comment support, comment support.class[0m
-       Color: #94A3B8 | Contrast: 2.44
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: variable.parameter, parameters variable.[0m
-       Color: #EA580C | Contrast: 3.39
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: variable.function[0m
-       Color: #059669 | Contrast: 3.59
-       Required: 4.5:1
-
-  [1mSELECTION:[0m
-    ΓÜá∩╕Å [33mSelection invisible (low contrast)[0m
-       Color: #0F766E40 | Contrast: 1.43
-       Opacity: 25%
-       Required: 3:1
-
-  [1mDIFFS:[0m
-    ΓÜá∩╕Å [33mInserted lines invisible (recommend 30% opacity)[0m
-       Color: #05966966 | Contrast: 1.64
-       Opacity: 40%
-       Required: 3:1
-    ΓÜá∩╕Å [33mRemoved lines invisible (recommend 30% opacity)[0m
-       Color: #DC262666 | Contrast: 1.89
-       Opacity: 40%
-       Required: 3:1
-
-  [1mFIND:[0m
-    Γä╣∩╕Å [34mNo visual hierarchy (all 4 properties identical)[0m
-       Color: #0F172A66 | Contrast: N/A
-
-  [1mBRACKETS:[0m
-    Γ¥î [31mBracket color 5 fails visibility[0m
-       Color: #0EA5E9 | Contrast: 2.64
+       Color: #C4223D33 | Contrast: 1.38
+       Opacity: 20%
        Required: 3:1
 
 [1mΓÿÇ∩╕Å  Tokyo Day[0m (light)
 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 
   [1mSYNTAX:[0m
-    Γ¥î [31mSyntax token fails readability: comment, comment keyword, comment markup[0m
-       Color: #95A5A6 | Contrast: 2.24
+    Γ¥î [31mSyntax token fails readability: comment.git-status.header.local[0m
+       Color: #2E7FA8 | Contrast: 3.91
        Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: comment storage.type[0m
-       Color: #95A5A6 | Contrast: 2.24
+    Γ¥î [31mSyntax token fails readability: constant.numeric[0m
+       Color: #C9661C | Contrast: 3.41
        Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: comment keyword.codetag.notation[0m
-       Color: #9B59B6 | Contrast: 4.10
+    Γ¥î [31mSyntax token fails readability: constant.numeric.line-number.match.find-[0m
+       Color: #9B8000 | Contrast: 3.36
        Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: variable.function[0m
-       Color: #2ECC71 | Contrast: 1.84
+    Γ¥î [31mSyntax token fails readability: entity.name.section[0m
+       Color: #9B8000 | Contrast: 3.36
+       Required: 4.5:1
+    Γ¥î [31mSyntax token fails readability: entity.name.function, entity.name.functi[0m
+       Color: #2E7FA8 | Contrast: 3.91
+       Required: 4.5:1
+    Γ¥î [31mSyntax token fails readability: entity.name.type.class.templated, entity[0m
+       Color: #9B8000 | Contrast: 3.36
+       Required: 4.5:1
+    Γ¥î [31mSyntax token fails readability: entity.name.function.preprocessor[0m
+       Color: #2E7FA8 | Contrast: 3.91
+       Required: 4.5:1
+    Γ¥î [31mSyntax token fails readability: entity.name.class[0m
+       Color: #9B8000 | Contrast: 3.36
+       Required: 4.5:1
+    Γ¥î [31mSyntax token fails readability: entity.name.function[0m
+       Color: #2E7FA8 | Contrast: 3.91
+       Required: 4.5:1
+    Γ¥î [31mSyntax token fails readability: entity.name.type, entity.name.type.class[0m
+       Color: #9B8000 | Contrast: 3.36
+       Required: 4.5:1
+    Γ¥î [31mSyntax token fails readability: entity.name.function, support.function[0m
+       Color: #2E7FA8 | Contrast: 3.91
+       Required: 4.5:1
+    Γ¥î [31mSyntax token fails readability: entity.name.operator.custom-literal.stri[0m
+       Color: #1D8548 | Contrast: 4.09
+       Required: 4.5:1
+    Γ¥î [31mSyntax token fails readability: entity.name.type.rust[0m
+       Color: #9B8000 | Contrast: 3.36
+       Required: 4.5:1
+    Γ¥î [31mSyntax token fails readability: markup.heading[0m
+       Color: #9B8000 | Contrast: 3.36
+       Required: 4.5:1
+    Γ¥î [31mSyntax token fails readability: meta.function-call.generic.python, suppo[0m
+       Color: #2E7FA8 | Contrast: 3.91
+       Required: 4.5:1
+    Γ¥î [31mSyntax token fails readability: meta.attribute-with-value.class string, [0m
+       Color: #9B8000 | Contrast: 3.36
+       Required: 4.5:1
+    Γ¥î [31mSyntax token fails readability: meta.attribute-with-value.id string, met[0m
+       Color: #C9661C | Contrast: 3.41
+       Required: 4.5:1
+    Γ¥î [31mSyntax token fails readability: storage.type[0m
+       Color: #2E7FA8 | Contrast: 3.91
+       Required: 4.5:1
+    Γ¥î [31mSyntax token fails readability: storage.modifier.const.rust, storage.mod[0m
+       Color: #2E7FA8 | Contrast: 3.91
+       Required: 4.5:1
+    Γ¥î [31mSyntax token fails readability: string[0m
+       Color: #1D8548 | Contrast: 4.09
+       Required: 4.5:1
+    Γ¥î [31mSyntax token fails readability: string.other.link.description.title[0m
+       Color: #2E7FA8 | Contrast: 3.91
+       Required: 4.5:1
+    Γ¥î [31mSyntax token fails readability: string.other.ref, string.other.restructu[0m
+       Color: #2E7FA8 | Contrast: 3.91
+       Required: 4.5:1
+    Γ¥î [31mSyntax token fails readability: support.function[0m
+       Color: #2E7FA8 | Contrast: 3.91
+       Required: 4.5:1
+    Γ¥î [31mSyntax token fails readability: support.type, entity.name.type.object.co[0m
+       Color: #2E7FA8 | Contrast: 3.91
+       Required: 4.5:1
+    Γ¥î [31mSyntax token fails readability: support.class[0m
+       Color: #9B8000 | Contrast: 3.36
        Required: 4.5:1
 
   [1mSELECTION:[0m
     ΓÜá∩╕Å [33mSelection invisible (low contrast)[0m
-       Color: #87CEEB40 | Contrast: 1.11
-       Opacity: 25%
+       Color: #87CEEB80 | Contrast: 1.24
+       Opacity: 50%
        Required: 3:1
+
+[1m≡ƒîÖ  Classic[0m (dark)
+ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  [1mSYNTAX:[0m
+    Γ¥î [31mSyntax token fails readability: constant.numeric.line-number.find-in-fil[0m
+       Color: #57584f | Contrast: 2.06
+       Required: 4.5:1
+
+  [1mDIFFS:[0m
+    ΓÜá∩╕Å [33mRemoved lines invisible (recommend 30% opacity)[0m
+       Color: #FF4D8AB3 | Contrast: 2.98
+       Opacity: 70%
+       Required: 3:1
+    Γ¥î [31mRemoved lines TOO OPAQUE - obscures code text (max 50%, recommend 30%)[0m
+       Color: #FF4D8AB3 | Contrast: N/A
+       Opacity: 70%
+
+[1m≡ƒîÖ  Cosmic Void[0m (dark)
+ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  [1mSYNTAX:[0m
+    Γ¥î [31mSyntax token fails readability: constant.numeric.line-number.find-in-fil[0m
+       Color: #334155 | Contrast: 1.95
+       Required: 4.5:1
+
+  [1mSELECTION:[0m
+    Γ¥î [31mSelection TOO OPAQUE - selected text unreadable (max 60%, recommend 30-40%)[0m
+       Color: #3B82F6B3 | Contrast: N/A
+       Opacity: 70%
+
+  [1mDIFFS:[0m
+    Γ¥î [31mInserted lines TOO OPAQUE - obscures code text (max 50%, recommend 30%)[0m
+       Color: #10B981A0 | Contrast: N/A
+       Opacity: 63%
+    Γ¥î [31mRemoved lines TOO OPAQUE - obscures code text (max 50%, recommend 30%)[0m
+       Color: #EF4444B3 | Contrast: N/A
+       Opacity: 70%
+
+[1m≡ƒîÖ  Feisty Fusion[0m (dark)
+ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  [1mSYNTAX:[0m
+    Γ¥î [31mSyntax token fails readability: constant.numeric.line-number.find-in-fil[0m
+       Color: #535763 | Contrast: 1.98
+       Required: 4.5:1
+
+  [1mDIFFS:[0m
+    Γ¥î [31mInserted lines TOO OPAQUE - obscures code text (max 50%, recommend 30%)[0m
+       Color: #bad761cc | Contrast: N/A
+       Opacity: 80%
+    Γ¥î [31mRemoved lines TOO OPAQUE - obscures code text (max 50%, recommend 30%)[0m
+       Color: #ff657acc | Contrast: N/A
+       Opacity: 80%
+
+[1m≡ƒîÖ  Filter Machine[0m (dark)
+ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  [1mSYNTAX:[0m
+    Γ¥î [31mSyntax token fails readability: constant.numeric.line-number.find-in-fil[0m
+       Color: #545f62 | Contrast: 2.02
+       Required: 4.5:1
+
+  [1mDIFFS:[0m
+    Γ¥î [31mInserted lines TOO OPAQUE - obscures code text (max 50%, recommend 30%)[0m
+       Color: #a2e57bcc | Contrast: N/A
+       Opacity: 80%
+    Γ¥î [31mRemoved lines TOO OPAQUE - obscures code text (max 50%, recommend 30%)[0m
+       Color: #ff6d7ecc | Contrast: N/A
+       Opacity: 80%
+
+[1m≡ƒîÖ  Filter Moon[0m (dark)
+ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  [1mSELECTION:[0m
+    Γ¥î [31mSelection TOO OPAQUE - selected text unreadable (max 60%, recommend 30-40%)[0m
+       Color: #C084FCcc | Contrast: N/A
+       Opacity: 80%
+
+  [1mDIFFS:[0m
+    Γ¥î [31mInserted lines TOO OPAQUE - obscures code text (max 50%, recommend 30%)[0m
+       Color: #34D399cc | Contrast: N/A
+       Opacity: 80%
+    Γ¥î [31mRemoved lines TOO OPAQUE - obscures code text (max 50%, recommend 30%)[0m
+       Color: #F87171cc | Contrast: N/A
+       Opacity: 80%
+
+[1m≡ƒîÖ  Filter Octagon[0m (dark)
+ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  [1mSYNTAX:[0m
+    Γ¥î [31mSyntax token fails readability: constant.numeric.line-number.find-in-fil[0m
+       Color: #535763 | Contrast: 1.96
+       Required: 4.5:1
+
+  [1mSELECTION:[0m
+    Γ¥î [31mSelection TOO OPAQUE - selected text unreadable (max 60%, recommend 30-40%)[0m
+       Color: #b2b9bdcc | Contrast: N/A
+       Opacity: 80%
+
+  [1mDIFFS:[0m
+    Γ¥î [31mInserted lines TOO OPAQUE - obscures code text (max 50%, recommend 30%)[0m
+       Color: #bad761cc | Contrast: N/A
+       Opacity: 80%
+    Γ¥î [31mRemoved lines TOO OPAQUE - obscures code text (max 50%, recommend 30%)[0m
+       Color: #ff657acc | Contrast: N/A
+       Opacity: 80%
+
+[1m≡ƒîÖ  Filter Ristretto[0m (dark)
+ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  [1mSYNTAX:[0m
+    Γ¥î [31mSyntax token fails readability: constant.numeric.line-number.find-in-fil[0m
+       Color: #5b5353 | Contrast: 2.01
+       Required: 4.5:1
+
+  [1mDIFFS:[0m
+    Γ¥î [31mInserted lines TOO OPAQUE - obscures code text (max 50%, recommend 30%)[0m
+       Color: #adda78cc | Contrast: N/A
+       Opacity: 80%
+    Γ¥î [31mRemoved lines TOO OPAQUE - obscures code text (max 50%, recommend 30%)[0m
+       Color: #fd6883cc | Contrast: N/A
+       Opacity: 80%
 
   [1mFIND:[0m
-    Γä╣∩╕Å [34mNo visual hierarchy (all 4 properties identical)[0m
-       Color: #87CEEB40 | Contrast: N/A
+    Γä╣∩╕Å [34mNo visual hierarchy (all 2 properties identical)[0m
+       Color: #fff1f366 | Contrast: N/A
 
-  [1mBRACKETS:[0m
-    Γ¥î [31mBracket color 1 fails visibility[0m
-       Color: #87CEEB | Contrast: 1.53
+[1mΓÿÇ∩╕Å  Filter Sun[0m (light)
+ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  [1mSYNTAX:[0m
+    Γ¥î [31mSyntax token fails readability: constant.numeric.line-number.find-in-fil[0m
+       Color: #beb5b3 | Contrast: 1.77
+       Required: 4.5:1
+
+  [1mSELECTION:[0m
+    Γ¥î [31mSelection TOO OPAQUE - selected text unreadable (max 60%, recommend 30-40%)[0m
+       Color: #4D4448cc | Contrast: N/A
+       Opacity: 80%
+
+  [1mDIFFS:[0m
+    ΓÜá∩╕Å [33mInserted lines invisible (recommend 30% opacity)[0m
+       Color: #21887133 | Contrast: 1.27
+       Opacity: 20%
        Required: 3:1
-    Γ¥î [31mBracket color 2 fails visibility[0m
-       Color: #E67E22 | Contrast: 2.50
+    ΓÜá∩╕Å [33mRemoved lines invisible (recommend 30% opacity)[0m
+       Color: #A8355833 | Contrast: 1.35
+       Opacity: 20%
        Required: 3:1
-    Γ¥î [31mBracket color 3 fails visibility (nearly invisible!)[0m
-       Color: #FFD700 | Contrast: 1.23
-       Required: 3:1
-    Γ¥î [31mBracket color 4 fails visibility[0m
-       Color: #2ECC71 | Contrast: 1.84
-       Required: 3:1
+
+[1m≡ƒîÖ  OGE Dark[0m (dark)
+ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  [1mSYNTAX:[0m
+    Γ¥î [31mSyntax token fails readability: constant.numeric.line-number.find-in-fil[0m
+       Color: #4B5563 | Contrast: 2.38
+       Required: 4.5:1
+
+  [1mSELECTION:[0m
+    Γ¥î [31mSelection TOO OPAQUE - selected text unreadable (max 60%, recommend 30-40%)[0m
+       Color: #14B8A6B3 | Contrast: N/A
+       Opacity: 70%
+
+  [1mDIFFS:[0m
+    Γ¥î [31mInserted lines TOO OPAQUE - obscures code text (max 50%, recommend 30%)[0m
+       Color: #10B981cc | Contrast: N/A
+       Opacity: 80%
+    Γ¥î [31mRemoved lines TOO OPAQUE - obscures code text (max 50%, recommend 30%)[0m
+       Color: #EF4444cc | Contrast: N/A
+       Opacity: 80%
 
 [1m≡ƒîÖ  Tokyo Night[0m (dark)
 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 
-  [1mSYNTAX:[0m
-    Γ¥î [31mSyntax token fails readability: comment, comment keyword, comment markup[0m
-       Color: #565f89 | Contrast: 2.35
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: comment storage.type[0m
-       Color: #565f89 | Contrast: 2.35
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: meta.brackets entity.name.function.opera[0m
-       Color: #565f89 | Contrast: 2.35
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.other.substitution[0m
-       Color: #565f89 | Contrast: 2.35
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.operator.heading.restructuredtex[0m
-       Color: #565f89 | Contrast: 2.35
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: keyword.other.parenthesis.elm[0m
-       Color: #565f89 | Contrast: 2.35
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: meta.brace.round, meta.brace.square, key[0m
-       Color: #565f89 | Contrast: 2.35
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: support.constant.handlebars[0m
-       Color: #565f89 | Contrast: 2.35
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: support.function.delimiter.elm[0m
-       Color: #565f89 | Contrast: 2.35
-       Required: 4.5:1
-    Γ¥î [31mSyntax token fails readability: comment support, comment support.class[0m
-       Color: #565f89 | Contrast: 2.35
-       Required: 4.5:1
+  [1mSELECTION:[0m
+    Γ¥î [31mSelection TOO OPAQUE - selected text unreadable (max 60%, recommend 30-40%)[0m
+       Color: #7aa2f7cc | Contrast: N/A
+       Opacity: 80%
+
+  [1mDIFFS:[0m
+    Γ¥î [31mInserted lines TOO OPAQUE - obscures code text (max 50%, recommend 30%)[0m
+       Color: #9ece6acc | Contrast: N/A
+       Opacity: 80%
+    Γ¥î [31mRemoved lines TOO OPAQUE - obscures code text (max 50%, recommend 30%)[0m
+       Color: #f7768ecc | Contrast: N/A
+       Opacity: 80%
+
+[1mΓÿÇ∩╕Å  Arctic Nord Light[0m (light)
+ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 
   [1mSELECTION:[0m
     ΓÜá∩╕Å [33mSelection invisible (low contrast)[0m
-       Color: #364a8266 | Contrast: 1.23
-       Opacity: 40%
+       Color: #5E81AC59 | Contrast: 1.44
+       Opacity: 35%
        Required: 3:1
 
   [1mDIFFS:[0m
     ΓÜá∩╕Å [33mInserted lines invisible (recommend 30% opacity)[0m
-       Color: #9ece6a66 | Contrast: 2.47
-       Opacity: 40%
+       Color: #5E81AC4D | Contrast: 1.37
+       Opacity: 30%
        Required: 3:1
     ΓÜá∩╕Å [33mRemoved lines invisible (recommend 30% opacity)[0m
-       Color: #f7768e66 | Contrast: 1.98
-       Opacity: 40%
+       Color: #BF616A4D | Contrast: 1.40
+       Opacity: 30%
        Required: 3:1
 
-  [1mFIND:[0m
-    Γä╣∩╕Å [34mNo visual hierarchy (all 4 properties identical)[0m
-       Color: #3d59a166 | Contrast: N/A
+  [1mBRACKETS:[0m
+    Γ¥î [31mBracket color 4 fails visibility[0m
+       Color: #a3be8c | Contrast: 1.67
+       Required: 3:1
+
+[1mΓÿÇ∩╕Å  Cosmic Void Light[0m (light)
+ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  [1mDIFFS:[0m
+    ΓÜá∩╕Å [33mInserted lines invisible (recommend 30% opacity)[0m
+       Color: #04785733 | Contrast: 1.33
+       Opacity: 20%
+       Required: 3:1
+    ΓÜá∩╕Å [33mRemoved lines invisible (recommend 30% opacity)[0m
+       Color: #B91C1C33 | Contrast: 1.41
+       Opacity: 20%
+       Required: 3:1
 
 [1m≡ƒîÖ  Cyberpunk Neon[0m (dark)
 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 
   [1mSELECTION:[0m
-    ΓÜá∩╕Å [33mSelection invisible (low contrast)[0m
-       Color: #9966FF80 | Contrast: 2.17
-       Opacity: 50%
-       Required: 3:1
+    Γ¥î [31mSelection TOO OPAQUE - selected text unreadable (max 60%, recommend 30-40%)[0m
+       Color: #9966FFb3 | Contrast: N/A
+       Opacity: 70%
 
   [1mDIFFS:[0m
     ΓÜá∩╕Å [33mInserted lines invisible (recommend 30% opacity)[0m
-       Color: #00ff9966 | Contrast: 2.82
-       Opacity: 40%
+       Color: #00ff994D | Contrast: 2.02
+       Opacity: 30%
        Required: 3:1
     ΓÜá∩╕Å [33mRemoved lines invisible (recommend 30% opacity)[0m
-       Color: #ff336666 | Contrast: 1.80
-       Opacity: 40%
+       Color: #ff33664D | Contrast: 1.50
+       Opacity: 30%
        Required: 3:1
 
 [1m≡ƒîÖ  Enchanted Grove Dark[0m (dark)
@@ -773,59 +438,93 @@ Analyzing 20 themes for accessibility issues...
 
   [1mSELECTION:[0m
     ΓÜá∩╕Å [33mSelection invisible (low contrast)[0m
-       Color: #3D5A3FE0 | Contrast: 1.77
-       Opacity: 88%
+       Color: #8ACC9059 | Contrast: 2.05
+       Opacity: 35%
        Required: 3:1
 
   [1mDIFFS:[0m
     ΓÜá∩╕Å [33mInserted lines invisible (recommend 30% opacity)[0m
-       Color: #228B22A0 | Contrast: 1.94
-       Opacity: 63%
+       Color: #90D8964D | Contrast: 1.96
+       Opacity: 30%
        Required: 3:1
     ΓÜá∩╕Å [33mRemoved lines invisible (recommend 30% opacity)[0m
-       Color: #FF6B6B80 | Contrast: 2.42
-       Opacity: 50%
+       Color: #FFB3B34D | Contrast: 1.92
+       Opacity: 30%
        Required: 3:1
 
-[1m≡ƒîÖ  Feisty Fusion[0m (dark)
+[1m≡ƒîÖ  Filter Spectrum[0m (dark)
 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  [1mSYNTAX:[0m
+    Γ¥î [31mSyntax token fails readability: constant.numeric.line-number.find-in-fil[0m
+       Color: #525053 | Contrast: 2.18
+       Required: 4.5:1
 
   [1mSELECTION:[0m
     ΓÜá∩╕Å [33mSelection invisible (low contrast)[0m
-       Color: #ffd76d66 | Contrast: 2.90
-       Opacity: 40%
+       Color: #00d9ff40 | Contrast: 1.77
+       Opacity: 25%
        Required: 3:1
 
   [1mDIFFS:[0m
     ΓÜá∩╕Å [33mInserted lines invisible (recommend 30% opacity)[0m
-       Color: #bad76166 | Contrast: 2.63
-       Opacity: 40%
+       Color: #55ff884d | Contrast: 2.33
+       Opacity: 30%
        Required: 3:1
     ΓÜá∩╕Å [33mRemoved lines invisible (recommend 30% opacity)[0m
-       Color: #bad76166 | Contrast: 2.63
-       Opacity: 40%
+       Color: #ff55554d | Contrast: 1.56
+       Opacity: 30%
        Required: 3:1
 
   [1mFIND:[0m
     Γä╣∩╕Å [34mFind highlight barely visible (recommend 30-50%)[0m
-       Opacity: 10%
+       Opacity: 19%
+    Γä╣∩╕Å [34mFind highlight barely visible (recommend 30-50%)[0m
+       Opacity: 19%
+    Γä╣∩╕Å [34mFind highlight barely visible (recommend 30-50%)[0m
+       Opacity: 19%
 
-[1m≡ƒîÖ  Classic[0m (dark)
+[1mΓÿÇ∩╕Å  Neon Pink Light[0m (light)
 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 
-  [1mDIFFS:[0m
-    ΓÜá∩╕Å [33mRemoved lines invisible (recommend 30% opacity)[0m
-       Color: #FF4D8AB3 | Contrast: 2.98
-       Opacity: 70%
+  [1mSELECTION:[0m
+    ΓÜá∩╕Å [33mSelection invisible (low contrast)[0m
+       Color: #ff008066 | Contrast: 1.97
+       Opacity: 40%
        Required: 3:1
-
-[1mΓÿÇ∩╕Å  Enchanted Grove[0m (light)
-ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 
   [1mDIFFS:[0m
     ΓÜá∩╕Å [33mInserted lines invisible (recommend 30% opacity)[0m
-       Color: #228B22C0 | Contrast: 2.76
-       Opacity: 75%
+       Color: #00885633 | Contrast: 1.31
+       Opacity: 20%
+       Required: 3:1
+    ΓÜá∩╕Å [33mRemoved lines invisible (recommend 30% opacity)[0m
+       Color: #CC004433 | Contrast: 1.45
+       Opacity: 20%
+       Required: 3:1
+
+[1mΓÿÇ∩╕Å  OGE Light[0m (light)
+ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  [1mSYNTAX:[0m
+    Γ¥î [31mSyntax token fails readability: constant.numeric.line-number.find-in-fil[0m
+       Color: #CBD5E1 | Contrast: 1.41
+       Required: 4.5:1
+
+  [1mSELECTION:[0m
+    ΓÜá∩╕Å [33mSelection invisible (low contrast)[0m
+       Color: #0D5A5280 | Contrast: 2.44
+       Opacity: 50%
+       Required: 3:1
+
+  [1mDIFFS:[0m
+    ΓÜá∩╕Å [33mInserted lines invisible (recommend 30% opacity)[0m
+       Color: #05966933 | Contrast: 1.27
+       Opacity: 20%
+       Required: 3:1
+    ΓÜá∩╕Å [33mRemoved lines invisible (recommend 30% opacity)[0m
+       Color: #B01F5233 | Contrast: 1.40
+       Opacity: 20%
        Required: 3:1
 
 [1m[36mΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù[0m
@@ -833,30 +532,37 @@ Analyzing 20 themes for accessibility issues...
 [1m[36mΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥[0m
 
 [1mStatistics:[0m
-  Themes analyzed: 20
-  [31mCritical issues: 163[0m (text fails 4.5:1)
-  [33mHigh issues: 42[0m (UI fails 3:1)
-  [34mMedium issues: 9[0m (opacity/hierarchy)
+  Themes analyzed: 21
+  [31mCritical issues: 71[0m (text fails 4.5:1)
+  [33mHigh issues: 32[0m (UI fails 3:1)
+  [34mMedium issues: 6[0m (opacity/hierarchy)
 
 [1m[35mREFACTOR PRIORITY QUEUE:[0m
 
-[31m[1m≡ƒÜ¿ URGENT (11):[0m
-  - Arctic Nord (10 issues)
-  - Filter Machine (14 issues)
-  - Filter Moon (6 issues)
-  - Filter Octagon (14 issues)
-  - Filter Ristretto (14 issues)
-  - Filter Spectrum (7 issues)
-  - Filter Sun (56 issues)
-  - OGE Dark (11 issues)
-  - OGE Light (46 issues)
-  - Tokyo Day (10 issues)
-  - Tokyo Night (14 issues)
+[31m[1m≡ƒÜ¿ URGENT (4):[0m
+  - Arctic Nord (9 issues)
+  - Enchanted Grove (7 issues)
+  - Feisty Fusion Light (6 issues)
+  - Tokyo Day (26 issues)
 
-[34m[1mΓä╣∩╕Å  MEDIUM (3):[0m
+[33m[1mΓÜá∩╕Å  HIGH (10):[0m
+  - Classic (3 issues)
+  - Cosmic Void (4 issues)
+  - Feisty Fusion (3 issues)
+  - Filter Machine (3 issues)
+  - Filter Moon (3 issues)
+  - Filter Octagon (4 issues)
+  - Filter Ristretto (4 issues)
+  - Filter Sun (4 issues)
+  - OGE Dark (4 issues)
+  - Tokyo Night (3 issues)
+
+[34m[1mΓä╣∩╕Å  MEDIUM (7):[0m
+  - Arctic Nord Light (4 issues)
+  - Cosmic Void Light (2 issues)
   - Cyberpunk Neon (3 issues)
   - Enchanted Grove Dark (3 issues)
-  - Feisty Fusion (4 issues)
-
-[32m[1mΓ£à CLEAN (4):[0m No significant issues detected
+  - Filter Spectrum (7 issues)
+  - Neon Pink Light (3 issues)
+  - OGE Light (4 issues)
 

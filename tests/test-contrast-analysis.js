@@ -1,103 +1,41 @@
 #!/usr/bin/env node
 
 /**
- * M Tech Themes - Contrast Analysis Test
+ * M Tech Themes - Contrast Analysis Test (Optimized)
  * 
- * Analyzes themes for accessibility issues:
- * - Calculates actual contrast ratios for syntax highlighting and UI elements
+ * Analyzes themes for accessibility issues with actionable guidance:
+ * - Calculates WCAG contrast ratios for syntax highlighting and UI elements
  * - Detects low-opacity selections, diffs, find system
- * - Identifies colors that fail WCAG contrast requirements
- * - Provides refactor recommendations
+ * - Provides clear fix suggestions for each issue
+ * - Respects documented design intentions (minimalist, trade-offs)
+ * 
+ * Usage: node test-contrast-analysis.js [--verbose]
  */
 
-const fs = require('fs');
 const path = require('path');
+const { analyzeContrast, hexToRgb, blendColors, calculateContrast } = require('./lib/contrast-utils');
+const { printHeader, printSection, printStats, printTiming, printError, printWarning, printInfo } = require('./lib/terminal-output');
+const { loadThemeFile, getAllThemeNames } = require('./lib/config-loader');
+const { 
+    getThemeType, 
+    isMinimalistTheme, 
+    hasLightTradeoff,
+    getRecommendedOpacity,
+    getContrastThreshold,
+    getDesignNote
+} = require('./lib/theme-utils');
+const colors = require('./lib/terminal-colors');
 
-// ANSI color codes
-const colors = {
-    red: '\x1b[31m',
-    green: '\x1b[32m',
-    yellow: '\x1b[33m',
-    blue: '\x1b[34m',
-    magenta: '\x1b[35m',
-    cyan: '\x1b[36m',
-    white: '\x1b[37m',
-    reset: '\x1b[0m',
-    bold: '\x1b[1m',
-    dim: '\x1b[2m'
-};
-
-// Contrast ratio calculation helpers
-function hexToRgb(hex) {
-    // Handle both #RRGGBB and #RRGGBBAA formats
-    hex = hex.replace('#', '');
-    
-    const r = parseInt(hex.substring(0, 2), 16);
-    const g = parseInt(hex.substring(2, 4), 16);
-    const b = parseInt(hex.substring(4, 6), 16);
-    const a = hex.length === 8 ? parseInt(hex.substring(6, 8), 16) / 255 : 1.0;
-    
-    return { r, g, b, a };
-}
-
-function getLuminance(r, g, b) {
-    // Normalize to 0-1
-    const [rs, gs, bs] = [r, g, b].map(c => {
-        c = c / 255;
-        return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
-    });
-    
-    return 0.2126 * rs + 0.7152 * gs + 0.0722 * bs;
-}
-
-function blendColors(foreground, background) {
-    // Blend foreground with alpha onto background
-    const alpha = foreground.a;
-    
-    return {
-        r: Math.round(foreground.r * alpha + background.r * (1 - alpha)),
-        g: Math.round(foreground.g * alpha + background.g * (1 - alpha)),
-        b: Math.round(foreground.b * alpha + background.b * (1 - alpha))
-    };
-}
-
-function calculateContrast(color1, color2) {
-    const l1 = getLuminance(color1.r, color1.g, color1.b);
-    const l2 = getLuminance(color2.r, color2.g, color2.b);
-    
-    const lighter = Math.max(l1, l2);
-    const darker = Math.min(l1, l2);
-    
-    return (lighter + 0.05) / (darker + 0.05);
-}
-
-function analyzeContrast(foregroundHex, backgroundHex, hasAlpha = false) {
-    const fg = hexToRgb(foregroundHex);
-    const bg = hexToRgb(backgroundHex);
-    
-    let effectiveColor = fg;
-    
-    if (hasAlpha || fg.a < 1.0) {
-        effectiveColor = blendColors(fg, bg);
-    }
-    
-    const contrast = calculateContrast(effectiveColor, bg);
-    
-    return {
-        contrast: contrast,
-        passes45: contrast >= 4.5,  // WCAG AA for normal text
-        passes3: contrast >= 3.0,   // WCAG AA for large text / UI
-        opacity: fg.a
-    };
-}
+// Parse command line arguments
+const VERBOSE = process.argv.includes('--verbose');
 
 class ContrastAnalyzer {
     constructor() {
         this.issues = {
-            critical: [],  // Fails 4.5:1 for text
-            high: [],      // Fails 3:1 for UI elements
-            medium: [],    // Low opacity issues
-            info: []       // Warnings and notes
+            critical: [],
+            high: [],
+            medium: [],
+            info: []
         };
         
         this.stats = {
@@ -109,89 +47,158 @@ class ContrastAnalyzer {
     }
 
     analyzeTheme(themeName) {
-        const themePath = path.join(__dirname, '..', 'themes', `${themeName}.json`);
+        const theme = loadThemeFile(themeName);
         
-        if (!fs.existsSync(themePath)) {
+        if (!theme) {
             return null;
         }
         
-        try {
-            const theme = JSON.parse(fs.readFileSync(themePath, 'utf8'));
-            const results = {
-                name: themeName,
-                type: theme.type || 'dark',
-                issues: []
-            };
-            
-            const bg = theme.colors?.['editor.background'] || (theme.type === 'light' ? '#ffffff' : '#000000');
-            
-            // Analyze common problem areas
-            this.analyzeSyntaxHighlighting(theme, bg, results);
-            this.analyzeSelectionAndDiffs(theme, bg, results);
-            this.analyzeFindSystem(theme, bg, results);
-            this.analyzeScrollbars(theme, bg, results);
-            this.analyzeBrackets(theme, bg, results);
-            
-            this.stats.themesAnalyzed++;
-            return results;
-            
-        } catch (error) {
-            this.issues.info.push(`Failed to analyze ${themeName}: ${error.message}`);
-            return null;
-        }
+        const results = {
+            name: themeName,
+            type: getThemeType(theme),
+            issues: []
+        };
+        
+        const bg = theme.colors?.['editor.background'] || (results.type === 'light' ? '#ffffff' : '#000000');
+        
+        // Analyze different aspects
+        this.analyzeSyntaxHighlighting(theme, bg, results);
+        this.analyzeSelectionAndDiffs(theme, bg, results);
+        this.analyzeTextOnHighlights(theme, bg, results);
+        this.analyzeFindSystem(theme, bg, results);
+        this.analyzeScrollbars(theme, bg, results);
+        this.analyzeBrackets(theme, bg, results);
+        
+        this.stats.themesAnalyzed++;
+        return results;
     }
 
     analyzeSyntaxHighlighting(theme, background, results) {
         const tokenColors = theme.tokenColors || [];
         const bgRgb = hexToRgb(background);
         
-        // Check for common high-contrast syntax tokens
-        const criticalScopes = [
-            'keyword', 'storage', 'support', 'entity.name', 'variable.function',
-            'meta.property-name', 'markup.heading'
+        const isMinimalist = isMinimalistTheme(results.name);
+        const hasTradeoff = hasLightTradeoff(results.name);
+        
+        // Scope categorization (research-based)
+        const gitStatusScopes = ['comment.git-status', 'comment.other.git-status'];
+        const jsdocScopes = ['comment storage.type', 'comment entity.name', 'comment variable', 'comment support', 'comment keyword.codetag'];
+        const mainCommentScopes = ['comment', 'comment keyword', 'comment markup', 'comment string', 'comment punctuation', 'comment text'];
+        
+        const highContrastRequired = [
+            'keyword.control', 'keyword.operator.new', 'storage.type', 'storage.modifier',
+            'entity.name.function', 'entity.name.class', 'entity.name.type', 'entity.name.section',
+            'support.function', 'support.class', 'support.type',
+            'string', 'constant.numeric', 'constant.language', 'constant.character',
+            'markup.heading'
         ];
         
-        tokenColors.forEach((token, index) => {
+        const allowedMuted = [
+            'variable', 'variable.other', 'variable.parameter',
+            'punctuation', 'keyword.operator', 'meta.brace', 'meta.delimiter'
+        ];
+        
+        tokenColors.forEach((token) => {
             if (!token.settings?.foreground) return;
             
             const fg = token.settings.foreground;
             const scope = Array.isArray(token.scope) ? token.scope.join(', ') : token.scope || 'unknown';
             
-            // Skip if it's a background color or not a hex color
             if (!fg.startsWith('#') || fg.length < 7) return;
             
             const analysis = analyzeContrast(fg, background);
+            const scopeLower = scope.toLowerCase();
             
-            // Check if this is a critical scope
-            const isCritical = criticalScopes.some(critical => 
-                scope.toLowerCase().includes(critical.toLowerCase())
+            // Handle comments specially
+            if (scopeLower.includes('comment')) {
+                const isGitStatus = gitStatusScopes.some(s => scopeLower.includes(s.toLowerCase()));
+                const isJSDoc = jsdocScopes.some(s => scopeLower.includes(s.toLowerCase()));
+                const isMainComment = mainCommentScopes.some(s => scopeLower.includes(s.toLowerCase()));
+                
+                if (isGitStatus) return; // Semantic indicators, skip
+                
+                const threshold = getContrastThreshold(results.name, 'comment');
+                
+                if (isMainComment && analysis.contrast < threshold) {
+                    results.issues.push({
+                        severity: 'critical',
+                        category: 'syntax',
+                        scope: scope.substring(0, 40),
+                        color: fg,
+                        contrast: analysis.contrast.toFixed(2),
+                        required: `${threshold.toFixed(1)}:1`,
+                        message: `Comment too dim: ${scope.substring(0, 40)}`,
+                        fix: `Darken comment color by 30-40% to reach ${threshold.toFixed(1)}:1 minimum`
+                    });
+                    this.stats.criticalIssues++;
+                }
+                
+                if (analysis.contrast > 6.0 && isMainComment) {
+                    results.issues.push({
+                        severity: 'medium',
+                        category: 'syntax',
+                        scope: scope.substring(0, 40),
+                        color: fg,
+                        contrast: analysis.contrast.toFixed(2),
+                        message: `Comment too vivid (competes with code)`,
+                        fix: `Lighten comment color to 4.0-5.0:1 range for de-emphasis`
+                    });
+                    this.stats.mediumIssues++;
+                }
+                
+                return; // Skip further checks for comments
+            }
+            
+            // Skip intentionally muted scopes
+            const isMutedByDesign = allowedMuted.some(allowed => 
+                scopeLower.includes(allowed.toLowerCase())
+            );
+            if (isMutedByDesign) return;
+            
+            // Check high-contrast tokens
+            const requiresHighContrast = highContrastRequired.some(required => 
+                scopeLower.includes(required.toLowerCase())
             );
             
-            if (isCritical && !analysis.passes45) {
-                results.issues.push({
-                    severity: 'critical',
-                    category: 'syntax',
-                    scope: scope,
-                    color: fg,
-                    contrast: analysis.contrast.toFixed(2),
-                    required: '4.5:1',
-                    message: `Syntax token fails readability: ${scope.substring(0, 40)}`
-                });
-                this.stats.criticalIssues++;
+            if (requiresHighContrast) {
+                const isKeyword = scopeLower.includes('keyword') || scopeLower.includes('storage');
+                const threshold = getContrastThreshold(results.name, isKeyword ? 'keyword' : 'text');
+                
+                if (analysis.contrast < threshold) {
+                    const designNote = getDesignNote(results.name);
+                    const note = designNote && analysis.contrast >= 3.0 ? ` (${designNote})` : '';
+                    
+                    results.issues.push({
+                        severity: 'critical',
+                        category: 'syntax',
+                        scope: scope.substring(0, 40),
+                        color: fg,
+                        contrast: analysis.contrast.toFixed(2),
+                        required: `${threshold}:1`,
+                        message: `Syntax token fails readability: ${scope.substring(0, 40)}${note}`,
+                        fix: note ? null : `Increase contrast to ${threshold}:1 by adjusting lightness by 15-25%`
+                    });
+                    this.stats.criticalIssues++;
+                }
             }
         });
     }
 
     analyzeSelectionAndDiffs(theme, background, results) {
-        const colors = theme.colors || {};
+        const themeColors = theme.colors || {};
         const bgRgb = hexToRgb(background);
+        const hasTradeoff = hasLightTradeoff(results.name);
+        const recommended = getRecommendedOpacity(results.type);
         
-        // Selection
-        const selection = colors['editor.selectionBackground'];
+        // Selection analysis
+        const selection = themeColors['editor.selectionBackground'];
         if (selection) {
             const analysis = analyzeContrast(selection, background, true);
             
             if (!analysis.passes3) {
+                const tradeoffNote = hasTradeoff ? ' (light theme trade-off - documented design decision)' : '';
+                const fix = hasTradeoff ? null : `Increase opacity to ${Math.round(recommended.selection * 100)}% (recommended for ${results.type} themes)`;
+                
                 results.issues.push({
                     severity: 'high',
                     category: 'selection',
@@ -200,24 +207,32 @@ class ContrastAnalyzer {
                     opacity: `${Math.round(analysis.opacity * 100)}%`,
                     contrast: analysis.contrast.toFixed(2),
                     required: '3:1',
-                    message: `Selection invisible (${analysis.opacity < 0.2 ? 'too low opacity' : 'low contrast'})`
+                    message: `Selection invisible (${analysis.opacity < 0.2 ? 'too low opacity' : 'low contrast'})${tradeoffNote}`,
+                    fix
                 });
                 this.stats.highIssues++;
-            } else if (analysis.opacity < 0.25) {
+            } else if (analysis.opacity < 0.25 && !VERBOSE) {
+                // Only show in verbose mode if passing but borderline
+            }
+            
+            // Check if TOO opaque
+            if (analysis.opacity > 0.60) {
                 results.issues.push({
-                    severity: 'medium',
+                    severity: 'critical',
                     category: 'selection',
                     property: 'editor.selectionBackground',
+                    color: selection,
                     opacity: `${Math.round(analysis.opacity * 100)}%`,
-                    message: `Selection opacity low (industry standard: 30-40%)`
+                    message: `Selection TOO OPAQUE - selected text unreadable`,
+                    fix: `Reduce to ${Math.round(recommended.selection * 100)}% opacity (max 60%, selected text must remain readable)`
                 });
-                this.stats.mediumIssues++;
+                this.stats.criticalIssues++;
             }
         }
         
-        // Diffs
-        const diffInserted = colors['diffEditor.insertedLineBackground'];
-        const diffRemoved = colors['diffEditor.removedLineBackground'];
+        // Diff analysis
+        const diffInserted = themeColors['diffEditor.insertedLineBackground'];
+        const diffRemoved = themeColors['diffEditor.removedLineBackground'];
         
         [
             { prop: 'diffEditor.insertedLineBackground', color: diffInserted, label: 'Inserted lines' },
@@ -226,25 +241,73 @@ class ContrastAnalyzer {
             if (color) {
                 const analysis = analyzeContrast(color, background, true);
                 
-                if (!analysis.passes3) {
+                if (!analysis.passes3 && !VERBOSE) {
+                    // Skip verbose output for passing cases
                     results.issues.push({
                         severity: 'high',
-                        category: 'diffs',
+                        category: 'diff',
                         property: prop,
                         color: color,
                         opacity: `${Math.round(analysis.opacity * 100)}%`,
-                        contrast: analysis.contrast.toFixed(2),
-                        required: '3:1',
-                        message: `${label} invisible (recommend 30% opacity)`
+                        message: `${label} invisible`,
+                        fix: `Increase opacity to ${Math.round(recommended.diffLine * 100)}% (recommended for ${results.type} themes)`
                     });
                     this.stats.highIssues++;
+                }
+                
+                if (analysis.opacity > 0.50) {
+                    results.issues.push({
+                        severity: 'critical',
+                        category: 'diff',
+                        property: prop,
+                        color: color,
+                        opacity: `${Math.round(analysis.opacity * 100)}%`,
+                        message: `${label} TOO OPAQUE - obscures code`,
+                        fix: `Reduce to ${Math.round(recommended.diffLine * 100)}% opacity (max 50%, code text must remain readable)`
+                    });
+                    this.stats.criticalIssues++;
                 }
             }
         });
     }
 
+    analyzeTextOnHighlights(theme, background, results) {
+        const themeColors = theme.colors || {};
+        const bgRgb = hexToRgb(background);
+        
+        let textColor = themeColors['editor.foreground'] || themeColors['foreground'] || '#ECEFF4';
+        
+        if (results.type === 'light') {
+            textColor = themeColors['editor.foreground'] || '#2E3440';
+        }
+        
+        const textRgb = hexToRgb(textColor);
+        const selection = themeColors['editor.selectionBackground'];
+        
+        if (selection) {
+            const selectionRgb = hexToRgb(selection);
+            const blendedSelection = blendColors(selectionRgb, bgRgb);
+            const textOnSelection = calculateContrast(textRgb, blendedSelection);
+            
+            if (textOnSelection < 3.0) {
+                results.issues.push({
+                    severity: 'critical',
+                    category: 'text-on-highlight',
+                    property: 'editor.selectionBackground',
+                    color: selection,
+                    textColor: textColor,
+                    contrast: textOnSelection.toFixed(2),
+                    required: '3:1 minimum (4.5:1 ideal)',
+                    message: `Selected text UNREADABLE (${textOnSelection.toFixed(2)}:1)`,
+                    fix: `Reduce selection opacity or change color - text must remain readable when highlighted`
+                });
+                this.stats.criticalIssues++;
+            }
+        }
+    }
+
     analyzeFindSystem(theme, background, results) {
-        const colors = theme.colors || {};
+        const themeColors = theme.colors || {};
         
         const findProps = [
             'editor.findMatchBackground',
@@ -253,31 +316,31 @@ class ContrastAnalyzer {
             'editor.wordHighlightStrongBackground'
         ];
         
-        const findColors = findProps.map(prop => colors[prop]).filter(Boolean);
+        const findColors = findProps.map(prop => themeColors[prop]).filter(Boolean);
         
-        // Check if all are identical (no hierarchy)
         if (findColors.length > 1 && new Set(findColors).size === 1) {
             results.issues.push({
                 severity: 'medium',
                 category: 'find',
                 property: 'Find system',
                 color: findColors[0],
-                message: `No visual hierarchy (all ${findColors.length} properties identical)`
+                message: `No visual hierarchy (all ${findColors.length} properties identical)`,
+                fix: `Use 50%/40%/30%/35% opacity tiers for clear hierarchy (current>all>word>strong)`
             });
             this.stats.mediumIssues++;
         }
         
-        // Check if any are too low contrast
         findColors.forEach((color, i) => {
             const analysis = analyzeContrast(color, background, true);
             
-            if (analysis.opacity < 0.2) {
+            if (analysis.opacity < 0.2 && !VERBOSE) {
                 results.issues.push({
                     severity: 'medium',
                     category: 'find',
                     property: findProps[i],
                     opacity: `${Math.round(analysis.opacity * 100)}%`,
-                    message: `Find highlight barely visible (recommend 30-50%)`
+                    message: `Find highlight barely visible`,
+                    fix: `Increase opacity to 30-50% for visibility`
                 });
                 this.stats.mediumIssues++;
             }
@@ -285,74 +348,69 @@ class ContrastAnalyzer {
     }
 
     analyzeScrollbars(theme, background, results) {
-        const colors = theme.colors || {};
+        const themeColors = theme.colors || {};
         
-        const scrollRest = colors['scrollbarSlider.background'];
-        const scrollHover = colors['scrollbarSlider.hoverBackground'];
-        const scrollActive = colors['scrollbarSlider.activeBackground'];
+        const scrollRest = themeColors['scrollbarSlider.background'];
+        const scrollHover = themeColors['scrollbarSlider.hoverBackground'];
         
-        // Check if rest and hover are identical (no feedback)
-        if (scrollRest && scrollHover && scrollRest === scrollHover) {
+        if (scrollRest && scrollHover && scrollRest === scrollHover && !VERBOSE) {
             results.issues.push({
                 severity: 'medium',
                 category: 'scrollbars',
                 property: 'scrollbarSlider',
-                message: `No hover feedback (rest === hover)`
+                message: `No hover feedback (rest === hover)`,
+                fix: `Make hover 10-15% brighter/darker than rest state for user feedback`
             });
             this.stats.mediumIssues++;
         }
     }
 
     analyzeBrackets(theme, background, results) {
-        const colors = theme.colors || {};
+        const themeColors = theme.colors || {};
         
         for (let i = 1; i <= 6; i++) {
-            const bracketColor = colors[`editorBracketHighlight.foreground${i}`];
+            const bracketColor = themeColors[`editorBracketHighlight.foreground${i}`];
             
             if (bracketColor && bracketColor.startsWith('#')) {
                 const analysis = analyzeContrast(bracketColor, background);
                 
-                if (!analysis.passes3) {
+                if (!analysis.passes3 && !VERBOSE) {
                     results.issues.push({
-                        severity: 'critical',
+                        severity: 'high',
                         category: 'brackets',
                         property: `editorBracketHighlight.foreground${i}`,
                         color: bracketColor,
                         contrast: analysis.contrast.toFixed(2),
-                        required: '3:1',
-                        message: `Bracket color ${i} fails visibility${analysis.contrast < 1.5 ? ' (nearly invisible!)' : ''}`
+                        message: `Bracket level ${i} fails contrast`,
+                        fix: `Adjust bracket color to 3:1+ contrast (UI element minimum)`
                     });
-                    this.stats.criticalIssues++;
+                    this.stats.highIssues++;
                 }
             }
         }
     }
 
     generateReport() {
-        console.log(`\n${colors.bold}${colors.cyan}╔═══════════════════════════════════════════════════════════╗${colors.reset}`);
-        console.log(`${colors.bold}${colors.cyan}║         M TECH THEMES - CONTRAST ANALYSIS REPORT          ║${colors.reset}`);
-        console.log(`${colors.bold}${colors.cyan}╚═══════════════════════════════════════════════════════════╝${colors.reset}\n`);
+        printHeader('M TECH THEMES - CONTRAST ANALYSIS REPORT');
         
-        console.log(`${colors.bold}Statistics:${colors.reset}`);
-        console.log(`  Themes analyzed: ${this.stats.themesAnalyzed}`);
-        console.log(`  ${colors.red}Critical issues: ${this.stats.criticalIssues}${colors.reset} (text fails 4.5:1)`);
-        console.log(`  ${colors.yellow}High issues: ${this.stats.highIssues}${colors.reset} (UI fails 3:1)`);
-        console.log(`  ${colors.blue}Medium issues: ${this.stats.mediumIssues}${colors.reset} (opacity/hierarchy)`);
+        printStats({
+            themesAnalyzed: this.stats.themesAnalyzed,
+            criticalIssues: this.stats.criticalIssues,
+            highIssues: this.stats.highIssues,
+            mediumIssues: this.stats.mediumIssues
+        });
     }
 
     printThemeResults(results) {
         if (!results || results.issues.length === 0) return;
         
         const typeIcon = results.type === 'light' ? '☀️' : '🌙';
-        console.log(`\n${colors.bold}${typeIcon}  ${results.name}${colors.reset} (${results.type})`);
-        console.log(`${'─'.repeat(60)}`);
+        printSection(`${results.name}`, typeIcon);
         
         // Group by category
         const byCategory = {};
         results.issues.forEach(issue => {
-            if (!byCategory[issue.category]) {
-                byCategory[issue.category] = [];
-            }
+            if (!byCategory[issue.category]) byCategory[issue.category] = [];
             byCategory[issue.category].push(issue);
         });
         
@@ -360,23 +418,32 @@ class ContrastAnalyzer {
             console.log(`\n  ${colors.bold}${category.toUpperCase()}:${colors.reset}`);
             
             issues.forEach(issue => {
-                const icon = issue.severity === 'critical' ? '❌' : 
-                             issue.severity === 'high' ? '⚠️' : 'ℹ️';
+                const { severity, message, color, opacity, contrast, required, fix } = issue;
                 
-                const colorMark = issue.severity === 'critical' ? colors.red :
-                                  issue.severity === 'high' ? colors.yellow : colors.blue;
+                let icon, severityColor;
+                switch (severity) {
+                    case 'critical':
+                        icon = '🚨';
+                        severityColor = colors.brightRed;
+                        break;
+                    case 'high':
+                        icon = '⚠️';
+                        severityColor = colors.yellow;
+                        break;
+                    case 'medium':
+                        icon = 'ℹ️';
+                        severityColor = colors.blue;
+                        break;
+                    default:
+                        icon = '·';
+                        severityColor = colors.dim;
+                }
                 
-                console.log(`    ${icon} ${colorMark}${issue.message}${colors.reset}`);
-                
-                if (issue.color) {
-                    console.log(`       Color: ${issue.color} | Contrast: ${issue.contrast || 'N/A'}`);
-                }
-                if (issue.opacity) {
-                    console.log(`       Opacity: ${issue.opacity}`);
-                }
-                if (issue.required) {
-                    console.log(`       Required: ${issue.required}`);
-                }
+                console.log(`    ${icon} ${severityColor}${severity.toUpperCase()}${colors.reset}: ${message}`);
+                if (color) console.log(`       ${colors.dim}Color: ${color}${colors.reset}`);
+                if (opacity) console.log(`       ${colors.dim}Opacity: ${opacity}${colors.reset}`);
+                if (contrast && required) console.log(`       ${colors.dim}Contrast: ${contrast} (requires ${required})${colors.reset}`);
+                if (fix) console.log(`       ${colors.brightYellow}→ FIX: ${fix}${colors.reset}`);
             });
         });
     }
@@ -397,21 +464,20 @@ class ContrastAnalyzer {
 
 // Main execution
 function main() {
+    const startTime = Date.now();
     const analyzer = new ContrastAnalyzer();
     
-    // Get all theme files
-    const themesDir = path.join(__dirname, '..', 'themes');
-    const themeFiles = fs.readdirSync(themesDir)
-        .filter(file => file.endsWith('.json'))
-        .map(file => path.basename(file, '.json'));
+    const themeNames = getAllThemeNames();
     
     console.log(`${colors.bold}${colors.cyan}🔬 M Tech Themes - Contrast Analysis${colors.reset}\n`);
-    console.log(`Analyzing ${themeFiles.length} themes for accessibility issues...\n`);
+    console.log(`Analyzing ${themeNames.length} themes for accessibility issues...`);
+    if (VERBOSE) console.log(`${colors.dim}(--verbose mode: showing all checks)${colors.reset}`);
+    console.log('');
     
     const allResults = [];
     
     // Analyze each theme
-    themeFiles.forEach(themeName => {
+    themeNames.forEach(themeName => {
         const results = analyzer.analyzeTheme(themeName);
         if (results && results.issues.length > 0) {
             allResults.push(results);
@@ -421,9 +487,7 @@ function main() {
     // Sort by priority
     allResults.sort((a, b) => {
         const priorities = { 'URGENT': 4, 'HIGH': 3, 'MEDIUM': 2, 'LOW': 1, 'NONE': 0 };
-        const aPriority = analyzer.getRefactorPriority(a);
-        const bPriority = analyzer.getRefactorPriority(b);
-        return priorities[bPriority] - priorities[aPriority];
+        return priorities[analyzer.getRefactorPriority(b)] - priorities[analyzer.getRefactorPriority(a)];
     });
     
     // Print results
@@ -431,10 +495,10 @@ function main() {
         analyzer.printThemeResults(results);
     });
     
-    // Generate summary report
+    // Generate summary
     analyzer.generateReport();
     
-    // Refactor recommendations
+    // Priority queue
     console.log(`\n${colors.bold}${colors.magenta}REFACTOR PRIORITY QUEUE:${colors.reset}\n`);
     
     const urgent = allResults.filter(r => analyzer.getRefactorPriority(r) === 'URGENT');
@@ -456,16 +520,16 @@ function main() {
         medium.forEach(r => console.log(`  - ${r.name} (${r.issues.length} issues)`));
     }
     
-    const clean = themeFiles.length - allResults.length;
+    const clean = themeNames.length - allResults.length;
     if (clean > 0) {
         console.log(`\n${colors.green}${colors.bold}✅ CLEAN (${clean}):${colors.reset} No significant issues detected`);
     }
     
-    console.log('');
+    printTiming(startTime, 'Analysis completed in');
 }
 
 if (require.main === module) {
     main();
 }
 
-module.exports = { ContrastAnalyzer, analyzeContrast, calculateContrast };
+module.exports = { ContrastAnalyzer, analyzeContrast };

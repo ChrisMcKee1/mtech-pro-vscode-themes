@@ -91,20 +91,20 @@
     "debugView.valueChangedHighlight": "#ebcb8b",
     "descriptionForeground": "#FFFFFF",
     "diffEditor.diagonalFill": "#2F4336",
-    "diffEditor.insertedLineBackground": "#5A80604D",
-    "diffEditor.insertedTextBackground": "#5A806066",
+    "diffEditor.insertedLineBackground": "#90D8964D",
+    "diffEditor.insertedTextBackground": "#90D89666",
     "diffEditor.move.border": "",
     "diffEditor.moveActive.border": "",
-    "diffEditor.removedLineBackground": "#CD5C5C4D",
-    "diffEditor.removedTextBackground": "#CD5C5C66",
+    "diffEditor.removedLineBackground": "#FFB3B34D",
+    "diffEditor.removedTextBackground": "#FFB3B366",
     "diffEditor.unchangedCodeBackground": "#0F1419",
     "diffEditor.unchangedRegionBackground": "#0F1419",
     "diffEditor.unchangedRegionForeground": "#FFFFFF",
     "diffEditor.unchangedRegionShadow": "#1b1f2b",
-    "diffEditorGutter.insertedLineBackground": "#5A806080",
-    "diffEditorGutter.removedLineBackground": "#CD5C5C80",
-    "diffEditorOverview.insertedForeground": "#5A8060a5",
-    "diffEditorOverview.removedForeground": "#CD5C5Ca5",
+    "diffEditorGutter.insertedLineBackground": "#90D89680",
+    "diffEditorGutter.removedLineBackground": "#FFB3B380",
+    "diffEditorOverview.insertedForeground": "#90D896a5",
+    "diffEditorOverview.removedForeground": "#FFB3B3a5",
     "dropdown.background": "#2F4336",
     "dropdown.border": "#C8E6C8",
     "dropdown.foreground": "#FFFFFF",
@@ -120,7 +120,7 @@
     "editor.foldBackground": "#5A806026",
     "editor.foreground": "#FFFFFF",
     "editor.hoverHighlightBackground": "#5A806026",
-    "editor.inactiveSelectionBackground": "#3D5A3F26",
+    "editor.inactiveSelectionBackground": "#8ACC9026",
     "editor.inlineValuesBackground": "#E8F5E8",
     "editor.inlineValuesForeground": "#FFFFFF",
     "editor.lineHighlightBackground": "#5A806026",
@@ -128,15 +128,15 @@
     "editor.linkedEditingBackground": "#2A3D2B",
     "editor.rangeHighlightBackground": "#2A3D2B",
     "editor.rangeHighlightBorder": "#2F4336",
-    "editor.selectionBackground": "#3D5A3Fcc",
-    "editor.selectionHighlightBackground": "#3D5A3F40",
+    "editor.selectionBackground": "#8ACC9059",
+    "editor.selectionHighlightBackground": "#8ACC9040",
     "editor.selectionHighlightBorder": "#00000000",
     "editor.stackFrameHighlightBackground": "#ebcb8b4d",
     "editor.wordHighlightBackground": "#5A806040",
     "editor.wordHighlightBorder": "#00000000",
     "editor.wordHighlightStrongBackground": "#5A806040",
     "editor.wordHighlightStrongBorder": "#00000000",
-    "editorBracketHighlight.foreground1": "#BF616A",
+    "editorBracketHighlight.foreground1": "#D88690",
     "editorBracketHighlight.foreground2": "#FFAC8F",
     "editorBracketHighlight.foreground3": "#ebcb8b",
     "editorBracketHighlight.foreground4": "#a3be8c",
@@ -584,7 +584,7 @@
       "settings": {
         "name": "Comments and overrides inside comments",
         "fontStyle": "italic",
-        "foreground": "#A8C9A8"
+        "foreground": "#7e977e"
       }
     },
     {
@@ -598,7 +598,7 @@
       "scope": "comment entity.name.type",
       "settings": {
         "name": "JSDoc entity name",
-        "foreground": "#4F7F56"
+        "foreground": "#7FC76A"
       }
     },
     {
@@ -608,7 +608,7 @@
       ],
       "settings": {
         "name": "JSDoc variable",
-        "foreground": "#4F7F56"
+        "foreground": "#7FC76A"
       }
     },
     {
@@ -619,7 +619,7 @@
       ],
       "settings": {
         "name": "PHPDoc keyword",
-        "foreground": "#4F7F56"
+        "foreground": "#7FC76A"
       }
     },
     {
@@ -633,7 +633,7 @@
       "scope": "comment.git-status.header.remote",
       "settings": {
         "name": "Git status remote",
-        "foreground": "#CD5C5C"
+        "foreground": "#E88787"
       }
     },
     {
@@ -867,7 +867,7 @@
       ],
       "settings": {
         "name": "Tag name",
-        "foreground": "#CD5C5C"
+        "foreground": "#E88787"
       }
     },
     {
@@ -881,7 +881,7 @@
       "scope": "entity.name.function.operator",
       "settings": {
         "name": "Operator",
-        "foreground": "#CD5C5C"
+        "foreground": "#E88787"
       }
     },
     {
@@ -980,7 +980,7 @@
       "scope": "entity.name.operator.custom-literal.string",
       "settings": {
         "name": "custom literal string",
-        "foreground": "#5A8060"
+        "foreground": "#7AB87A"
       }
     },
     {
@@ -1001,14 +1001,14 @@
       "scope": "entity.name.lifetime.rust",
       "settings": {
         "name": "rust specific",
-        "foreground": "#CD5C5C"
+        "foreground": "#E88787"
       }
     },
     {
       "scope": "invalid",
       "settings": {
         "name": "Invalid",
-        "foreground": "#CD5C5C",
+        "foreground": "#E88787",
         "fontStyle": "italic underline"
       }
     },
@@ -1024,21 +1024,21 @@
       "scope": "keyword",
       "settings": {
         "name": "Keyword",
-        "foreground": "#CD5C5C"
+        "foreground": "#E88787"
       }
     },
     {
       "scope": "keyword.control",
       "settings": {
         "name": "Control keywords",
-        "foreground": "#CD5C5C"
+        "foreground": "#E88787"
       }
     },
     {
       "scope": "keyword.control.directive",
       "settings": {
         "name": "keyword control directive",
-        "foreground": "#CD5C5C"
+        "foreground": "#E88787"
       }
     },
     {
@@ -1049,7 +1049,7 @@
       ],
       "settings": {
         "name": "Operator",
-        "foreground": "#CD5C5C"
+        "foreground": "#E88787"
       }
     },
     {
@@ -1066,7 +1066,7 @@
       ],
       "settings": {
         "name": "Template literal begin / end",
-        "foreground": "#CD5C5C"
+        "foreground": "#E88787"
       }
     },
     {
@@ -1105,7 +1105,7 @@
       ],
       "settings": {
         "name": "rust specific",
-        "foreground": "#CD5C5C"
+        "foreground": "#E88787"
       }
     },
     {
@@ -1116,7 +1116,7 @@
       ],
       "settings": {
         "name": "ruby specific",
-        "foreground": "#CD5C5C"
+        "foreground": "#E88787"
       }
     },
     {
@@ -1168,7 +1168,7 @@
       ],
       "settings": {
         "name": "Diff inserted",
-        "foreground": "#5A8060"
+        "foreground": "#7FB885"
       }
     },
     {
@@ -1178,7 +1178,7 @@
       ],
       "settings": {
         "name": "Diff deleted",
-        "foreground": "#CD5C5C"
+        "foreground": "#E88585"
       }
     },
     {
@@ -1291,7 +1291,7 @@
       "scope": "source.yaml meta.mapping.key string",
       "settings": {
         "name": "YAML keys",
-        "foreground": "#CD5C5C"
+        "foreground": "#E88787"
       }
     },
     {
@@ -1619,7 +1619,7 @@
       "scope": "storage",
       "settings": {
         "name": "Storage",
-        "foreground": "#CD5C5C"
+        "foreground": "#E88787"
       }
     },
     {
@@ -1635,7 +1635,7 @@
       "settings": {
         "name": "Extends",
         "fontStyle": "normal",
-        "foreground": "#CD5C5C"
+        "foreground": "#E88787"
       }
     },
     {
@@ -1643,7 +1643,7 @@
       "settings": {
         "name": "Fat arrow function",
         "fontStyle": "normal",
-        "foreground": "#CD5C5C"
+        "foreground": "#E88787"
       }
     },
     {
@@ -1654,7 +1654,7 @@
       "settings": {
         "name": "Keywords that affect the storage",
         "fontStyle": "italic",
-        "foreground": "#CD5C5C"
+        "foreground": "#E88787"
       }
     },
     {
@@ -1671,7 +1671,7 @@
       ],
       "settings": {
         "name": "rust specific",
-        "foreground": "#CD5C5C"
+        "foreground": "#E88787"
       }
     },
     {
@@ -1701,7 +1701,7 @@
       ],
       "settings": {
         "name": "rust specific (adjust blue to red)",
-        "foreground": "#CD5C5C"
+        "foreground": "#E88787"
       }
     },
     {
@@ -1715,7 +1715,7 @@
       "scope": "string",
       "settings": {
         "name": "String",
-        "foreground": "#5A8060"
+        "foreground": "#7AB87A"
       }
     },
     {
@@ -1749,7 +1749,7 @@
       ],
       "settings": {
         "name": "link title",
-        "foreground": "#CD5C5C"
+        "foreground": "#E88787"
       }
     },
     {
@@ -1766,7 +1766,7 @@
       ],
       "settings": {
         "name": "String regexp begin / end",
-        "foreground": "#CD5C5C"
+        "foreground": "#E88787"
       }
     },
     {
@@ -1783,14 +1783,14 @@
       "scope": "string.other.git-status.help.key",
       "settings": {
         "name": "git key in git status help text",
-        "foreground": "#4F7F56"
+        "foreground": "#7FC76A"
       }
     },
     {
       "scope": "string.other.git-status.remote",
       "settings": {
         "name": "git status remote",
-        "foreground": "#CD5C5C"
+        "foreground": "#E88787"
       }
     },
     {
@@ -1811,7 +1811,7 @@
       "scope": "support.type.vendor-prefix.css",
       "settings": {
         "name": "vendor prefix",
-        "foreground": "#4F7F56"
+        "foreground": "#7FC76A"
       }
     },
     {

@@ -90,18 +90,18 @@
     "debugView.valueChangedHighlight": "#fce566",
     "descriptionForeground": "#8b888f",
     "diffEditor.diagonalFill": "#363537",
-    "diffEditor.insertedLineBackground": "#55ff884d",
-    "diffEditor.insertedTextBackground": "#55ff8866",
+    "diffEditor.insertedLineBackground": "#55ff8833",
+    "diffEditor.insertedTextBackground": "#55ff884D",
     "diffEditor.move.border": "",
     "diffEditor.moveActive.border": "",
-    "diffEditor.removedLineBackground": "#ff55554d",
-    "diffEditor.removedTextBackground": "#ff555566",
+    "diffEditor.removedLineBackground": "#ff555533",
+    "diffEditor.removedTextBackground": "#ff55554D",
     "diffEditor.unchangedCodeBackground": "#191966",
     "diffEditor.unchangedRegionBackground": "#191966",
     "diffEditor.unchangedRegionForeground": "#bab6c0",
     "diffEditor.unchangedRegionShadow": "#131313",
-    "diffEditorGutter.insertedLineBackground": "#55ff8880",
-    "diffEditorGutter.removedLineBackground": "#ff555580",
+    "diffEditorGutter.insertedLineBackground": "#55ff8866",
+    "diffEditorGutter.removedLineBackground": "#ff555566",
     "diffEditorOverview.insertedForeground": "#7bd88fa5",
     "diffEditorOverview.removedForeground": "#fc618da5",
     "dropdown.background": "#252525",
@@ -111,9 +111,9 @@
     "editor.background": "#1a1a1a",
     "editor.findMatchBackground": "#00d9ff50",
     "editor.findMatchBorder": "#00d9ff",
-    "editor.findMatchHighlightBackground": "#00d9ff30",
+    "editor.findMatchHighlightBackground": "#00d9ff4d",
     "editor.findMatchHighlightBorder": "#00000000",
-    "editor.findRangeHighlightBackground": "#00d9ff20",
+    "editor.findRangeHighlightBackground": "#00d9ff40",
     "editor.findRangeHighlightBorder": "#00000000",
     "editor.focusedStackFrameHighlightBackground": "#bab6c066",
     "editor.foldBackground": "#ffffff08",
@@ -127,7 +127,7 @@
     "editor.linkedEditingBackground": "#363537",
     "editor.rangeHighlightBackground": "#363537",
     "editor.rangeHighlightBorder": "#363537",
-    "editor.selectionBackground": "#00d9ff40",
+    "editor.selectionBackground": "#00d9ff59",
     "editor.selectionHighlightBackground": "#00d9ff30",
     "editor.selectionHighlightBorder": "#00000000",
     "editor.stackFrameHighlightBackground": "#bab6c066",
@@ -176,7 +176,7 @@
     "editorLightBulbAi.foreground": "#fce566",
     "editorLightBulbAutoFix.foreground": "#7bd88f",
     "editorLineNumber.activeForeground": "#d0d0d0",
-    "editorLineNumber.foreground": "#707070",
+    "editorLineNumber.foreground": "#9FA4AB",
     "editorLink.activeForeground": "#5ad4e6",
     "editorMarkerNavigation.background": "#363537",
     "editorMarkerNavigationError.background": "#fc618d",
@@ -580,7 +580,7 @@
       "settings": {
         "name": "Comments and overrides inside comments",
         "fontStyle": "italic",
-        "foreground": "#9F9DA2"
+        "foreground": "#7f7e82"
       }
     },
     {
@@ -758,7 +758,7 @@
       "scope": "constant.numeric.line-number.find-in-files",
       "settings": {
         "name": "Search result line numbers",
-        "foreground": "#525053"
+        "foreground": "#9FA4AB"
       }
     },
     {

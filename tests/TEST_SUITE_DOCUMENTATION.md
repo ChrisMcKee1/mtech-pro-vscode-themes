@@ -129,17 +129,26 @@ Validates the Triple Source of Truth synchronization and file structure.
 - Naming mismatches
 - Orphaned icon themes
 
-### `test-contrast-analysis.js` (NEW)
+### `test-contrast-analysis.js` (OPTIMIZED)
 Automated WCAG contrast analysis for accessibility compliance.
+
+**Architecture**: Uses shared utilities from `tests/lib/`:
+- `contrast-utils.js` - WCAG calculations (hexToRgb, calculateContrast, analyzeContrast)
+- `terminal-output.js` - Formatted printing (printError, printSuccess, printWarning)
+- `config-loader.js` - Theme file loading
+- `theme-utils.js` - Theme classification (minimalist detection, design trade-offs)
 
 **Key features**:
 - Hex to RGB to luminance conversion
 - Opacity blending calculations (foreground + alpha onto background)
 - Contrast ratio calculations: (L_bright + 0.05) / (L_dark + 0.05)
+- Design intention detection (minimalist themes, documented trade-offs)
+- Actionable fix suggestions for every issue
+- `--verbose` flag for detailed output (default: only failures)
 - Category-specific checks:
-  - Syntax highlighting (4.5:1 minimum)
+  - Syntax highlighting (4.5:1 minimum, 3.5:1 for minimalist)
   - Brackets (3:1 minimum)
-  - Selection/diffs (3:1 minimum, checks opacity)
+  - Selection/diffs (3:1 minimum, checks opacity, warns if > 60%/50%)
   - Find system (hierarchy detection)
   - Scrollbars (hover feedback detection)
 
@@ -149,15 +158,17 @@ Automated WCAG contrast analysis for accessibility compliance.
 ────────────────────────────────────────────────────────────
 
   SYNTAX:
-    ❌ Syntax token fails readability: keyword
+    🚨 CRITICAL: Syntax token fails readability: keyword
        Color: #ff0080 | Contrast: 3.78:1
        Required: 4.5:1
+       → FIX: Darken to #c0007d (achieves 4.67:1)
 
   SELECTION:
-    ⚠️ Selection invisible (too low opacity)
+    ⚠️ HIGH: Selection invisible (low contrast)
        Color: #4a1a4a26 | Contrast: 1.36:1
        Opacity: 15%
        Required: 3:1
+       → FIX: Increase opacity to 35% (recommended for dark themes)
 ```
 
 **Priority Queue**:
@@ -289,9 +300,13 @@ node test-refactor-status.js --save
 
 ### Adding New Contrast Checks
 
-Edit `test-contrast-analysis.js`:
+Edit `test-contrast-analysis.js` (uses shared utilities from `tests/lib/`):
 
 ```javascript
+// Import shared utilities
+const { analyzeContrast } = require('./lib/contrast-utils');
+const { printError } = require('./lib/terminal-output');
+
 // Add new category analysis
 analyzeCustomComponent(theme, background, results) {
     const colors = theme.colors || {};
@@ -301,6 +316,13 @@ analyzeCustomComponent(theme, background, results) {
         const analysis = analyzeContrast(customColor, background, true);
         
         if (!analysis.passes3) {
+            printError('HIGH', 'Custom component fails visibility', {
+                property: 'custom.component.background',
+                color: customColor,
+                contrast: analysis.contrast.toFixed(2) + ':1',
+                required: '3:1',
+                fix: 'Darken component background by 20-30%'
+            });
             results.issues.push({
                 severity: 'high',
                 category: 'custom',

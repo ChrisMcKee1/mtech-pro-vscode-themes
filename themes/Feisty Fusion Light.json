@@ -90,12 +90,12 @@
     "debugView.valueChangedHighlight": "#b8860b",
     "descriptionForeground": "#6b7280",
     "diffEditor.diagonalFill": "#e5e7eb",
-    "diffEditor.insertedLineBackground": "#54731633",
-    "diffEditor.insertedTextBackground": "#5473164D",
+    "diffEditor.insertedLineBackground": "#2A3E0B40",
+    "diffEditor.insertedTextBackground": "#2A3E0B59",
     "diffEditor.move.border": "",
     "diffEditor.moveActive.border": "",
-    "diffEditor.removedLineBackground": "#C4223D33",
-    "diffEditor.removedTextBackground": "#C4223D4D",
+    "diffEditor.removedLineBackground": "#7A142440",
+    "diffEditor.removedTextBackground": "#7A142459",
     "diffEditor.unchangedCodeBackground": "#f5f2ef",
     "diffEditor.unchangedRegionBackground": "#f5f2ef",
     "diffEditor.unchangedRegionForeground": "#535763",
@@ -127,7 +127,7 @@
     "editor.linkedEditingBackground": "#e5e7eb",
     "editor.rangeHighlightBackground": "#e5e7eb",
     "editor.rangeHighlightBorder": "#e5e7eb",
-    "editor.selectionBackground": "#805C0899",
+    "editor.selectionBackground": "#5A3D054D",
     "editor.selectionHighlightBackground": "#b8860bBF",
     "editor.selectionHighlightBorder": "#00000000",
     "editor.stackFrameHighlightBackground": "#b8860bBF",
@@ -574,7 +574,7 @@
       "settings": {
         "name": "Comments and overrides inside comments",
         "fontStyle": "italic",
-        "foreground": "#5B6169"
+        "foreground": "#697079"
       }
     },
     {
@@ -752,7 +752,7 @@
       "scope": "constant.numeric.line-number.find-in-files",
       "settings": {
         "name": "Search result line numbers",
-        "foreground": "#d1d5db"
+        "foreground": "#6b7280"
       }
     },
     {
@@ -1267,7 +1267,7 @@
       ],
       "settings": {
         "name": "ID string name (i.e. in html attributes)",
-        "foreground": "#ff9b5e"
+        "foreground": "#a8500d"
       }
     },
     {
@@ -1705,7 +1705,7 @@
       "scope": "string",
       "settings": {
         "name": "String",
-        "foreground": "#b8860b"
+        "foreground": "#8b6508"
       }
     },
     {

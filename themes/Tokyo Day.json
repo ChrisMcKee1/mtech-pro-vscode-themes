@@ -85,7 +85,7 @@
     "editorBracketMatch.border": "#95A5A6",
     "editorCodeLens.foreground": "#95A5A6",
     "editorCursor.background": "#E0E0E0",
-    "editorCursor.foreground": "#FFFFFF",
+    "editorCursor.foreground": "#E67E22",
     "editorError.foreground": "#E74C3C",
     "editorGhostText.foreground": "#95A5A6",
     "editorGroup.border": "#E0E0E0",

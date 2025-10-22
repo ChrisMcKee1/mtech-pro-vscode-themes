@@ -1,5 +1,50 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## 0.6.3 - Neon Pink Light Improvements (October 2025)
+
+🎨 **Neon Pink Light Theme Refinements** - Enhanced accessibility and visual consistency
+
+### 🟣 Color Improvements
+
+**Replaced Yellow with Purple Accent** (#9900CC):
+- All yellow color variations (#ffff00) replaced with purple accent
+- Affected 16 properties across UI and syntax highlighting
+- Maintains neon pink/purple/green palette identity
+- Better visual harmony with theme's vibrant aesthetic
+
+**UI Elements Updated**:
+- Charts, debug icons, lightbulb suggestions
+- Git decorations (modified files)
+- Terminal ANSI colors (yellow → purple)
+- Extension star icons
+- SCM graph colors
+
+**Syntax Highlighting Updated**:
+- Symbol icon colors (strings, text)
+- Maintains readability while improving consistency
+
+### ♿ Accessibility Fixes
+
+**Extensions Panel Hover Highlighting**:
+- `list.hoverBackground`: Enhanced from `#f3e8ff` to `#e9d5ff` (deeper purple)
+- `list.hoverForeground`: Updated to `#4a1a4a` (dark purple, no white text)
+- Visible highlight distinction when hovering over extensions
+- Dark text remains readable on light background
+
+**Text Color Corrections**:
+- Eliminated all white text on light backgrounds
+- Ensured proper contrast ratios throughout theme
+- All foreground colors now dark and readable
+
+### ✨ Visual Consistency
+
+- Purple accent now used consistently across all UI elements
+- No more jarring yellow color conflicts
+- Cohesive neon pink/purple/green color palette
+- Professional appearance while maintaining vibrant identity
+
+---
+
 ## 0.6.0 - Initial Release (October 2025)
 
 🎉 **Official Launch** - Professional themes with accessibility and unique identities

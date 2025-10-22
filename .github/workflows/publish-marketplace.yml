@@ -1,0 +1,41 @@
+name: Publish to VS Code Marketplace
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install dependencies
+        run: npm install -g @vscode/vsce
+      
+      - name: Publish to Marketplace
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+        run: |
+          echo "Publishing version $(node -p "require('./package.json').version")"
+          npx @vscode/vsce publish -p $VSCE_PAT
+      
+      - name: Notify success
+        if: success()
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "✅ Successfully published M Tech Themes v$VERSION to VS Code Marketplace"
+      
+      - name: Notify failure
+        if: failure()
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "❌ Failed to publish M Tech Themes v$VERSION to VS Code Marketplace"
+          exit 1

@@ -3,7 +3,7 @@
 	"displayName": "M Tech Themes",
 	"description": "✨ Professional dark & light theme + icon pack, from the author of the original M Tech color scheme.",
 	"publisher": "M-Tech",
-	"version": "0.6.3",
+	"version": "0.6.4",
 	"pricing": "Free",
 	"engines": {
 		"vscode": "^1.90.0"
@@ -125,6 +125,16 @@
 				"label": "Mystic Dusk",
 				"uiTheme": "vs-dark",
 				"path": "./themes/Mystic Dusk.json"
+			},
+			{
+				"label": "Morning Coffee",
+				"uiTheme": "vs",
+				"path": "./themes/Morning Coffee.json"
+			},
+			{
+				"label": "Evening Espresso",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Evening Espresso.json"
 			},
 			{
 				"label": "Feisty Fusion Light",
@@ -322,6 +332,16 @@
 				"label": "Mystic Dusk Icons",
 				"id": "Mystic Dusk Icons",
 				"path": "./icon-themes/Mystic Dusk icon-theme.json"
+			},
+			{
+				"label": "Morning Coffee Icons",
+				"id": "Morning Coffee Icons",
+				"path": "./icon-themes/Morning Coffee icon-theme.json"
+			},
+			{
+				"label": "Evening Espresso Icons",
+				"id": "Evening Espresso Icons",
+				"path": "./icon-themes/Evening Espresso icon-theme.json"
 			}
 		],
 		"configuration": {

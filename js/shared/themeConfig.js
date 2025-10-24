@@ -22,7 +22,9 @@ const THEMES = Object.freeze([
     "Cosmic Void Light",
     "Enchanted Grove",
     "Enchanted Grove Dark",
-    "Mystic Dusk"
+    "Mystic Dusk",
+    "Morning Coffee",
+    "Evening Espresso"
 ]);
 
 const ICON_THEMES = Object.freeze([
@@ -47,7 +49,9 @@ const ICON_THEMES = Object.freeze([
     "Cosmic Void Light Icons",
     "Enchanted Grove Icons",
     "Enchanted Grove Dark Icons",
-    "Mystic Dusk Icons"
+    "Mystic Dusk Icons",
+    "Morning Coffee Icons",
+    "Evening Espresso Icons"
 ]);
 
 const THEME_SET = new Set(THEMES);
@@ -59,7 +63,9 @@ const LIGHT_THEME_HINTS = new Set([
     "Arctic Nord Light",
     "Cosmic Void Light",
     "Feisty Fusion Light",
-    "Neon Pink Light"
+    "Neon Pink Light",
+    "Morning Coffee",
+    "OGE Light"
 ]);
 
 const THEME_CONFIG = Object.freeze({

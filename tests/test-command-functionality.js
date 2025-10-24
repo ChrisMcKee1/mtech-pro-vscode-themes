@@ -37,7 +37,8 @@ function getThemeCategories(themes) {
     const lightThemes = [
         "Light", "Sandstone Light", "Tokyo Day", "Enchanted Grove",
         "Arctic Nord Light", "Cosmic Void Light",
-        "Feisty Fusion Light", "Cyberpunk Neon Light"
+        "Feisty Fusion Light", "Cyberpunk Neon Light",
+        "Morning Coffee", "OGE Light"
     ];
     
     return {

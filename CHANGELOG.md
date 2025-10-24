@@ -1,5 +1,54 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## 0.6.4 - Coffee Themes (October 2025)
+
+☕ **Two New Coffee-Themed Color Schemes** - Warm, inviting themes for all-day coding
+
+### 🎨 New Themes
+
+**Morning Coffee (Light)**:
+- Warm cream/caramel/chocolate palette optimized for daytime coding
+- Rich espresso text on cream backgrounds
+- Inspired by coffee shop aesthetics with natural warmth
+- Perfect for bright environments and long coding sessions
+
+**Evening Espresso (Dark)**:
+- Deep espresso/coffee grounds color scheme for low-light environments
+- Cream text on dark roast backgrounds
+- Sophisticated dark theme with warm undertones
+- Perfect companion to Morning Coffee for all-day workflow
+
+### ✨ Key Features
+
+**Professional Coffee Shop Aesthetic**:
+- Consistent warm color temperature throughout both themes
+- Natural brown/tan/cream color palettes
+- Sophisticated and calming for extended use
+- Complementary light/dark pair for seamless day-to-night transitions
+
+**WCAG 2.1 Level AA Compliant**:
+- All syntax highlighting meets 4.5:1 minimum contrast (normal text)
+- All UI elements meet 3:1 minimum contrast
+- Clear selection highlights with readable text
+- Visible scrollbars in all states (rest/hover/active)
+- Professional accessibility standards throughout
+
+**Smart Design Details**:
+- 30/40/50% opacity hierarchy for diff backgrounds
+- Off-black/off-white backgrounds (no harsh pure colors)
+- Enhanced hover states for clear interaction feedback
+- Complete terminal ANSI color support
+- Optimized for TypeScript, Python, JavaScript, HTML, CSS, and Markdown
+
+### 🎯 Perfect For
+
+- Coffee lovers who appreciate warm, natural aesthetics
+- Developers who switch between light/dark modes throughout the day
+- Teams requiring WCAG AA accessibility compliance
+- Long coding sessions in varying lighting conditions
+
+---
+
 ## 0.6.3 - Neon Pink Light Improvements (October 2025)
 
 🎨 **Neon Pink Light Theme Refinements** - Enhanced accessibility and visual consistency

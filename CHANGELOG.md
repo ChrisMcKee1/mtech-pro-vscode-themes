@@ -1,5 +1,17 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## 0.6.5 - Diff & Text Visibility Fixes (October 2025)
+
+### Bug Fixes
+
+- Fixed scrollbar opacity blocking diff colors (all 23 themes - semi-transparent overlays)
+- Fixed find highlight obscuring diffs (19 themes - theme-appropriate colors matching diff insert)
+- Reduced diff background opacity to 25% standard, inserted text to 20%
+- Fixed comment visibility (Enchanted Grove Dark, Evening Espresso - complete color redesign)
+- Combined overlay opacity now ~48% (was 60-74%) ensuring readable text in all scenarios
+
+---
+
 ## 0.6.4 - Coffee Themes (October 2025)
 
 ☕ **Two New Coffee-Themed Color Schemes** - Warm, inviting themes for all-day coding

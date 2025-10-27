@@ -110,11 +110,11 @@
     "dropdown.foreground": "#FFFFFF",
     "dropdown.listBackground": "#2A3D2B",
     "editor.background": "#2A3D2B",
-    "editor.findMatchBackground": "#5A80604d",
+    "editor.findMatchBackground": "#90D89643",
     "editor.findMatchBorder": "#5A8060",
-    "editor.findMatchHighlightBackground": "#5A806033",
+    "editor.findMatchHighlightBackground": "#90D8962b",
     "editor.findMatchHighlightBorder": "#00000000",
-    "editor.findRangeHighlightBackground": "#5A806026",
+    "editor.findRangeHighlightBackground": "#90D89620",
     "editor.findRangeHighlightBorder": "#00000000",
     "editor.focusedStackFrameHighlightBackground": "#5A80604d",
     "editor.foldBackground": "#5A806026",
@@ -132,9 +132,9 @@
     "editor.selectionHighlightBackground": "#8ACC9040",
     "editor.selectionHighlightBorder": "#00000000",
     "editor.stackFrameHighlightBackground": "#ebcb8b4d",
-    "editor.wordHighlightBackground": "#5A806040",
+    "editor.wordHighlightBackground": "#90D8963a",
     "editor.wordHighlightBorder": "#00000000",
-    "editor.wordHighlightStrongBackground": "#5A806040",
+    "editor.wordHighlightStrongBackground": "#90D89643",
     "editor.wordHighlightStrongBorder": "#00000000",
     "editorBracketHighlight.foreground1": "#D88690",
     "editorBracketHighlight.foreground2": "#FFAC8F",
@@ -394,9 +394,9 @@
     "scmGraph.historyItemRemoteRefColor": "#228B22",
     "scmGraph.historyItemBaseRefColor": "#5A8060",
     "scrollbar.shadow": "#1b1f2b",
-    "scrollbarSlider.activeBackground": "#8DB4E659",
-    "scrollbarSlider.background": "#2F4336",
-    "scrollbarSlider.hoverBackground": "#E8F5E8",
+    "scrollbarSlider.activeBackground": "#a3be8c80",
+    "scrollbarSlider.background": "#1a2a1a40",
+    "scrollbarSlider.hoverBackground": "#2d4a2d66",
     "selection.background": "#A8B1C426",
     "settings.checkboxBackground": "#2A3D2B",
     "settings.checkboxBorder": "#C8E6C8",
@@ -584,7 +584,7 @@
       "settings": {
         "name": "Comments and overrides inside comments",
         "fontStyle": "italic",
-        "foreground": "#7e977e"
+        "foreground": "#A8B89A"
       }
     },
     {

@@ -56,10 +56,10 @@
     "commandCenter.foreground": "#95A5A6",
     "editor.background": "#F0F0F0",
     "editor.foreground": "#2C3E50",
-    "editor.findMatchBackground": "#87CEEB80",
+    "editor.findMatchBackground": "#2ECC714d",
     "editor.findMatchBorder": "#2ECC71",
-    "editor.findMatchHighlightBackground": "#87CEEB66",
-    "editor.findRangeHighlightBackground": "#0000000c",
+    "editor.findMatchHighlightBackground": "#2ECC7133",
+    "editor.findRangeHighlightBackground": "#2ECC7126",
     "editor.focusedStackFrameHighlightBackground": "#95A5A666",
     "editor.foldBackground": "#0000000c",
     "editor.hoverHighlightBackground": "#0000000c",
@@ -161,7 +161,11 @@
     "diffEditorGutter.insertedLineBackground": "#2ECC7166",
     "diffEditorGutter.removedLineBackground": "#E74C3C66",
     "diffEditorOverview.insertedForeground": "#2ECC71",
-    "diffEditorOverview.removedForeground": "#E74C3C"
+    "diffEditorOverview.removedForeground": "#E74C3C",
+    "scrollbar.shadow": "#00000033",
+    "scrollbarSlider.activeBackground": "#2C3E50CC",
+    "scrollbarSlider.background": "#7F8C8D40",
+    "scrollbarSlider.hoverBackground": "#2C3E5099"
   },
   "tokenColors": [
     {

@@ -7,31 +7,134 @@
 const fs = require('fs');
 const path = require('path');
 
-// Critical properties that must exist for proper UI functionality
-const REQUIRED_PROPERTIES = {
-    menu: [
-        'menu.selectionBackground',
-        'menu.selectionForeground',
-        'menubar.selectionBackground',
-        'menubar.selectionForeground'
-    ],
-    list: [
-        'list.activeSelectionBackground',
-        'list.activeSelectionForeground',
-        'list.activeSelectionIconForeground',
-        'list.hoverBackground',
-        'list.hoverForeground',
-        'list.focusAndSelectionOutline',
-        'list.focusOutline',
-        'list.inactiveFocusOutline',
-        'list.inactiveSelectionIconForeground'
-    ],
-    editor: [
-        'editor.selectionBackground',
-        'editor.selectionHighlightBackground',
-        'editor.inactiveSelectionBackground'
-    ]
-};
+// Property groups mirror docs/CONTRAST_REFERENCE.md so coverage gaps map directly to checklist rows
+const PROPERTY_GROUPS = [
+    {
+        name: 'Selection & Highlights',
+        properties: [
+            'editor.selectionBackground',
+            'editor.selectionHighlightBackground',
+            'editor.inactiveSelectionBackground',
+            'editor.findMatchBackground',
+            'editor.findMatchHighlightBackground',
+            'editor.findRangeHighlightBackground',
+            'editor.wordHighlightBackground',
+            'editor.wordHighlightStrongBackground'
+        ]
+    },
+    {
+        name: 'Diff Views',
+        properties: [
+            'diffEditor.insertedLineBackground',
+            'diffEditor.removedLineBackground',
+            'diffEditor.insertedTextBackground',
+            'diffEditor.removedTextBackground'
+        ]
+    },
+    {
+        name: 'Lists & Menus',
+        properties: [
+            'list.hoverBackground',
+            'list.hoverForeground',
+            'list.focusBackground',
+            'list.focusForeground',
+            'list.activeSelectionBackground',
+            'list.activeSelectionForeground',
+            'list.activeSelectionIconForeground',
+            'list.inactiveSelectionBackground',
+            'list.inactiveSelectionForeground',
+            'list.inactiveSelectionIconForeground',
+            'menu.selectionBackground',
+            'menu.selectionForeground',
+            'menubar.selectionBackground',
+            'menubar.selectionForeground'
+        ]
+    },
+    {
+        name: 'Buttons & Inputs',
+        properties: [
+            'button.background',
+            'button.foreground',
+            'button.hoverBackground',
+            'button.secondaryHoverBackground',
+            'button.secondaryHoverForeground',
+            'input.background',
+            'input.foreground',
+            'inputOption.activeBackground',
+            'inputOption.activeForeground'
+        ]
+    },
+    {
+        name: 'Tabs & Panels',
+        properties: [
+            'tab.activeBackground',
+            'tab.activeForeground',
+            'tab.hoverBackground',
+            'tab.hoverForeground',
+            'editorGroupHeader.tabsBackground',
+            'panel.background'
+        ]
+    },
+    {
+        name: 'Status Bar',
+        properties: [
+            'statusBarItem.prominentBackground',
+            'statusBarItem.prominentForeground',
+            'statusBarItem.prominentHoverBackground',
+            'statusBarItem.prominentHoverForeground',
+            'statusBarItem.remoteBackground',
+            'statusBarItem.remoteForeground',
+            'statusBarItem.remoteHoverBackground',
+            'statusBarItem.remoteHoverForeground'
+        ]
+    },
+    {
+        name: 'Scrollbars',
+        properties: [
+            'scrollbarSlider.background',
+            'scrollbarSlider.hoverBackground',
+            'scrollbarSlider.activeBackground'
+        ]
+    },
+    {
+        name: 'Focus Outlines',
+        properties: [
+            'list.focusOutline',
+            'list.focusAndSelectionOutline',
+            'list.inactiveFocusOutline'
+        ]
+    },
+    {
+        name: 'Welcome Page',
+        properties: [
+            'welcomePage.buttonHoverBackground',
+            'welcomePage.buttonHoverForeground',
+            'welcomePage.tileHoverBackground',
+            'welcomePage.tileHoverForeground'
+        ]
+    }
+];
+
+const BACKGROUND_FOREGROUND_PAIRS = [
+    { background: 'menu.selectionBackground', foreground: 'menu.selectionForeground', label: 'menu.selection' },
+    { background: 'menubar.selectionBackground', foreground: 'menubar.selectionForeground', label: 'menubar.selection' },
+    { background: 'list.hoverBackground', foreground: 'list.hoverForeground', label: 'list.hover' },
+    { background: 'list.focusBackground', foreground: 'list.focusForeground', label: 'list.focus' },
+    { background: 'list.activeSelectionBackground', foreground: 'list.activeSelectionForeground', label: 'list.activeSelection' },
+    { background: 'list.inactiveSelectionBackground', foreground: 'list.inactiveSelectionForeground', label: 'list.inactiveSelection' },
+    { background: 'button.background', foreground: 'button.foreground', label: 'button.default' },
+    { background: 'button.secondaryHoverBackground', foreground: 'button.secondaryHoverForeground', label: 'button.secondaryHover' },
+    { background: 'input.background', foreground: 'input.foreground', label: 'input.default' },
+    { background: 'inputOption.activeBackground', foreground: 'inputOption.activeForeground', label: 'inputOption.active' },
+    { background: 'tab.activeBackground', foreground: 'tab.activeForeground', label: 'tab.active' },
+    { background: 'tab.hoverBackground', foreground: 'tab.hoverForeground', label: 'tab.hover' },
+    { background: 'statusBarItem.prominentBackground', foreground: 'statusBarItem.prominentForeground', label: 'statusBar.prominent' },
+    { background: 'statusBarItem.prominentHoverBackground', foreground: 'statusBarItem.prominentHoverForeground', label: 'statusBar.prominentHover' },
+    { background: 'statusBarItem.remoteBackground', foreground: 'statusBarItem.remoteForeground', label: 'statusBar.remote' },
+    { background: 'statusBarItem.remoteHoverBackground', foreground: 'statusBarItem.remoteHoverForeground', label: 'statusBar.remoteHover' },
+    { background: 'welcomePage.buttonHoverBackground', foreground: 'welcomePage.buttonHoverForeground', label: 'welcome.buttonHover' },
+    { background: 'welcomePage.tileHoverBackground', foreground: 'welcomePage.tileHoverForeground', label: 'welcome.tileHover' }
+];
 
 function analyzeTheme(themePath) {
     const themeName = path.basename(themePath, '.json');
@@ -40,16 +143,29 @@ function analyzeTheme(themePath) {
     
     const issues = {
         missing: [],
-        contrastIssues: []
+        contrastIssues: [],
+        unpaired: []
     };
     
     // Check for missing properties
-    Object.entries(REQUIRED_PROPERTIES).forEach(([category, props]) => {
-        props.forEach(prop => {
+    PROPERTY_GROUPS.forEach((group) => {
+        group.properties.forEach((prop) => {
             if (!colors[prop]) {
-                issues.missing.push({ property: prop, category });
+                issues.missing.push({ property: prop, category: group.name });
             }
         });
+    });
+
+    // Background/foreground pairs should exist together so hover states never fall back to editor.foreground
+    BACKGROUND_FOREGROUND_PAIRS.forEach((pair) => {
+        const hasBg = Boolean(colors[pair.background]);
+        const hasFg = Boolean(colors[pair.foreground]);
+        if (hasBg !== hasFg) {
+            issues.unpaired.push({
+                label: pair.label,
+                missing: hasBg ? pair.foreground : pair.background
+            });
+        }
     });
     
     // Check for white-on-light or dark-on-dark contrast issues
@@ -95,7 +211,7 @@ function analyzeTheme(themePath) {
     return {
         themeName,
         isDark: themeData.type === 'dark',
-        issueCount: issues.missing.length + issues.contrastIssues.length,
+        issueCount: issues.missing.length + issues.contrastIssues.length + issues.unpaired.length,
         issues
     };
 }
@@ -164,6 +280,14 @@ if (needsFixes.length > 0) {
             result.issues.contrastIssues.forEach(issue => {
                 console.log(`     - ${issue.property}: ${issue.problem}`);
                 console.log(`       BG: ${issue.bg}, FG: ${issue.fg}`);
+            });
+            console.log('');
+        }
+
+        if (result.issues.unpaired.length > 0) {
+            console.log(`   Background/Foreground Mismatches (${result.issues.unpaired.length}):`);
+            result.issues.unpaired.forEach(issue => {
+                console.log(`     - ${issue.label}: missing ${issue.missing}`);
             });
             console.log('');
         }

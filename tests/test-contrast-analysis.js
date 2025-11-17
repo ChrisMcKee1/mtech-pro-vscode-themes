@@ -26,6 +26,10 @@ const {
 } = require('./lib/theme-utils');
 const colors = require('./lib/terminal-colors');
 
+function shouldDowngradeToInfo(designNote, contrast, floor = 2.5) {
+    return Boolean(designNote) && typeof contrast === 'number' && contrast >= floor;
+}
+
 // Parse command line arguments
 const VERBOSE = process.argv.includes('--verbose');
 
@@ -68,6 +72,7 @@ class ContrastAnalyzer {
         this.analyzeFindSystem(theme, bg, results);
         this.analyzeScrollbars(theme, bg, results);
         this.analyzeBrackets(theme, bg, results);
+        this.analyzeWelcomePage(theme, results);
         
         this.stats.themesAnalyzed++;
         return results;
@@ -79,6 +84,7 @@ class ContrastAnalyzer {
         
         const isMinimalist = isMinimalistTheme(results.name);
         const hasTradeoff = hasLightTradeoff(results.name);
+        const designNote = getDesignNote(results.name);
         
         // Scope categorization (research-based)
         const gitStatusScopes = ['comment.git-status', 'comment.other.git-status'];
@@ -165,20 +171,29 @@ class ContrastAnalyzer {
                 const threshold = getContrastThreshold(results.name, isKeyword ? 'keyword' : 'text');
                 
                 if (analysis.contrast < threshold) {
-                    const designNote = getDesignNote(results.name);
-                    const note = designNote && analysis.contrast >= 3.0 ? ` (${designNote})` : '';
-                    
-                    results.issues.push({
-                        severity: 'critical',
-                        category: 'syntax',
-                        scope: scope.substring(0, 40),
-                        color: fg,
-                        contrast: analysis.contrast.toFixed(2),
-                        required: `${threshold}:1`,
-                        message: `Syntax token fails readability: ${scope.substring(0, 40)}${note}`,
-                        fix: note ? null : `Increase contrast to ${threshold}:1 by adjusting lightness by 15-25%`
-                    });
-                    this.stats.criticalIssues++;
+                    if (shouldDowngradeToInfo(designNote, analysis.contrast, 3.0)) {
+                        results.issues.push({
+                            severity: 'info',
+                            category: 'syntax',
+                            scope: scope.substring(0, 40),
+                            color: fg,
+                            contrast: analysis.contrast.toFixed(2),
+                            required: `${threshold}:1`,
+                            message: `Design trade-off (${designNote}): ${scope.substring(0, 40)} at ${analysis.contrast.toFixed(2)}:1`
+                        });
+                    } else {
+                        results.issues.push({
+                            severity: 'critical',
+                            category: 'syntax',
+                            scope: scope.substring(0, 40),
+                            color: fg,
+                            contrast: analysis.contrast.toFixed(2),
+                            required: `${threshold}:1`,
+                            message: `Syntax token fails readability: ${scope.substring(0, 40)}`,
+                            fix: `Increase contrast to ${threshold}:1 by adjusting lightness by 15-25%`
+                        });
+                        this.stats.criticalIssues++;
+                    }
                 }
             }
         });
@@ -189,28 +204,42 @@ class ContrastAnalyzer {
         const bgRgb = hexToRgb(background);
         const hasTradeoff = hasLightTradeoff(results.name);
         const recommended = getRecommendedOpacity(results.type);
+        const designNote = getDesignNote(results.name);
         
         // Selection analysis
         const selection = themeColors['editor.selectionBackground'];
         if (selection) {
             const analysis = analyzeContrast(selection, background, true);
+            const downgraded = shouldDowngradeToInfo(designNote, analysis.contrast, 1.5);
             
             if (!analysis.passes3) {
-                const tradeoffNote = hasTradeoff ? ' (light theme trade-off - documented design decision)' : '';
-                const fix = hasTradeoff ? null : `Increase opacity to ${Math.round(recommended.selection * 100)}% (recommended for ${results.type} themes)`;
-                
-                results.issues.push({
-                    severity: 'high',
-                    category: 'selection',
-                    property: 'editor.selectionBackground',
-                    color: selection,
-                    opacity: `${Math.round(analysis.opacity * 100)}%`,
-                    contrast: analysis.contrast.toFixed(2),
-                    required: '3:1',
-                    message: `Selection invisible (${analysis.opacity < 0.2 ? 'too low opacity' : 'low contrast'})${tradeoffNote}`,
-                    fix
-                });
-                this.stats.highIssues++;
+                if (downgraded) {
+                    results.issues.push({
+                        severity: 'info',
+                        category: 'selection',
+                        property: 'editor.selectionBackground',
+                        color: selection,
+                        opacity: `${Math.round(analysis.opacity * 100)}%`,
+                        contrast: analysis.contrast.toFixed(2),
+                        message: `Design trade-off (${designNote}): selection contrast ${analysis.contrast.toFixed(2)}:1`
+                    });
+                } else {
+                    const tradeoffNote = hasTradeoff ? ' (light theme trade-off - documented design decision)' : '';
+                    const fix = hasTradeoff ? null : `Increase opacity to ${Math.round(recommended.selection * 100)}% (recommended for ${results.type} themes)`;
+                    
+                    results.issues.push({
+                        severity: 'high',
+                        category: 'selection',
+                        property: 'editor.selectionBackground',
+                        color: selection,
+                        opacity: `${Math.round(analysis.opacity * 100)}%`,
+                        contrast: analysis.contrast.toFixed(2),
+                        required: '3:1',
+                        message: `Selection invisible (${analysis.opacity < 0.2 ? 'too low opacity' : 'low contrast'})${tradeoffNote}`,
+                        fix
+                    });
+                    this.stats.highIssues++;
+                }
             } else if (analysis.opacity < 0.25 && !VERBOSE) {
                 // Only show in verbose mode if passing but borderline
             }
@@ -240,19 +269,31 @@ class ContrastAnalyzer {
         ].forEach(({ prop, color, label }) => {
             if (color) {
                 const analysis = analyzeContrast(color, background, true);
+                const downgraded = shouldDowngradeToInfo(designNote, analysis.contrast, 1.5);
                 
                 if (!analysis.passes3 && !VERBOSE) {
-                    // Skip verbose output for passing cases
-                    results.issues.push({
-                        severity: 'high',
-                        category: 'diff',
-                        property: prop,
-                        color: color,
-                        opacity: `${Math.round(analysis.opacity * 100)}%`,
-                        message: `${label} invisible`,
-                        fix: `Increase opacity to ${Math.round(recommended.diffLine * 100)}% (recommended for ${results.type} themes)`
-                    });
-                    this.stats.highIssues++;
+                    if (downgraded) {
+                        results.issues.push({
+                            severity: 'info',
+                            category: 'diff',
+                            property: prop,
+                            color: color,
+                            opacity: `${Math.round(analysis.opacity * 100)}%`,
+                            contrast: analysis.contrast.toFixed(2),
+                            message: `Design trade-off (${designNote}): ${label.toLowerCase()} contrast ${analysis.contrast.toFixed(2)}:1`
+                        });
+                    } else {
+                        results.issues.push({
+                            severity: 'high',
+                            category: 'diff',
+                            property: prop,
+                            color: color,
+                            opacity: `${Math.round(analysis.opacity * 100)}%`,
+                            message: `${label} invisible`,
+                            fix: `Increase opacity to ${Math.round(recommended.diffLine * 100)}% (recommended for ${results.type} themes)`
+                        });
+                        this.stats.highIssues++;
+                    }
                 }
                 
                 if (analysis.opacity > 0.50) {
@@ -388,6 +429,90 @@ class ContrastAnalyzer {
                 }
             }
         }
+    }
+
+    analyzeWelcomePage(theme, results) {
+        const themeColors = theme.colors || {};
+        const designNote = getDesignNote(results.name);
+        const hoverBackgroundKeys = Object.keys(themeColors)
+            .filter(key => key.startsWith('welcomePage.') && key.endsWith('HoverBackground'));
+
+        hoverBackgroundKeys.forEach((bgKey) => {
+            const bgColor = themeColors[bgKey];
+            if (!bgColor || typeof bgColor !== 'string' || !bgColor.startsWith('#')) {
+                return;
+            }
+
+            const expectedForegroundKey = bgKey.replace('Background', 'Foreground');
+            const baseKey = bgKey.replace('HoverBackground', '');
+            const candidateForegroundKeys = [
+                expectedForegroundKey,
+                `${baseKey}Foreground`,
+                'welcomePage.buttonHoverForeground',
+                'welcomePage.tileHoverForeground',
+                'welcomePage.buttonForeground',
+                'welcomePage.tileForeground',
+                'foreground',
+                'editor.foreground'
+            ];
+
+            const fgKey = candidateForegroundKeys.find((key) => typeof themeColors[key] === 'string' && themeColors[key].startsWith('#'));
+            const fgColor = fgKey ? themeColors[fgKey] : null;
+
+            if (!fgColor) {
+                results.issues.push({
+                    severity: 'medium',
+                    category: 'welcome',
+                    property: bgKey,
+                    message: `No matching foreground found for ${bgKey} (expected ${expectedForegroundKey})`,
+                    fix: `Define ${expectedForegroundKey} or set ${baseKey}Foreground to control welcome page text color`
+                });
+                this.stats.mediumIssues++;
+                return;
+            }
+
+            const contrast = calculateContrast(hexToRgb(bgColor), hexToRgb(fgColor));
+            if (isNaN(contrast)) {
+                return;
+            }
+
+            if (contrast < 4.5) {
+                const severity = contrast < 3 ? 'high' : 'medium';
+                const required = contrast < 3 ? '3:1' : '4.5:1';
+                const floor = severity === 'high' ? 2.5 : 3.2;
+                if (shouldDowngradeToInfo(designNote, contrast, floor)) {
+                    results.issues.push({
+                        severity: 'info',
+                        category: 'welcome',
+                        property: bgKey,
+                        textProperty: fgKey,
+                        color: bgColor,
+                        textColor: fgColor,
+                        contrast: contrast.toFixed(2),
+                        required: `${required}`,
+                        message: `Design trade-off (${designNote}): ${bgKey} vs ${fgKey} contrast ${contrast.toFixed(2)}:1`
+                    });
+                } else {
+                    results.issues.push({
+                        severity,
+                        category: 'welcome',
+                        property: bgKey,
+                        textProperty: fgKey,
+                        color: bgColor,
+                        textColor: fgColor,
+                        contrast: contrast.toFixed(2),
+                        required: `${required}`,
+                        message: `${bgKey} vs ${fgKey} contrast ${contrast.toFixed(2)}:1`,
+                        fix: `Adjust ${bgKey} or ${fgKey} to reach ${required} minimum on the welcome page`
+                    });
+                    if (severity === 'high') {
+                        this.stats.highIssues++;
+                    } else {
+                        this.stats.mediumIssues++;
+                    }
+                }
+            }
+        });
     }
 
     generateReport() {

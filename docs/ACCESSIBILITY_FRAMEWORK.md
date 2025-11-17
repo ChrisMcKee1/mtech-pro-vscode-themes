@@ -56,6 +56,23 @@ VS Code themes frequently ship with accessibility issues:### **The Core Problem*
 
 - Background: Off-white to reduce glare
 
+### 🎨 Design-First Exceptions (New in v0.5.20+)
+
+Some flagship palettes (Morning Coffee, Arctic Nord family, Enchanted Grove, etc.) intentionally relax WCAG math so the aesthetic tells the right story. Instead of forcing 4.5:1 everywhere, we now:
+
+- **Document the intent** in two places: this file + `tests/lib/theme-utils.js` (`DESIGN_PRIORITY_THEMES`, `MINIMALIST_THEMES`, `LIGHT_THEME_TRADEOFFS`).
+- **Set a visibility floor**: syntax ≥ 3.0:1, overlays/UI ≥ 1.5:1. Anything below that still escalates as HIGH/CRITICAL.
+- **Downgrade automated findings** to ℹ️ informational notes whenever a theme carries a design note. The contrast analyzer still prints the ratio, but it no longer blocks refactors.
+- **Explain the trade-off** in release notes/screenshots so users know the look is intentional and controlled.
+
+➡️ **How to mark a new exception**
+
+1. Add the theme name to the appropriate array in `tests/lib/theme-utils.js` (for marquee “design-first” palettes use `DESIGN_PRIORITY_THEMES`).
+2. Mention the design direction + visibility floor in this framework and in `docs/CONTRAST_REFERENCE.md`.
+3. Re-run `./run-tests.cmd --contrast` to verify the analyzer now emits an ℹ️ note instead of a 🚨 failure.
+
+This keeps the suite honest (we still see the ratios) while protecting intentional award-winning visuals from noisy failure spam.
+
 ## 🔬 Universal Patterns Discovered
 
 **Temperature Consistency**: Match color temperature to theme name psychology

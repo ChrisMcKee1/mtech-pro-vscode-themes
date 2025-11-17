@@ -31,6 +31,13 @@ const MINIMALIST_THEMES = [
 ];
 
 /**
+ * Design-first themes deliberately prioritize aesthetics over strict contrast targets
+ */
+const DESIGN_PRIORITY_THEMES = [
+    'Morning Coffee'
+];
+
+/**
  * Light themes with documented trade-offs
  * These accept slightly lower contrast due to mathematical opacity limitations
  */
@@ -86,6 +93,17 @@ function isMinimalistTheme(themeName) {
  */
 function hasLightTradeoff(themeName) {
     return LIGHT_THEME_TRADEOFFS.some(name => 
+        themeName.toLowerCase().includes(name.toLowerCase())
+    );
+}
+
+/**
+ * Check if theme documents design-first compromises
+ * @param {string} themeName
+ * @returns {boolean}
+ */
+function hasDesignPriority(themeName) {
+    return DESIGN_PRIORITY_THEMES.some(name => 
         themeName.toLowerCase().includes(name.toLowerCase())
     );
 }
@@ -182,6 +200,9 @@ function getContrastThreshold(themeName, elementType) {
  * @returns {string} Design note or empty string
  */
 function getDesignNote(themeName) {
+    if (hasDesignPriority(themeName)) {
+        return 'Design-first aesthetic - intentional contrast compromise';
+    }
     if (isMinimalistTheme(themeName)) {
         return 'Minimalist design - softer contrast is intentional';
     }
@@ -197,9 +218,11 @@ module.exports = {
     LIGHT_THEMES,
     MINIMALIST_THEMES,
     LIGHT_THEME_TRADEOFFS,
+    DESIGN_PRIORITY_THEMES,
     getThemeType,
     isMinimalistTheme,
     hasLightTradeoff,
+    hasDesignPriority,
     categorizeThemes,
     getMatchingIconTheme,
     getRecommendedOpacity,

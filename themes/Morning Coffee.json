@@ -91,28 +91,28 @@
     "debugView.valueChangedHighlight": "#CD9B4D",
     "descriptionForeground": "#3E2723",
     "diffEditor.diagonalFill": "#EDE4DB",
-    "diffEditor.insertedLineBackground": "#8FBC8F40",
-    "diffEditor.insertedTextBackground": "#8FBC8F80",
-    "diffEditor.removedLineBackground": "#CD5C5C40",
-    "diffEditor.removedTextBackground": "#CD5C5C80",
+    "diffEditor.insertedLineBackground": "#35603C4D",
+    "diffEditor.insertedTextBackground": "#35603C66",
+    "diffEditor.removedLineBackground": "#A348344D",
+    "diffEditor.removedTextBackground": "#A3483466",
     "diffEditor.unchangedCodeBackground": "#FAF6F1",
     "diffEditor.unchangedRegionBackground": "#FAF6F1",
     "diffEditor.unchangedRegionForeground": "#6B5B52",
     "diffEditor.unchangedRegionShadow": "#D5C4B0",
-    "diffEditorGutter.insertedLineBackground": "#8FBC8F99",
-    "diffEditorGutter.removedLineBackground": "#CD5C5C99",
-    "diffEditorOverview.insertedForeground": "#8FBC8FA5",
-    "diffEditorOverview.removedForeground": "#CD5C5CA5",
+    "diffEditorGutter.insertedLineBackground": "#35603C80",
+    "diffEditorGutter.removedLineBackground": "#A3483480",
+    "diffEditorOverview.insertedForeground": "#35603CA5",
+    "diffEditorOverview.removedForeground": "#A34834A5",
     "dropdown.background": "#EDE4DB",
     "dropdown.border": "#B8860B",
     "dropdown.foreground": "#3E2723",
     "dropdown.listBackground": "#EDE4DB",
     "editor.background": "#FAF6F1",
-    "editor.findMatchBackground": "#8FBC8F4d",
+    "editor.findMatchBackground": "#35603C4D",
     "editor.findMatchBorder": "#B8860B",
-    "editor.findMatchHighlightBackground": "#8FBC8F33",
+    "editor.findMatchHighlightBackground": "#35603C33",
     "editor.findMatchHighlightBorder": "#00000000",
-    "editor.findRangeHighlightBackground": "#8FBC8F26",
+    "editor.findRangeHighlightBackground": "#35603C26",
     "editor.findRangeHighlightBorder": "#00000000",
     "editor.focusedStackFrameHighlightBackground": "#FFD7804D",
     "editor.foldBackground": "#E5D5C326",
@@ -126,20 +126,20 @@
     "editor.linkedEditingBackground": "#EDE4DB",
     "editor.rangeHighlightBackground": "#EDE4DB",
     "editor.rangeHighlightBorder": "#EDE4DB",
-    "editor.selectionBackground": "#D2691E73",
+    "editor.selectionBackground": "#7A3A1199",
     "editor.selectionHighlightBackground": "#D2691E4D",
     "editor.selectionHighlightBorder": "#00000000",
     "editor.stackFrameHighlightBackground": "#CD9B4D4D",
-    "editor.wordHighlightBackground": "#8FBC8F40",
+    "editor.wordHighlightBackground": "#35603C40",
     "editor.wordHighlightBorder": "#00000000",
-    "editor.wordHighlightStrongBackground": "#8FBC8F4d",
+    "editor.wordHighlightStrongBackground": "#35603C4D",
     "editor.wordHighlightStrongBorder": "#00000000",
     "editorBracketHighlight.foreground1": "#8B4513",
     "editorBracketHighlight.foreground2": "#D2691E",
-    "editorBracketHighlight.foreground3": "#CD9B4D",
-    "editorBracketHighlight.foreground4": "#8FBC8F",
+    "editorBracketHighlight.foreground3": "#7A5128",
+    "editorBracketHighlight.foreground4": "#4C724C",
     "editorBracketHighlight.foreground5": "#9B6B3F",
-    "editorBracketHighlight.foreground6": "#CD9B4D",
+    "editorBracketHighlight.foreground6": "#5A381C",
     "editorBracketMatch.background": "#B8860B26",
     "editorBracketMatch.border": "#B8860B",
     "editorCodeLens.foreground": "#6B5B52",
@@ -240,8 +240,8 @@
     "inlineChat.background": "#EDE4DB",
     "inlineChat.border": "#B8860B",
     "inlineChat.shadow": "#D5C4B0",
-    "inlineChatDiff.inserted": "#8FBC8F4D",
-    "inlineChatDiff.removed": "#CD5C5C4D",
+    "inlineChatDiff.inserted": "#35603C4D",
+    "inlineChatDiff.removed": "#A348344D",
     "input.background": "#FFFFFF",
     "input.border": "#E5D5C3",
     "input.foreground": "#3E2723",
@@ -300,8 +300,8 @@
     "merge.border": "#E5D5C3",
     "merge.commonContentBackground": "#E5D5C34D",
     "merge.commonHeaderBackground": "#E5D5C366",
-    "merge.currentContentBackground": "#8FBC8F4D",
-    "merge.currentHeaderBackground": "#8FBC8F66",
+    "merge.currentContentBackground": "#35603C4D",
+    "merge.currentHeaderBackground": "#35603C66",
     "merge.incomingContentBackground": "#9B6B3F4D",
     "merge.incomingHeaderBackground": "#9B6B3F66",
     "mergeEditor.change.background": "#E5D5C34D",
@@ -444,6 +444,7 @@
     "statusBarItem.hoverBackground": "#EDE4DB",
     "statusBarItem.hoverForeground": "#3E2723",
     "statusBarItem.prominentBackground": "#B8860B",
+    "statusBarItem.prominentForeground": "#FAF6F1",
     "statusBarItem.offlineBackground": "#6B5B52",
     "statusBarItem.offlineForeground": "#FAF6F1",
     "statusBarItem.prominentHoverBackground": "#8B4513",
@@ -662,98 +663,98 @@
       "scope": "constant",
       "settings": {
         "name": "Constant",
-        "foreground": "#B8551A"
+        "foreground": "#A64B16"
       }
     },
     {
       "scope": "constant.other",
       "settings": {
         "name": "Constant",
-        "foreground": "#B8551A"
+        "foreground": "#A64B16"
       }
     },
     {
       "scope": "constant.other.caps",
       "settings": {
         "name": "Constant",
-        "foreground": "#B8551A"
+        "foreground": "#A64B16"
       }
     },
     {
       "scope": "constant.other.placeholder",
       "settings": {
         "name": "Placeholders",
-        "foreground": "#B8551A"
+        "foreground": "#A64B16"
       }
     },
     {
       "scope": "constant.other.property",
       "settings": {
         "name": "Constant as property",
-        "foreground": "#B8551A"
+        "foreground": "#A64B16"
       }
     },
     {
       "scope": "constant.other.citation.latex",
       "settings": {
         "name": "Constant in latex",
-        "foreground": "#B8551A"
+        "foreground": "#A64B16"
       }
     },
     {
       "scope": "constant.other.color",
       "settings": {
         "name": "Constant as color (in css / sass)",
-        "foreground": "#B8551A"
+        "foreground": "#A64B16"
       }
     },
     {
       "scope": "constant.other.character-class.escape",
       "settings": {
         "name": "Constant as character class escape (e.g. in regex)",
-        "foreground": "#B8551A"
+        "foreground": "#A64B16"
       }
     },
     {
       "scope": "constant.other.key",
       "settings": {
         "name": "Constant as key (e.g. in puppet manifests)",
-        "foreground": "#B8551A"
+        "foreground": "#A64B16"
       }
     },
     {
       "scope": "constant.other.symbol",
       "settings": {
         "name": "Constant as symbol (e.g. in ruby)",
-        "foreground": "#B8551A"
+        "foreground": "#A64B16"
       }
     },
     {
       "scope": "constant.other.elm",
       "settings": {
         "name": "Constants in elm",
-        "foreground": "#B8551A"
+        "foreground": "#A64B16"
       }
     },
     {
       "scope": "constant.numeric",
       "settings": {
         "name": "Number",
-        "foreground": "#B8551A"
+        "foreground": "#A64B16"
       }
     },
     {
       "scope": "constant.language",
       "settings": {
         "name": "Constant",
-        "foreground": "#B8551A"
+        "foreground": "#A64B16"
       }
     },
     {
       "scope": "constant.character.escape",
       "settings": {
         "name": "Character escape",
-        "foreground": "#B8551A"
+        "foreground": "#A64B16"
       }
     },
     {
@@ -767,7 +768,7 @@
       "scope": "constant.numeric.line-number.match.find-in-files",
       "settings": {
         "name": "Search result matched line numbes",
-        "foreground": "#B8860B"
+        "foreground": "#8B6506"
       }
     },
     {
@@ -785,7 +786,7 @@
       ],
       "settings": {
         "name": "Functions",
-        "foreground": "#A86A2F"
+        "foreground": "#9B5C24"
       }
     },
     {
@@ -810,7 +811,7 @@
       "scope": "entity.name.function.preprocessor",
       "settings": {
         "name": "Macros",
-        "foreground": "#A86A2F"
+        "foreground": "#9B5C24"
       }
     },
     {
@@ -853,7 +854,7 @@
       "scope": "entity.name.function",
       "settings": {
         "name": "Function name",
-        "foreground": "#A86A2F"
+        "foreground": "#9B5C24"
       }
     },
     {
@@ -908,7 +909,7 @@
       "settings": {
         "name": "Tag attribute",
         "fontStyle": "italic",
-        "foreground": "#A86A2F"
+        "foreground": "#9B5C24"
       }
     },
     {
@@ -950,7 +951,7 @@
       ],
       "settings": {
         "name": "Function names / calls",
-        "foreground": "#A86A2F"
+        "foreground": "#9B5C24"
       }
     },
     {
@@ -1236,7 +1237,7 @@
       ],
       "settings": {
         "name": "Function call (vs)",
-        "foreground": "#A86A2F"
+        "foreground": "#9B5C24"
       }
     },
     {
@@ -1783,14 +1784,14 @@
       "scope": "string.other.git-status.help.key",
       "settings": {
         "name": "git key in git status help text",
-        "foreground": "#9B6B3F"
+        "foreground": "#8C5D31"
       }
     },
     {
       "scope": "string.other.git-status.remote",
       "settings": {
         "name": "git status remote",
-        "foreground": "#8FBC8F"
+        "foreground": "#4C724C"
       }
     },
     {
@@ -1818,14 +1819,14 @@
       "scope": "support.function",
       "settings": {
         "name": "function name",
-        "foreground": "#A86A2F"
+        "foreground": "#9B5C24"
       }
     },
     {
       "scope": "support.macro",
       "settings": {
         "name": "support macro",
-        "foreground": "#A86A2F"
+        "foreground": "#9B5C24"
       }
     },
     {
@@ -1932,14 +1933,14 @@
       "settings": {
         "name": "Reserved variable names",
         "fontStyle": "italic",
-        "foreground": "#A86A2F"
+        "foreground": "#9B5C24"
       }
     },
     {
       "scope": "variable.language.arguments",
       "settings": {
         "name": "Reserved variable names: 'arguments'",
-        "foreground": "#A86A2F"
+        "foreground": "#9B5C24"
       }
     },
     {
@@ -1992,7 +1993,7 @@
       "scope": "variable.function",
       "settings": {
         "name": "Function and method names",
-        "foreground": "#A86A2F"
+        "foreground": "#9B5C24"
       }
     },
     {

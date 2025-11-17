@@ -1,5 +1,18 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## 0.6.6 - Welcome Contrast & Design Notes (November 2025)
+
+### Highlights
+
+- Documented design-first palettes (Morning Coffee, Arctic Nord family, Enchanted Grove, etc.) and taught the analyzer to log ℹ️ trade-offs when ratios stay above the new floors (docs + `tests/lib/theme-utils.js`, `tests/test-contrast-analysis.js`).
+- Expanded property coverage checks: `tests/analyze-theme-properties.js` now enforces selection/diff/list/button/tab/status/welcome groups plus background/foreground pairing, and `tests/check-welcome-contrast.js` spot-checks hover combos.
+- Added missing UI colors (button secondary hover text, menubar selection background, status bar prominent/remote states, welcome page hover foregrounds, tab hover/active fills) across all refreshed themes.
+- Re-tuned diff overlays, selections, and find highlights with palette-matched hues in 20+ themes (Arctic Nord + Light, Chroma Void, Copper Bloom, Cosmic Void + Light, Cyberpunk Neon, Digital Aqua, Enchanted Grove + Dark, Evening Espresso, Feisty Fusion + Light, Graphite Bay, Morning Coffee, Mystic Dusk, Neon Pink Light, OGE Dark/Light, Obsidian Moss, Sandstone Light, Tokyo Day/Night) so text never drowns under layered highlights.
+- Arctic Nord dark + light now share the calmer warning palette and matching welcome hover colors introduced last week, so both variants keep Nord identity while presenting alerts that feel intentional instead of harsh.
+- Morning Coffee received a targeted readability polish: stronger espresso selections/diffs, refreshed bracket spectrum, and warmer constant/function tones while keeping the cafe narrative intact.
+
+---
+
 ## 0.6.5 - Diff & Text Visibility Fixes (October 2025)
 
 ### Bug Fixes

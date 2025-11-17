@@ -13,6 +13,8 @@
 | UI elements | 3.0:1 | 4.5:1+ |
 | Large text | 3.0:1 | 4.5:1+ |
 
+> **Design-first override**: When a palette needs softer cues for storytelling, we treat these numbers as guidelines instead of hard rules. Document the intent in `docs/ACCESSIBILITY_FRAMEWORK.md` and add the theme to `DESIGN_PRIORITY_THEMES` (see `tests/lib/theme-utils.js`). The contrast analyzer will log an ℹ️ informational note—as long as syntax stays above ~3.0:1 and overlays stay above ~1.5:1—so we protect the look without hiding the ratios.
+
 ---
 
 ## Core Design Rules
@@ -153,19 +155,22 @@ Test all 7 combinations:
 2. **Verify against official docs**: https://code.visualstudio.com/api/references/theme-color
 3. **Check pairing**: Every `*Background` needs `*Foreground`
 4. **Test multi-state**: Focus + Hover combinations
-5. **Validate contrast**: Use automated tests
+5. **Run coverage analyzer**: `node tests/analyze-theme-properties.js` lists any missing checklist entries or unmatched background/foreground pairs
+6. **Validate contrast**: Use automated tests
 
 ---
 
 ## Common Mistakes
 
 ### ❌ Missing Foreground Property
+
 ```json
 "button.secondaryHoverBackground": "#ECEFF4"
 // Missing: "button.secondaryHoverForeground": "#2E3440"
 ```
 
 ### ❌ Property Precedence Oversight
+
 ```json
 // BAD: Focus overrides hover in focus+hover state
 "list.focusForeground": "#FFFFFF",    // White - takes precedence!
@@ -177,6 +182,7 @@ Test all 7 combinations:
 ```
 
 ### ❌ Invalid Properties (Not in VS Code API)
+
 ```json
 // These don't exist - use list.* properties instead
 "scmGraph.historyItemHoverBackground": "#ECEFF4",  // ❌
@@ -184,6 +190,7 @@ Test all 7 combinations:
 ```
 
 ### ❌ Copying Dark → Light Without Inversion
+
 ```json
 // BAD: Light theme using dark theme colors
 "activityBar.background": "#ECEFF4",  // Light bg
@@ -199,11 +206,13 @@ Test all 7 combinations:
 ## Pre-Release Checklist
 
 ### Automated Tests
+
 - [ ] `.\run-tests.cmd --contrast` (accessibility analysis)
 - [ ] `.\run-tests.cmd --quick` (structure validation)
 - [ ] `.\run-tests.cmd --full` (comprehensive)
 
 ### Manual Tests
+
 - [ ] GitLens commit graph (hover, focus, focus+hover)
 - [ ] Command Palette (hover, selection)
 - [ ] File Explorer (all list states)
@@ -213,6 +222,7 @@ Test all 7 combinations:
 - [ ] Settings UI (all input types)
 
 ### Property Validation
+
 - [ ] All properties exist in official VS Code API
 - [ ] All `*Background` properties have `*Foreground`
 - [ ] Multi-state scenarios tested (focus+hover)
@@ -222,7 +232,7 @@ Test all 7 combinations:
 
 ## References
 
-- **VS Code Theme API**: https://code.visualstudio.com/api/references/theme-color
-- **WCAG Guidelines**: https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html
+- **VS Code Theme API**: <https://code.visualstudio.com/api/references/theme-color>
+- **WCAG Guidelines**: <https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html>
 - **Accessibility Framework**: `docs/ACCESSIBILITY_FRAMEWORK.md`
 - **Test Suite Docs**: `tests/TEST_SUITE_DOCUMENTATION.md`

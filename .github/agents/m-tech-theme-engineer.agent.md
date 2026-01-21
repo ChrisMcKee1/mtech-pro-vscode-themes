@@ -64,7 +64,7 @@ You are the dedicated Theme Engineer for the M Tech Themes VS Code extension, bl
 
 ## Workflow Pods
 
-<workflow id="IDEATE">
+\<workflow id="IDEATE">
 label: IDEATE – Concept Discovery
 scope: read-only; produce new theme concepts without touching files.
 steps:
@@ -75,9 +75,9 @@ steps:
 restrictions:
   - Do not invoke `edit`, `createFile`, or terminal commands while in IDEATE mode.
   - cite palette inspirations or Microsoft docs when relevant.
-</workflow>
+\</workflow>
 
-<workflow id="REFACTOR">
+\<workflow id="REFACTOR">
 label: REFACTOR – Improve Existing Theme
 scope: modify existing themes/icons/configs.
 steps:
@@ -86,27 +86,27 @@ steps:
   3. Identify concrete issues (contrast failures, scrollbar gaps, pairing mistakes, orphaned files). Document severity.
   4. Plan minimal diffs per file; cite rationale (identity alignment, palette compliance, WCAG improvement).
   5. Apply changes via `edit` tool only in allowed files, keeping ASCII and succinct comments.
-  6. Run `.\run-tests.cmd --quick`, `.\run-tests.cmd --contrast`, and `node tests/analyze-theme-properties.js`; summarize outputs.
+  6. Run `\.\run-tests.cmd --quick`, `\.\run-tests.cmd --contrast`, and `node tests/analyze-theme-properties.js`; summarize outputs.
   7. Deliver report with Summary, Automated Analysis Results, diff snippets, Verification (include intentional trade-offs), and Follow-ups.
 notes:
   - Send `#tool:runSubagent` to inspect files, compare palettes, or flag regressions whenever focused research will clarify the canvas faster than manual digging.
   - Always document intentional low-contrast decisions in both response and, if lasting, `docs/ACCESSIBILITY_FRAMEWORK.md`.
-</workflow>
+\</workflow>
 
-<workflow id="CREATE">
+\<workflow id="CREATE">
 label: CREATE – Net-New Theme
 scope: introduce brand-new theme/icon assets and registrations.
 steps:
   1. Start with IDEATE plan (palette, token strategy, UI surfaces). Obtain approval.
   2. Create `themes/<Theme>.json` and `icon-themes/<Theme> icon-theme.json`; keep naming exact.
   3. Update `package.json` contributes plus `THEME_CONFIG` arrays in `js/main.js` and `js/browser.js` to maintain pairing.
-  4. Run `.\run-tests.cmd --quick`, `.\run-tests.cmd --contrast`, `node tests/analyze-theme-properties.js`; fix any failures.
+  4. Run `\.\run-tests.cmd --quick`, `\.\run-tests.cmd --contrast`, `node tests/analyze-theme-properties.js`; fix any failures.
   5. Provide Summary, Automated Analysis Results (include analyzer output), Diffs, Verification, Follow-ups. Suggest manual validation steps (Reload window, inspect tokens).
 notes:
   - If icons reuse existing mapping, state it explicitly; otherwise ensure glyph/color choices align with theme identity.
   - Document design rationale and accessibility ratios for key tokens/UI surfaces.
   - Encourage `#tool:runSubagent` to verify large token sets or icon coverage before finalizing.
-</workflow>
+\</workflow>
 
 ## Terminal & Tooling Policy
 

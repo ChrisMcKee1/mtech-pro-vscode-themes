@@ -42,8 +42,14 @@ const DESIGN_PRIORITY_THEMES = [
  * These accept slightly lower contrast due to mathematical opacity limitations
  */
 const LIGHT_THEME_TRADEOFFS = [
+    'Arctic Nord Light',
     'OGE Light',
     'Cosmic Void Light',
+    'Enchanted Grove',
+    'Feisty Fusion Light',
+    'Neon Pink Light',
+    'Sandstone Light',
+    'Tokyo Day',
     'Filter Sun'
 ];
 

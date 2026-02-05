@@ -98,16 +98,12 @@ console.log('Text vs background:', getContrastRatio(bg, textColor).toFixed(2) + 
 console.log('SELECTION TEXT READABILITY:');
 const selection35 = blendColors(selectionBase, bg, 0.35);
 const selection40 = blendColors(selectionBase, bg, 0.40);
-const selection60 = blendColors(selectionBase, bg, 0.60);
-console.log('Text on selection @ 35%:', getContrastRatio(textColor, selection35).toFixed(2) + ':1', 
+console.log('Text on selection @ 35% (canonical):', getContrastRatio(textColor, selection35).toFixed(2) + ':1', 
             getContrastRatio(textColor, selection35) >= 4.5 ? '✅ Excellent' : 
             getContrastRatio(textColor, selection35) >= 3.0 ? '⚠️ Acceptable (UI minimum)' : '❌ FAIL');
-console.log('Text on selection @ 40% (CURRENT):', getContrastRatio(textColor, selection40).toFixed(2) + ':1',
+console.log('Text on selection @ 40% (stronger):', getContrastRatio(textColor, selection40).toFixed(2) + ':1',
             getContrastRatio(textColor, selection40) >= 4.5 ? '✅ Excellent' : 
             getContrastRatio(textColor, selection40) >= 3.0 ? '⚠️ Acceptable (UI minimum)' : '❌ FAIL');
-console.log('Text on selection @ 60% (OLD):', getContrastRatio(textColor, selection60).toFixed(2) + ':1',
-            getContrastRatio(textColor, selection60) >= 4.5 ? '✅ Excellent' : 
-            getContrastRatio(textColor, selection60) >= 3.0 ? '⚠️ Acceptable (UI minimum)' : '❌ FAIL');
 
 // Diff text readability
 console.log('\nDIFF TEXT READABILITY:');
@@ -130,17 +126,17 @@ console.log('Text on removed @ 50%:', getContrastRatio(textColor, removed50).toF
 // ============================================================
 console.log('\n=== COMPOUNDING OPACITY ANALYSIS ===\n');
 
-// NEW VALUES: Selection 40% (#66), Diff 30% (#4D) - industry standard
-const selOpacity = 0.40;
+// Canonical overlay targets for dark themes
+const selOpacity = 0.35;
 const diffOpacity = 0.30;
-const findOpacity = 0.50;
+const findOpacity = 0.30;
 
 const sel_plus_diff = 1 - (1 - selOpacity) * (1 - diffOpacity);
 const sel_plus_diff_plus_find = 1 - (1 - selOpacity) * (1 - diffOpacity) * (1 - findOpacity);
 
-console.log('Selection (40%) + Diff (30%):');
+console.log('Selection (35%) + Diff (30%):');
 console.log('  Combined opacity:', (sel_plus_diff * 100).toFixed(0) + '%',
-            sel_plus_diff <= 0.70 ? '✅ Safe' : sel_plus_diff <= 0.80 ? '⚠️ Borderline' : '❌ Too opaque');
+            sel_plus_diff <= 0.55 ? '✅ Under 55% cap' : '⚠️ Over 55% cap');
 
 // Calculate actual color when compounded
 const selection_blended = blendColors(selectionBase, bg, selOpacity);
@@ -149,9 +145,9 @@ console.log('  Text readability on combined:',
             getContrastRatio(textColor, selection_plus_diff_blended).toFixed(2) + ':1',
             getContrastRatio(textColor, selection_plus_diff_blended) >= 3.0 ? '✅' : '❌ Text obscured!');
 
-console.log('\nSelection (40%) + Diff (30%) + Find (50%):');
+console.log('\nSelection (35%) + Diff (30%) + Find (30%):');
 console.log('  Combined opacity:', (sel_plus_diff_plus_find * 100).toFixed(0) + '%',
-            sel_plus_diff_plus_find <= 0.70 ? '✅ Safe' : sel_plus_diff_plus_find <= 0.80 ? '⚠️ Borderline' : '❌ Too opaque');
+            sel_plus_diff_plus_find <= 0.55 ? '✅ Under 55% cap' : '⚠️ Over 55% cap (triple stack)');
 
 // Calculate actual color for triple compound
 const triple_compound = blendColors(hexToRgb('#88C0D0'), selection_plus_diff_blended, findOpacity); // Assume cyan find
@@ -164,27 +160,28 @@ console.log('  Text readability on triple:',
 // ============================================================
 console.log('\n=== RECOMMENDATIONS ===\n');
 
-const textOnSel40 = getContrastRatio(textColor, selection40);
-const compoundOk = sel_plus_diff <= 0.70 && getContrastRatio(textColor, selection_plus_diff_blended) >= 3.0;
+const textOnSel35 = getContrastRatio(textColor, selection35);
+const compoundOk = sel_plus_diff <= 0.55 && getContrastRatio(textColor, selection_plus_diff_blended) >= 3.0;
 
-console.log('CURRENT SETTINGS (40% selection, 30% diff):');
-if (textOnSel40 >= 4.5 && compoundOk) {
+console.log('CANONICAL SETTINGS (35% selection, 30% diff):');
+if (textOnSel35 >= 4.5 && compoundOk) {
   console.log('✅ SAFE - Text remains readable on all highlights');
-  console.log('   - Text readability: ' + textOnSel40.toFixed(2) + ':1 ✅ Excellent');
+  console.log('   - Text readability: ' + textOnSel35.toFixed(2) + ':1 ✅ Excellent');
   console.log('   - Compounded opacity: ' + (sel_plus_diff * 100).toFixed(0) + '% ✅ Safe');
   console.log('   - Compounded readability: ' + getContrastRatio(textColor, selection_plus_diff_blended).toFixed(2) + ':1 ✅');
-} else if (textOnSel40 >= 3.0 && compoundOk) {
+} else if (textOnSel35 >= 3.0 && compoundOk) {
   console.log('⚠️ ACCEPTABLE but not ideal');
-  console.log('   - Text readability: ' + textOnSel40.toFixed(2) + ':1 (meets UI minimum 3:1)');
+  console.log('   - Text readability: ' + textOnSel35.toFixed(2) + ':1 (meets UI minimum 3:1)');
   console.log('   - Consider: Reduce selection to 35% for better text contrast');
 } else {
   console.log('❌ COMPROMISES text readability');
-  console.log('   - Text on selection: ' + textOnSel40.toFixed(2) + ':1');
+  console.log('   - Text on selection: ' + textOnSel35.toFixed(2) + ':1');
   console.log('   - Compounded opacity: ' + (sel_plus_diff * 100).toFixed(0) + '%');
-  console.log('   - RECOMMENDED: Selection 35%, Diff 25-30%');
+  console.log('   - RECOMMENDED: Selection 35%, Diff 30%');
 }
 
-console.log('\nIndustry standard (One Dark Pro, Dracula, GitHub):');
-console.log('   - Selection: 20-30% opacity');
-console.log('   - Diff: 20-30% opacity');
-console.log('   - Compounded: ~40-50% (well below 70% threshold)');
+console.log('\nCanonical targets:');
+console.log('   - Selection: 35% (dark) / 30% (light)');
+console.log('   - Diff line: 30% (dark) / 25% (light)');
+console.log('   - Diff text: 40% (dark) / 35% (light)');
+console.log('   - Combined cap: 55% (dark) / 48-50% (light)');

@@ -206,14 +206,17 @@ class ContrastAnalyzer {
         const recommended = getRecommendedOpacity(results.type);
         const designNote = getDesignNote(results.name);
         
+        const overlayFloor = 1.5;
+
         // Selection analysis
         const selection = themeColors['editor.selectionBackground'];
         if (selection) {
             const analysis = analyzeContrast(selection, background, true);
-            const downgraded = shouldDowngradeToInfo(designNote, analysis.contrast, 1.5);
-            
+            const tradeoffLabel = designNote || (hasTradeoff ? 'Light theme trade-off - documented design decision' : 'Pragmatic overlay target');
+            const fix = hasTradeoff ? null : `Increase opacity to ${Math.round(recommended.selection * 100)}% (recommended for ${results.type} themes)`;
+
             if (!analysis.passes3) {
-                if (downgraded) {
+                if (analysis.contrast >= overlayFloor) {
                     results.issues.push({
                         severity: 'info',
                         category: 'selection',
@@ -221,12 +224,9 @@ class ContrastAnalyzer {
                         color: selection,
                         opacity: `${Math.round(analysis.opacity * 100)}%`,
                         contrast: analysis.contrast.toFixed(2),
-                        message: `Design trade-off (${designNote}): selection contrast ${analysis.contrast.toFixed(2)}:1`
+                        message: `${tradeoffLabel}: selection contrast ${analysis.contrast.toFixed(2)}:1 (floor ${overlayFloor}:1)`
                     });
                 } else {
-                    const tradeoffNote = hasTradeoff ? ' (light theme trade-off - documented design decision)' : '';
-                    const fix = hasTradeoff ? null : `Increase opacity to ${Math.round(recommended.selection * 100)}% (recommended for ${results.type} themes)`;
-                    
                     results.issues.push({
                         severity: 'high',
                         category: 'selection',
@@ -235,7 +235,7 @@ class ContrastAnalyzer {
                         opacity: `${Math.round(analysis.opacity * 100)}%`,
                         contrast: analysis.contrast.toFixed(2),
                         required: '3:1',
-                        message: `Selection invisible (${analysis.opacity < 0.2 ? 'too low opacity' : 'low contrast'})${tradeoffNote}`,
+                        message: `Selection invisible (${analysis.opacity < 0.2 ? 'too low opacity' : 'low contrast'})`,
                         fix
                     });
                     this.stats.highIssues++;
@@ -269,10 +269,11 @@ class ContrastAnalyzer {
         ].forEach(({ prop, color, label }) => {
             if (color) {
                 const analysis = analyzeContrast(color, background, true);
-                const downgraded = shouldDowngradeToInfo(designNote, analysis.contrast, 1.5);
-                
+                const tradeoffLabel = designNote || (hasTradeoff ? 'Light theme trade-off - documented design decision' : 'Pragmatic overlay target');
+
                 if (!analysis.passes3 && !VERBOSE) {
-                    if (downgraded) {
+                    if (analysis.contrast >= overlayFloor || designNote) {
+                        // Themes with a designNote (minimalist/design-first) get INFO even below floor
                         results.issues.push({
                             severity: 'info',
                             category: 'diff',
@@ -280,7 +281,7 @@ class ContrastAnalyzer {
                             color: color,
                             opacity: `${Math.round(analysis.opacity * 100)}%`,
                             contrast: analysis.contrast.toFixed(2),
-                            message: `Design trade-off (${designNote}): ${label.toLowerCase()} contrast ${analysis.contrast.toFixed(2)}:1`
+                            message: `${tradeoffLabel}: ${label.toLowerCase()} contrast ${analysis.contrast.toFixed(2)}:1 (floor ${overlayFloor}:1)`
                         });
                     } else {
                         results.issues.push({
@@ -353,9 +354,18 @@ class ContrastAnalyzer {
         const findProps = [
             'editor.findMatchBackground',
             'editor.findMatchHighlightBackground',
+            'editor.findRangeHighlightBackground',
             'editor.wordHighlightBackground',
             'editor.wordHighlightStrongBackground'
         ];
+
+        const findOpacityTargets = {
+            'editor.findMatchBackground': 0.30,
+            'editor.findMatchHighlightBackground': 0.20,
+            'editor.findRangeHighlightBackground': 0.15,
+            'editor.wordHighlightBackground': 0.25,
+            'editor.wordHighlightStrongBackground': 0.30
+        };
         
         const findColors = findProps.map(prop => themeColors[prop]).filter(Boolean);
         
@@ -366,22 +376,23 @@ class ContrastAnalyzer {
                 property: 'Find system',
                 color: findColors[0],
                 message: `No visual hierarchy (all ${findColors.length} properties identical)`,
-                fix: `Use 50%/40%/30%/35% opacity tiers for clear hierarchy (current>all>word>strong)`
+                fix: `Use 30%/20%/15%/25%/30% opacity tiers for clear hierarchy (match>highlight>range>word>strong)`
             });
             this.stats.mediumIssues++;
         }
         
         findColors.forEach((color, i) => {
             const analysis = analyzeContrast(color, background, true);
+            const targetOpacity = findOpacityTargets[findProps[i]] ?? 0.2;
             
-            if (analysis.opacity < 0.2 && !VERBOSE) {
+            if (analysis.opacity < targetOpacity && !VERBOSE) {
                 results.issues.push({
                     severity: 'medium',
                     category: 'find',
                     property: findProps[i],
                     opacity: `${Math.round(analysis.opacity * 100)}%`,
-                    message: `Find highlight barely visible`,
-                    fix: `Increase opacity to 30-50% for visibility`
+                    message: `Find highlight below target opacity`,
+                    fix: `Increase opacity to ${Math.round(targetOpacity * 100)}% to match hierarchy`
                 });
                 this.stats.mediumIssues++;
             }

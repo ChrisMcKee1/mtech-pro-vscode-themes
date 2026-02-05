@@ -38,23 +38,23 @@ Set-Content -Path $morningPath -Value $morningContent -NoNewline
 Write-Host "   ✅ Removed 4 empty properties from each theme" -ForegroundColor Green
 
 # ============================================
-# FIX 2: Line Highlight Opacity (too low at 20%)
+# FIX 2: Line Highlight Opacity (normalize to canonical band)
 # ============================================
 Write-Host ""
 Write-Host "2. Fixing line highlight opacity..." -ForegroundColor Yellow
 
-# Evening Espresso: 20% → 30%
+# Evening Espresso: normalize to 20%
 $espressoContent = Get-Content $espressoPath -Raw
-$espressoContent = $espressoContent -replace '"editor\.lineHighlightBackground":\s*"#4A322833"', '"editor.lineHighlightBackground": "#4A32284D"'
+$espressoContent = $espressoContent -replace '"editor\.lineHighlightBackground":\s*"#4A3228[0-9A-Fa-f]{2}"', '"editor.lineHighlightBackground": "#4A322833"'
 Set-Content -Path $espressoPath -Value $espressoContent -NoNewline
 
-# Morning Coffee: 20% → 40%
+# Morning Coffee: normalize to 20%
 $morningContent = Get-Content $morningPath -Raw
-$morningContent = $morningContent -replace '"editor\.lineHighlightBackground":\s*"#E5D5C333"', '"editor.lineHighlightBackground": "#E5D5C366"'
+$morningContent = $morningContent -replace '"editor\.lineHighlightBackground":\s*"#E5D5C3[0-9A-Fa-f]{2}"', '"editor.lineHighlightBackground": "#E5D5C333"'
 Set-Content -Path $morningPath -Value $morningContent -NoNewline
 
-Write-Host "   ✅ Evening Espresso: 20% → 30% opacity" -ForegroundColor Green
-Write-Host "   ✅ Morning Coffee: 20% → 40% opacity" -ForegroundColor Green
+Write-Host "   ✅ Evening Espresso: normalized to 20% opacity" -ForegroundColor Green
+Write-Host "   ✅ Morning Coffee: normalized to 20% opacity" -ForegroundColor Green
 
 # ============================================
 # FIX 3: Contrast Analysis Issues - Evening Espresso
@@ -75,20 +75,20 @@ $espressoContent = $espressoContent -replace '"editorLineNumber\.foreground":\s*
 # CSS vendor prefix same issue - already uses line number color, so fixed above
 
 # Selection too low contrast (45% opacity = 2.78:1, needs 3:1)
-# Fix: Increase to 50% opacity
-$espressoContent = $espressoContent -replace '"editor\.selectionBackground":\s*"#F4A46073"', '"editor.selectionBackground": "#F4A46080"'
+# Fix: Normalize to canonical 35% opacity
+$espressoContent = $espressoContent -replace '"editor\.selectionBackground":\s*"#F4A460[0-9A-Fa-f]{2}"', '"editor.selectionBackground": "#F4A46059"'
 
-# Diff inserted lines too low (40% → 50%)
-$espressoContent = $espressoContent -replace '"diffEditor\.insertedTextBackground":\s*"#6B8E6B66"', '"diffEditor.insertedTextBackground": "#6B8E6B80"'
+# Diff inserted lines too low (target 40% for dark)
+$espressoContent = $espressoContent -replace '"diffEditor\.insertedTextBackground":\s*"#6B8E6B[0-9A-Fa-f]{2}"', '"diffEditor.insertedTextBackground": "#6B8E6B66"'
 
-# Diff removed lines too low (40% → 50%)
-$espressoContent = $espressoContent -replace '"diffEditor\.removedTextBackground":\s*"#A9444266"', '"diffEditor.removedTextBackground": "#A944428"'
+# Diff removed lines too low (target 40% for dark)
+$espressoContent = $espressoContent -replace '"diffEditor\.removedTextBackground":\s*"#A94442[0-9A-Fa-f]{2}"', '"diffEditor.removedTextBackground": "#A9444266"'
 
 Set-Content -Path $espressoPath -Value $espressoContent -NoNewline
 
 Write-Host "   ✅ Fixed line numbers contrast (4.19 → 4.5+)" -ForegroundColor Green
-Write-Host "   ✅ Fixed selection contrast (45% → 50%)" -ForegroundColor Green
-Write-Host "   ✅ Fixed diff line contrast (40% → 50%)" -ForegroundColor Green
+Write-Host "   ✅ Fixed selection contrast (→ 35% canonical)" -ForegroundColor Green
+Write-Host "   ✅ Fixed diff text contrast (→ 40% canonical)" -ForegroundColor Green
 
 # ============================================
 # FIX 4: Contrast Analysis Issues - Morning Coffee

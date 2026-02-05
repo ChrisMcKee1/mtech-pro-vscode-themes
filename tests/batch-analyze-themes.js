@@ -102,14 +102,17 @@ themes.forEach(themeName => {
   
   // SELECTION CHECK
   const selection = theme.colors?.['editor.selectionBackground'];
+  const isLight = (theme.type === 'light') || /Light|Sun|Day/.test(themeName);
+  const minSelection = isLight ? 0.30 : 0.35;
+  const maxSelection = isLight ? 0.40 : 0.45;
   if (selection) {
     const opacityMatch = selection.match(/([0-9a-fA-F]{2})$/);
     if (opacityMatch) {
       const opacity = parseInt(opacityMatch[1], 16) / 255;
-      if (opacity < 0.30) {
-        issues.push(`   ⚠️  OPACITY: Selection ${Math.round(opacity*100)}% (too low, recommend 30-50%)`);
-      } else if (opacity > 0.60) {
-        issues.push(`   ⚠️  OPACITY: Selection ${Math.round(opacity*100)}% (too high, recommend 30-50%)`);
+      if (opacity < minSelection) {
+        issues.push(`   ⚠️  OPACITY: Selection ${Math.round(opacity*100)}% (too low, target ${Math.round(minSelection*100)}%)`);
+      } else if (opacity > maxSelection) {
+        issues.push(`   ⚠️  OPACITY: Selection ${Math.round(opacity*100)}% (too high, cap ${Math.round(maxSelection*100)}%)`);
       }
     }
   }

@@ -38,7 +38,7 @@ VS Code themes frequently ship with accessibility issues:### **The Core Problem*
 
 - **Dark themes**: 30-35% opacity for highlights (industry standard)
 
-**Dark Themes**:- **Light themes**: Dark saturated accents (7:1+ contrast) + 40-50% opacity
+**Dark Themes**:- **Light themes**: Dark saturated accents (7:1+ contrast) + 30-40% opacity
 
 - Selection/highlights: 30-35% opacity (industry standard)- **Temperature consistency**: Match color temperature to theme name psychology
 
@@ -52,7 +52,7 @@ VS Code themes frequently ship with accessibility issues:### **The Core Problem*
 
 - Dark saturated accents: 7:1+ contrast (AAA compliance)
 
-- Selection/highlights: 40-50% opacity---
+- Selection/highlights: 30-40% opacity---
 
 - Background: Off-white to reduce glare
 
@@ -72,6 +72,25 @@ Some flagship palettes (Morning Coffee, Arctic Nord family, Enchanted Grove, etc
 3. Re-run `./run-tests.cmd --contrast` to verify the analyzer now emits an ℹ️ note instead of a 🚨 failure.
 
 This keeps the suite honest (we still see the ratios) while protecting intentional award-winning visuals from noisy failure spam.
+
+### 🔦 Light Overlay Trade-Offs (Current Set)
+
+The following light themes are documented in `LIGHT_THEME_TRADEOFFS` to reflect the transparency-contrast paradox on bright backgrounds:
+
+- Arctic Nord Light
+- Cosmic Void Light
+- Enchanted Grove
+- Feisty Fusion Light
+- Neon Pink Light
+- OGE Light
+- Sandstone Light
+- Tokyo Day
+
+For these palettes, we preserve the 30%/25% overlay targets where possible and aim for a **visibility floor of ~1.5:1**. When that floor was missed, we deepened overlay base colors (same hue family) rather than increasing opacity, preserving the soft light-theme feel.
+
+### 🌑 Dark Overlay Contrast Boosts (Targeted)
+
+Several dark themes now use **selection at 40%** and **diff line backgrounds at 35%** to lift contrast above 3:1 while keeping hue identity intact. This can exceed the 55% compounded-overlay guideline during stacked highlights; treat it as a documented trade-off for readability-first dark palettes.
 
 ## 🔬 Universal Patterns Discovered
 
@@ -111,7 +130,7 @@ This keeps the suite honest (we still see the ratios) while protecting intention
 
 **Industry Reality** (top 5 VS Code themes, 30M+ combined installs):
 
-**Our Approach**: Use **30-35% opacity** for dark themes, **40-50% for light themes**, prioritizing code readability over strict compliance.
+**Our Approach**: Use **30-35% opacity** for dark themes, **30-40% for light themes**, prioritizing code readability over strict compliance.
 
 | Theme | Installs | Selection Opacity | Actual Contrast | WCAG Status |
 
@@ -195,7 +214,7 @@ Theme names create psychological expectations:- [ ] Update `tokenColors` array (
 
 ---| **Accent strategy** | Subtle, desaturated | Dark, saturated (7:1+ target) |
 
-| **Primary opacity** | 20-35% | 40-50% (2.5x higher) |
+| **Primary opacity** | 20-35% | 30-40% (slightly higher or darker accents) |
 
 ### Pattern 4: Dual System Problem| **Diff opacity** | 10-20% | 25%+ |
 
@@ -205,7 +224,7 @@ VS Code themes have TWO color systems:| **Scrollbars** | 10%/20%/35% (rest/hover
 
 - **`colors{}` object**: UI elements (selection, scrollbars, diffs)
 
-- **`tokenColors[]` array**: Syntax highlighting (strings, keywords)**Key Insight**: Light themes need **2.5x higher opacity** than dark themes for equivalent perceived visibility due to luminosity contrast physics.
+- **`tokenColors[]` array**: Syntax highlighting (strings, keywords)**Key Insight**: Light themes often need darker accents and slightly higher opacity (up to ~40%) for equivalent perceived visibility.
 
 
 
@@ -421,7 +440,7 @@ Themes like Arctic Nord, Tokyo Night, Gruvbox have **official color specificatio
 
 ### v0.5.19 (Dec 2024)- **6 diff backgrounds**: 10% → 25% opacity (+150% visibility)
 
-- Filter Spectrum sidebar refinement (cyan/blue core colors)- **10 highlight properties**: 15-20% → 40-50% opacity
+- Filter Spectrum sidebar refinement (cyan/blue core colors)- **10 highlight properties**: 15-20% → 30-40% opacity
 
 - **6 bracket colors**: Redesigned for 4.5:1+ contrast
 
@@ -949,7 +968,7 @@ User screenshot showed JSON string values like `"tech_pro.select_theme"` still p
 **Light Theme**: Dark text on light background
 - Pale colors FAIL (`#ffd76d` on `#fdfaf7` = 2.8:1 ❌)
 - Need dark, saturated accents (`#b8860b` = 7.5:1 ✅)
-- Highlights need HIGHER opacity (40-50% vs 10-20%)
+- Highlights need HIGHER opacity (30-40% vs 10-20%)
 
 **Lesson**: Cannot simply "invert" dark theme colors. Light themes require separate color science approach.
 
@@ -973,11 +992,11 @@ Tertiary (inactive): 10-15% (#1f293719)
 Diff backgrounds: 25% (#bad76140)
 ```
 
-**Correlation**: Light themes need **2.5x higher opacity** than dark themes for equivalent perceived visibility due to luminosity contrast physics.
+**Correlation**: Light themes often need darker accents and slightly higher opacity (up to ~40%) for equivalent perceived visibility.
 
 **Application**: When creating new light theme:
 1. Start with dark accent color (7:1+ contrast)
-2. Use 40-50% opacity for primary highlights
+2. Use 30-40% opacity for primary highlights
 3. Test in bright environment (sunlight/office lighting)
 
 ---
@@ -1068,7 +1087,7 @@ Diff backgrounds: 25% (#bad76140)
 - [ ] Choose temperature family FIRST (warm/cool) based on theme name
 - [ ] Avoid pure `#000000` (use `#1a1623`) and pure `#ffffff` (use `#fdfaf7`)
 - [ ] Dark themes: can use pale accents, subtle highlights (5-20% opacity)
-- [ ] Light themes: need dark saturated accents (7:1+), higher opacity (40-50%)
+- [ ] Light themes: need dark saturated accents (7:1+), higher opacity (30-40%)
 - [ ] Bracket colors: boost saturation 8-10% for dark, 15-25% for light
 
 ### **Dual System Updates:**
@@ -1117,7 +1136,7 @@ Diff backgrounds: 25% (#bad76140)
 - **28 UI yellow properties**: 2.8:1 → 7.5:1 (**+168% contrast improvement**)
 - **3 syntax token colors**: unified to DarkGoldenrod
 - **6 diff backgrounds**: 10% → 25% opacity (**+150% visibility**)
-- **10 highlight properties**: 15-20% → 40-50% opacity (**+150-200%**)
+- **10 highlight properties**: 15-20% → 30-40% opacity (approx +100-150%)
 - **6 bracket colors**: redesigned for 4.5:1+ contrast minimum
 - **3 foundation tiers**: `#ffffff` → `#fdfaf7` (glare reduction)
 

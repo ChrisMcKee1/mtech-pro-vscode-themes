@@ -1,3 +1,5 @@
+# NOTE: Legacy script. Current overlay spec is in tests/lib/theme-utils.js.
+# Prefer batch-fix-all-opacity.js for active refactors.
 # Standardize Diff Background Opacity to 30%
 # Adjusts both insertedLineBackground and removedLineBackground to 4D (30% opacity)
 # Preserves theme-specific colors while fixing opacity

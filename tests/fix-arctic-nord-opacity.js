@@ -103,15 +103,13 @@ console.log(`  Text readability: ${getContrast(text, rgbToHex(currentCompoundedC
 console.log('');
 
 console.log('='.repeat(80));
-console.log('=== PROPOSED SOLUTION (30/40/50 Rule) ===');
+console.log('=== PROPOSED SOLUTION (Canonical 35/30/40/50) ===');
 console.log('='.repeat(80));
 console.log('');
 
 // Test various opacity combinations
 const proposals = [
-  { name: 'Conservative (30/30)', sel: 0.30, diffLine: 0.30, diffText: 0.40, gutter: 0.50 },
-  { name: 'Balanced (35/30)', sel: 0.35, diffLine: 0.30, diffText: 0.40, gutter: 0.50 },
-  { name: 'Standard (40/30)', sel: 0.40, diffLine: 0.30, diffText: 0.40, gutter: 0.50 }
+  { name: 'Canonical (35/30)', sel: 0.35, diffLine: 0.30, diffText: 0.40, gutter: 0.50 }
 ];
 
 proposals.forEach(prop => {
@@ -138,13 +136,13 @@ proposals.forEach(prop => {
   const selBlendedRgb = blendColors(selectionBase, bg, prop.sel);
   const compoundedColor = blendColors(insertedBase, rgbToHex(selBlendedRgb), prop.diffLine);
   console.log(`Compounding (selection + diff):`);
-  console.log(`  Combined opacity: ${(compounded*100).toFixed(0)}% ${compounded <= 0.70 ? '✅ Safe' : compounded <= 0.80 ? '⚠️ Borderline' : '❌ Too high'}`);
+  console.log(`  Combined opacity: ${(compounded*100).toFixed(0)}% ${compounded <= 0.55 ? '✅ Under 55% cap' : '⚠️ Over 55% cap'}`);
   console.log(`  Text readability: ${getContrast(text, rgbToHex(compoundedColor)).toFixed(2)}:1 ${getContrast(text, rgbToHex(compoundedColor)) >= 3.0 ? '✅' : '❌'}`);
   console.log('');
 });
 
 // Select best proposal
-const best = proposals[1];  // Balanced (35/30)
+const best = proposals[0];  // Canonical (35/30)
 console.log('='.repeat(80));
 console.log(`RECOMMENDED: ${best.name}`);
 console.log('='.repeat(80));

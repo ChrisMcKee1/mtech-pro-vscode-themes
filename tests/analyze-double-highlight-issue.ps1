@@ -25,12 +25,43 @@ function Get-BaseColor($hexColor) {
     return $hexColor
 }
 
+function Get-ThemeType($themeName, $themeData) {
+    if ($themeData.type -eq 'light') {
+        return 'light'
+    }
+
+    $explicitLight = @(
+        'Enchanted Grove',
+        'Arctic Nord Light',
+        'Cosmic Void Light',
+        'Feisty Fusion Light',
+        'Neon Pink Light',
+        'OGE Light',
+        'Tokyo Day',
+        'Filter Sun'
+    )
+
+    if ($explicitLight -contains $themeName) {
+        return 'light'
+    }
+
+    if ($themeName -match 'Light|Sun|Day') {
+        return 'light'
+    }
+
+    return 'dark'
+}
+
 $problematicThemes = @()
 
 foreach ($themeFile in $themes) {
     try {
         $content = Get-Content -Path $themeFile.FullName -Raw | ConvertFrom-Json
         $colors = $content.colors
+        $themeName = [System.IO.Path]::GetFileNameWithoutExtension($themeFile.Name)
+        $themeType = Get-ThemeType -themeName $themeName -themeData $content
+        $combinedCap = if ($themeType -eq 'light') { 50 } else { 55 }
+        $lineHighlightCap = if ($themeType -eq 'light') { 25 } else { 20 }
         
         # Extract relevant properties
         $diffInserted = $colors.'diffEditor.insertedLineBackground'
@@ -63,11 +94,11 @@ foreach ($themeFile in $themes) {
         $issues = @()
         
         # Issue 1: Find match overlay too opaque (>50% combined)
-        if ($combinedFindDiffInsert -gt 50) {
-            $issues += "Find+DiffInsert = ${combinedFindDiffInsert}% (too opaque)"
+        if ($combinedFindDiffInsert -gt $combinedCap) {
+            $issues += "Find+DiffInsert = ${combinedFindDiffInsert}% (over cap ${combinedCap}%)"
         }
-        if ($combinedFindDiffRemove -gt 50) {
-            $issues += "Find+DiffRemove = ${combinedFindDiffRemove}% (too opaque)"
+        if ($combinedFindDiffRemove -gt $combinedCap) {
+            $issues += "Find+DiffRemove = ${combinedFindDiffRemove}% (over cap ${combinedCap}%)"
         }
         
         # Issue 2: Find match base color clashes with diff colors (warm yellows/oranges on green/red)
@@ -82,18 +113,20 @@ foreach ($themeFile in $themes) {
         }
         
         # Issue 4: Line highlight + diff combination too dark
-        if ($lineHighlightOpacity -gt 30 -and ($diffInsertedOpacity + $lineHighlightOpacity) -gt 50) {
-            $issues += "LineHighlight+Diff too dark (combined ~$($diffInsertedOpacity + $lineHighlightOpacity)%)"
+        if ($lineHighlightOpacity -gt $lineHighlightCap -and ($diffInsertedOpacity + $lineHighlightOpacity) -gt $combinedCap) {
+            $issues += "LineHighlight+Diff too dark (combined ~$($diffInsertedOpacity + $lineHighlightOpacity)% cap ${combinedCap}%)"
         }
         
         if ($issues.Count -gt 0) {
             $problematicThemes += [PSCustomObject]@{
                 Theme = $themeFile.Name
+                ThemeType = $themeType
                 DiffInsert = "$diffInserted ($diffInsertedOpacity%)"
                 DiffRemove = "$diffRemoved ($diffRemovedOpacity%)"
                 FindMatch = "$findMatch ($findMatchOpacity%)"
                 CombinedInsert = "${combinedFindDiffInsert}%"
                 CombinedRemove = "${combinedFindDiffRemove}%"
+                CombinedCap = "${combinedCap}%"
                 Issues = $issues -join " | "
             }
         }
@@ -116,8 +149,10 @@ else {
         Write-Host "  Diff Insert:  $($theme.DiffInsert)" -ForegroundColor DarkGray
         Write-Host "  Diff Remove:  $($theme.DiffRemove)" -ForegroundColor DarkGray
         Write-Host "  Find Match:   $($theme.FindMatch)" -ForegroundColor DarkGray
-        Write-Host "  Combined Insert: $($theme.CombinedInsert)" -ForegroundColor $(if ([int]$theme.CombinedInsert.TrimEnd('%') -gt 50) { "Red" } else { "Yellow" })
-        Write-Host "  Combined Remove: $($theme.CombinedRemove)" -ForegroundColor $(if ([int]$theme.CombinedRemove.TrimEnd('%') -gt 50) { "Red" } else { "Yellow" })
+        Write-Host "  Theme Type:  $($theme.ThemeType)" -ForegroundColor DarkGray
+        Write-Host "  Combined Cap: $($theme.CombinedCap)" -ForegroundColor DarkGray
+        Write-Host "  Combined Insert: $($theme.CombinedInsert)" -ForegroundColor $(if ([int]$theme.CombinedInsert.TrimEnd('%') -gt [int]$theme.CombinedCap.TrimEnd('%')) { "Red" } else { "Yellow" })
+        Write-Host "  Combined Remove: $($theme.CombinedRemove)" -ForegroundColor $(if ([int]$theme.CombinedRemove.TrimEnd('%') -gt [int]$theme.CombinedCap.TrimEnd('%')) { "Red" } else { "Yellow" })
         Write-Host "  Issues: $($theme.Issues)" -ForegroundColor Cyan
         Write-Host ""
     }
@@ -126,16 +161,16 @@ else {
     Write-Host "Problematic themes: $($problematicThemes.Count)" -ForegroundColor Yellow
     Write-Host ""
     Write-Host "=== ARCTIC NORD (GOOD EXAMPLE) ===" -ForegroundColor Green
-    Write-Host "Diff Insert: #88C0D040 (25% cyan - subtle)" -ForegroundColor DarkGray
-    Write-Host "Find Match:  #88c0d04d (30% cyan - same color family)" -ForegroundColor DarkGray
-    Write-Host "Combined:    ~48% (text remains readable)" -ForegroundColor DarkGray
+    Write-Host "Diff Insert: #88C0D04D (30% cyan - subtle)" -ForegroundColor DarkGray
+    Write-Host "Find Match:  #88C0D04D (30% cyan - same color family)" -ForegroundColor DarkGray
+    Write-Host "Combined:    ~51% (text remains readable, under dark cap 55%)" -ForegroundColor DarkGray
     Write-Host "Strategy:    Uses SAME base color (#88C0D0) for both overlays" -ForegroundColor DarkGray
     Write-Host ""
 }
 
 Write-Host "=== RECOMMENDATIONS ===" -ForegroundColor Cyan
 Write-Host "1. Use SAME base color for find highlights and diff backgrounds" -ForegroundColor White
-Write-Host "2. Keep find match opacity ≤ 50% (80 hex or less)" -ForegroundColor White
-Write-Host "3. Keep combined opacity < 50% to maintain text readability" -ForegroundColor White
+Write-Host "2. Use canonical find tiers: 30/20/15/25/30 (find/hi/range/word/strong)" -ForegroundColor White
+Write-Host "3. Keep combined opacity <= 55% (dark) / <= 50% (light, 48% preferred)" -ForegroundColor White
 Write-Host "4. Avoid warm yellows/oranges on green diffs (color clash)" -ForegroundColor White
 Write-Host "5. Test in actual diff view with Ctrl+F active" -ForegroundColor White

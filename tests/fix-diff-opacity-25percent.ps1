@@ -1,3 +1,5 @@
+# NOTE: Legacy script. Current overlay spec is in tests/lib/theme-utils.js.
+# Prefer batch-fix-all-opacity.js for active refactors.
 # Fix Diff Opacity - 25% Standard
 # Only adjust themes with 40%+ opacity down to 25% (40 hex)
 # Leave themes already at 25% or below unchanged

@@ -65,6 +65,42 @@ const PROPERTY_GROUPS = [
         ]
     },
     {
+        name: 'VS Code 2026 Additions',
+        properties: [
+            'activityBar.activeBorder',
+            'activityBarTop.activeBorder',
+            'activityErrorBadge.background',
+            'activityErrorBadge.foreground',
+            'activityWarningBadge.background',
+            'activityWarningBadge.foreground',
+            'breadcrumb.background',
+            'button.border',
+            'chat.requestBubbleBackground',
+            'chat.requestBubbleHoverBackground',
+            'commandCenter.activeBorder',
+            'editorCommentsWidget.rangeActiveBackground',
+            'editorCommentsWidget.rangeBackground',
+            'editorIndentGuide.activeBackground',
+            'editorWidget.foreground',
+            'gauge.background',
+            'gauge.border',
+            'gauge.errorBackground',
+            'gauge.errorForeground',
+            'gauge.foreground',
+            'gauge.warningBackground',
+            'gauge.warningForeground',
+            'quickInput.border',
+            'quickInputList.focusBackground',
+            'quickInputList.focusForeground',
+            'quickInputList.focusIconForeground',
+            'quickInputList.hoverBackground',
+            'quickInputTitle.background',
+            'terminal.border',
+            'terminal.tab.activeBorder',
+            'disabledForeground'
+        ]
+    },
+    {
         name: 'Tabs & Panels',
         properties: [
             'tab.activeBackground',
@@ -133,13 +169,20 @@ const BACKGROUND_FOREGROUND_PAIRS = [
     { background: 'statusBarItem.remoteBackground', foreground: 'statusBarItem.remoteForeground', label: 'statusBar.remote' },
     { background: 'statusBarItem.remoteHoverBackground', foreground: 'statusBarItem.remoteHoverForeground', label: 'statusBar.remoteHover' },
     { background: 'welcomePage.buttonHoverBackground', foreground: 'welcomePage.buttonHoverForeground', label: 'welcome.buttonHover' },
-    { background: 'welcomePage.tileHoverBackground', foreground: 'welcomePage.tileHoverForeground', label: 'welcome.tileHover' }
+    { background: 'welcomePage.tileHoverBackground', foreground: 'welcomePage.tileHoverForeground', label: 'welcome.tileHover' },
+    { background: 'activityErrorBadge.background', foreground: 'activityErrorBadge.foreground', label: 'activityErrorBadge' },
+    { background: 'activityWarningBadge.background', foreground: 'activityWarningBadge.foreground', label: 'activityWarningBadge' },
+    { background: 'gauge.errorBackground', foreground: 'gauge.errorForeground', label: 'gauge.error' },
+    { background: 'gauge.warningBackground', foreground: 'gauge.warningForeground', label: 'gauge.warning' },
+    { background: 'quickInputList.focusBackground', foreground: 'quickInputList.focusForeground', label: 'quickInputList.focus' }
 ];
 
 function analyzeTheme(themePath) {
     const themeName = path.basename(themePath, '.json');
     const themeData = JSON.parse(fs.readFileSync(themePath, 'utf8'));
     const colors = themeData.colors || {};
+    const semanticTokenColors = themeData.semanticTokenColors || {};
+    const semanticHighlightingEnabled = themeData.semanticHighlighting === true;
     
     const issues = {
         missing: [],
@@ -154,6 +197,17 @@ function analyzeTheme(themePath) {
                 issues.missing.push({ property: prop, category: group.name });
             }
         });
+    });
+
+    // Require semantic token colors that align with VS Code 2026 themes
+    if (!semanticHighlightingEnabled) {
+        issues.missing.push({ property: 'semanticHighlighting', category: 'Semantic Tokens' });
+    }
+
+    ['customLiteral', 'newOperator', 'numberLiteral', 'stringLiteral'].forEach((token) => {
+        if (!semanticTokenColors[token]) {
+            issues.missing.push({ property: `semanticTokenColors.${token}`, category: 'Semantic Tokens' });
+        }
     });
 
     // Background/foreground pairs should exist together so hover states never fall back to editor.foreground

@@ -40,19 +40,18 @@ console.log('Background #E5E9F0 luminance:', getLuminance(bg.r, bg.g, bg.b).toFi
 console.log('\n=== SELECTION CONTRAST ===\n');
 const selectionBase = hexToRgb('#5E81AC'); // Nord 10
 console.log('Selection base #5E81AC (Nord 10):', getContrastRatio(bg, selectionBase).toFixed(2) + ':1');
-console.log('Current @ 35%:', getContrastRatio(bg, blendColors(selectionBase, bg, 0.35)).toFixed(2) + ':1');
-console.log('Proposed @ 50%:', getContrastRatio(bg, blendColors(selectionBase, bg, 0.50)).toFixed(2) + ':1');
-console.log('Proposed @ 60%:', getContrastRatio(bg, blendColors(selectionBase, bg, 0.60)).toFixed(2) + ':1');
+console.log('Canonical @ 30%:', getContrastRatio(bg, blendColors(selectionBase, bg, 0.30)).toFixed(2) + ':1');
+console.log('Stronger @ 35%:', getContrastRatio(bg, blendColors(selectionBase, bg, 0.35)).toFixed(2) + ':1');
 
 console.log('\n=== DIFF CONTRAST ===\n');
 console.log('Inserted base #5E81AC (Nord 10):', getContrastRatio(bg, selectionBase).toFixed(2) + ':1');
-console.log('Current @ 30%:', getContrastRatio(bg, blendColors(selectionBase, bg, 0.30)).toFixed(2) + ':1');
-console.log('Proposed @ 50%:', getContrastRatio(bg, blendColors(selectionBase, bg, 0.50)).toFixed(2) + ':1');
+console.log('Canonical @ 25%:', getContrastRatio(bg, blendColors(selectionBase, bg, 0.25)).toFixed(2) + ':1');
+console.log('Stronger @ 30%:', getContrastRatio(bg, blendColors(selectionBase, bg, 0.30)).toFixed(2) + ':1');
 
 const removedBase = hexToRgb('#BF616A'); // Nord 11
 console.log('\nRemoved base #BF616A (Nord 11):', getContrastRatio(bg, removedBase).toFixed(2) + ':1');
-console.log('Current @ 30%:', getContrastRatio(bg, blendColors(removedBase, bg, 0.30)).toFixed(2) + ':1');
-console.log('Proposed @ 50%:', getContrastRatio(bg, blendColors(removedBase, bg, 0.50)).toFixed(2) + ':1');
+console.log('Canonical @ 25%:', getContrastRatio(bg, blendColors(removedBase, bg, 0.25)).toFixed(2) + ':1');
+console.log('Stronger @ 30%:', getContrastRatio(bg, blendColors(removedBase, bg, 0.30)).toFixed(2) + ':1');
 
 console.log('\n=== BRACKET CONTRAST ===\n');
 const currentBracket = hexToRgb('#a3be8c'); // Nord 14 Aurora Green
@@ -77,14 +76,14 @@ console.log('Text vs background:', getContrastRatio(bg, textColor).toFixed(2) + 
 
 // Selection text readability
 console.log('SELECTION TEXT READABILITY:');
+const selection30 = blendColors(selectionBase, bg, 0.30);
 const selection35 = blendColors(selectionBase, bg, 0.35);
-const selection60 = blendColors(selectionBase, bg, 0.60);
-console.log('Text on selection @ 35%:', getContrastRatio(textColor, selection35).toFixed(2) + ':1', 
+console.log('Text on selection @ 30% (canonical):', getContrastRatio(textColor, selection30).toFixed(2) + ':1', 
+            getContrastRatio(textColor, selection30) >= 4.5 ? '✅ Excellent' : 
+            getContrastRatio(textColor, selection30) >= 3.0 ? '⚠️ Acceptable (UI minimum)' : '❌ FAIL');
+console.log('Text on selection @ 35% (stronger):', getContrastRatio(textColor, selection35).toFixed(2) + ':1', 
             getContrastRatio(textColor, selection35) >= 4.5 ? '✅ Excellent' : 
             getContrastRatio(textColor, selection35) >= 3.0 ? '⚠️ Acceptable (UI minimum)' : '❌ FAIL');
-console.log('Text on selection @ 60%:', getContrastRatio(textColor, selection60).toFixed(2) + ':1',
-            getContrastRatio(textColor, selection60) >= 4.5 ? '✅ Excellent' : 
-            getContrastRatio(textColor, selection60) >= 3.0 ? '⚠️ Acceptable (UI minimum)' : '❌ FAIL');
 
 // Diff text readability  
 console.log('\nDIFF TEXT READABILITY:');
@@ -107,16 +106,16 @@ console.log('Text on removed @ 50%:', getContrastRatio(textColor, removed50).toF
 // ============================================================
 console.log('\n=== COMPOUNDING OPACITY ANALYSIS ===\n');
 
-const selOpacity = 0.60;
-const diffOpacity = 0.50;
-const findOpacity = 0.50;
+const selOpacity = 0.30;
+const diffOpacity = 0.25;
+const findOpacity = 0.30;
 
 const sel_plus_diff = 1 - (1 - selOpacity) * (1 - diffOpacity);
 const sel_plus_diff_plus_find = 1 - (1 - selOpacity) * (1 - diffOpacity) * (1 - findOpacity);
 
-console.log('Selection (60%) + Diff (50%):');
+console.log('Selection (30%) + Diff (25%):');
 console.log('  Combined opacity:', (sel_plus_diff * 100).toFixed(0) + '%',
-            sel_plus_diff <= 0.70 ? '✅ Safe' : sel_plus_diff <= 0.80 ? '⚠️ Borderline' : '❌ Too opaque');
+            sel_plus_diff <= 0.50 ? '✅ Under 50% cap' : '⚠️ Over 50% cap');
 
 const selection_blended = blendColors(selectionBase, bg, selOpacity);
 const selection_plus_diff_blended = blendColors(selectionBase, selection_blended, diffOpacity);
@@ -124,9 +123,9 @@ console.log('  Text readability on combined:',
             getContrastRatio(textColor, selection_plus_diff_blended).toFixed(2) + ':1',
             getContrastRatio(textColor, selection_plus_diff_blended) >= 3.0 ? '✅' : '❌ Text obscured!');
 
-console.log('\nSelection (60%) + Diff (50%) + Find (50%):');
+console.log('\nSelection (30%) + Diff (25%) + Find (30%):');
 console.log('  Combined opacity:', (sel_plus_diff_plus_find * 100).toFixed(0) + '%',
-            sel_plus_diff_plus_find <= 0.70 ? '✅ Safe' : sel_plus_diff_plus_find <= 0.80 ? '⚠️ Borderline' : '❌ Too opaque');
+            sel_plus_diff_plus_find <= 0.50 ? '✅ Under 50% cap' : '⚠️ Over 50% cap (triple stack)');
 
 const triple_compound = blendColors(selectionBase, selection_plus_diff_blended, findOpacity);
 console.log('  Text readability on triple:', 
@@ -138,20 +137,20 @@ console.log('  Text readability on triple:',
 // ============================================================
 console.log('\n=== RECOMMENDATIONS ===\n');
 
-const textOnSel60 = getContrastRatio(textColor, selection60);
-const compoundOk = sel_plus_diff <= 0.80 && getContrastRatio(textColor, selection_plus_diff_blended) >= 3.0;
+const textOnSel30 = getContrastRatio(textColor, selection30);
+const compoundOk = sel_plus_diff <= 0.50 && getContrastRatio(textColor, selection_plus_diff_blended) >= 3.0;
 
-if (textOnSel60 >= 4.5 && compoundOk) {
-  console.log('✅ Current settings (60% selection, 50% diff) are SAFE');
-} else if (textOnSel60 >= 3.0 && compoundOk) {
-  console.log('⚠️ Current settings are ACCEPTABLE but not ideal');
-  console.log('   - Text readability: ' + textOnSel60.toFixed(2) + ':1 (meets UI minimum 3:1)');
-  console.log('   - Consider: Reduce selection to 40% for better text contrast');
+if (textOnSel30 >= 4.5 && compoundOk) {
+  console.log('✅ Canonical settings (30% selection, 25% diff) are SAFE');
+} else if (textOnSel30 >= 3.0 && compoundOk) {
+  console.log('⚠️ Canonical settings are ACCEPTABLE but not ideal');
+  console.log('   - Text readability: ' + textOnSel30.toFixed(2) + ':1 (meets UI minimum 3:1)');
+  console.log('   - Consider: Adjust selection to 35% if needed');
 } else {
-  console.log('❌ Current settings COMPROMISE text readability');
-  console.log('   - Text on selection: ' + textOnSel60.toFixed(2) + ':1');
+  console.log('❌ Canonical settings COMPROMISE text readability');
+  console.log('   - Text on selection: ' + textOnSel30.toFixed(2) + ':1');
   console.log('   - Compounded opacity: ' + (sel_plus_diff * 100).toFixed(0) + '%');
-  console.log('   - RECOMMENDED: Selection 35-40%, Diff 30%');
+  console.log('   - RECOMMENDED: Selection 30-35%, Diff 25%');
 }
 
-console.log('\nIndustry standard: Selection 20-30%, Diff 20-30%, Compounded ~40-50%');
+console.log('\nCanonical targets: Selection 30%, Diff 25%, Find 30%, Cap 48-50%');

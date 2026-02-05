@@ -108,9 +108,7 @@ console.log('');
 
 // Test various opacity combinations (light themes need LOWER opacity than dark)
 const proposals = [
-  { name: 'Conservative (25/25)', sel: 0.25, diffLine: 0.25, diffText: 0.30, gutter: 0.40 },
-  { name: 'Balanced (30/25)', sel: 0.30, diffLine: 0.25, diffText: 0.35, gutter: 0.40 },
-  { name: 'Standard (30/30)', sel: 0.30, diffLine: 0.30, diffText: 0.40, gutter: 0.45 }
+  { name: 'Canonical (30/25)', sel: 0.30, diffLine: 0.25, diffText: 0.35, gutter: 0.40 }
 ];
 
 proposals.forEach(prop => {
@@ -137,13 +135,13 @@ proposals.forEach(prop => {
   const selBlendedRgb = blendColors(selectionBase, bg, prop.sel);
   const compoundedColor = blendColors(insertedBase, rgbToHex(selBlendedRgb), prop.diffLine);
   console.log(`Compounding (selection + diff):`);
-  console.log(`  Combined opacity: ${(compounded*100).toFixed(0)}% ${compounded <= 0.50 ? '✅ Safe' : compounded <= 0.60 ? '⚠️ Borderline' : '❌ Too high'}`);
+  console.log(`  Combined opacity: ${(compounded*100).toFixed(0)}% ${compounded <= 0.50 ? '✅ Under 50% cap' : '⚠️ Over 50% cap'}`);
   console.log(`  Text readability: ${getContrast(text, rgbToHex(compoundedColor)).toFixed(2)}:1 ${getContrast(text, rgbToHex(compoundedColor)) >= 4.5 ? '✅' : getContrast(text, rgbToHex(compoundedColor)) >= 3.0 ? '⚠️' : '❌'}`);
   console.log('');
 });
 
 // Select best proposal
-const best = proposals[1];  // Balanced (30/25)
+const best = proposals[0];  // Canonical (30/25)
 console.log('='.repeat(80));
 console.log(`RECOMMENDED: ${best.name}`);
 console.log('='.repeat(80));

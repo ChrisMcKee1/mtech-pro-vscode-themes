@@ -407,6 +407,9 @@ class ContrastAnalyzer {
         
         // Check if this is a light theme with documented trade-offs
         const hasLightTradeoff = this.lightThemeTradeoffs.some(name => results.name.includes(name));
+        const isLight = results.type === 'light' || results.name.includes('Light') || results.name.includes('Sun') || results.name.includes('Day');
+        const selectionMin = isLight ? 0.30 : 0.35;
+        const selectionMax = isLight ? 0.45 : 0.50;
         
         // Selection
         const selection = colors['editor.selectionBackground'];
@@ -431,27 +434,27 @@ class ContrastAnalyzer {
                     message: `Selection invisible (${analysis.opacity < 0.2 ? 'too low opacity' : 'low contrast'})${tradeoffNote}`
                 });
                 this.stats.highIssues++;
-            } else if (analysis.opacity < 0.25) {
+            } else if (analysis.opacity < selectionMin) {
                 results.issues.push({
                     severity: 'medium',
                     category: 'selection',
                     property: 'editor.selectionBackground',
                     opacity: `${Math.round(analysis.opacity * 100)}%`,
-                    message: `Selection opacity low (industry standard: 30-40%)`
+                    message: `Selection opacity low (target ${Math.round(selectionMin * 100)}%)`
                 });
                 this.stats.mediumIssues++;
             }
             
             // CRITICAL: Check if selection is TOO opaque (obscures selected text)
             // Must be able to read text THROUGH the selection highlight
-            if (analysis.opacity > 0.60) {
+            if (analysis.opacity > selectionMax) {
                 results.issues.push({
                     severity: 'critical',
                     category: 'selection',
                     property: 'editor.selectionBackground',
                     color: selection,
                     opacity: `${Math.round(analysis.opacity * 100)}%`,
-                    message: `Selection TOO OPAQUE - selected text unreadable (max 60%, recommend 30-40%)`
+                    message: `Selection TOO OPAQUE - selected text unreadable (cap ${Math.round(selectionMax * 100)}%)`
                 });
                 this.stats.criticalIssues++;
             }
@@ -461,6 +464,9 @@ class ContrastAnalyzer {
         const diffInserted = colors['diffEditor.insertedLineBackground'];
         const diffRemoved = colors['diffEditor.removedLineBackground'];
         
+        const diffTarget = isLight ? 0.25 : 0.30;
+        const diffMax = isLight ? 0.35 : 0.40;
+
         [
             { prop: 'diffEditor.insertedLineBackground', color: diffInserted, label: 'Inserted lines' },
             { prop: 'diffEditor.removedLineBackground', color: diffRemoved, label: 'Removed lines' }
@@ -483,21 +489,21 @@ class ContrastAnalyzer {
                         opacity: `${Math.round(analysis.opacity * 100)}%`,
                         contrast: analysis.contrast.toFixed(2),
                         required: '3:1',
-                        message: `${label} invisible (recommend 30% opacity)${tradeoffNote}`
+                        message: `${label} invisible (target ${Math.round(diffTarget * 100)}% opacity)${tradeoffNote}`
                     });
                     this.stats.highIssues++;
                 }
                 
                 // CRITICAL: Check if diff is TOO opaque (obscures code text)
                 // Research principle: 30% opacity for diffs to maintain text readability
-                if (analysis.opacity > 0.50) {
+                if (analysis.opacity > diffMax) {
                     results.issues.push({
                         severity: 'critical',
                         category: 'diffs',
                         property: prop,
                         color: color,
                         opacity: `${Math.round(analysis.opacity * 100)}%`,
-                        message: `${label} TOO OPAQUE - obscures code text (max 50%, recommend 30%)`
+                        message: `${label} TOO OPAQUE - obscures code text (cap ${Math.round(diffMax * 100)}%)`
                     });
                     this.stats.criticalIssues++;
                 }

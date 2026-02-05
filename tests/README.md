@@ -99,6 +99,20 @@ node batch-analyze-themes.js
 node analyze-theme-properties.js
 ```
 
+## Overlay Standards (Source Of Truth)
+
+Canonical overlay targets live in `tests/lib/theme-utils.js` and the overlay plan in
+`docs/OVERLAY_AUDIT_PLAN.md`.
+
+- Dark themes: selection 35%, diff line 30%, diff text 40%, gutter 50%, combined cap 55%
+- Light themes: selection 30%, diff line 25%, diff text 35%, gutter 40%, combined cap 48-50%
+- Find hierarchy (all themes): match 30%, highlight 20%, range 15%, word 25%, word strong 30%
+
+Legacy scripts retained for historical reference (do not use for current refactors):
+- `fix-diff-opacity-25percent.ps1`
+- `fix-diff-opacity-30percent.ps1`
+- `fine-tune-find-opacity.ps1`
+
 ## Consolidation Summary
 
 **Before**: 28 calculation scripts + 15 text files = 43 files  

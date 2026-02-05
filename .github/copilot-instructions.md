@@ -299,9 +299,9 @@ When adjusting existing themes:
 
 **Common fixes identified by automated analysis**:
 - Low-contrast comments: 2.3-2.8:1 → darken by 30-40%
-- Invisible selections: 10-15% opacity → increase to 30-40%
-- Invisible diffs: 10% opacity → increase to 30%
-- Missing find hierarchy: all identical → use 50%/40%/30%/35% tiers
+- Invisible selections: 10-15% opacity → increase to 30-35% (dark) / 30% (light)
+- Invisible diffs: 10% opacity → increase to 30% (dark) / 25% (light)
+- Missing find hierarchy: all identical → use 30%/20%/15%/25%/30% tiers
 - Bracket invisibility: adjust saturated colors for light themes
 
 ## Project-Specific Conventions

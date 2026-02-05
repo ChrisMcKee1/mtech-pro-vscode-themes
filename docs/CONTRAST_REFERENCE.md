@@ -15,6 +15,8 @@
 
 > **Design-first override**: When a palette needs softer cues for storytelling, we treat these numbers as guidelines instead of hard rules. Document the intent in `docs/ACCESSIBILITY_FRAMEWORK.md` and add the theme to `DESIGN_PRIORITY_THEMES` (see `tests/lib/theme-utils.js`). The contrast analyzer will log an ℹ️ informational note—as long as syntax stays above ~3.0:1 and overlays stay above ~1.5:1—so we protect the look without hiding the ratios.
 
+> **Overlay visibility floor**: Selections/diffs are judged with a pragmatic floor of ~1.5:1 when opacities are within the documented ranges. Anything below 1.5:1 remains a high-priority issue.
+
 ---
 
 ## Core Design Rules
@@ -60,8 +62,8 @@ Test all 7 combinations:
 - [ ] `editor.wordHighlightBackground` + `wordHighlightStrongBackground`
 
 ### Diff Views
-- [ ] `diffEditor.insertedTextBackground` (30% opacity dark, 25% light)
-- [ ] `diffEditor.removedTextBackground` (30% opacity dark, 25% light)
+- [ ] `diffEditor.insertedTextBackground` (40% opacity dark, 35% light)
+- [ ] `diffEditor.removedTextBackground` (40% opacity dark, 35% light)
 - [ ] `diffEditor.insertedLineBackground` + `removedLineBackground`
 
 ### Lists & Menus
@@ -106,19 +108,25 @@ Test all 7 combinations:
 ## Opacity Guidelines
 
 ### Selection & Highlights (Dark Themes)
-- Selection: 30-35% (`4D`-`59` hex)
-- Find matches: 30-40% (`4D`-`66` hex)
+- Selection: 35% target (`59` hex) with 30-35% acceptable range
+- Find hierarchy: 30/20/15/25/30 (match/highlight/range/word/word-strong)
 - Line highlight: 15-20% (`26`-`33` hex)
 
 ### Selection & Highlights (Light Themes)
-- Selection: 40-50% (`66`-`80` hex)
-- Find matches: 40-50% (`66`-`80` hex)
+- Selection: 30% target (`4D` hex) with 30-35% acceptable range
+- Find hierarchy: 30/20/15/25/30 (match/highlight/range/word/word-strong)
 - Line highlight: 20-25% (`33`-`40` hex)
 
-### Diff Backgrounds (30/40/50 Rule)
-- **Line backgrounds**: 30% (`4D` hex) - prevents text obscurity when find highlights layer
-- **Word changes**: 40% (`66` hex) - emphasizes changed words
-- **Gutter marks**: 50% (`80` hex) - clear sidebar indicators
+**If overlay contrast falls below ~1.5:1**: darken the base hue (keep the same color family) rather than pushing opacity higher, and document the palette in `LIGHT_THEME_TRADEOFFS` (`tests/lib/theme-utils.js`).
+
+### Diff Background Targets
+- **Line backgrounds**: 30% dark (`4D`) / 25% light (`40`)
+- **Word changes**: 40% dark (`66`) / 35% light (`59`)
+- **Gutter marks**: 50% dark (`80`) / 40% light (`66`)
+
+### Combined Overlay Caps
+- Dark themes: 55% combined cap (selection + diff, find + diff)
+- Light themes: 48-50% combined cap (selection + diff, find + diff)
 
 **Why NOT 75-80%?**: High opacity causes double-layer obscurity when overlapped with find highlights.
 

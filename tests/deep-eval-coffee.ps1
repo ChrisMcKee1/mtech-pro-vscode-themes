@@ -161,42 +161,48 @@ Write-Host ""
 # ============================================
 # ISSUE CATEGORY 4: Opacity Issues
 # ============================================
-Write-Host "   D. Checking opacity levels:" -ForegroundColor Cyan
+Write-Host "   D. Checking overlay opacity tiers (canonical):" -ForegroundColor Cyan
 
 $lowOpacityProps = @()
 
-# Properties that should have visible opacity (30%+ for dark, 40%+ for light)
-$opacityProps = @(
-    "editor.selectionBackground",
-    "editor.lineHighlightBackground",
-    "list.hoverBackground",
-    "list.activeSelectionBackground",
-    "list.inactiveSelectionBackground",
-    "editorLineNumber.activeForeground",
-    "diffEditor.insertedTextBackground",
-    "diffEditor.removedTextBackground"
+$opacityChecks = @(
+    @{ Prop = "editor.selectionBackground"; DarkMin = 35; LightMin = 30 },
+    @{ Prop = "editor.lineHighlightBackground"; DarkMin = 15; LightMin = 15 },
+    @{ Prop = "diffEditor.insertedLineBackground"; DarkMin = 30; LightMin = 25 },
+    @{ Prop = "diffEditor.removedLineBackground"; DarkMin = 30; LightMin = 25 },
+    @{ Prop = "diffEditor.insertedTextBackground"; DarkMin = 40; LightMin = 35 },
+    @{ Prop = "diffEditor.removedTextBackground"; DarkMin = 40; LightMin = 35 },
+    @{ Prop = "diffEditorGutter.insertedLineBackground"; DarkMin = 50; LightMin = 40 },
+    @{ Prop = "diffEditorGutter.removedLineBackground"; DarkMin = 50; LightMin = 40 },
+    @{ Prop = "editor.findMatchBackground"; DarkMin = 30; LightMin = 30 },
+    @{ Prop = "editor.findMatchHighlightBackground"; DarkMin = 20; LightMin = 20 },
+    @{ Prop = "editor.findRangeHighlightBackground"; DarkMin = 15; LightMin = 15 },
+    @{ Prop = "editor.wordHighlightBackground"; DarkMin = 25; LightMin = 25 },
+    @{ Prop = "editor.wordHighlightStrongBackground"; DarkMin = 30; LightMin = 30 }
 )
 
-foreach ($prop in $opacityProps) {
-    # Check Evening Espresso (dark theme - min 30%)
+foreach ($check in $opacityChecks) {
+    $prop = $check.Prop
+
+    # Check Evening Espresso (dark theme)
     $color = $espresso.colors.$prop
     if ($color -and $color -match '#[0-9A-Fa-f]{6}([0-9A-Fa-f]{2})$') {
         $opacityHex = $Matches[1]
         $opacityPct = [int]"0x$opacityHex" / 255 * 100
         
-        if ($opacityPct -lt 30) {
-            $lowOpacityProps += "Evening Espresso: $prop = $color ($([int]$opacityPct)% - too low)"
+        if ($opacityPct -lt $check.DarkMin) {
+            $lowOpacityProps += "Evening Espresso: $prop = $color ($([int]$opacityPct)% < $($check.DarkMin)%)"
         }
     }
     
-    # Check Morning Coffee (light theme - min 40%)
+    # Check Morning Coffee (light theme)
     $color = $morning.colors.$prop
     if ($color -and $color -match '#[0-9A-Fa-f]{6}([0-9A-Fa-f]{2})$') {
         $opacityHex = $Matches[1]
         $opacityPct = [int]"0x$opacityHex" / 255 * 100
         
-        if ($opacityPct -lt 40) {
-            $lowOpacityProps += "Morning Coffee: $prop = $color ($([int]$opacityPct)% - too low)"
+        if ($opacityPct -lt $check.LightMin) {
+            $lowOpacityProps += "Morning Coffee: $prop = $color ($([int]$opacityPct)% < $($check.LightMin)%)"
         }
     }
 }

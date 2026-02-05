@@ -1,5 +1,6 @@
-# Fine-tune Find Opacity for Remaining 7 Themes
-# Reduce find match from 30% (4D) to 26% (43) to get combined under 50%
+# Canonical find overlay normalization.
+# Current overlay spec is in tests/lib/theme-utils.js and docs/OVERLAY_AUDIT_PLAN.md.
+# Normalize find tiers to 30/20/15/25/30 and respect combined caps (55% dark, 48-50% light).
 
 $themesDir = Join-Path $PSScriptRoot "..\themes"
 
@@ -12,8 +13,8 @@ $themesToFix = @(
     "Tokyo Night.json"
 )
 
-Write-Host "=== Fine-Tune Find Opacity (30% → 26%) ===" -ForegroundColor Cyan
-Write-Host "Target: Combined opacity ~49% (under 50% threshold)" -ForegroundColor Yellow
+Write-Host "=== Normalize Find Opacity (30/20/15/25/30) ===" -ForegroundColor Cyan
+Write-Host "Target: Canonical tiers; combined caps 55% dark / 48-50% light" -ForegroundColor Yellow
 Write-Host ""
 
 $updated = 0
@@ -30,29 +31,29 @@ foreach ($themeName in $themesToFix) {
         $currentFind = $json.colors.'editor.findMatchBackground'
         $currentHighlight = $json.colors.'editor.findMatchHighlightBackground'
         
-        # Replace opacity: 4D (30%) → 43 (26%)
-        $newFind = $currentFind -replace '4[Dd]$', '43'
-        $newHighlight = $currentHighlight -replace '33$', '2b'  # 20% → 17%
+        # Normalize find tiers: 30% / 20% / 15% / 25% / 30%
+        $newFind = $currentFind -replace '([0-9A-Fa-f]{2})$', '4D'
+        $newHighlight = $currentHighlight -replace '([0-9A-Fa-f]{2})$', '33'
         
         $json.colors.'editor.findMatchBackground' = $newFind
         $json.colors.'editor.findMatchHighlightBackground' = $newHighlight
         
         # Also update range highlight
-        $json.colors.'editor.findRangeHighlightBackground' = $json.colors.'editor.findRangeHighlightBackground' -replace '26$', '20'  # 15% → 13%
+        $json.colors.'editor.findRangeHighlightBackground' = $json.colors.'editor.findRangeHighlightBackground' -replace '([0-9A-Fa-f]{2})$', '26'
         
         # Update word highlights if they exist
         if ($json.colors.'editor.wordHighlightBackground') {
-            $json.colors.'editor.wordHighlightBackground' = $json.colors.'editor.wordHighlightBackground' -replace '40$', '3a'  # 25% → 23%
-            $json.colors.'editor.wordHighlightStrongBackground' = $json.colors.'editor.wordHighlightStrongBackground' -replace '4[Dd]$', '43'  # 30% → 26%
+            $json.colors.'editor.wordHighlightBackground' = $json.colors.'editor.wordHighlightBackground' -replace '([0-9A-Fa-f]{2})$', '40'
+            $json.colors.'editor.wordHighlightStrongBackground' = $json.colors.'editor.wordHighlightStrongBackground' -replace '([0-9A-Fa-f]{2})$', '4D'
         }
         
         # Save
         $newContent = $json | ConvertTo-Json -Depth 100
         Set-Content -Path $filePath -Value $newContent -NoNewline
         
-        Write-Host "  ✓ Reduced opacity: 30% → 26%" -ForegroundColor Green
+        Write-Host "  ✓ Normalized to canonical find tiers" -ForegroundColor Green
         Write-Host "    findMatch: $currentFind → $newFind" -ForegroundColor DarkGray
-        Write-Host "    Combined with 30% diff = ~49%" -ForegroundColor Cyan
+        Write-Host "    Combined with 30% diff = ~51% (under dark cap 55%)" -ForegroundColor Cyan
         
         $updated++
     }

@@ -5,7 +5,7 @@ M Tech Themes for Visual Studio Code
 
 **Quick Start**: Download the [latest VSIX](https://github.com/ChrisMcKee1/mtech-pro-vscode-themes/releases/latest) → Extensions panel (⋯) → "Install from VSIX" → `Ctrl+Shift+P` → "M Tech Themes: Select Theme". Icons auto-match your theme choice. Works in VS Code and Cursor.
 
-I like dogss
+I like dogs
 ---
 
 ## ⚖️ License

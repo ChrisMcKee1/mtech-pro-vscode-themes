@@ -669,7 +669,7 @@
       "scope": "comment keyword.codetag.notation",
       "settings": {
         "name": "Comment TODO / FIXME",
-        "foreground": "#c0caf5"
+        "foreground": "#7A88B5"
       }
     },
     {

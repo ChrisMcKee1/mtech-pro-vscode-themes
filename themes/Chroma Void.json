@@ -639,7 +639,7 @@
       "scope": "comment storage.type",
       "settings": {
         "name": "JSDoc storage type",
-        "foreground": "#9F9DA2"
+        "foreground": "#86848A"
       }
     },
     {
@@ -1445,7 +1445,7 @@
       "scope": "punctuation.definition.comment",
       "settings": {
         "name": "Comment start / end",
-        "foreground": "#9F9DA2"
+        "foreground": "#86848A"
       }
     },
     {
@@ -1933,7 +1933,7 @@
       ],
       "settings": {
         "name": "comment support",
-        "foreground": "#9F9DA2"
+        "foreground": "#86848A"
       }
     },
     {

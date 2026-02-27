@@ -1445,7 +1445,7 @@
       "scope": "punctuation.definition.comment",
       "settings": {
         "name": "Comment start / end",
-        "foreground": "#4C566A"
+        "foreground": "#64728A"
       }
     },
     {

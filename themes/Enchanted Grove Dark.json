@@ -1445,7 +1445,7 @@
       "scope": "punctuation.definition.comment",
       "settings": {
         "name": "Comment start / end",
-        "foreground": "#E8F5E8"
+        "foreground": "#8BA68B"
       }
     },
     {
@@ -1933,7 +1933,7 @@
       ],
       "settings": {
         "name": "comment support",
-        "foreground": "#bde3bd"
+        "foreground": "#8BA68B"
       }
     },
     {

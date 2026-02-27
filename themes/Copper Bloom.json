@@ -595,7 +595,16 @@
     "list.focusAndSelectionOutline": "#fd6883",
     "list.inactiveFocusOutline": "#f38d70",
     "list.activeSelectionIconForeground": "#f9cc6c",
-    "list.inactiveSelectionIconForeground": "#b7adae"
+    "list.inactiveSelectionIconForeground": "#b7adae",
+    "editorBracketMatch.foreground": "#F38D70",
+    "chat.thinkingShimmer": "#D97706",
+    "agentStatusIndicator.background": "#D97706",
+    "sessionsSidebar.background": "#211c1c",
+    "sessionsSidebar.border": "#191515",
+    "sessionsSidebarHeader.background": "#2c2525",
+    "sessionsSidebarHeader.foreground": "#b7adae",
+    "chatBarTitle.background": "#2c2525",
+    "chatBarTitle.foreground": "#b7adae"
   },
   "semanticHighlighting": true,
   "semanticTokenColors": {

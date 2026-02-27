@@ -598,7 +598,16 @@
     "welcomePage.tileHoverBackground": "#DDB790",
     "welcomePage.tileHoverForeground": "#1A0F0A",
     "welcomePage.tileShadow": "#120905",
-    "widget.shadow": "#5C4233"
+    "widget.shadow": "#5C4233",
+    "editorBracketMatch.foreground": "#D4A574",
+    "chat.thinkingShimmer": "#D4A574",
+    "agentStatusIndicator.background": "#6B8E6B",
+    "sessionsSidebar.background": "#2B1810",
+    "sessionsSidebar.border": "#4A3228",
+    "sessionsSidebarHeader.background": "#3E2723",
+    "sessionsSidebarHeader.foreground": "#F5EFE7",
+    "chatBarTitle.background": "#3E2723",
+    "chatBarTitle.foreground": "#F5EFE7"
   },
   "semanticHighlighting": true,
   "semanticTokenColors": {

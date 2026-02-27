@@ -1,6 +1,6 @@
 ---
 description: 'Bump version, clean old artifacts, and package fresh VSIX for VS Code extension'
-mode: 'm-tech-theme-engineer'
+agent: 'M-Tech-Theme-Engineer'
 ---
 
 # Rebuild VSIX Package

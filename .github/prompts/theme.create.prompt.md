@@ -1,6 +1,6 @@
 ---
 description: 'Build a new theme from scratch with complete palette, token strategy, and icon pairing'
-mode: 'm-tech-theme-engineer'
+agent: 'M-Tech-Theme-Engineer'
 ---
 
 # Create New Theme
@@ -35,9 +35,9 @@ If user hasn't run `/ideate-theme`, gather:
 - Dracula variants → Official Dracula palette
 - Gruvbox-inspired → Gruvbox color system
 
-### 2. Design Palette
+### 2. Design Palette (60-30-10 Rule)
 
-**Background & Foreground** (establish first):
+**Background & Foreground (60% Dominant Base)**:
 ```
 Dark Theme Example:
 Background:     #1e1e1e (off-black, never pure #000000)
@@ -50,8 +50,11 @@ Foreground:     #2c2c2c (dark gray, readable)
 Contrast:       14.1:1
 ```
 
-**Syntax Palette** (4-6 core hues):
-- **Keywords**: Control flow (if/for/class) - often blue
+**Structural UI (30% Secondary)**:
+- Use tints/shades of the base color for Activity Bar, Side Bar, and inactive tabs.
+
+**Syntax Palette (Grouped by Hierarchy)**:
+- **Keywords**: Control flow (if/for/class) - often blue/magenta
 - **Strings**: Literals ("text") - often orange/green
 - **Comments**: Documentation - muted but ≥4.5:1
 - **Constants**: Fixed values (true/false/null) - bright for visibility
@@ -66,12 +69,12 @@ Constants:  #4fc1ff  →  8.1:1 ✅
 Errors:     #f44747  →  5.2:1 ✅
 ```
 
-**UI Surfaces**:
+**UI Surfaces & Alpha Blending**:
 ```
 Selection:          #264f784D (30% opacity - prevents double-layer obscurity)
-  → 3.2:1 vs background, text remains readable
+Selection Highlight:#264f7826 (15% opacity - must be lower than active selection)
 Line Highlight:     #2a2d2e26 (15% opacity - subtle)
-Scrollbars:         bg #424242 / hover #4e4e4e / active #6e6e6e (visible in all states)
+Scrollbars:         bg #42424200 / hover #4e4e4e80 / active #6e6e6e (unobtrusive at rest)
 Diff Added:         #1e71454D (30% green - text readable when find overlays)
 Diff Removed:       #a315154D (30% red)
 Diff Modified:      #1b81a866 (40% blue - emphasize changed text)
@@ -88,6 +91,7 @@ Structure:
 {
   "name": "New Theme",
   "type": "dark",
+  "semanticHighlighting": true,
   "colors": {
     "editor.background": "#1e1e1e",
     "editor.foreground": "#d4d4d4",
@@ -295,6 +299,6 @@ Unified diffs for all created/modified files with 3-5 lines context
 ## Reference Documents
 
 - [copilot-instructions.md](../copilot-instructions.md) - Theme structure and pairing rules
-- [THEME_CONTRAST_GUIDELINES.md](../../THEME_CONTRAST_GUIDELINES.md) - Complete property checklist
-- [THEME_IMPROVEMENTS_ANALYSIS.md](../../THEME_IMPROVEMENTS_ANALYSIS.md) - Successful themes case studies
+- [CONTRAST_REFERENCE.md](../../docs/CONTRAST_REFERENCE.md) - Complete property checklist
+- [ACCESSIBILITY_FRAMEWORK.md](../../docs/ACCESSIBILITY_FRAMEWORK.md) - Successful themes case studies
 - [tests/TEST_SUITE_DOCUMENTATION.md](../../tests/TEST_SUITE_DOCUMENTATION.md) - Test suite guide

@@ -1,6 +1,6 @@
 ---
 description: 'Complete release workflow: commit, push, GitHub release, README update. Marketplace publishing automated via GitHub Actions.'
-mode: 'm-tech-theme-engineer'
+agent: 'M-Tech-Theme-Engineer'
 ---
 
 # Release to GitHub

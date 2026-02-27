@@ -1,6 +1,6 @@
 ---
 description: 'Explore and propose new theme concepts with palettes, accessibility rationale, and UI surface colors'
-mode: 'm-tech-theme-engineer'
+agent: 'M-Tech-Theme-Engineer'
 ---
 
 # Ideate New Theme Concepts
@@ -39,26 +39,34 @@ For each theme concept, provide:
 - **Target Use Case**: Who benefits most (e.g., "long coding sessions", "bright environments")
 - **Design Philosophy**: 1-2 sentences explaining the vibe
 
-### Palette Specification
+### Palette Specification (60-30-10 Rule)
 
 ```
-Background:     #1e1e1e (dark gray-blue)
-Foreground:     #d4d4d4 (soft white)
-Contrast Ratio: 12.6:1
+Background (60%): #1e1e1e (dark gray-blue)
+Foreground:       #d4d4d4 (soft white)
+Contrast Ratio:   12.6:1
 
-Syntax Colors:
+Structural UI (30%):
+- Activity Bar:   #252526 (tint of base)
+- Side Bar:       #252526 (tint of base)
+
+Accent (10%):
+- Active Tab:     #007acc (highly saturated)
+
+Syntax Colors (Grouped by Hierarchy):
 - Keywords:     #569cd6 (blue)      - 7.2:1 contrast
 - Strings:      #ce9178 (orange)    - 5.8:1 contrast  
 - Comments:     #6a9955 (green)     - 4.7:1 contrast
 - Constants:    #4fc1ff (cyan)      - 8.1:1 contrast
 - Errors:       #f44747 (red)       - 5.2:1 contrast
 
-UI Surfaces:
-- Selection:    #264f78 (blue 30%)  - 3.2:1 vs background, text readable
-- Line Highlight: #2a2d2e (subtle)  - minimal distraction
-- Scrollbars:   bg #424242 / hover #4e4e4e / active #6e6e6e
-- Diff Added:   #1e7145 (green 30%)
-- Diff Removed: #a31515 (red 30%)
+UI Surfaces & Alpha Blending:
+- Selection:    #264f784D (blue 30%)  - 3.2:1 vs background, text readable
+- Selection Highlight: #264f7826 (blue 15%) - subordinate to active selection
+- Line Highlight: #2a2d2e26 (subtle)  - minimal distraction
+- Scrollbars:   bg #42424200 / hover #4e4e4e80 / active #6e6e6e
+- Diff Added:   #1e71454D (green 30%)
+- Diff Removed: #a315154D (red 30%)
 ```
 
 ### Token Strategy
@@ -93,5 +101,5 @@ UI Surfaces:
 ## Reference Documents
 
 - [copilot-instructions.md](../copilot-instructions.md) - Core architecture patterns
-- [THEME_CONTRAST_GUIDELINES.md](../../THEME_CONTRAST_GUIDELINES.md) - Accessibility rules
-- [THEME_IMPROVEMENTS_ANALYSIS.md](../../THEME_IMPROVEMENTS_ANALYSIS.md) - Case studies
+- [CONTRAST_REFERENCE.md](../../docs/CONTRAST_REFERENCE.md) - Accessibility rules
+- [ACCESSIBILITY_FRAMEWORK.md](../../docs/ACCESSIBILITY_FRAMEWORK.md) - Case studies

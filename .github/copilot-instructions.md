@@ -120,7 +120,32 @@ Example scope pattern from `Classic.json`:
 {"scope": ["keyword.control"], "settings": {"foreground": "#f92672"}}
 ```
 
-### Accessibility & Design Standards
+### Architectural Principles & Design Standards
+
+**The 60-30-10 Rule & Visual Hierarchy**:
+- **60% Dominant Base**: Primary background colors (editor, workbench). Avoid pure black (`#000000`) or pure white (`#FFFFFF`). Use deep neutrals or soft off-whites.
+- **30% Secondary**: Structural UI elements (Activity Bar, Side Bar, inactive tabs). Use tints/shades of the base color, not entirely new hues.
+- **10% Accent**: Highly saturated colors for active states, primary buttons, and critical markers.
+
+**Alpha Channel & Overlays (RGBA)**:
+- Use 8-digit hex codes (`#RRGGBBAA`) for overlapping elements.
+- **Diffs & Find Matches**: Must use significant transparency (low alpha) so underlying syntax highlighting is not obliterated.
+- **The Selection Conundrum**: `editor.selectionHighlightBackground` (background matches) must have significantly lower opacity than `editor.selectionBackground` (active selection) to maintain spatial awareness.
+
+**Syntax Highlighting & Semantic Tokens**:
+- **Semantic Highlighting**: Always opt-in by setting `"semanticHighlighting": true` in the theme JSON.
+- **Token Grouping**: Avoid "color overloading" (kaleidoscope effect). Group tokens by structural hierarchy (e.g., all types share a color family).
+- **Bracket Pairs**: Define `editorBracketHighlight.foreground1-6`. Avoid overly saturated colors that compete with keywords.
+
+**Terminal & The ANSI Paradox**:
+- In dark themes, `terminal.ansiBlack` and `terminal.ansiBrightBlack` must be mapped to a lighter gray/white to be visible against dark backgrounds.
+- In light themes, `terminal.ansiWhite` must be heavily darkened.
+
+
+**The "Two Paths" Paradigm (Accessibility vs. Aesthetics)**:
+When evaluating or refactoring themes, we recognize two distinct paths:
+- **Path A (Strict Accessibility)**: Enforce strict WCAG 4.5:1 contrast for syntax and 3:1 for UI. This is the default for most themes to ensure maximum readability.
+- **Path B (Established Palette Exemption)**: For themes based on established, iconic color palettes (e.g., Nord, Dracula), we allow softer contrast (minimum 3.0:1 for syntax) to preserve the exact hex codes and aesthetic identity of the original palette. This is a deliberate, beautiful design tradeoff. However, actual bugs (like invisible find highlights or screaming comment punctuation) must still be fixed.
 
 **WCAG Contrast Requirements**:
 - Normal text: **4.5:1** minimum contrast ratio (text to background)
@@ -131,7 +156,7 @@ Example scope pattern from `Classic.json`:
 **Critical Accessibility Rules**:
 1. **Never use pure black (#000000)** - use dark gray/blue-tinted backgrounds (e.g., `#1e1e1e`, `#272822`)
 2. **Test highlighted text** - selection colors must not make text unreadable
-3. **Visible scrollbars** - define `scrollbarSlider.background`, `hoverBackground`, and `activeBackground`
+3. **Visible scrollbars** - define `scrollbarSlider.background`, `hoverBackground`, and `activeBackground`. Keep unobtrusive at rest, high contrast on hover/active.
 4. **Color blindness** - don't rely on red/green alone; use icons, shapes, or lightness differences
 5. **Semi-transparent overlays** - use alpha channels for find matches, line highlights (e.g., `#FFCC0033`)
 6. **High contrast mode** - use `editorUnnecessaryCode.border` instead of opacity reduction

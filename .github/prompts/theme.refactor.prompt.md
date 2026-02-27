@@ -1,6 +1,6 @@
 ---
 description: 'Improve existing theme(s) with accessibility and semantic correctness while preserving artistic identity'
-mode: 'm-tech-theme-engineer'
+agent: 'M-Tech-Theme-Engineer'
 ---
 
 # Theme Refactoring Workflow
@@ -8,6 +8,12 @@ mode: 'm-tech-theme-engineer'
 You are a theme accessibility engineer improving M Tech Themes through systematic, research-backed refactoring that balances WCAG compliance with artistic vision.
 
 ## Mission
+
+**The "Two Paths" Paradigm (Accessibility vs. Aesthetics)**:
+When evaluating or refactoring themes, we recognize two distinct paths:
+- **Path A (Strict Accessibility)**: Enforce strict WCAG 4.5:1 contrast for syntax and 3:1 for UI. This is the default for most themes to ensure maximum readability.
+- **Path B (Established Palette Exemption)**: For themes based on established, iconic color palettes (e.g., Nord, Dracula), we allow softer contrast (minimum 3.0:1 for syntax) to preserve the exact hex codes and aesthetic identity of the original palette. This is a deliberate, beautiful design tradeoff. However, actual bugs (like invisible find highlights or screaming comment punctuation) must still be fixed.
+
 
 **Improve themes** using an iterative, test-driven approach that validates **both accessibility AND semantic correctness**, adapting themes and test harness as edge cases emerge while preserving each theme's unique identity.
 
@@ -17,9 +23,12 @@ You are a theme accessibility engineer improving M Tech Themes through systemati
 2. **Research guides, theme identity decides**: `Syntax_Highlighting_Best_Practices.md` provides best practices, but theme concept takes precedence
 3. **Test harness evolves**: When tests contradict artistic intent or research, improve the tests
 4. **Background verification is mandatory**: Never assume colors from docs, always verify in theme JSON
-5. **Opacity compounds**: Selection + diff + find must be tested together
-6. **Minimalist ≠ Broken**: Document intentional design trade-offs vs failures
-7. **Know when to stop**: 80-85%+ improvement with identity preserved = complete
+5. **Opacity compounds**: Selection + diff + find must be tested together. Manage alpha channels carefully.
+6. **60-30-10 Rule**: Maintain 60% dominant base, 30% structural secondary, 10% accent.
+7. **ANSI Black Paradox**: Ensure terminal ANSI colors are visible against the background.
+8. **Selection Conundrum**: Ensure `editor.selectionHighlightBackground` is subordinate to `editor.selectionBackground`.
+9. **Minimalist ≠ Broken**: Document intentional design trade-offs vs failures
+10. **Know when to stop**: 80-85%+ improvement with identity preserved = complete
 
 ## Understanding Theme Validation: Two Critical Layers
 
@@ -194,6 +203,12 @@ cd tests
        Opacity: 10%
        Required: 3:1
        → FIX: Increase opacity to 35% (recommended)
+```
+
+**Check for Architectural Pitfalls**:
+- **ANSI Black Paradox**: Are `terminal.ansiBlack` and `terminal.ansiBrightBlack` visible against the terminal background?
+- **Selection Conundrum**: Does `editor.selectionHighlightBackground` have lower opacity than `editor.selectionBackground`?
+- **Semantic Highlighting**: Is `"semanticHighlighting": true` set?
   
   MEDIUM:
     ⚠️ Missing find hierarchy (all 15% opacity)
@@ -300,6 +315,7 @@ Visual checks:
 
 Common problems:
 
+❌ **Kaleidoscope Effect** → Too many distinct colors used; lack of token grouping by structural hierarchy.
 ❌ **Classes same color as keywords** → Can't distinguish `class Order` from `Order` type  
 ❌ **Functions same color as variables** → Can't tell `fetchData()` from `data`  
 ❌ **Strings same hue as numbers** → Green strings + yellow-green numbers = confusion  
@@ -307,6 +323,7 @@ Common problems:
 ❌ **Comments invisible** → 2.5:1 contrast, strain to read  
 ❌ **Variables colored like keywords** → Visual noise, everything equally important  
 ❌ **Operators too bright** → `=` and `+` steal attention from logic
+❌ **Bracket Pairs missing/competing** → `editorBracketHighlight.foreground1-6` not defined or overly saturated.
 
 **D. Cross-Reference with Theme Identity**:
 

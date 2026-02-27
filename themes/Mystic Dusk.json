@@ -146,8 +146,8 @@
     "editor.foreground": "#F3E8FF",
     "editor.findMatchBackground": "#34D3994D",
     "editor.findMatchBorder": "#E879F9",
-    "editor.findMatchHighlightBackground": "#34D39933",
-    "editor.findRangeHighlightBackground": "#34D39926",
+    "editor.findMatchHighlightBackground": "#34D3994D",
+    "editor.findRangeHighlightBackground": "#34D39935",
     "editor.focusedStackFrameHighlightBackground": "#C084FC66",
     "editor.foldBackground": "#8B5CF60c",
     "editor.hoverHighlightBackground": "#6366F10c",
@@ -260,7 +260,7 @@
     "extensionIcon.starForeground": "#FBBF24",
     "extensionIcon.verifiedForeground": "#34D399",
     "focusBorder": "#8B5CF6",
-    "foreground": "#F3E8FF",
+    "foreground": "#5b5760",
     "gitDecoration.addedResourceForeground": "#34D399",
     "gitDecoration.conflictingResourceForeground": "#FB923C",
     "gitDecoration.deletedResourceForeground": "#F87171",
@@ -663,28 +663,28 @@
       "scope": "comment keyword.codetag.notation",
       "settings": {
         "name": "Comment TODO / FIXME",
-        "foreground": "#C084FC"
+        "foreground": "#9063bd"
       }
     },
     {
       "scope": "comment.git-status.header.remote",
       "settings": {
         "name": "Git status remote",
-        "foreground": "#E879F9"
+        "foreground": "#ae5bbb"
       }
     },
     {
       "scope": "comment.git-status.header.local",
       "settings": {
         "name": "Git status local",
-        "foreground": "#60A5FA"
+        "foreground": "#487cbc"
       }
     },
     {
       "scope": "comment.other.git-status.head",
       "settings": {
         "name": "Git status head",
-        "foreground": "#F3E8FF"
+        "foreground": "#5b5760"
       }
     },
     {

@@ -147,9 +147,9 @@
     "editor.background": "#1C1512",
     "editor.findMatchBackground": "#1DE9B64d",
     "editor.findMatchBorder": "#FFB84D",
-    "editor.findMatchHighlightBackground": "#1DE9B633",
+    "editor.findMatchHighlightBackground": "#1DE9B64D",
     "editor.findMatchHighlightBorder": "#00000000",
-    "editor.findRangeHighlightBackground": "#1DE9B626",
+    "editor.findRangeHighlightBackground": "#1DE9B635",
     "editor.findRangeHighlightBorder": "#00000000",
     "editor.focusedStackFrameHighlightBackground": "#B8BCC866",
     "editor.foldBackground": "#F9FAFB0C",
@@ -264,7 +264,7 @@
     "extensionIcon.starForeground": "#FBBF24",
     "extensionIcon.verifiedForeground": "#10B981",
     "focusBorder": "#6B7280",
-    "foreground": "#F9FAFB",
+    "foreground": "#5e5e5e",
     "gitDecoration.addedResourceForeground": "#10B981",
     "gitDecoration.conflictingResourceForeground": "#FF8C42",
     "gitDecoration.deletedResourceForeground": "#EF4444",
@@ -634,14 +634,14 @@
       "scope": "comment storage.type",
       "settings": {
         "name": "JSDoc storage type",
-        "foreground": "#C9A876"
+        "foreground": "#977e59"
       }
     },
     {
       "scope": "comment entity.name.type",
       "settings": {
         "name": "JSDoc entity name",
-        "foreground": "#B8BCC8"
+        "foreground": "#8a8d96"
       }
     },
     {
@@ -651,7 +651,7 @@
       ],
       "settings": {
         "name": "JSDoc variable",
-        "foreground": "#B8BCC8"
+        "foreground": "#8a8d96"
       }
     },
     {
@@ -662,14 +662,14 @@
       ],
       "settings": {
         "name": "PHPDoc keyword",
-        "foreground": "#B8BCC8"
+        "foreground": "#8a8d96"
       }
     },
     {
       "scope": "comment keyword.codetag.notation",
       "settings": {
         "name": "Comment TODO / FIXME (at least in VSCode Python)",
-        "foreground": "#A78BFA"
+        "foreground": "#8069bf"
       }
     },
     {
@@ -683,14 +683,14 @@
       "scope": "comment.git-status.header.local",
       "settings": {
         "name": "Git status local",
-        "foreground": "#22D3EE"
+        "foreground": "#1a9eb3"
       }
     },
     {
       "scope": "comment.other.git-status.head",
       "settings": {
         "name": "Git status remote",
-        "foreground": "#F9FAFB"
+        "foreground": "#5e5e5e"
       }
     },
     {

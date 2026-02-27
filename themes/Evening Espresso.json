@@ -141,9 +141,9 @@
     "editor.background": "#1A0F0A",
     "editor.findMatchBackground": "#6B8E6B4d",
     "editor.findMatchBorder": "#D4A574",
-    "editor.findMatchHighlightBackground": "#6B8E6B33",
+    "editor.findMatchHighlightBackground": "#6B8E6B4D",
     "editor.findMatchHighlightBorder": "#00000000",
-    "editor.findRangeHighlightBackground": "#6B8E6B26",
+    "editor.findRangeHighlightBackground": "#6B8E6B35",
     "editor.findRangeHighlightBorder": "#00000000",
     "editor.focusedStackFrameHighlightBackground": "#FFD7804D",
     "editor.foldBackground": "#4A322826",
@@ -630,7 +630,7 @@
       "settings": {
         "name": "Comments and overrides inside comments",
         "fontStyle": "italic",
-        "foreground": "#C4A57B"
+        "foreground": "#94775A"
       }
     },
     {
@@ -672,7 +672,7 @@
       "scope": "comment keyword.codetag.notation",
       "settings": {
         "name": "Comment TODO / FIXME",
-        "foreground": "#D4A574"
+        "foreground": "#9f7c57"
       }
     },
     {
@@ -686,7 +686,7 @@
       "scope": "comment.git-status.header.local",
       "settings": {
         "name": "Git status local",
-        "foreground": "#F4A460"
+        "foreground": "#b77b48"
       }
     },
     {

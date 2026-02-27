@@ -147,9 +147,9 @@
     "editor.background": "#2A3D2B",
     "editor.findMatchBackground": "#90D8964D",
     "editor.findMatchBorder": "#5A8060",
-    "editor.findMatchHighlightBackground": "#90D89633",
+    "editor.findMatchHighlightBackground": "#90D8964D",
     "editor.findMatchHighlightBorder": "#00000000",
-    "editor.findRangeHighlightBackground": "#90D89626",
+    "editor.findRangeHighlightBackground": "#90D89635",
     "editor.findRangeHighlightBorder": "#00000000",
     "editor.focusedStackFrameHighlightBackground": "#5A80604d",
     "editor.foldBackground": "#5A806026",
@@ -265,7 +265,7 @@
     "extensionIcon.starForeground": "#ebcb8b",
     "extensionIcon.verifiedForeground": "#228B22",
     "focusBorder": "#7A9A42",
-    "foreground": "#FFFFFF",
+    "foreground": "#606060",
     "gitDecoration.addedResourceForeground": "#228B22",
     "gitDecoration.conflictingResourceForeground": "#FFB366",
     "gitDecoration.deletedResourceForeground": "#CD5C5C",
@@ -639,7 +639,7 @@
       "scope": "comment storage.type",
       "settings": {
         "name": "JSDoc storage type",
-        "foreground": "#A8C9A8"
+        "foreground": "#809980"
       }
     },
     {
@@ -688,14 +688,14 @@
       "scope": "comment.git-status.header.local",
       "settings": {
         "name": "Git status local",
-        "foreground": "#A3C5F0"
+        "foreground": "#7d96b7"
       }
     },
     {
       "scope": "comment.other.git-status.head",
       "settings": {
         "name": "Git status remote",
-        "foreground": "#FFFFFF"
+        "foreground": "#606060"
       }
     },
     {
@@ -705,7 +705,7 @@
       ],
       "settings": {
         "name": "Docstring",
-        "foreground": "#A8C9A8"
+        "foreground": "#bde3bd"
       }
     },
     {
@@ -810,7 +810,7 @@
       "scope": "constant.numeric.line-number.find-in-files",
       "settings": {
         "name": "Search result line numbers",
-        "foreground": "#E8F5E8"
+        "foreground": "#aeb8ae"
       }
     },
     {
@@ -939,7 +939,7 @@
       ],
       "settings": {
         "name": "Operator",
-        "foreground": "#E8F5E8"
+        "foreground": "#aeb8ae"
       }
     },
     {
@@ -1014,7 +1014,7 @@
       "scope": "entity.other.jinja2.delimiter",
       "settings": {
         "name": "jinja delimiters",
-        "foreground": "#E8F5E8"
+        "foreground": "#747b74"
       }
     },
     {
@@ -1104,7 +1104,7 @@
       "scope": "keyword.other.substitution",
       "settings": {
         "name": "Substitution string",
-        "foreground": "#E8F5E8"
+        "foreground": "#747b74"
       }
     },
     {
@@ -1933,7 +1933,7 @@
       ],
       "settings": {
         "name": "comment support",
-        "foreground": "#A8C9A8"
+        "foreground": "#bde3bd"
       }
     },
     {

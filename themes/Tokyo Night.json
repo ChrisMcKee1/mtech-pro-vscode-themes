@@ -147,9 +147,9 @@
     "editor.background": "#24283b",
     "editor.findMatchBackground": "#9ece6a4D",
     "editor.findMatchBorder": "#e0af68",
-    "editor.findMatchHighlightBackground": "#9ece6a33",
+    "editor.findMatchHighlightBackground": "#9ece6a4D",
     "editor.findMatchHighlightBorder": "#00000000",
-    "editor.findRangeHighlightBackground": "#9ece6a26",
+    "editor.findRangeHighlightBackground": "#9ece6a35",
     "editor.findRangeHighlightBorder": "#00000000",
     "editor.focusedStackFrameHighlightBackground": "#7aa2f766",
     "editor.foldBackground": "#3d59a10c",
@@ -264,7 +264,7 @@
     "extensionIcon.starForeground": "#e0af68",
     "extensionIcon.verifiedForeground": "#9ece6a",
     "focusBorder": "#7aa2f7",
-    "foreground": "#c0caf5",
+    "foreground": "#9098b8",
     "gitDecoration.addedResourceForeground": "#9ece6a",
     "gitDecoration.conflictingResourceForeground": "#ff9e64",
     "gitDecoration.deletedResourceForeground": "#f7768e",
@@ -641,7 +641,7 @@
       "scope": "comment entity.name.type",
       "settings": {
         "name": "JSDoc entity name",
-        "foreground": "#7dcfff"
+        "foreground": "#5e9bbf"
       }
     },
     {
@@ -651,7 +651,7 @@
       ],
       "settings": {
         "name": "JSDoc variable",
-        "foreground": "#7dcfff"
+        "foreground": "#5e9bbf"
       }
     },
     {
@@ -662,14 +662,14 @@
       ],
       "settings": {
         "name": "PHPDoc keyword",
-        "foreground": "#7dcfff"
+        "foreground": "#5e9bbf"
       }
     },
     {
       "scope": "comment keyword.codetag.notation",
       "settings": {
         "name": "Comment TODO / FIXME",
-        "foreground": "#bb9af7"
+        "foreground": "#c0caf5"
       }
     },
     {
@@ -690,7 +690,7 @@
       "scope": "comment.other.git-status.head",
       "settings": {
         "name": "Git status remote",
-        "foreground": "#c0caf5"
+        "foreground": "#9098b8"
       }
     },
     {

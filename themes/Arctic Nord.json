@@ -149,7 +149,7 @@
     "editor.findMatchBorder": "#88c0d0",
     "editor.findMatchHighlightBackground": "#88c0d033",
     "editor.findMatchHighlightBorder": "#00000000",
-    "editor.findRangeHighlightBackground": "#88c0d026",
+    "editor.findRangeHighlightBackground": "#88c0d035",
     "editor.findRangeHighlightBorder": "#00000000",
     "editor.focusedStackFrameHighlightBackground": "#88c0d04d",
     "editor.foldBackground": "#88c0d026",
@@ -265,7 +265,7 @@
     "extensionIcon.starForeground": "#ebcb8b",
     "extensionIcon.verifiedForeground": "#a3be8c",
     "focusBorder": "#A3C5F0",
-    "foreground": "#FFFFFF",
+    "foreground": "#bfbfbf",
     "gitDecoration.addedResourceForeground": "#a3be8c",
     "gitDecoration.conflictingResourceForeground": "#D08770",
     "gitDecoration.deletedResourceForeground": "#ECEFF4",
@@ -681,7 +681,7 @@
       "scope": "comment.git-status.header.remote",
       "settings": {
         "name": "Git status remote",
-        "foreground": "#ECEFF4"
+        "foreground": "#b1b3b7"
       }
     },
     {
@@ -695,7 +695,7 @@
       "scope": "comment.other.git-status.head",
       "settings": {
         "name": "Git status remote",
-        "foreground": "#FFFFFF"
+        "foreground": "#bfbfbf"
       }
     },
     {
@@ -810,7 +810,7 @@
       "scope": "constant.numeric.line-number.find-in-files",
       "settings": {
         "name": "Search result line numbers",
-        "foreground": "#ECEFF4"
+        "foreground": "#b1b3b7"
       }
     },
     {
@@ -915,7 +915,7 @@
       ],
       "settings": {
         "name": "Tag name",
-        "foreground": "#ECEFF4"
+        "foreground": "#b1b3b7"
       }
     },
     {

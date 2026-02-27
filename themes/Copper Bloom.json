@@ -143,9 +143,9 @@
     "editor.background": "#2c2525",
     "editor.findMatchBackground": "#adda784D",
     "editor.findMatchBorder": "#f9cc6c",
-    "editor.findMatchHighlightBackground": "#adda7833",
+    "editor.findMatchHighlightBackground": "#adda784D",
     "editor.findMatchHighlightBorder": "#00000000",
-    "editor.findRangeHighlightBackground": "#adda7826",
+    "editor.findRangeHighlightBackground": "#adda7835",
     "editor.findRangeHighlightBorder": "#00000000",
     "editor.focusedStackFrameHighlightBackground": "#c3b7b866",
     "editor.foldBackground": "#fff1f30c",
@@ -259,7 +259,7 @@
     "extensionIcon.starForeground": "#f9cc6c",
     "extensionIcon.verifiedForeground": "#adda78",
     "focusBorder": "#72696a",
-    "foreground": "#fff1f3",
+    "foreground": "#605b5b",
     "gitDecoration.addedResourceForeground": "#adda78",
     "gitDecoration.conflictingResourceForeground": "#f38d70",
     "gitDecoration.deletedResourceForeground": "#fd6883",
@@ -641,7 +641,7 @@
       "scope": "comment entity.name.type",
       "settings": {
         "name": "JSDoc entity name",
-        "foreground": "#c3b7b8"
+        "foreground": "#92898a"
       }
     },
     {
@@ -651,7 +651,7 @@
       ],
       "settings": {
         "name": "JSDoc variable",
-        "foreground": "#c3b7b8"
+        "foreground": "#92898a"
       }
     },
     {
@@ -662,14 +662,14 @@
       ],
       "settings": {
         "name": "PHPDoc keyword",
-        "foreground": "#c3b7b8"
+        "foreground": "#92898a"
       }
     },
     {
       "scope": "comment keyword.codetag.notation",
       "settings": {
         "name": "Comment TODO / FIXME (at least in VSCode Python)",
-        "foreground": "#a8a9eb"
+        "foreground": "#8081b3"
       }
     },
     {
@@ -683,14 +683,14 @@
       "scope": "comment.git-status.header.local",
       "settings": {
         "name": "Git status local",
-        "foreground": "#85dacc"
+        "foreground": "#64a499"
       }
     },
     {
       "scope": "comment.other.git-status.head",
       "settings": {
         "name": "Git status remote",
-        "foreground": "#fff1f3"
+        "foreground": "#605b5b"
       }
     },
     {

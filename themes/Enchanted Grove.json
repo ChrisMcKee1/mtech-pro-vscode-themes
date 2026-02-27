@@ -147,9 +147,9 @@
     "editor.background": "#F0F7EE",
     "editor.findMatchBackground": "#A3BE8C4d",
     "editor.findMatchBorder": "#405020",
-    "editor.findMatchHighlightBackground": "#A3BE8C33",
+    "editor.findMatchHighlightBackground": "#A3BE8C4D",
     "editor.findMatchHighlightBorder": "#00000000",
-    "editor.findRangeHighlightBackground": "#A3BE8C26",
+    "editor.findRangeHighlightBackground": "#A3BE8C35",
     "editor.findRangeHighlightBorder": "#00000000",
     "editor.focusedStackFrameHighlightBackground": "#4050204d",
     "editor.foldBackground": "#40502026",
@@ -265,7 +265,7 @@
     "extensionIcon.starForeground": "#B8860B",
     "extensionIcon.verifiedForeground": "#228B22",
     "focusBorder": "#6B8E23",
-    "foreground": "#2F4F4F",
+    "foreground": "#3f6b6b",
     "gitDecoration.addedResourceForeground": "#228B22",
     "gitDecoration.conflictingResourceForeground": "#CD5C5C",
     "gitDecoration.deletedResourceForeground": "#B22222",
@@ -682,21 +682,21 @@
       "scope": "comment.git-status.header.remote",
       "settings": {
         "name": "Git status remote",
-        "foreground": "#B22222"
+        "foreground": "#801b1b"
       }
     },
     {
       "scope": "comment.git-status.header.local",
       "settings": {
         "name": "Git status local",
-        "foreground": "#405020"
+        "foreground": "#566c2b"
       }
     },
     {
       "scope": "comment.other.git-status.head",
       "settings": {
         "name": "Git status remote",
-        "foreground": "#2F4F4F"
+        "foreground": "#3f6b6b"
       }
     },
     {

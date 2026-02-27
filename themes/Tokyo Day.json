@@ -94,8 +94,8 @@
     "editor.foreground": "#2C3E50",
     "editor.findMatchBackground": "#2ECC714d",
     "editor.findMatchBorder": "#2ECC71",
-    "editor.findMatchHighlightBackground": "#2ECC7133",
-    "editor.findRangeHighlightBackground": "#2ECC7126",
+    "editor.findMatchHighlightBackground": "#2ECC714D",
+    "editor.findRangeHighlightBackground": "#2ECC7135",
     "editor.focusedStackFrameHighlightBackground": "#95A5A666",
     "editor.foldBackground": "#0000000c",
     "editor.hoverHighlightBackground": "#0000000c",
@@ -297,7 +297,7 @@
       "scope": "comment keyword.codetag.notation",
       "settings": {
         "name": "Comment TODO / FIXME",
-        "foreground": "#7C3A99"
+        "foreground": "#5e2d75"
       }
     },
     {
@@ -318,7 +318,7 @@
       "scope": "comment.other.git-status.head",
       "settings": {
         "name": "Git status remote",
-        "foreground": "#2C3E50"
+        "foreground": "#507192"
       }
     },
     {

@@ -147,9 +147,9 @@
     "editor.background": "#E5E9F0",
     "editor.findMatchBackground": "#5E81AC4d",
     "editor.findMatchBorder": "#5E81AC",
-    "editor.findMatchHighlightBackground": "#5E81AC33",
+    "editor.findMatchHighlightBackground": "#5E81AC4D",
     "editor.findMatchHighlightBorder": "#00000000",
-    "editor.findRangeHighlightBackground": "#5E81AC26",
+    "editor.findRangeHighlightBackground": "#5E81AC35",
     "editor.findRangeHighlightBorder": "#00000000",
     "editor.focusedStackFrameHighlightBackground": "#5E81AC4d",
     "editor.foldBackground": "#5E81AC26",
@@ -265,7 +265,7 @@
     "extensionIcon.starForeground": "#A04F3D",
     "extensionIcon.verifiedForeground": "#a3be8c",
     "focusBorder": "#2F6B91",
-    "foreground": "#2E3440",
+    "foreground": "#5d6981",
     "gitDecoration.addedResourceForeground": "#a3be8c",
     "gitDecoration.conflictingResourceForeground": "#A04030",
     "gitDecoration.deletedResourceForeground": "#963548",
@@ -695,7 +695,7 @@
       "scope": "comment.other.git-status.head",
       "settings": {
         "name": "Git status remote",
-        "foreground": "#2E3440"
+        "foreground": "#5d6981"
       }
     },
     {
@@ -810,7 +810,7 @@
       "scope": "constant.numeric.line-number.find-in-files",
       "settings": {
         "name": "Search result line numbers",
-        "foreground": "#4C566A"
+        "foreground": "#67748f"
       }
     },
     {
@@ -939,7 +939,7 @@
       ],
       "settings": {
         "name": "Operator",
-        "foreground": "#4C566A"
+        "foreground": "#67748f"
       }
     },
     {
@@ -1014,7 +1014,7 @@
       "scope": "entity.other.jinja2.delimiter",
       "settings": {
         "name": "jinja delimiters",
-        "foreground": "#4C566A"
+        "foreground": "#72819f"
       }
     },
     {
@@ -1104,7 +1104,7 @@
       "scope": "keyword.other.substitution",
       "settings": {
         "name": "Substitution string",
-        "foreground": "#4C566A"
+        "foreground": "#72819f"
       }
     },
     {

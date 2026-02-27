@@ -147,9 +147,9 @@
     "editor.background": "#f8efe7",
     "editor.findMatchBackground": "#2188714d",
     "editor.findMatchBorder": "#b16803",
-    "editor.findMatchHighlightBackground": "#21887133",
+    "editor.findMatchHighlightBackground": "#2188714D",
     "editor.findMatchHighlightBorder": "#00000000",
-    "editor.findRangeHighlightBackground": "#21887126",
+    "editor.findRangeHighlightBackground": "#21887135",
     "editor.findRangeHighlightBorder": "#00000000",
     "editor.focusedStackFrameHighlightBackground": "#72696d66",
     "editor.foldBackground": "#2c232e0c",
@@ -264,7 +264,7 @@
     "extensionIcon.starForeground": "#A83558",
     "extensionIcon.verifiedForeground": "#218871",
     "focusBorder": "#a59c9c",
-    "foreground": "#2c232e",
+    "foreground": "#59475d",
     "gitDecoration.addedResourceForeground": "#218871",
     "gitDecoration.conflictingResourceForeground": "#B54623",
     "gitDecoration.deletedResourceForeground": "#A83558",
@@ -683,14 +683,14 @@
       "scope": "comment.git-status.header.local",
       "settings": {
         "name": "Git status local",
-        "foreground": "#1B5A92"
+        "foreground": "#15456f"
       }
     },
     {
       "scope": "comment.other.git-status.head",
       "settings": {
         "name": "Git status remote",
-        "foreground": "#2c232e"
+        "foreground": "#59475d"
       }
     },
     {

@@ -145,9 +145,9 @@
     "editor.background": "#FAF6F1",
     "editor.findMatchBackground": "#35603C4D",
     "editor.findMatchBorder": "#B8860B",
-    "editor.findMatchHighlightBackground": "#35603C33",
+    "editor.findMatchHighlightBackground": "#35603C4D",
     "editor.findMatchHighlightBorder": "#00000000",
-    "editor.findRangeHighlightBackground": "#35603C26",
+    "editor.findRangeHighlightBackground": "#35603C35",
     "editor.findRangeHighlightBorder": "#00000000",
     "editor.focusedStackFrameHighlightBackground": "#FFD7804D",
     "editor.foldBackground": "#E5D5C326",
@@ -630,21 +630,21 @@
       "settings": {
         "name": "Comments and overrides inside comments",
         "fontStyle": "italic",
-        "foreground": "#6B5B52"
+        "foreground": "#6a5e57"
       }
     },
     {
       "scope": "comment storage.type",
       "settings": {
         "name": "JSDoc storage type",
-        "foreground": "#6B5B52"
+        "foreground": "#6a5e57"
       }
     },
     {
       "scope": "comment entity.name.type",
       "settings": {
         "name": "JSDoc entity name",
-        "foreground": "#6B5B52"
+        "foreground": "#6a5e57"
       }
     },
     {
@@ -654,7 +654,7 @@
       ],
       "settings": {
         "name": "JSDoc variable",
-        "foreground": "#6B5B52"
+        "foreground": "#6a5e57"
       }
     },
     {
@@ -665,7 +665,7 @@
       ],
       "settings": {
         "name": "PHPDoc keyword",
-        "foreground": "#6B5B52"
+        "foreground": "#6a5e57"
       }
     },
     {
@@ -679,7 +679,7 @@
       "scope": "comment.git-status.header.remote",
       "settings": {
         "name": "Git status remote",
-        "foreground": "#8FBC8F"
+        "foreground": "#506a50"
       }
     },
     {
@@ -693,7 +693,7 @@
       "scope": "comment.other.git-status.head",
       "settings": {
         "name": "Git status remote",
-        "foreground": "#8FBC8F"
+        "foreground": "#506a50"
       }
     },
     {
@@ -808,7 +808,7 @@
       "scope": "constant.numeric.line-number.find-in-files",
       "settings": {
         "name": "Search result line numbers",
-        "foreground": "#6B5B52"
+        "foreground": "#8D7D74"
       }
     },
     {
@@ -1191,7 +1191,7 @@
       "scope": "markup.raw",
       "settings": {
         "name": "Raw",
-        "foreground": "#6B5B52"
+        "foreground": "#8D7D74"
       }
     },
     {
@@ -1246,7 +1246,7 @@
       ],
       "settings": {
         "name": "Diff ignored",
-        "foreground": "#6B5B52"
+        "foreground": "#6c5c53"
       }
     },
     {
@@ -1455,7 +1455,7 @@
       "scope": "punctuation.definition.comment",
       "settings": {
         "name": "Comment start / end",
-        "foreground": "#6B5B52"
+        "foreground": "#6c5d54"
       }
     },
     {
@@ -1943,7 +1943,7 @@
       ],
       "settings": {
         "name": "comment support",
-        "foreground": "#6B5B52"
+        "foreground": "#51453e"
       }
     },
     {

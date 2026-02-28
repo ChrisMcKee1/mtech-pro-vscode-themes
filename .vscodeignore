@@ -34,3 +34,4 @@ Thumbs.db
 # IDE files
 .idea/
 *.code-workspace 
+.venv/**

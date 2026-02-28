@@ -1,10 +1,24 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## 0.7.5 - Documentation & Marketplace Release
+### Highlights
+- Overhauled documentation (README.md) for direct VS Code Marketplace distribution focusing on automated workflows.
+- Added standard OSS community files: SECURITY.md and CONTRIBUTING.md.
+- Consolidated repository documentation layout to emphasize the Visual Studio Code extension listing over manual downloading.
+
+## 0.7.4 - Deep Accessibility Pass & Contrast Overlay Enhancements
+### Highlights
+- Passed a major contrast and accessibility overhaul to resolve failures across 23 themes.
+- Re-architected alpha channels for diff overlays, selections, and search highlights.
+- Improved foreground legibility for comments and UI contrast in *Feisty Fusion, Graphite Bay, Mystic Dusk, Obsidian Moss, OGE Dark, and Tokyo Night*.
+- Added 9 new theming controls and expanded tests to ensure WCAG validation for future updates.
+- Fixed dynamic comment dimming and model info contrast issues.
+
 ## 0.6.6 - Welcome Contrast & Design Notes (November 2025)
 
 ### Highlights
 
-- Documented design-first palettes (Morning Coffee, Arctic Nord family, Enchanted Grove, etc.) and taught the analyzer to log ℹ️ trade-offs when ratios stay above the new floors (docs + `tests/lib/theme-utils.js`, `tests/test-contrast-analysis.js`).
+- Documented design-first palettes (Morning Coffee, Arctic Nord family, Enchanted Grove, etc.) and taught the analyzer to log Γä╣∩╕Å trade-offs when ratios stay above the new floors (docs + `tests/lib/theme-utils.js`, `tests/test-contrast-analysis.js`).
 - Expanded property coverage checks: `tests/analyze-theme-properties.js` now enforces selection/diff/list/button/tab/status/welcome groups plus background/foreground pairing, and `tests/check-welcome-contrast.js` spot-checks hover combos.
 - Added missing UI colors (button secondary hover text, menubar selection background, status bar prominent/remote states, welcome page hover foregrounds, tab hover/active fills) across all refreshed themes.
 - Re-tuned diff overlays, selections, and find highlights with palette-matched hues in 20+ themes (Arctic Nord + Light, Chroma Void, Copper Bloom, Cosmic Void + Light, Cyberpunk Neon, Digital Aqua, Enchanted Grove + Dark, Evening Espresso, Feisty Fusion + Light, Graphite Bay, Morning Coffee, Mystic Dusk, Neon Pink Light, OGE Dark/Light, Obsidian Moss, Sandstone Light, Tokyo Day/Night) so text never drowns under layered highlights.
@@ -27,9 +41,9 @@
 
 ## 0.6.4 - Coffee Themes (October 2025)
 
-☕ **Two New Coffee-Themed Color Schemes** - Warm, inviting themes for all-day coding
+Γÿò **Two New Coffee-Themed Color Schemes** - Warm, inviting themes for all-day coding
 
-### 🎨 New Themes
+### ≡ƒÄ¿ New Themes
 
 **Morning Coffee (Light)**:
 - Warm cream/caramel/chocolate palette optimized for daytime coding
@@ -43,7 +57,7 @@
 - Sophisticated dark theme with warm undertones
 - Perfect companion to Morning Coffee for all-day workflow
 
-### ✨ Key Features
+### Γ£¿ Key Features
 
 **Professional Coffee Shop Aesthetic**:
 - Consistent warm color temperature throughout both themes
@@ -65,7 +79,7 @@
 - Complete terminal ANSI color support
 - Optimized for TypeScript, Python, JavaScript, HTML, CSS, and Markdown
 
-### 🎯 Perfect For
+### ≡ƒÄ» Perfect For
 
 - Coffee lovers who appreciate warm, natural aesthetics
 - Developers who switch between light/dark modes throughout the day
@@ -76,9 +90,9 @@
 
 ## 0.6.3 - Neon Pink Light Improvements (October 2025)
 
-🎨 **Neon Pink Light Theme Refinements** - Enhanced accessibility and visual consistency
+≡ƒÄ¿ **Neon Pink Light Theme Refinements** - Enhanced accessibility and visual consistency
 
-### 🟣 Color Improvements
+### ≡ƒƒú Color Improvements
 
 **Replaced Yellow with Purple Accent** (#9900CC):
 - All yellow color variations (#ffff00) replaced with purple accent
@@ -89,7 +103,7 @@
 **UI Elements Updated**:
 - Charts, debug icons, lightbulb suggestions
 - Git decorations (modified files)
-- Terminal ANSI colors (yellow → purple)
+- Terminal ANSI colors (yellow ΓåÆ purple)
 - Extension star icons
 - SCM graph colors
 
@@ -97,7 +111,7 @@
 - Symbol icon colors (strings, text)
 - Maintains readability while improving consistency
 
-### ♿ Accessibility Fixes
+### ΓÖ┐ Accessibility Fixes
 
 **Extensions Panel Hover Highlighting**:
 - `list.hoverBackground`: Enhanced from `#f3e8ff` to `#e9d5ff` (deeper purple)
@@ -110,7 +124,7 @@
 - Ensured proper contrast ratios throughout theme
 - All foreground colors now dark and readable
 
-### ✨ Visual Consistency
+### Γ£¿ Visual Consistency
 
 - Purple accent now used consistently across all UI elements
 - No more jarring yellow color conflicts
@@ -121,9 +135,9 @@
 
 ## 0.6.0 - Initial Release (October 2025)
 
-🎉 **Official Launch** - Professional themes with accessibility and unique identities
+≡ƒÄë **Official Launch** - Professional themes with accessibility and unique identities
 
-### 🎨 21 Distinctive Themes
+### ≡ƒÄ¿ 21 Distinctive Themes
 
 **Dark Themes (13)**:
 - **Obsidian Moss** - Jade-tinted dark gray with lime green accents
@@ -150,33 +164,33 @@
 - **Enchanted Grove** - Mystical forest light elf aesthetic
 - **Neon Pink Light** - Vibrant pink-accented light theme
 
-### ✨ Key Features
+### Γ£¿ Key Features
 
-**🎯 Accessibility First**:
+**≡ƒÄ» Accessibility First**:
 - WCAG-compliant contrast ratios (4.5:1 text, 3:1 UI minimum)
 - 30-40% opacity highlights (no invisible selections/diffs)
 - Visible scrollbars in all states (rest/hover/active)
 - Readable text on all background colors
 - Off-black/off-white palettes (no pure #000000/#FFFFFF)
 
-**🎨 Matching Icon Packs**:
+**≡ƒÄ¿ Matching Icon Packs**:
 - 22 icon themes with color-coordinated file icons
 - Monochrome variants for 13 themes
 - Auto-pairing: Icons match your active theme automatically
 
-**⚡ Smart Theme Commands**:
+**ΓÜí Smart Theme Commands**:
 - `M Tech Themes: select theme` - Category-based picker (Light/Dark sections)
 - `M Tech Themes: activate icons` - Apply matching icon theme
 - `M Tech Themes: set theme and icons` - Atomically apply both
 - Auto-dismissing notifications (3-second timeout, no manual close needed)
 
-**🌈 Design Philosophy**:
+**≡ƒîê Design Philosophy**:
 - Each theme has unique personality and color identity
 - Temperature-consistent palettes (warm themes stay warm, cool stay cool)
 - Dual system coverage (UI colors + syntax token colors)
 - Multi-language tested (TypeScript, Python, HTML, CSS, Markdown, JSON)
 
-### 🔧 Technical Details
+### ≡ƒöº Technical Details
 
 **Extension Capabilities**:
 - Works in VS Code and Cursor
@@ -187,7 +201,7 @@
 **Configuration**:
 - `techThemes.fileIconsMonochrome` - Enable monochrome icon variants
 
-### 📦 What's Included
+### ≡ƒôª What's Included
 
 - 21 color themes (13 dark, 8 light)
 - 22 icon themes (with monochrome variants)

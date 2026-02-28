@@ -1,6 +1,7 @@
 ---
 name: Theme-Implementer
 description: Implements theme updates, fixes, and corrections based on plans.
+model: Gemini 3.1 Pro (Preview) (copilot)
 user-invocable: false
 tools: ['agent', 'read', 'search', 'edit', 'execute']
 ---

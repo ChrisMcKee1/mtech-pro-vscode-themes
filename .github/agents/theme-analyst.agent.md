@@ -1,6 +1,7 @@
 ---
 name: Theme-Analyst
 description: Researches color palettes, theme trends, and analyzes existing themes.
+model: Gemini 3.1 Pro (Preview) (copilot)
 user-invocable: false
 tools: ['agent', 'read', 'search', 'web']
 ---

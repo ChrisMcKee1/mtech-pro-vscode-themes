@@ -1,5 +1,5 @@
 /logs
 tests/*.txt
-
+/issues
 
 *.vsix

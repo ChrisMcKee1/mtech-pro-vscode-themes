@@ -1,6 +1,7 @@
 ---
 name: UI-UX-Expert
 description: Analyzes UI/UX, accessibility, and contrast ratios for themes.
+model: Gemini 3.1 Pro (Preview) (copilot)
 user-invocable: false
 tools: ['agent', 'read', 'search', 'execute']
 ---

@@ -421,7 +421,7 @@
     "scmGraph.historyItemHoverDefaultLabelBackground": "#64748B",
     "scrollbar.shadow": "#FFFFFF",
     "scrollbarSlider.activeBackground": "#4a6d8cCC",
-    "scrollbarSlider.background": "#2a2d3140",
+    "scrollbarSlider.background": "#2a2d314D",
     "scrollbarSlider.hoverBackground": "#3d434d99",
     "selection.background": "#0F766E40",
     "settings.checkboxBackground": "#FFFFFF",

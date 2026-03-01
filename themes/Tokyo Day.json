@@ -204,7 +204,7 @@
     "diffEditorOverview.removedForeground": "#B03A2E",
     "scrollbar.shadow": "#00000033",
     "scrollbarSlider.activeBackground": "#2C3E50CC",
-    "scrollbarSlider.background": "#7F8C8D40",
+    "scrollbarSlider.background": "#7F8C8D4D",
     "scrollbarSlider.hoverBackground": "#2C3E5099",
     "statusBarItem.prominentBackground": "#1B2838",
     "statusBarItem.prominentForeground": "#F0F0F0",

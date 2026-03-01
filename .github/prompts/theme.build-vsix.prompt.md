@@ -83,7 +83,13 @@ If missing, print (don't run):
 npm install -g @vscode/vsce
 ```
 
-### 6. Package VSIX
+### 6a. Update the Change Log (if applicable)
+- If `CHANGELOG.md` exists, append new version and notes in correct format
+- If not, skip this step (don't create new file)
+- If dry run testing the extension, skip this step to avoid false commits
+   - otherwise, this file should be updated then move on to 6b to package the VSIX with the new version number.
+
+### 6b. Package VSIX
 
 From workspace root:
 ```bash

@@ -1,5 +1,12 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## 0.7.7 - Midnight Cortado Refresh & Visibility Improvements (2026-02-28)
+### Highlights
+- Reimagined **Evening Espresso** with a major visual redesign in the new Midnight Cortado direction.
+- Improved scrollbar visibility across themes for clearer navigation in long files and panels.
+- Fixed **Digital Aqua** overview ruler and find-selection visibility so search cues are consistently visible.
+- Packaged release updates and version bump completed for `0.7.7`.
+
 ## 0.7.5 - Documentation & Marketplace Release
 ### Highlights
 - Overhauled documentation (README.md) for direct VS Code Marketplace distribution focusing on automated workflows.

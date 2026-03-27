@@ -1,5 +1,25 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## [0.9.0] - 2026-03-27
+
+### Added
+- Comprehensive VS Code theme color reference audit — all 23 themes now define 700+ color properties
+- Tokyo Day fully rebuilt: 385 properties added (was only 330, now 715+)
+- 16 universally-missing properties added across all themes:
+  - `editor.selectionForeground`, `editorHoverWidget.foreground`, `widget.border`
+  - `activityBar.activeBackground`, `terminal.selectionForeground`
+  - `gitDecoration.renamedResourceForeground`, `sideBarSectionHeader.border`
+  - `tab.activeBorderTop`
+  - `editorGutter.commentGlyphForeground`, `editorGutter.commentUnresolvedGlyphForeground`
+  - `statusBarItem.compactHoverBackground`
+  - `multiDiffEditor.headerBackground/background/border`
+  - `editorCommentsWidget.resolvedBorder/unresolvedBorder`
+
+### Quality
+- Zero critical property gaps remaining (245/245 critical, 157/157 important)
+- Zero empty-string values across all themes
+- Full test suite: 87/87 passed, 0 errors
+
 ## [0.8.1] - 2026-03-27
 
 ### Fixed

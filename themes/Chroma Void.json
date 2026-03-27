@@ -706,7 +706,21 @@
     "extensionIcon.privateForeground": "#fc618d",
     "mcpIcon.starForeground": "#fce566",
     "outputView.background": "#1a1a1a",
-    "outputViewStickyScroll.background": "#222222"
+    "outputViewStickyScroll.background": "#222222",
+    "editor.selectionForeground": "#f0f0f0",
+    "editorHoverWidget.foreground": "#d0d0d0",
+    "widget.border": "#303030",
+    "activityBar.activeBackground": "#00000000",
+    "terminal.selectionForeground": "#d0d0d0",
+    "gitDecoration.renamedResourceForeground": "#55ddff",
+    "editorGutter.commentGlyphForeground": "#8b888f",
+    "editorGutter.commentUnresolvedGlyphForeground": "#ff9955",
+    "statusBarItem.compactHoverBackground": "#252525",
+    "multiDiffEditor.headerBackground": "#252525",
+    "multiDiffEditor.background": "#1a1a1a",
+    "multiDiffEditor.border": "#252525",
+    "editorCommentsWidget.resolvedBorder": "#55ff88",
+    "editorCommentsWidget.unresolvedBorder": "#ff9955"
   },
   "semanticHighlighting": true,
   "semanticTokenColors": {

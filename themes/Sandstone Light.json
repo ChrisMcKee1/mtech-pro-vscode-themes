@@ -5,7 +5,7 @@
   "uuid": "5805b5b3-6bdd-55b1-a3f5-bb5b08d8cc9c",
   "colorSpaceName": "sRGB",
   "colors": {
-    "agentStatusIndicator.background": "#218871",
+    "agentStatusIndicator.background": "#EAE1DB",
     "activityBar.activeBorder": "#A83558",
     "activityBarTop.activeBorder": "#A83558",
     "activityErrorBadge.background": "#A83558",

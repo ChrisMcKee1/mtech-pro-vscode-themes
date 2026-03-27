@@ -1,5 +1,11 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## [0.8.1] - 2026-03-27
+
+### Fixed
+- Fixed `agentStatusIndicator.background` rendering as a green background bar across the command center in VS Code Insiders
+- All 23 themes now use subtle title-bar-harmonized colors instead of vivid accent colors for the agent status indicator
+
 ## [0.8.0] - 2026-03-26
 
 ### Added

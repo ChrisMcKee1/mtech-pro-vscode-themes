@@ -46,7 +46,7 @@
     "activityBarTop.background": "#EDE4DB",
     "activityBarTop.foreground": "#3E2723",
     "activityBarTop.inactiveForeground": "#6B5B52",
-    "agentStatusIndicator.background": "#5D8A5D",
+    "agentStatusIndicator.background": "#F3EBDE",
     "badge.background": "#B8860B",
     "badge.foreground": "#FAF6F1",
     "banner.background": "#EDE4DB",

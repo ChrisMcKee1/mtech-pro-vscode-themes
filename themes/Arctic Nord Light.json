@@ -5,7 +5,7 @@
   "uuid": "a2d8f7e4-c6ba-4f1e-9c3d-5a8e7f9d2c1b",
   "colorSpaceName": "sRGB",
   "colors": {
-    "agentStatusIndicator.background": "#5E7A5E",
+    "agentStatusIndicator.background": "#E6EBF1",
     "agentSessionReadIndicator.foreground": "#4C566A",
     "agentSessionSelectedBadge.border": "#2F6B91",
     "agentSessionSelectedUnfocusedBadge.border": "#5E81AC",

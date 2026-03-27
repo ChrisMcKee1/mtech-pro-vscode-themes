@@ -11,7 +11,7 @@
     "activityErrorBadge.foreground": "#273136",
     "activityWarningBadge.background": "#ffb270",
     "activityWarningBadge.foreground": "#273136",
-    "agentStatusIndicator.background": "#a2e57b",
+    "agentStatusIndicator.background": "#212C30",
     "breadcrumb.background": "#273136",
     "button.border": "#879295",
     "chat.requestBubbleBackground": "#3a4449",

@@ -5,7 +5,7 @@
   "uuid": "new-feisty-fusion-uuid",
   "colorSpaceName": "sRGB",
   "colors": {
-    "agentStatusIndicator.background": "#ff9b5e",
+    "agentStatusIndicator.background": "#26252F",
     "activityBar.activeBorder": "#ffd76d",
     "activityBarTop.activeBorder": "#ffd76d",
     "activityErrorBadge.background": "#ff657a",

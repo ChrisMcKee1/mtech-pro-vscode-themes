@@ -5,7 +5,7 @@
   "uuid": "new-dark-enchanted-grove-uuid",
   "colorSpaceName": "sRGB",
   "colors": {
-    "agentStatusIndicator.background": "#7A9A42",
+    "agentStatusIndicator.background": "#151C1E",
     "activityBar.activeBorder": "#7A9A42",
     "activityBarTop.activeBorder": "#7A9A42",
     "activityErrorBadge.background": "#CD5C5C",

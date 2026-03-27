@@ -1,5 +1,25 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## [0.8.0] - 2026-03-26
+
+### Added
+- 97 new VS Code theme color properties across all 23 themes for full VS Code Insiders compatibility
+- Copilot inline edit gutter indicators and diff backgrounds
+- Chat panel, inline chat input, and agent session UI colors
+- Markdown alert block colors (note, tip, important, warning, caution)
+- Tab selected state properties for new tab model
+- Editor action list, sticky scroll gutter, and peek view sticky scroll colors
+- Terminal sticky scroll and command guide colors
+- Multi-cursor primary/secondary differentiation
+- Editor placeholder, composition border, and fold placeholder colors
+- Panel title badges, minimap chat highlights, and overview ruler inline chat markers
+- Git blame decoration foreground
+- Status bar offline state indicators
+- Sash borders for profiles, chat management, and AI customization panels
+
+### Fixed
+- Empty-string values replaced with proper colors (diff move borders, offline status bar, find widget sash)
+
 ## 0.7.7 - Midnight Cortado Refresh & Visibility Improvements (2026-02-28)
 ### Highlights
 - Reimagined **Evening Espresso** with a major visual redesign in the new Midnight Cortado direction.

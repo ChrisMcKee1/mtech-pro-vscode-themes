@@ -1,6 +1,6 @@
 # M Tech Themes for Visual Studio Code Changelog
 
-## [0.9.1] - 2026-04-01
+## [0.10.0] - 2026-04-01
 
 ### Accessibility
 - Comprehensive WCAG accessibility audit and fixes across all 23 themes

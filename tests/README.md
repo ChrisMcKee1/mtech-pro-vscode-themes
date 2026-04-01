@@ -4,135 +4,64 @@
 
 **Run Tests**: `.\run-tests.cmd [--quick|--contrast|--status|--full|--help]`
 
-**Key Files**:
+## Core Test Files
 
-- `test-contrast-analysis.js` - Main contrast validation (WCAG compliance)
-- `test-mapping-validation.js` - Theme-icon pairing verification
-- `test-command-functionality.js` - Extension command testing
-- `test-refactor-status.js` - Refactor progress tracking
-- `TEST_SUITE_DOCUMENTATION.md` - Complete test suite documentation
+| File | Purpose |
+|------|---------|
+| `run-tests.cmd` | Main entry point — orchestrates all test modes |
+| `test-contrast-analysis.js` | WCAG contrast analysis (syntax, UI, ANSI, semantic, brackets) |
+| `test-mapping-validation.js` | Triple Source of Truth sync & theme-icon pairing |
+| `test-command-functionality.js` | Extension command simulation & theme categorization |
+| `test-refactor-status.js` | Refactor progress dashboard |
 
-## Active Scripts
+## Utility Library (`lib/`)
 
-### Production Tools (Keep - Essential)
+| File | Purpose |
+|------|---------|
+| `config-loader.js` | Theme file loading & package.json parsing |
+| `contrast-utils.js` | WCAG luminance, contrast ratio & alpha blending math |
+| `theme-utils.js` | Theme classification arrays, opacity targets, thresholds |
+| `terminal-colors.js` | ANSI color codes for terminal output |
+| `terminal-output.js` | Formatted printing (headers, sections, stats) |
 
-- `fix-arctic-nord-opacity.js` - Reference implementation for opacity fixes (dual contrast validation)
-- `fix-oge-light-opacity.js` - Light theme opacity reference (critical 75%→48% fix)
-- `batch-fix-all-opacity.js` - Batch processor for opacity fixes across all themes
-- `batch-analyze-themes.js` - Batch analysis for theme properties
-- `calculate-nord-colors.js` - Nord palette research with authoritative color mappings
+## Audit Tools (Periodic Use)
 
-### Research Scripts (Keep - Reference)
+| File | Purpose |
+|------|---------|
+| `comprehensive-property-audit.js` | Audit all themes against full VS Code property reference |
+| `audit-missing-properties.js` | Detect missing properties from newer VS Code versions |
 
-- `research-comment-contrast.js` - Industry standard research (4.0-6.0:1 range established)
-- `research-comment-scope-categories.js` - Comment scope categorization (test harness v2 basis)
-- `analyze-all-comments.js` - Comprehensive comment analysis across themes
-- `analyze-theme-properties.js` - Theme property analysis
-- `calculate-arctic-light.js` - Arctic Nord Light specific calculations
+Run these when VS Code adds new theme properties or before major releases.
 
-## Archive Directory
+## Contrast Analysis Coverage
 
-**Location**: `./archive/`
+The `test-contrast-analysis.js` checks:
 
-**Archived Scripts** (Historical reference, work completed):
+- **Syntax highlighting** — 4.5:1 text, 3.5:1 minimalist keywords, 4.0-6.0:1 comments
+- **Selection & diffs** — 3:1 minimum, opacity caps (60% selection, 50% diff)
+- **Text on highlights** — selected text readability (3:1+)
+- **Find system** — visual hierarchy across 5 match types
+- **Scrollbar states** — rest vs hover vs active (all 3 states)
+- **Bracket levels** — 6 levels at 3:1+ each
+- **Welcome page** — text contrast on hover backgrounds
+- **Terminal ANSI colors** — ansiBlack trap (dark), ansiWhite trap (light), all 16 colors
+- **Semantic highlighting** — `semanticHighlighting: true` enabled
 
-- Theme-specific analysis: `calculate-enchanted-grove*.js`, `calculate-tokyo-day.js`
-- Individual fixes: `calculate-target.js`, `check-contrast.js`, `debug-arctic-nord.js`
-- Strategy exploration: `calculate-light-opacity-strategy.js`, `calculate-light-selection-diff.js`
-- Simple testers: `test-comments.js`, `test-selection-diff.js`
-- Verification: `verify-opacity-blending.js`
-- Semantic fixes: `find-string-color.js`, `semantic-fix-enchanted-grove.js`
+## Overlay Standards
 
-**Archived Text Files** (Intermediate results):
+Canonical targets in `lib/theme-utils.js`:
 
-- Arctic Nord analysis: `arctic-*.txt`
-- Feisty Fusion analysis: `fusion-*.txt`
-- Tokyo Day analysis: `tokyo-day-analysis.txt`
-- Misc results: `temp-results.txt`, `final*.txt`
+- **Dark**: selection 35%, diff line 30%, diff text 40%, gutter 50%, cap 55%
+- **Light**: selection 30%, diff line 25%, diff text 35%, gutter 40%, cap 48-50%
+- **Find hierarchy**: match 30% / highlight 20% / range 15% / word 25% / strong 30%
 
-## Test Output Files (Keep - Active Results)
-
-- `contrast-results.txt` - Latest contrast analysis
-- `contrast-results-after.txt` - Post-fix contrast results
-- `contrast-full-results.txt` - Comprehensive contrast report
-- `full-results.txt` - Full test suite results
-- `full-test-results.txt` - Complete validation results
-
-## Workflow Patterns
-
-### 1. Opacity Fix Workflow (Completed)
+## Workflow
 
 ```bash
-# Individual theme analysis
-node fix-arctic-nord-opacity.js
-
-# Light theme critical fix
-node fix-oge-light-opacity.js
-
-# Batch fix remaining themes
-node batch-fix-all-opacity.js
-
-# Validate
-.\run-tests.cmd --contrast
+.\run-tests.cmd --quick      # Pre-commit validation (2-3s)
+.\run-tests.cmd --contrast   # Accessibility audit (5-10s)
+.\run-tests.cmd --status     # Refactor progress (1s)
+.\run-tests.cmd --full       # Pre-release validation (10-15s)
 ```
 
-### 2. Comment Contrast Research (Completed)
-
-```bash
-# Establish industry standards
-node research-comment-contrast.js
-
-# Analyze scope categories
-node research-comment-scope-categories.js
-
-# Update test harness (test-contrast-analysis.js)
-# Result: 92 false positives eliminated
-```
-
-### 3. Theme Property Analysis
-
-```bash
-# Batch analyze all themes
-node batch-analyze-themes.js
-
-# Specific property deep-dive
-node analyze-theme-properties.js
-```
-
-## Overlay Standards (Source Of Truth)
-
-Canonical overlay targets live in `tests/lib/theme-utils.js` and the overlay plan in
-`docs/OVERLAY_AUDIT_PLAN.md`.
-
-- Dark themes: selection 35%, diff line 30%, diff text 40%, gutter 50%, combined cap 55%
-- Light themes: selection 30%, diff line 25%, diff text 35%, gutter 40%, combined cap 48-50%
-- Find hierarchy (all themes): match 30%, highlight 20%, range 15%, word 25%, word strong 30%
-
-Legacy scripts retained for historical reference (do not use for current refactors):
-- `fix-diff-opacity-25percent.ps1`
-- `fix-diff-opacity-30percent.ps1`
-- `fine-tune-find-opacity.ps1`
-
-## Consolidation Summary
-
-**Before**: 28 calculation scripts + 15 text files = 43 files  
-**After**: 10 active scripts + 5 test output files + 18 archived = 33 files  
-**Reduction**: 23% fewer top-level files, organized structure
-
-**Key Improvements**:
-
-- Separated active tools from historical reference
-- Consolidated overlapping analysis scripts
-- Archived completed one-time fixes
-- Preserved research and reference implementations
-- Maintained all test output for validation tracking
-
-## Documentation
-
-See `TEST_SUITE_DOCUMENTATION.md` for:
-
-- Complete test mode descriptions
-- Test harness architecture
-- Validation criteria
-- Enhancement history
-- Usage examples
+See `TEST_SUITE_DOCUMENTATION.md` for complete details.

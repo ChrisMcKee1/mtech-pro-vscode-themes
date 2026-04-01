@@ -48,7 +48,10 @@ cd tests
 - UI element contrast (selections, diffs, brackets must pass 3:1)
 - Low-opacity overlays that may be invisible
 - Find system hierarchy (visual distinction between match types)
-- Scrollbar hover feedback
+- Scrollbar 3-state feedback (rest, hover, active)
+- Terminal ANSI color traps (ansiBlack in dark, ansiWhite in light)
+- Semantic highlighting enabled (`semanticHighlighting: true`)
+- Bracket highlight levels (6 levels, 3:1 minimum each)
 
 **Output**:
 - Critical issues: Syntax tokens failing 4.5:1 readability
@@ -61,7 +64,7 @@ cd tests
 - After completing a refactor (validate fixes)
 - Periodic audits to catch regressions
 
-**Runtime**: ~5-10 seconds (analyzes all 20 themes)
+**Runtime**: ~5-10 seconds (analyzes all themes)
 
 ### `--status`
 **Purpose**: Refactor progress dashboard and work tracking
@@ -147,10 +150,13 @@ Automated WCAG contrast analysis for accessibility compliance.
 - `--verbose` flag for detailed output (default: only failures)
 - Category-specific checks:
   - Syntax highlighting (4.5:1 minimum, 3.5:1 for minimalist)
-  - Brackets (3:1 minimum)
+  - Brackets (3:1 minimum, all 6 levels)
   - Selection/diffs (3:1 minimum, checks opacity, warns if > 60%/50%)
   - Find system (hierarchy detection)
-  - Scrollbars (hover feedback detection)
+  - Scrollbars (3-state validation: rest, hover, active)
+  - Terminal ANSI colors (ansiBlack/ansiBrightBlack trap in dark themes, ansiWhite/ansiBrightWhite in light themes, all 16 ANSI colors at 2:1 minimum)
+  - Semantic highlighting (verifies `semanticHighlighting: true` is set)
+  - Welcome page (text contrast on hover backgrounds)
 
 **Output format**:
 ```
@@ -446,11 +452,10 @@ Potential additions to test suite:
 
 1. **Color extraction utility**: Auto-detect "hot" colors likely to fail contrast
 2. **Theme comparison**: Diff two themes to see differences
-3. **Batch refactor**: Apply common fixes across multiple themes
-4. **Visual regression**: Screenshot comparison between versions
-5. **Token coverage**: Ensure all TextMate scopes are styled
-6. **Icon coverage**: Validate icon mappings for common file types
-7. **Performance testing**: Theme load time benchmarking
+3. **Visual regression**: Screenshot comparison between versions
+4. **Token coverage**: Ensure all TextMate scopes are styled
+5. **Icon coverage**: Validate icon mappings for common file types
+6. **Performance testing**: Theme load time benchmarking
 
 ## Contributing
 

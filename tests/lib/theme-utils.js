@@ -8,15 +8,15 @@
  */
 const LIGHT_THEMES = [
     'Light',
-    'Filter Sun',
     'Tokyo Day',
     'Enchanted Grove',
     'Arctic Nord Light',
     'Cosmic Void Light',
     'Feisty Fusion Light',
-    'Cyberpunk Neon Light',
     'Neon Pink Light',
-    'OGE Light'
+    'OGE Light',
+    'Morning Coffee',
+    'Sandstone Light'
 ];
 
 /**
@@ -50,7 +50,7 @@ const LIGHT_THEME_TRADEOFFS = [
     'Neon Pink Light',
     'Sandstone Light',
     'Tokyo Day',
-    'Filter Sun'
+    'Morning Coffee'
 ];
 
 /**

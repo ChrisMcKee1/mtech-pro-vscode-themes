@@ -73,6 +73,8 @@ class ContrastAnalyzer {
         this.analyzeScrollbars(theme, bg, results);
         this.analyzeBrackets(theme, bg, results);
         this.analyzeWelcomePage(theme, results);
+        this.analyzeTerminalAnsiColors(theme, bg, results);
+        this.analyzeSemanticHighlighting(theme, results);
         
         this.stats.themesAnalyzed++;
         return results;
@@ -404,6 +406,7 @@ class ContrastAnalyzer {
         
         const scrollRest = themeColors['scrollbarSlider.background'];
         const scrollHover = themeColors['scrollbarSlider.hoverBackground'];
+        const scrollActive = themeColors['scrollbarSlider.activeBackground'];
         
         if (scrollRest && scrollHover && scrollRest === scrollHover && !VERBOSE) {
             results.issues.push({
@@ -412,6 +415,26 @@ class ContrastAnalyzer {
                 property: 'scrollbarSlider',
                 message: `No hover feedback (rest === hover)`,
                 fix: `Make hover 10-15% brighter/darker than rest state for user feedback`
+            });
+            this.stats.mediumIssues++;
+        }
+
+        if (!scrollActive && !VERBOSE) {
+            results.issues.push({
+                severity: 'medium',
+                category: 'scrollbars',
+                property: 'scrollbarSlider.activeBackground',
+                message: `Missing active state (3rd scrollbar state undefined)`,
+                fix: `Define scrollbarSlider.activeBackground — should be most visible of the 3 states`
+            });
+            this.stats.mediumIssues++;
+        } else if (scrollActive && scrollHover && scrollActive === scrollHover && !VERBOSE) {
+            results.issues.push({
+                severity: 'medium',
+                category: 'scrollbars',
+                property: 'scrollbarSlider.activeBackground',
+                message: `No active feedback (active === hover)`,
+                fix: `Make active 5-10% brighter/darker than hover for drag feedback`
             });
             this.stats.mediumIssues++;
         }
@@ -439,6 +462,95 @@ class ContrastAnalyzer {
                     this.stats.highIssues++;
                 }
             }
+        }
+    }
+
+    analyzeTerminalAnsiColors(theme, background, results) {
+        const themeColors = theme.colors || {};
+        const termBg = themeColors['terminal.background'] || background;
+        const termBgRgb = hexToRgb(termBg);
+        const isDark = results.type === 'dark';
+
+        // In dark themes, ansiBlack must be visible (mapped to lighter shade)
+        // In light themes, ansiWhite must be visible (mapped to darker shade)
+        const trapColors = isDark
+            ? [
+                { prop: 'terminal.ansiBlack', label: 'ANSI Black (dark theme trap)' },
+                { prop: 'terminal.ansiBrightBlack', label: 'ANSI Bright Black (dark theme trap)' }
+              ]
+            : [
+                { prop: 'terminal.ansiWhite', label: 'ANSI White (light theme trap)' },
+                { prop: 'terminal.ansiBrightWhite', label: 'ANSI Bright White (light theme trap)' }
+              ];
+
+        trapColors.forEach(({ prop, label }) => {
+            const color = themeColors[prop];
+            if (!color || !color.startsWith('#')) return;
+
+            const analysis = analyzeContrast(color, termBg);
+
+            if (analysis.contrast < 3.0 && !VERBOSE) {
+                results.issues.push({
+                    severity: 'high',
+                    category: 'terminal',
+                    property: prop,
+                    color: color,
+                    contrast: analysis.contrast.toFixed(2),
+                    required: '3:1',
+                    message: `${label} invisible on terminal background`,
+                    fix: isDark
+                        ? `Map ${prop} to a lighter gray (e.g., #555555+) so it's visible on dark background`
+                        : `Map ${prop} to a darker shade (e.g., #cccccc-) so it's visible on light background`
+                });
+                this.stats.highIssues++;
+            }
+        });
+
+        // Check all 16 ANSI colors for minimum contrast with terminal background
+        const ansiProps = [
+            'terminal.ansiBlack', 'terminal.ansiRed', 'terminal.ansiGreen', 'terminal.ansiYellow',
+            'terminal.ansiBlue', 'terminal.ansiMagenta', 'terminal.ansiCyan', 'terminal.ansiWhite',
+            'terminal.ansiBrightBlack', 'terminal.ansiBrightRed', 'terminal.ansiBrightGreen', 'terminal.ansiBrightYellow',
+            'terminal.ansiBrightBlue', 'terminal.ansiBrightMagenta', 'terminal.ansiBrightCyan', 'terminal.ansiBrightWhite'
+        ];
+
+        ansiProps.forEach(prop => {
+            // Skip trap colors already checked above
+            if (trapColors.some(t => t.prop === prop)) return;
+
+            const color = themeColors[prop];
+            if (!color || !color.startsWith('#')) return;
+
+            const analysis = analyzeContrast(color, termBg);
+
+            if (analysis.contrast < 2.0 && !VERBOSE) {
+                results.issues.push({
+                    severity: 'medium',
+                    category: 'terminal',
+                    property: prop,
+                    color: color,
+                    contrast: analysis.contrast.toFixed(2),
+                    required: '2:1',
+                    message: `ANSI color nearly invisible on terminal background`,
+                    fix: `Adjust ${prop} to achieve at least 2:1 contrast against terminal background`
+                });
+                this.stats.mediumIssues++;
+            }
+        });
+    }
+
+    analyzeSemanticHighlighting(theme, results) {
+        const semanticHighlighting = theme.semanticHighlighting;
+
+        if (semanticHighlighting !== true && !VERBOSE) {
+            results.issues.push({
+                severity: 'medium',
+                category: 'semantic',
+                property: 'semanticHighlighting',
+                message: `Semantic highlighting not enabled (${semanticHighlighting === undefined ? 'missing' : `set to ${semanticHighlighting}`})`,
+                fix: `Add "semanticHighlighting": true to theme JSON root for richer token coloring`
+            });
+            this.stats.mediumIssues++;
         }
     }
 

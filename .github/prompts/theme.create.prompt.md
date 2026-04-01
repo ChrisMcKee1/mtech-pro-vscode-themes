@@ -16,10 +16,20 @@ Build a **production-ready theme** with palette, syntax tokens, UI surfaces, ico
 - User provides theme concept (or use `/ideate-theme` first)
 - Theme must fill a gap in current collection (21 themes)
 - Follow [copilot-instructions.md](../copilot-instructions.md) architecture rules
-- Meet WCAG AA accessibility minimums (4.5:1 text, 3:1 UI)
+- Meet WCAG accessibility minimums (4.5:1 text, 3:1 UI, 7:1 for high-contrast themes)
 - Pass automated test suite before completion
 
 ## Workflow
+
+### 0. Fetch Official VS Code Theme Color Reference
+
+**Before creating any theme**, fetch the latest official property list to ensure full coverage:
+
+```
+web_fetch https://code.visualstudio.com/api/references/theme-color
+```
+
+This ensures you don't miss newly added properties (chat panels, inline edit, command center, sticky scroll, notebook, etc.). VS Code adds new color keys each release — always check the canonical source.
 
 ### 1. Finalize Concept (If Not Provided)
 
@@ -121,8 +131,40 @@ Structure:
       "settings": {"foreground": "#ce9178"}
     },
     // ... complete token definitions
-  ]
+  ],
+  "semanticTokenColors": {
+    "variable.declaration": "#d4d4d4",
+    "function.declaration": "#dcdcaa",
+    "class.declaration": "#4ec9b0",
+    "type.declaration": "#4ec9b0",
+    "parameter.declaration": "#9cdcfe",
+    "property.declaration": "#9cdcfe",
+    "enumMember.declaration": "#4fc1ff"
+    // ... semantic overrides for language-specific precision
+  }
 }
+```
+
+**Terminal ANSI Color Trap** ⚠️:
+```json
+// Dark themes: ansiBlack/ansiBrightBlack MUST be light (visible on dark bg)
+"terminal.ansiBlack": "#636d83",
+"terminal.ansiBrightBlack": "#808a9a",
+
+// Light themes: ansiWhite/ansiBrightWhite MUST be dark (visible on light bg)
+"terminal.ansiWhite": "#4a4a4a",
+"terminal.ansiBrightWhite": "#2c2c2c"
+```
+
+**Bracket Highlight Colors** (define all 6 levels):
+```json
+"editorBracketHighlight.foreground1": "#ffd700",
+"editorBracketHighlight.foreground2": "#da70d6",
+"editorBracketHighlight.foreground3": "#179fff",
+"editorBracketHighlight.foreground4": "#00d9ff",
+"editorBracketHighlight.foreground5": "#f5a623",
+"editorBracketHighlight.foreground6": "#98c379",
+"editorBracketHighlight.unexpectedBracket.foreground": "#ff0000"
 ```
 
 **Reference existing themes** for complete property coverage:
@@ -139,12 +181,20 @@ Structure:
   "name": "New Theme Icons",
   "colors": {
     "folderForeground": "#569cd6",
-    "fileForeground": "#d4d4d4",
-    // ... icon colors matching theme palette
+    "fileForeground": "#d4d4d4"
   },
-  // ... file associations, folder mappings
+  "light": {
+    "folderForeground": "#0060c0",
+    "fileForeground": "#2c2c2c"
+  },
+  "highContrast": {
+    "folderForeground": "#75beff",
+    "fileForeground": "#ffffff"
+  }
 }
 ```
+
+Icon themes should include `light` and `highContrast` variant overrides so icons remain visible across all VS Code modes.
 
 **Option B: Reuse Existing** (for similar color palette):
 - Classic Icons (neutral)
@@ -233,7 +283,8 @@ Checks:
   - [ ] Scrollbars visible (rest/hover/active states)
   - [ ] Diff views show clear added/removed/modified
   - [ ] Find matches have visual hierarchy
-  - [ ] Terminal ANSI colors work
+  - [ ] Terminal ANSI colors work (ansiBlack visible in dark themes, ansiWhite visible in light themes)
+  - [ ] Bracket pair colors are distinct across all 6 levels
 
 **Use "Developer: Inspect Editor Tokens"** to verify token scopes.
 
@@ -298,6 +349,7 @@ Unified diffs for all created/modified files with 3-5 lines context
 
 ## Reference Documents
 
+- [VS Code Theme Color Reference](https://code.visualstudio.com/api/references/theme-color) - **Canonical property list** (fetch before creating)
 - [copilot-instructions.md](../copilot-instructions.md) - Theme structure and pairing rules
 - [CONTRAST_REFERENCE.md](../../docs/CONTRAST_REFERENCE.md) - Complete property checklist
 - [ACCESSIBILITY_FRAMEWORK.md](../../docs/ACCESSIBILITY_FRAMEWORK.md) - Successful themes case studies

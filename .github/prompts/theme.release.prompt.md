@@ -40,6 +40,7 @@ Execute a **complete release workflow**: stage/commit all changes, push to GitHu
 Check these exist before proceeding:
 - [ ] `package.json` version updated (e.g., `0.5.22`)
 - [ ] VSIX file in root: `theme-m-tech-vscode-{VERSION}.vsix`
+- [ ] Accessibility tests pass: `cd tests && .\run-tests.cmd --contrast` (no CRITICAL/HIGH issues)
 - [ ] Git working directory clean (or changes ready to commit)
 - [ ] GitHub CLI available (`gh --version`) or manual release planned
 

@@ -79,8 +79,11 @@ UI Surfaces & Alpha Blending:
 
 ### Trade-offs & Variants
 
-- **Contrast Notes**: All text meets WCAG AA (4.5:1), UI elements meet 3:1
+- **Contrast Notes**: All text meets WCAG AA (4.5:1), UI elements meet 3:1, high-contrast variants target 7:1
+- **Terminal ANSI Trap**: Dark themes must map ansiBlack to a light gray; light themes must darken ansiWhite
 - **Risks**: [List any potential issues, e.g., "Blue may blend with links"]
+- **Bracket Pairs**: Plan 6 distinct bracket highlight colors that don't compete with syntax
+- **Icon Theme Variants**: Consider `light` and `highContrast` overrides for icon themes
 - **Variants**: Suggest light/dark/monochrome companion themes
 
 ## Constraints
@@ -100,6 +103,7 @@ UI Surfaces & Alpha Blending:
 
 ## Reference Documents
 
+- [VS Code Theme Color Reference](https://code.visualstudio.com/api/references/theme-color) - Official property list for coverage checks
 - [copilot-instructions.md](../copilot-instructions.md) - Core architecture patterns
 - [CONTRAST_REFERENCE.md](../../docs/CONTRAST_REFERENCE.md) - Accessibility rules
 - [ACCESSIBILITY_FRAMEWORK.md](../../docs/ACCESSIBILITY_FRAMEWORK.md) - Case studies

@@ -19,6 +19,7 @@ When evaluating or refactoring themes, we recognize two distinct paths:
 
 ## Core Principles
 
+0. **Fetch the official reference first**: Before modifying any theme, run `web_fetch https://code.visualstudio.com/api/references/theme-color` to check for newly added VS Code color properties (chat, inline edit, command center, sticky scroll, notebook, etc.).
 1. **Two validation layers required**: Accessibility (automated) + Semantic correctness (manual)
 2. **Research guides, theme identity decides**: `Syntax_Highlighting_Best_Practices.md` provides best practices, but theme concept takes precedence
 3. **Test harness evolves**: When tests contradict artistic intent or research, improve the tests
@@ -37,7 +38,7 @@ When evaluating or refactoring themes, we recognize two distinct paths:
 ### Layer 1: Accessibility (Automated Testing)
 
 **What it checks**:
-- Contrast ratios: 4.5:1 for text, 3:1 for UI elements
+- Contrast ratios: 4.5:1 for text, 3:1 for UI elements, 7:1 for high-contrast themes
 - Opacity levels: Selection, diffs, find highlights
 - UI element visibility: Scrollbars, brackets, diagnostics
 
@@ -323,7 +324,7 @@ Common problems:
 ❌ **Comments invisible** → 2.5:1 contrast, strain to read  
 ❌ **Variables colored like keywords** → Visual noise, everything equally important  
 ❌ **Operators too bright** → `=` and `+` steal attention from logic
-❌ **Bracket Pairs missing/competing** → `editorBracketHighlight.foreground1-6` not defined or overly saturated.
+❌ **Bracket Pairs missing/competing** → `editorBracketHighlight.foreground1-6` not defined or overly saturated. All 6 levels must be distinct.
 
 **D. Cross-Reference with Theme Identity**:
 
@@ -709,9 +710,19 @@ Even with automated validation, you MUST manually test:
   "colors": {
     "folderForeground": "#569cd6",  // Match theme's primary accent
     "fileForeground": "#d4d4d4"     // Match theme's foreground
+  },
+  "light": {
+    "folderForeground": "#0060c0",
+    "fileForeground": "#2c2c2c"
+  },
+  "highContrast": {
+    "folderForeground": "#75beff",
+    "fileForeground": "#ffffff"
   }
 }
 ```
+
+Icon themes should include `light` and `highContrast` overrides so icons remain visible when users switch VS Code appearance modes.
 
 ### Step 4: Triple Source of Truth Sync (Only When Needed)
 
@@ -1110,6 +1121,7 @@ Provide unified diffs with 3-5 lines context for each file
 
 ## Reference Documents
 
+- [VS Code Theme Color Reference](https://code.visualstudio.com/api/references/theme-color) - **Fetch first** to check for new properties
 - [copilot-instructions.md](../copilot-instructions.md) - Architecture patterns and theme identity
 - [Syntax_Highlighting_Best_Practices.md](../../docs/references/Syntax_Highlighting_Best_Practices.md) - Research guidance
 - [ACCESSIBILITY_FRAMEWORK.md](../../docs/ACCESSIBILITY_FRAMEWORK.md) - WCAG requirements and case studies

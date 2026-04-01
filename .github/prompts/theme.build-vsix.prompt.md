@@ -98,12 +98,16 @@ npx @vscode/vsce package
 
 Capture output: `theme-m-tech-vscode-0.5.20.vsix`
 
-### 7. Optional: Run Tests
+### 7. Run Tests (Recommended)
+
+Run accessibility and structure tests before finalizing the package:
 
 If `tests/run-tests.cmd` exists:
 ```bash
 cd tests && .\run-tests.cmd --full
 ```
+
+This runs structure validation (`--quick`) and contrast analysis (`--contrast`). Fix any CRITICAL or HIGH accessibility issues before distributing.
 
 Summarize pass/fail.
 

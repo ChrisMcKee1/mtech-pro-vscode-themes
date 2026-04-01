@@ -538,7 +538,7 @@
     "tab.unfocusedHoverForeground": "#bab6c0",
     "tab.unfocusedInactiveForeground": "#707070",
     "tab.unfocusedInactiveModifiedBorder": "#363537",
-    "terminal.ansiBlack": "#636363",
+    "terminal.ansiBlack": "#6c6c6c",
     "terminal.ansiBlue": "#5588ff",
     "terminal.ansiBrightBlack": "#707070",
     "terminal.ansiBrightBlue": "#77aaff",
@@ -733,7 +733,6 @@
     {
       "scope": [
         "comment",
-        "comment keyword",
         "comment markup.underline.link",
         "comment string",
         "comment punctuation.definition",
@@ -1831,21 +1830,6 @@
       "settings": {
         "name": "rust specific",
         "foreground": "#fc618d"
-      }
-    },
-    {
-      "scope": [
-        "storage.modifier.const.rust",
-        "storage.modifier.dyn.rust",
-        "storage.modifier.mut.rust",
-        "storage.modifier.static.rust",
-        "storage.type.rust",
-        "storage.type.core.rust",
-        "storage.class.std.rust"
-      ],
-      "settings": {
-        "name": "rust specific",
-        "foreground": "#5ad4e6"
       }
     },
     {

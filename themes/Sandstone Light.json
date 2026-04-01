@@ -18,7 +18,7 @@
     "chat.requestBubbleHoverBackground": "#beb5b3",
     "chat.requestBubbleForeground": "#2c232e",
     "commandCenter.activeBorder": "#A83558",
-    "disabledForeground": "#a59c9c",
+    "disabledForeground": "#8a8080",
     "editorCommentsWidget.rangeActiveBackground": "#A8355840",
     "editorCommentsWidget.rangeBackground": "#A8355826",
     "editorIndentGuide.activeBackground": "#a59c9c",
@@ -41,7 +41,7 @@
     "activityBar.activeFocusBorder": "#A83558",
     "activityBar.background": "#ded5d0",
     "activityBar.border": "#ded5d0",
-    "activityBar.foreground": "#72696d",
+    "activityBar.foreground": "#5F5758",
     "activityBar.inactiveForeground": "#a59c9c",
     "activityBarBadge.background": "#A83558",
     "activityBarBadge.foreground": "#f8efe7",
@@ -189,7 +189,7 @@
     "editorError.background": "#00000000",
     "editorError.border": "#00000000",
     "editorError.foreground": "#A83558",
-    "editorGhostText.foreground": "#a59c9c",
+    "editorGhostText.foreground": "#8a8080",
     "editorGroup.border": "#eee5de",
     "editorGroup.dropBackground": "#eee5debf",
     "editorGroup.emptyBackground": "#ded5d0",
@@ -454,7 +454,7 @@
     "sideBar.background": "#eee5de",
     "sideBar.border": "#ded5d0",
     "sideBar.dropBackground": "#eee5debf",
-    "sideBar.foreground": "#72696d",
+    "sideBar.foreground": "#685F63",
     "sideBarSectionHeader.background": "#eee5de",
     "sideBarSectionHeader.foreground": "#847a7a",
     "sideBarStickyScroll.background": "#eee5de",
@@ -544,9 +544,9 @@
     "tab.unfocusedInactiveForeground": "#5F5758",
     "tab.unfocusedInactiveModifiedBorder": "#d2c9c4",
     "terminal.ansiBlack": "#d2c9c4",
-    "terminal.ansiBlue": "#B54623",
+    "terminal.ansiBlue": "#1B5A92",
     "terminal.ansiBrightBlack": "#847a7a",
-    "terminal.ansiBrightBlue": "#B54623",
+    "terminal.ansiBrightBlue": "#1B5A92",
     "terminal.ansiBrightCyan": "#2473b6",
     "terminal.ansiBrightGreen": "#1A7460",
     "terminal.ansiBrightMagenta": "#6851a2",
@@ -637,12 +637,12 @@
     "inlineChat.foreground": "#5F5758",
     "inlineChatInput.border": "#d2c9c4",
     "inlineChatInput.focusBorder": "#A83558",
-    "inlineChatInput.placeholderForeground": "#beb5b3",
+    "inlineChatInput.placeholderForeground": "#948a8a",
     "inlineChatInput.background": "#fdf7f3",
     "agentSessionReadIndicator.foreground": "#218871",
     "agentSessionSelectedBadge.border": "#A83558",
     "agentSessionSelectedUnfocusedBadge.border": "#a59c9c",
-    "editor.placeholder.foreground": "#beb5b3",
+    "editor.placeholder.foreground": "#948a8a",
     "editor.compositionBorder": "#A83558",
     "editor.findMatchForeground": "#2c232e",
     "editor.findMatchHighlightForeground": "#2c232e",
@@ -734,7 +734,6 @@
     {
       "scope": [
         "comment",
-        "comment keyword",
         "comment markup.underline.link",
         "comment string",
         "comment punctuation.definition",
@@ -1832,21 +1831,6 @@
       "settings": {
         "name": "rust specific",
         "foreground": "#A83558"
-      }
-    },
-    {
-      "scope": [
-        "storage.modifier.const.rust",
-        "storage.modifier.dyn.rust",
-        "storage.modifier.mut.rust",
-        "storage.modifier.static.rust",
-        "storage.type.rust",
-        "storage.type.core.rust",
-        "storage.class.std.rust"
-      ],
-      "settings": {
-        "name": "rust specific",
-        "foreground": "#1B5A92"
       }
     },
     {

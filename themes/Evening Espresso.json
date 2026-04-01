@@ -737,7 +737,6 @@
     {
       "scope": [
         "comment",
-        "comment keyword",
         "comment markup.underline.link",
         "comment string",
         "comment punctuation.definition",
@@ -1837,21 +1836,6 @@
       "settings": {
         "name": "rust specific",
         "foreground": "#00E5FF"
-      }
-    },
-    {
-      "scope": [
-        "storage.modifier.const.rust",
-        "storage.modifier.dyn.rust",
-        "storage.modifier.mut.rust",
-        "storage.modifier.static.rust",
-        "storage.type.rust",
-        "storage.type.core.rust",
-        "storage.class.std.rust"
-      ],
-      "settings": {
-        "name": "rust specific",
-        "foreground": "#F47140"
       }
     },
     {

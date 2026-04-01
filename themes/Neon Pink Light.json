@@ -17,7 +17,7 @@
     "chat.requestBubbleBackground": "#f5f0ff",
     "chat.requestBubbleHoverBackground": "#f3e8ff",
     "commandCenter.activeBorder": "#ff0080",
-    "disabledForeground": "#9ca3af",
+    "disabledForeground": "#848B95",
     "editorCommentsWidget.rangeActiveBackground": "#ff008040",
     "editorCommentsWidget.rangeBackground": "#ff008026",
     "editorIndentGuide.activeBackground": "#c084fc",
@@ -175,7 +175,7 @@
     "editorBracketHighlight.foreground2": "#B34700",
     "editorBracketHighlight.foreground3": "#737300",
     "editorBracketHighlight.foreground4": "#008052",
-    "editorBracketHighlight.foreground5": "#c0007d",
+    "editorBracketHighlight.foreground5": "#0E7490",
     "editorBracketHighlight.foreground6": "#9900cc",
     "editorBracketMatch.background": "#ff00801A",
     "editorBracketMatch.border": "#737880",
@@ -186,7 +186,7 @@
     "editorError.background": "#00000000",
     "editorError.border": "#00000000",
     "editorError.foreground": "#CC0044",
-    "editorGhostText.foreground": "#9ca3af",
+    "editorGhostText.foreground": "#848B95",
     "editorGroup.border": "#f3e8ff",
     "editorGroup.dropBackground": "#f3e8ffbf",
     "editorGroup.emptyBackground": "#fdf2f8",
@@ -421,8 +421,8 @@
     "scmGraph.historyItemHoverDefaultLabelBackground": "#e9d5ff",
     "scrollbar.shadow": "#f3e8ff",
     "scrollbarSlider.activeBackground": "#ff2288CC",
-    "scrollbarSlider.background": "#2a2a2e4D",
-    "scrollbarSlider.hoverBackground": "#ff55aa99",
+    "scrollbarSlider.background": "#9ca3af55",
+    "scrollbarSlider.hoverBackground": "#ff008088",
     "selection.background": "#4a1a4a26",
     "sessionsSidebar.background": "#f3e8ff",
     "sessionsSidebar.border": "#fdf2f8",
@@ -541,16 +541,16 @@
     "tab.unfocusedInactiveModifiedBorder": "#f5f0ff",
     "terminal.ansiBlack": "#1f2937",
     "terminal.ansiBlue": "#B34700",
-    "terminal.ansiBrightBlack": "#737880",
+    "terminal.ansiBrightBlack": "#656A72",
     "terminal.ansiBrightBlue": "#B34700",
-    "terminal.ansiBrightCyan": "#ff0080",
-    "terminal.ansiBrightGreen": "#008856",
+    "terminal.ansiBrightCyan": "#D90070",
+    "terminal.ansiBrightGreen": "#007048",
     "terminal.ansiBrightMagenta": "#9900CC",
     "terminal.ansiBrightRed": "#CC0044",
     "terminal.ansiBrightWhite": "#000000",
     "terminal.ansiBrightYellow": "#9900CC",
-    "terminal.ansiCyan": "#ff0080",
-    "terminal.ansiGreen": "#008856",
+    "terminal.ansiCyan": "#D90070",
+    "terminal.ansiGreen": "#007048",
     "terminal.ansiMagenta": "#9900CC",
     "terminal.ansiRed": "#CC0044",
     "terminal.ansiWhite": "#000000",
@@ -734,7 +734,7 @@
       ],
       "settings": {
         "fontStyle": "italic",
-        "foreground": "#757a83"
+        "foreground": "#6b7078"
       }
     },
     {
@@ -754,7 +754,7 @@
         "entity.name"
       ],
       "settings": {
-        "foreground": "#008856"
+        "foreground": "#007A4D"
       }
     },
     {
@@ -800,7 +800,7 @@
         "punctuation.definition.string"
       ],
       "settings": {
-        "foreground": "#008856"
+        "foreground": "#007A4D"
       }
     },
     {
@@ -888,7 +888,7 @@
         "string.regexp"
       ],
       "settings": {
-        "foreground": "#008856"
+        "foreground": "#007A4D"
       }
     },
     {
@@ -899,14 +899,14 @@
         "string.regexp string.regexp.arbitrary-repitition"
       ],
       "settings": {
-        "foreground": "#008856"
+        "foreground": "#007A4D"
       }
     },
     {
       "scope": "string.regexp constant.character.escape",
       "settings": {
         "fontStyle": "bold",
-        "foreground": "#008856"
+        "foreground": "#007A4D"
       }
     },
     {
@@ -946,7 +946,7 @@
     {
       "scope": "markup.quote",
       "settings": {
-        "foreground": "#008856"
+        "foreground": "#007A4D"
       }
     },
     {
@@ -988,7 +988,7 @@
       ],
       "settings": {
         "background": "#008856",
-        "foreground": "#008856"
+        "foreground": "#007A4D"
       }
     },
     {
@@ -1062,7 +1062,7 @@
         "string.other.link"
       ],
       "settings": {
-        "foreground": "#008856",
+        "foreground": "#007A4D",
         "fontStyle": "underline"
       }
     }

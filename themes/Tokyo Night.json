@@ -541,13 +541,13 @@
     "terminal.ansiBlack": "#9aa7d4",
     "terminal.ansiBlue": "#7aa2f7",
     "terminal.ansiBrightBlack": "#bcc8ef",
-    "terminal.ansiBrightBlue": "#7aa2f7",
-    "terminal.ansiBrightCyan": "#7dcfff",
-    "terminal.ansiBrightGreen": "#9ece6a",
-    "terminal.ansiBrightMagenta": "#bb9af7",
-    "terminal.ansiBrightRed": "#f7768e",
+    "terminal.ansiBrightBlue": "#96b6f9",
+    "terminal.ansiBrightCyan": "#9ad8ff",
+    "terminal.ansiBrightGreen": "#b4e08a",
+    "terminal.ansiBrightMagenta": "#ceaff9",
+    "terminal.ansiBrightRed": "#ff8fa3",
     "terminal.ansiBrightWhite": "#c0caf5",
-    "terminal.ansiBrightYellow": "#e0af68",
+    "terminal.ansiBrightYellow": "#ecc47e",
     "terminal.ansiCyan": "#7dcfff",
     "terminal.ansiGreen": "#9ece6a",
     "terminal.ansiMagenta": "#bb9af7",
@@ -730,7 +730,6 @@
     {
       "scope": [
         "comment",
-        "comment keyword",
         "comment markup.underline.link",
         "comment string",
         "comment punctuation.definition",
@@ -1828,21 +1827,6 @@
       "settings": {
         "name": "rust specific",
         "foreground": "#f7768e"
-      }
-    },
-    {
-      "scope": [
-        "storage.modifier.const.rust",
-        "storage.modifier.dyn.rust",
-        "storage.modifier.mut.rust",
-        "storage.modifier.static.rust",
-        "storage.type.rust",
-        "storage.type.core.rust",
-        "storage.class.std.rust"
-      ],
-      "settings": {
-        "name": "rust specific",
-        "foreground": "#7aa2f7"
       }
     },
     {

@@ -423,7 +423,7 @@
     "editorUnnecessaryCode.opacity": "#000000a5",
     "editorWarning.background": "#00000000",
     "editorWarning.border": "#00000000",
-    "editorWarning.foreground": "#E67E22",
+    "editorWarning.foreground": "#B8600E",
     "editorWhitespace.foreground": "#BDC3C7",
     "errorForeground": "#E74C3C",
     "extensionBadge.remoteForeground": "#229954",
@@ -437,7 +437,7 @@
     "extensionIcon.sponsorForeground": "#1D6890",
     "extensionIcon.starForeground": "#B8860B",
     "extensionIcon.verifiedForeground": "#229954",
-    "focusBorder": "#87CEEB",
+    "focusBorder": "#2E86C1",
     "foreground": "#2C3E50",
     "gitDecoration.addedResourceForeground": "#1A7A41",
     "gitDecoration.conflictingResourceForeground": "#B8600E",
@@ -669,17 +669,17 @@
     "tab.unfocusedHoverForeground": "#7F8C8D",
     "tab.unfocusedInactiveForeground": "#7F8C8D",
     "tab.unfocusedInactiveModifiedBorder": "#E0E0E0",
-    "terminal.ansiBlack": "#E0E0E0",
+    "terminal.ansiBlack": "#BDC3C7",
     "terminal.ansiBlue": "#1D6890",
     "terminal.ansiBrightBlack": "#6B7B7C",
     "terminal.ansiBrightBlue": "#2E86C1",
-    "terminal.ansiBrightCyan": "#2E86C1",
+    "terminal.ansiBrightCyan": "#1A8F6E",
     "terminal.ansiBrightGreen": "#1A8F4E",
     "terminal.ansiBrightMagenta": "#9B59B6",
     "terminal.ansiBrightRed": "#C0392B",
     "terminal.ansiBrightWhite": "#1B2838",
     "terminal.ansiBrightYellow": "#8B7500",
-    "terminal.ansiCyan": "#1D6890",
+    "terminal.ansiCyan": "#17806D",
     "terminal.ansiGreen": "#1A7A41",
     "terminal.ansiMagenta": "#7C3A99",
     "terminal.ansiRed": "#C82355",
@@ -732,7 +732,6 @@
     {
       "scope": [
         "comment",
-        "comment keyword",
         "comment markup.underline.link",
         "comment string",
         "comment punctuation.definition",
@@ -1605,7 +1604,7 @@
       ],
       "settings": {
         "name": "Punctuation hard line break in Markdown",
-        "background": "#bb9af7"
+        "background": "#7C3A994D"
       }
     },
     {
@@ -1830,21 +1829,6 @@
       "settings": {
         "name": "rust specific",
         "foreground": "#C82355"
-      }
-    },
-    {
-      "scope": [
-        "storage.modifier.const.rust",
-        "storage.modifier.dyn.rust",
-        "storage.modifier.mut.rust",
-        "storage.modifier.static.rust",
-        "storage.type.rust",
-        "storage.type.core.rust",
-        "storage.class.std.rust"
-      ],
-      "settings": {
-        "name": "rust specific",
-        "foreground": "#1D6890"
       }
     },
     {

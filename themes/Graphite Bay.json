@@ -213,7 +213,7 @@
     "editorLightBulbAi.foreground": "#ffd76d",
     "editorLightBulbAutoFix.foreground": "#bad761",
     "editorLineNumber.activeForeground": "#b2b9bd",
-    "editorLineNumber.foreground": "#6e7280",
+    "editorLineNumber.foreground": "#747a88",
     "editorLink.activeForeground": "#9cd1bb",
     "editorMarkerNavigation.background": "#3a3d4b",
     "editorMarkerNavigationError.background": "#ff657a",
@@ -542,17 +542,17 @@
     "terminal.ansiBlack": "#a5b0cb",
     "terminal.ansiBlue": "#ff9b5e",
     "terminal.ansiBrightBlack": "#bfcae0",
-    "terminal.ansiBrightBlue": "#ff9b5e",
-    "terminal.ansiBrightCyan": "#9cd1bb",
-    "terminal.ansiBrightGreen": "#bad761",
-    "terminal.ansiBrightMagenta": "#c39ac9",
-    "terminal.ansiBrightRed": "#ff657a",
-    "terminal.ansiBrightWhite": "#eaf2f1",
-    "terminal.ansiBrightYellow": "#ffd76d",
+    "terminal.ansiBrightBlue": "#ffb580",
+    "terminal.ansiBrightCyan": "#b5e2d2",
+    "terminal.ansiBrightGreen": "#cbea7a",
+    "terminal.ansiBrightMagenta": "#d4b3da",
+    "terminal.ansiBrightRed": "#ffa8b5",
+    "terminal.ansiBrightWhite": "#f5faf9",
+    "terminal.ansiBrightYellow": "#ffe18d",
     "terminal.ansiCyan": "#9cd1bb",
     "terminal.ansiGreen": "#bad761",
     "terminal.ansiMagenta": "#c39ac9",
-    "terminal.ansiRed": "#ff657a",
+    "terminal.ansiRed": "#ff8fa0",
     "terminal.ansiWhite": "#eaf2f1",
     "terminal.ansiYellow": "#ffd76d",
     "terminal.background": "#3a3d4b",
@@ -730,7 +730,6 @@
     {
       "scope": [
         "comment",
-        "comment keyword",
         "comment markup.underline.link",
         "comment string",
         "comment punctuation.definition",
@@ -1828,21 +1827,6 @@
       "settings": {
         "name": "rust specific",
         "foreground": "#ff657a"
-      }
-    },
-    {
-      "scope": [
-        "storage.modifier.const.rust",
-        "storage.modifier.dyn.rust",
-        "storage.modifier.mut.rust",
-        "storage.modifier.static.rust",
-        "storage.type.rust",
-        "storage.type.core.rust",
-        "storage.class.std.rust"
-      ],
-      "settings": {
-        "name": "rust specific",
-        "foreground": "#9cd1bb"
       }
     },
     {

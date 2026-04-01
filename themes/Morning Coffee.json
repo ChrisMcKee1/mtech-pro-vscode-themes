@@ -10,7 +10,7 @@
     "activityErrorBadge.background": "#C41E3A",
     "activityErrorBadge.foreground": "#FAF6F1",
     "activityWarningBadge.background": "#CD9B4D",
-    "activityWarningBadge.foreground": "#FAF6F1",
+    "activityWarningBadge.foreground": "#3E2723",
     "breadcrumb.background": "#F5EFE7",
     "button.border": "#B8860B",
     "chat.requestBubbleBackground": "#EDE4DB",
@@ -470,7 +470,7 @@
     "statusBar.border": "#E5D5C3",
     "statusBar.debuggingBackground": "#CD9B4D",
     "statusBar.debuggingBorder": "#E5D5C3",
-    "statusBar.debuggingForeground": "#FAF6F1",
+    "statusBar.debuggingForeground": "#3E2723",
     "statusBar.focusBorder": "#B8860B",
     "statusBar.foreground": "#3E2723",
     "statusBar.noFolderBackground": "#F5EFE7",
@@ -494,7 +494,7 @@
     "statusBarItem.remoteHoverBackground": "#3D6D3D",
     "statusBarItem.remoteHoverForeground": "#FAF6F1",
     "statusBarItem.warningBackground": "#CD9B4D",
-    "statusBarItem.warningForeground": "#FAF6F1",
+    "statusBarItem.warningForeground": "#3E2723",
     "symbolIcon.arrayForeground": "#D2691E",
     "symbolIcon.booleanForeground": "#D2691E",
     "symbolIcon.classForeground": "#8B4513",
@@ -735,7 +735,6 @@
     {
       "scope": [
         "comment",
-        "comment keyword",
         "comment markup.underline.link",
         "comment string",
         "comment punctuation.definition",
@@ -1331,7 +1330,7 @@
       ],
       "settings": {
         "name": "Diff inserted",
-        "foreground": "#8FBC8F"
+        "foreground": "#4D7A4D"
       }
     },
     {
@@ -1841,21 +1840,6 @@
       "scope": [
         "storage.modifier.visibility.rust",
         "storage.modifier.lifetime.rust"
-      ],
-      "settings": {
-        "name": "rust specific",
-        "foreground": "#8B4513"
-      }
-    },
-    {
-      "scope": [
-        "storage.modifier.const.rust",
-        "storage.modifier.dyn.rust",
-        "storage.modifier.mut.rust",
-        "storage.modifier.static.rust",
-        "storage.type.rust",
-        "storage.type.core.rust",
-        "storage.class.std.rust"
       ],
       "settings": {
         "name": "rust specific",

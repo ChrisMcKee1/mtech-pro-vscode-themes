@@ -1,5 +1,61 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## [0.9.1] - 2026-04-01
+
+### Accessibility — Full 23-Theme Audit & Fixes
+- Deep one-by-one expert audit of all 23 themes covering WCAG contrast, overlays, ANSI colors, brackets, scrollbars, and modern property coverage
+- Fixed **Arctic Nord** terminal ansiBlack trap (was 1.45:1 — nearly invisible)
+- Fixed **5 light themes** (Cosmic Void Light, Tokyo Day, Feisty Fusion Light, Neon Pink Light, Enchanted Grove) with invisible terminal ansiBlack (was same as background)
+- Fixed **Morning Coffee** gold-background debug/warning text readability (2.33:1 → 5.19:1)
+- Fixed **Cyberpunk Neon** selection/find overlay hierarchy (selectionHighlight was stronger than selection)
+- Fixed **Enchanted Grove Dark** only WCAG failure — semanticTokenColors.newOperator (2.93:1 → 4.58:1)
+- Fixed **Obsidian Moss** terminal ansiRed (3.55:1) and ansiMagenta (3.92:1) contrast failures
+- Fixed **Graphite Bay** terminal ansiRed (3.79:1) and line number contrast (2.96:1)
+- Fixed **OGE Light** tab text contrast (2.31:1 → readable) and restored ansiBlue from orange to actual blue
+- Fixed **Sandstone Light** placeholder text (1.77:1 → 3:1+) and restored ansiBlue from orange to actual blue
+- Fixed **Neon Pink Light** scrollbar visibility (was 1.85:1), comment/string contrast, duplicate bracket level
+- Fixed **Feisty Fusion Light** accent gold used as text (3.13:1 → 4.5:1+) in ~10 UI properties
+- Fixed **Arctic Nord Light** variable.parameter contrast (4.13:1 → 5.06:1) and terminal ansiGreen
+- Fixed **Enchanted Grove** 7 UI contrast failures (badges, buttons, links, warnings)
+- Fixed **Cosmic Void Light** 19 properties using Slate-400 (#94A3B8) that failed on light backgrounds
+- Fixed **Tokyo Day** focusBorder (1.53:1 → visible), editorWarning (2.50:1), dark-theme token background leftover
+
+### Terminal ANSI Bright Differentiation
+- Added distinct bright ANSI variants across 8 themes where normal/bright pairs were identical
+- Themes fixed: Tokyo Night, Cosmic Void, Digital Aqua, Feisty Fusion, Graphite Bay, Mystic Dusk, OGE Dark, Copper Bloom
+- Each bright variant is now 15-20% lighter than its normal counterpart for proper bold/bright terminal rendering
+
+### Code Quality — Dead Token Rule Cleanup
+- Removed dead Rust-specific tokenColor rules from 20 themes (rule #128 was fully overridden by rule #129)
+- Removed duplicate `comment keyword` scope from 21 themes (was defined in two conflicting rules)
+- All themes now have clean, conflict-free tokenColor arrays
+
+### Icon Themes
+- Added `light` and `highContrast` variant sections to 3 key icon themes (Light, Tokyo Night, Arctic Nord) as templates
+- Fixed Mystic Dusk and Tokyo Day icon themes — restored 172 missing `fileNames` associations
+
+### Documentation — Skill Alignment
+- Updated `docs/CONTRAST_REFERENCE.md` with HC 7:1 threshold, 60-30-10 rule, semantic highlighting, terminal ANSI, brackets, scrollbar, and icon theme guidance
+- Updated `docs/ACCESSIBILITY_FRAMEWORK.md` with official VS Code doc URLs and comprehensive skill-aligned guidance
+- Updated `docs/OVERLAY_AUDIT_PLAN.md` — marked as completed reference, aligned diff opacity to 25-35%
+- Updated `docs/references/Syntax_Highlighting_Best_Practices.md` with M Tech guidelines appendix
+
+### Agent & Prompt Improvements
+- Enhanced all 4 `.github/agents/` definitions with vscode-theme-engineer skill awareness (ANSI inversion, brackets, scrollbars, semantic highlighting, icon variants, modern UI surfaces)
+- Updated all 5 `.github/prompts/` with official docs fetch step, ANSI trap warnings, HC 7:1, bracket levels, icon variant guidance
+
+### Test Suite Consolidation
+- Removed 28 obsolete one-time fix/analysis scripts (6,268 lines of dead code)
+- Added 3 new automated checks to contrast analyzer: terminal ANSI traps, semantic highlighting verification, scrollbar active state validation
+- Fixed `lib/theme-utils.js` arrays — removed phantom themes, added missing light themes
+- Updated test documentation to reflect streamlined suite
+- Full test suite: 87/87 passed, 0 errors
+
+### Quality
+- Contrast analysis: 0 Critical, 0 High issues across all 23 themes
+- All themes maintain 700+ color properties with modern VS Code API coverage
+- All themes have `semanticHighlighting: true` and 6 bracket highlight levels
+
 ## [0.9.0] - 2026-03-27
 
 ### Added

@@ -553,13 +553,13 @@
     "terminal.ansiBlack": "#8eb39b",
     "terminal.ansiBlue": "#7A9A42",
     "terminal.ansiBrightBlack": "#b7d2c2",
-    "terminal.ansiBrightBlue": "#7A9A42",
-    "terminal.ansiBrightCyan": "#8fbcbb",
-    "terminal.ansiBrightGreen": "#a3be8c",
-    "terminal.ansiBrightMagenta": "#D4AECE",
-    "terminal.ansiBrightRed": "#BF616A",
+    "terminal.ansiBrightBlue": "#95B862",
+    "terminal.ansiBrightCyan": "#A8D1D0",
+    "terminal.ansiBrightGreen": "#B8D4A5",
+    "terminal.ansiBrightMagenta": "#E0C4DC",
+    "terminal.ansiBrightRed": "#D98E95",
     "terminal.ansiBrightWhite": "#FFFFFF",
-    "terminal.ansiBrightYellow": "#ebcb8b",
+    "terminal.ansiBrightYellow": "#F0D8A0",
     "terminal.ansiCyan": "#8fbcbb",
     "terminal.ansiGreen": "#a3be8c",
     "terminal.ansiMagenta": "#D4AECE",
@@ -727,7 +727,7 @@
   "semanticHighlighting": true,
   "semanticTokenColors": {
     "customLiteral": "#B8A3FF",
-    "newOperator": "#CD5C5C",
+    "newOperator": "#E88787",
     "numberLiteral": "#FFB366",
     "stringLiteral": "#7AB87A"
   },
@@ -735,7 +735,6 @@
     {
       "scope": [
         "comment",
-        "comment keyword",
         "comment markup.underline.link",
         "comment string",
         "comment punctuation.definition",
@@ -1833,21 +1832,6 @@
       "settings": {
         "name": "rust specific",
         "foreground": "#E88787"
-      }
-    },
-    {
-      "scope": [
-        "storage.modifier.const.rust",
-        "storage.modifier.dyn.rust",
-        "storage.modifier.mut.rust",
-        "storage.modifier.static.rust",
-        "storage.type.rust",
-        "storage.type.core.rust",
-        "storage.class.std.rust"
-      ],
-      "settings": {
-        "name": "rust specific",
-        "foreground": "#A3C5F0"
       }
     },
     {

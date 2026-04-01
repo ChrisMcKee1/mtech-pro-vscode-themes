@@ -177,6 +177,7 @@
     "editorBracketHighlight.foreground4": "#a6e22e",
     "editorBracketHighlight.foreground5": "#66d9ef",
     "editorBracketHighlight.foreground6": "#ae81ff",
+    "editorBracketHighlight.unexpectedBracket.foreground": "#FF4D8A",
     "editorBracketMatch.background": "#272822",
     "editorBracketMatch.border": "#A3A199",
     "editorBracketMatch.foreground": "#a6e22e",
@@ -547,14 +548,14 @@
     "terminal.ansiBrightBlue": "#fd971f",
     "terminal.ansiBrightCyan": "#66d9ef",
     "terminal.ansiBrightGreen": "#a6e22e",
-    "terminal.ansiBrightMagenta": "#ae81ff",
-    "terminal.ansiBrightRed": "#FF4D8A",
+    "terminal.ansiBrightMagenta": "#CCA8FF",
+    "terminal.ansiBrightRed": "#FF85B0",
     "terminal.ansiBrightWhite": "#fdfff1",
     "terminal.ansiBrightYellow": "#e6db74",
     "terminal.ansiCyan": "#66d9ef",
     "terminal.ansiGreen": "#a6e22e",
-    "terminal.ansiMagenta": "#ae81ff",
-    "terminal.ansiRed": "#FF4D8A",
+    "terminal.ansiMagenta": "#BF95FF",
+    "terminal.ansiRed": "#FF6B9D",
     "terminal.ansiWhite": "#fdfff1",
     "terminal.ansiYellow": "#e6db74",
     "terminal.background": "#3b3c35",
@@ -732,7 +733,6 @@
     {
       "scope": [
         "comment",
-        "comment keyword",
         "comment markup.underline.link",
         "comment string",
         "comment punctuation.definition",
@@ -1830,21 +1830,6 @@
       "settings": {
         "name": "rust specific",
         "foreground": "#FF4D8A"
-      }
-    },
-    {
-      "scope": [
-        "storage.modifier.const.rust",
-        "storage.modifier.dyn.rust",
-        "storage.modifier.mut.rust",
-        "storage.modifier.static.rust",
-        "storage.type.rust",
-        "storage.type.core.rust",
-        "storage.class.std.rust"
-      ],
-      "settings": {
-        "name": "rust specific",
-        "foreground": "#66d9ef"
       }
     },
     {

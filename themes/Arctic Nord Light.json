@@ -643,13 +643,13 @@
     "terminal.ansiBrightBlack": "#4C566A",
     "terminal.ansiBrightBlue": "#2F6B91",
     "terminal.ansiBrightCyan": "#3B6B71",
-    "terminal.ansiBrightGreen": "#5E7A5E",
+    "terminal.ansiBrightGreen": "#4D6A4D",
     "terminal.ansiBrightMagenta": "#8C4F7A",
     "terminal.ansiBrightRed": "#963548",
     "terminal.ansiBrightWhite": "#2E3440",
     "terminal.ansiBrightYellow": "#A04F3D",
     "terminal.ansiCyan": "#3B6B71",
-    "terminal.ansiGreen": "#5E7A5E",
+    "terminal.ansiGreen": "#4D6A4D",
     "terminal.ansiMagenta": "#8C4F7A",
     "terminal.ansiRed": "#963548",
     "terminal.ansiWhite": "#434C5E",
@@ -737,7 +737,6 @@
     {
       "scope": [
         "comment",
-        "comment keyword",
         "comment markup.underline.link",
         "comment string",
         "comment punctuation.definition",
@@ -1093,7 +1092,7 @@
       "scope": "entity.other.attribute-name.id.css",
       "settings": {
         "name": "CSS id",
-        "foreground": "#C04810"
+        "foreground": "#A83D08"
       }
     },
     {
@@ -1150,7 +1149,7 @@
       "scope": "entity.name.operator.custom-literal.number",
       "settings": {
         "name": "custom literal number",
-        "foreground": "#C04810"
+        "foreground": "#A83D08"
       }
     },
     {
@@ -1584,7 +1583,7 @@
       ],
       "settings": {
         "name": "Punctuation section embedded",
-        "foreground": "#C04810"
+        "foreground": "#A83D08"
       }
     },
     {
@@ -1839,21 +1838,6 @@
     },
     {
       "scope": [
-        "storage.modifier.const.rust",
-        "storage.modifier.dyn.rust",
-        "storage.modifier.mut.rust",
-        "storage.modifier.static.rust",
-        "storage.type.rust",
-        "storage.type.core.rust",
-        "storage.class.std.rust"
-      ],
-      "settings": {
-        "name": "rust specific",
-        "foreground": "#2F6B91"
-      }
-    },
-    {
-      "scope": [
         "storage.type.rust",
         "storage.modifier.const.rust",
         "storage.modifier.dyn.rust",
@@ -2083,7 +2067,7 @@
       "settings": {
         "name": "Function arguments",
         "fontStyle": "italic",
-        "foreground": "#C04810"
+        "foreground": "#A83D08"
       }
     },
     {

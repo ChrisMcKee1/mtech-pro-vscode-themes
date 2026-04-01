@@ -48,7 +48,7 @@
     "activityBarTop.foreground": "#2E8B57",
     "activityBarTop.inactiveForeground": "#228B22",
     "badge.background": "#6B8E23",
-    "badge.foreground": "#E8F5E8",
+    "badge.foreground": "#FFFFFF",
     "banner.background": "#D8F0D8",
     "banner.foreground": "#434C5E",
     "banner.iconForeground": "#4D4D4D",
@@ -57,7 +57,7 @@
     "breadcrumb.foreground": "#434C5E",
     "breadcrumbPicker.background": "#F0F7EE",
     "button.background": "#6B8E23",
-    "button.foreground": "#E8F5E8",
+    "button.foreground": "#FFFFFF",
     "button.hoverBackground": "#6B8E23",
     "button.secondaryBackground": "#C0D8C0",
     "button.secondaryForeground": "#4D4D4D",
@@ -248,7 +248,7 @@
     "editorUnnecessaryCode.opacity": "#CCD3DDa5",
     "editorWarning.background": "#00000000",
     "editorWarning.border": "#00000000",
-    "editorWarning.foreground": "#B8860B",
+    "editorWarning.foreground": "#9A7000",
     "editorWhitespace.foreground": "#D8F0D8",
     "editorWidget.background": "#D8F0D8",
     "editorWidget.border": "#4C566A",
@@ -466,7 +466,7 @@
     "sideBarStickyScroll.background": "#E8F5E8",
     "sideBarStickyScroll.border": "#D8F0D8",
     "sideBarStickyScroll.shadow": "#CCD3DD",
-    "sideBarTitle.foreground": "#2E8B57",
+    "sideBarTitle.foreground": "#1F6B3F",
     "simpleFindWidget.sashBorder": "#D8F0D8",
     "statusBar.background": "#E8F5E8",
     "statusBar.border": "#F0F7EE",
@@ -491,12 +491,12 @@
     "statusBarItem.offlineForeground": "#E8F5E8",
     "statusBarItem.prominentHoverBackground": "#4F634F",
     "statusBarItem.prominentHoverForeground": "#F2F9F2",
-    "statusBarItem.remoteBackground": "#228B22",
+    "statusBarItem.remoteBackground": "#1A6B1A",
     "statusBarItem.remoteForeground": "#E8F5E8",
     "statusBarItem.remoteHoverBackground": "#b6d096",
     "statusBarItem.remoteHoverForeground": "#E8F5E8",
     "statusBarItem.warningBackground": "#B8860B",
-    "statusBarItem.warningForeground": "#E8F5E8",
+    "statusBarItem.warningForeground": "#2E3440",
     "symbolIcon.arrayForeground": "#B48EAD",
     "symbolIcon.booleanForeground": "#CD5C5C",
     "symbolIcon.classForeground": "#B8860B",
@@ -589,7 +589,7 @@
     "textBlockQuote.border": "#6B8E23",
     "textCodeBlock.background": "#CCD3DD",
     "textLink.activeForeground": "#405020",
-    "textLink.foreground": "#6B8E23",
+    "textLink.foreground": "#4D6B18",
     "textPreformat.foreground": "#2E3440",
     "textSeparator.foreground": "#4C566A",
     "titleBar.activeBackground": "#E8F5E8",
@@ -735,7 +735,6 @@
     {
       "scope": [
         "comment",
-        "comment keyword",
         "comment markup.underline.link",
         "comment string",
         "comment punctuation.definition",
@@ -1833,21 +1832,6 @@
       "settings": {
         "name": "rust specific",
         "foreground": "#B22222"
-      }
-    },
-    {
-      "scope": [
-        "storage.modifier.const.rust",
-        "storage.modifier.dyn.rust",
-        "storage.modifier.mut.rust",
-        "storage.modifier.static.rust",
-        "storage.type.rust",
-        "storage.type.core.rust",
-        "storage.class.std.rust"
-      ],
-      "settings": {
-        "name": "rust specific",
-        "foreground": "#405020"
       }
     },
     {

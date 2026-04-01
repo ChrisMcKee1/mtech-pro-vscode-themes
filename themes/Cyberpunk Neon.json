@@ -145,7 +145,7 @@
     "dropdown.foreground": "#e6e6fa",
     "dropdown.listBackground": "#4d1a4d",
     "editor.background": "#1a0033",
-    "editor.findMatchBackground": "#00ff994d",
+    "editor.findMatchBackground": "#00ff9966",
     "editor.findMatchBorder": "#ffff00",
     "editor.findMatchHighlightBackground": "#00ff994D",
     "editor.findMatchHighlightBorder": "#00000000",
@@ -164,7 +164,7 @@
     "editor.rangeHighlightBackground": "#4d1a4d",
     "editor.rangeHighlightBorder": "#4d1a4d",
     "editor.selectionBackground": "#9966FF66",
-    "editor.selectionHighlightBackground": "#9966FF80",
+    "editor.selectionHighlightBackground": "#9966FF40",
     "editor.selectionHighlightBorder": "#00000000",
     "editor.stackFrameHighlightBackground": "#9966FF80",
     "editor.wordHighlightBackground": "#00ff9940",
@@ -730,7 +730,6 @@
     {
       "scope": [
         "comment",
-        "comment keyword",
         "comment markup.underline.link",
         "comment string",
         "comment punctuation.definition",
@@ -1828,21 +1827,6 @@
       "settings": {
         "name": "rust specific",
         "foreground": "#ff3366"
-      }
-    },
-    {
-      "scope": [
-        "storage.modifier.const.rust",
-        "storage.modifier.dyn.rust",
-        "storage.modifier.mut.rust",
-        "storage.modifier.static.rust",
-        "storage.type.rust",
-        "storage.type.core.rust",
-        "storage.class.std.rust"
-      ],
-      "settings": {
-        "name": "rust specific",
-        "foreground": "#ff0080"
       }
     },
     {

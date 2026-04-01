@@ -629,16 +629,16 @@
     "tab.unfocusedHoverForeground": "#2E3440",
     "tab.unfocusedInactiveForeground": "#ECEFF4",
     "tab.unfocusedInactiveModifiedBorder": "#434c5e",
-    "terminal.ansiBlack": "#434c5e",
+    "terminal.ansiBlack": "#616E88",
     "terminal.ansiBlue": "#A3C5F0",
     "terminal.ansiBrightBlack": "#ECEFF4",
-    "terminal.ansiBrightBlue": "#A3C5F0",
-    "terminal.ansiBrightCyan": "#8fbcbb",
-    "terminal.ansiBrightGreen": "#a3be8c",
-    "terminal.ansiBrightMagenta": "#D4AECE",
-    "terminal.ansiBrightRed": "#BF616A",
+    "terminal.ansiBrightBlue": "#B8D4F5",
+    "terminal.ansiBrightCyan": "#A5D1D0",
+    "terminal.ansiBrightGreen": "#B4CF9D",
+    "terminal.ansiBrightMagenta": "#E0C4DB",
+    "terminal.ansiBrightRed": "#D06A73",
     "terminal.ansiBrightWhite": "#FFFFFF",
-    "terminal.ansiBrightYellow": "#ebcb8b",
+    "terminal.ansiBrightYellow": "#F0D89C",
     "terminal.ansiCyan": "#8fbcbb",
     "terminal.ansiGreen": "#a3be8c",
     "terminal.ansiMagenta": "#D4AECE",
@@ -735,7 +735,6 @@
     {
       "scope": [
         "comment",
-        "comment keyword",
         "comment markup.underline.link",
         "comment string",
         "comment punctuation.definition",
@@ -1833,21 +1832,6 @@
       "settings": {
         "name": "rust specific",
         "foreground": "#ECEFF4"
-      }
-    },
-    {
-      "scope": [
-        "storage.modifier.const.rust",
-        "storage.modifier.dyn.rust",
-        "storage.modifier.mut.rust",
-        "storage.modifier.static.rust",
-        "storage.type.rust",
-        "storage.type.core.rust",
-        "storage.class.std.rust"
-      ],
-      "settings": {
-        "name": "rust specific",
-        "foreground": "#A3C5F0"
       }
     },
     {

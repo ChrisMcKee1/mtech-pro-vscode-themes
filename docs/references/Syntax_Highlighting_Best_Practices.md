@@ -1,5 +1,8 @@
 Best Practices for Designing an Ultimate Code
  Syntax Highlighting Theme (2025)
+
+> **Official Reference**: Always consult the [VS Code Theme Color Reference](https://code.visualstudio.com/api/references/theme-color) for the latest color properties and the [Color Theme Guide](https://code.visualstudio.com/api/extension-guides/color-theme) for theme creation guidance. Properties change with every VS Code release.
+
  Designing a top-tier editor theme is both an art and a science. Modern research and years of community
  experience have converged on certain best practices for syntax coloring. Below, we outline 2025’s best
  practices – from cognitive research insights to practical color choices – to help you craft the “ultimate”
@@ -853,3 +856,39 @@ Visual Studio Code Documentation – Color Theme Guide and Syntax Highlight Guid
  41
  44 45
  13
+
+---
+
+## M Tech Themes: Additional Guidelines
+
+The following supplement the research-backed best practices above with project-specific and VS Code skill-aligned standards.
+
+### Palette Architecture: 60-30-10 Rule
+
+Distribute colors following the **60-30-10 rule**:
+- **60%**: Primary backgrounds (editor, workbench) — deep neutrals, no pure black/white
+- **30%**: Secondary UI (Activity Bar, Side Bar, inactive tabs) — tints/shades of base
+- **10%**: Accents (active states, buttons, highlights) — saturated colors
+
+### Semantic Highlighting
+
+Always set `"semanticHighlighting": true` in theme JSON. Define `semanticTokenColors` to provide richer coloring beyond TextMate scopes (e.g., distinguish `variable.readonly`, `function.declaration`, `class` vs `enum`).
+
+### Bracket Pair Colorization
+
+Define **all 6 levels** of `editorBracketHighlight.foreground1` through `foreground6` with distinct but not overwhelming colors. Also define `editorBracketPairGuide.*` properties. Bracket colors should be visible but should not compete with keyword syntax colors.
+
+### Terminal ANSI Color Inversion
+
+Terminal ANSI colors require special handling:
+- **Dark themes**: `terminal.ansiBlack` and `terminal.ansiBrightBlack` must be light enough to read on dark backgrounds
+- **Light themes**: `terminal.ansiWhite` and `terminal.ansiBrightWhite` must be dark enough to read on light backgrounds
+
+### Two Paths Paradigm (Accessibility vs. Aesthetics)
+
+- **Path A (Strict Accessibility)**: Enforce WCAG 4.5:1 for syntax, 3:1 for UI. Default for most themes.
+- **Path B (Established Palette Exemption)**: For iconic palettes (Nord, Dracula), allow softer contrast (minimum 3.0:1 for syntax) to preserve authentic hex codes. Actual bugs (invisible highlights, etc.) must still be fixed.
+
+### Newer VS Code Color Categories
+
+Check theme coverage for recently added categories: Chat & Inline Chat colors, Inline Edit colors, Command Center, Sticky Scroll, Multi-diff Editor. Fetch the [Theme Color Reference](https://code.visualstudio.com/api/references/theme-color) for the latest properties.

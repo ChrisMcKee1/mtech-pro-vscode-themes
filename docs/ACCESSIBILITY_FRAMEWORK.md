@@ -1,5 +1,7 @@
 # M Tech Themes: Accessibility Framework# 📊 M Tech Themes: Universal Design Patterns & Accessibility Framework
 
+> **Official Source of Truth**: The [VS Code Theme Color Reference](https://code.visualstudio.com/api/references/theme-color) is the living reference for all 800+ themeable color properties. Always fetch it before making changes — properties change with every VS Code release. See also the [Color Theme Guide](https://code.visualstudio.com/api/extension-guides/color-theme), [File Icon Theme Guide](https://code.visualstudio.com/api/extension-guides/file-icon-theme), and [Product Icon Theme Guide](https://code.visualstudio.com/api/extension-guides/product-icon-theme).
+
 
 
 **Status**: Active framework covering 21 themes  **Status**: Active analysis covering 8 themes (Feisty Fusion Dark/Light, Arctic Nord Dark/Light, Classic, Cosmic Void, Enchanted Grove Dark/Light, Cyberpunk Neon Light)  
@@ -56,14 +58,15 @@ VS Code themes frequently ship with accessibility issues:### **The Core Problem*
 
 - Background: Off-white to reduce glare
 
-### 🎨 Design-First Exceptions (New in v0.5.20+)
+### 🎨 Design-First Exceptions (Path B — Established Palette Exemption, v0.5.20+)
 
-Some flagship palettes (Morning Coffee, Arctic Nord family, Enchanted Grove, etc.) intentionally relax WCAG math so the aesthetic tells the right story. Instead of forcing 4.5:1 everywhere, we now:
+Some flagship palettes based on established, iconic color schemes (Morning Coffee, Arctic Nord family, Enchanted Grove, etc.) intentionally relax strict WCAG so the aesthetic tells the right story. Instead of forcing 4.5:1 everywhere, we:
 
 - **Document the intent** in two places: this file + `tests/lib/theme-utils.js` (`DESIGN_PRIORITY_THEMES`, `MINIMALIST_THEMES`, `LIGHT_THEME_TRADEOFFS`).
-- **Set a visibility floor**: syntax ≥ 3.0:1, overlays/UI ≥ 1.5:1. Anything below that still escalates as HIGH/CRITICAL.
+- **Enforce a visibility floor**: syntax ≥ **3.0:1** (the skill's minimum for Path B themes), overlays/UI ≥ 1.5:1. Anything below that still escalates as HIGH/CRITICAL.
 - **Downgrade automated findings** to ℹ️ informational notes whenever a theme carries a design note. The contrast analyzer still prints the ratio, but it no longer blocks refactors.
 - **Explain the trade-off** in release notes/screenshots so users know the look is intentional and controlled.
+- **Still fix actual bugs**: invisible find highlights, screaming comment punctuation, and broken overlays must be fixed regardless of path.
 
 ➡️ **How to mark a new exception**
 
@@ -1835,6 +1838,88 @@ Is theme temperature WRONG for its name?
 **Target Grade**: B → B+ (85% correct → 92% correct via surgical fixes)
 
 ---
+
+---
+
+## 📘 Additional Skill-Aligned Guidance
+
+The following sections document standards from the VS Code Theme Engineer skill that apply to all themes in this collection.
+
+### Palette Architecture: 60-30-10 Rule
+
+When designing or auditing a theme, distribute color weight using the **60-30-10 rule**:
+
+- **60% Dominant Base**: Primary backgrounds (editor, workbench). Avoid pure black (`#000000`) or pure white (`#FFFFFF`). Use deep neutrals or soft off-whites.
+- **30% Secondary**: Structural UI elements (Activity Bar, Side Bar, inactive tabs). Use tints/shades of the base color, not entirely new hues.
+- **10% Accent**: Highly saturated colors for active states, primary buttons, and critical markers.
+
+### Semantic Highlighting
+
+Always set `"semanticHighlighting": true` in every theme JSON file and define `semanticTokenColors` entries for at least common token types (`variable.readonly`, `function.declaration`, `class`, `enum`). This opts in to richer coloring from language servers beyond TextMate scopes alone.
+
+### Terminal ANSI Color Inversion
+
+Terminal ANSI colors require special care because of the paradox of color naming vs. visibility:
+
+- **Dark themes**: `terminal.ansiBlack` and `terminal.ansiBrightBlack` must be mapped to a lighter gray/white to be visible against dark backgrounds.
+- **Light themes**: `terminal.ansiWhite` and `terminal.ansiBrightWhite` must be heavily darkened to be visible against light backgrounds.
+
+### Bracket Pair Colorization
+
+Define **all 6 levels** of `editorBracketHighlight.foreground1` through `foreground6`. Use distinct but not overwhelming colors. Also define `editorBracketPairGuide.*` properties. Bracket colors should complement the palette without competing with keyword syntax colors.
+
+### Scrollbar 3-State Visibility
+
+Define all three scrollbar states with progressive visibility:
+- `scrollbarSlider.background` — unobtrusive at rest
+- `scrollbarSlider.hoverBackground` — higher contrast on hover
+- `scrollbarSlider.activeBackground` — highest contrast when actively scrolling
+
+### File Icon Theme Variants
+
+File icon themes should include `light` and `highContrast` overrides so icons remain visible across all theme types:
+```json
+{
+  "light": { /* icon overrides for light themes */ },
+  "highContrast": { /* icon overrides for HC themes */ }
+}
+```
+
+### Product Icon Themes
+
+Product icon themes (replacing VS Code's built-in UI codicons) are **separate** from file icon themes and use different glyph font mappings. See the [Product Icon Theme Guide](https://code.visualstudio.com/api/extension-guides/product-icon-theme) and the [Icons in Labels reference](https://code.visualstudio.com/api/references/icons-in-labels) for the full icon ID listing.
+
+### Newer Color Categories to Cover
+
+When auditing themes or updating for new VS Code releases, check coverage for:
+- **Chat & Inline Chat**: `chat.requestBackground`, `chat.slashCommandForeground`, `inlineChat.background`, `inlineChatInput.*`
+- **Inline Edits**: `inlineEdit.gutterIndicator.*`, `inlineEdit.modifiedBackground`
+- **Command Center**: `commandCenter.foreground/background/border`
+- **Sticky Scroll**: `editorStickyScroll.*`, `sideBarStickyScroll.*`, `panelStickyScroll.*`
+- **Multi-diff Editor**: `multiDiffEditor.*`
+- **Terminal Enhancements**: `terminalCommandDecoration.*`, `terminalStickyScroll.*`
+- **Profile Badge**: `profileBadge.*`
+
+> **Always fetch** https://code.visualstudio.com/api/references/theme-color **for the latest complete list of properties.**
+
+### WCAG Quick Reference
+
+| Element Type | Minimum Contrast | Standard |
+|-------------|------------------|----------|
+| Normal text (syntax highlighting) | **4.5:1** | WCAG 2.1 AA |
+| Large text (>18px or >14px bold) | **3:1** | WCAG 2.1 AA |
+| UI components & graphical objects | **3:1** | WCAG 2.1 AA |
+| High contrast themes | **7:1** | WCAG 2.1 AAA |
+| Path B themes (established palettes) | **3:1** syntax minimum | Project convention |
+
+### References
+
+- **VS Code Theme Color Reference**: https://code.visualstudio.com/api/references/theme-color
+- **VS Code Color Theme Guide**: https://code.visualstudio.com/api/extension-guides/color-theme
+- **VS Code File Icon Theme Guide**: https://code.visualstudio.com/api/extension-guides/file-icon-theme
+- **VS Code Product Icon Theme Guide**: https://code.visualstudio.com/api/extension-guides/product-icon-theme
+- **WCAG Contrast Guidelines**: https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html
+- **VS Code Accessibility**: https://code.visualstudio.com/docs/editor/accessibility
 
 ### **Initial Assessment: Already Strong Design**
 

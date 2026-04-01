@@ -123,11 +123,11 @@
     "descriptionForeground": "#b7adae",
     "diffEditor.diagonalFill": "#403838",
     "diffEditor.insertedLineBackground": "#adda7859",
-    "diffEditor.insertedTextBackground": "#adda7866",
+    "diffEditor.insertedTextBackground": "#adda7855",
     "diffEditor.move.border": "#a8a9eb80",
     "diffEditor.moveActive.border": "#a8a9eb",
     "diffEditor.removedLineBackground": "#fd688359",
-    "diffEditor.removedTextBackground": "#fd688366",
+    "diffEditor.removedTextBackground": "#fd688355",
     "diffEditor.unchangedCodeBackground": "#211c1c",
     "diffEditor.unchangedRegionBackground": "#211c1c",
     "diffEditor.unchangedRegionForeground": "#c3b7b8",
@@ -141,7 +141,7 @@
     "dropdown.foreground": "#b7adae",
     "dropdown.listBackground": "#403838",
     "editor.background": "#2c2525",
-    "editor.findMatchBackground": "#adda784D",
+    "editor.findMatchBackground": "#adda7880",
     "editor.findMatchBorder": "#f9cc6c",
     "editor.findMatchHighlightBackground": "#adda784D",
     "editor.findMatchHighlightBorder": "#00000000",
@@ -160,7 +160,7 @@
     "editor.rangeHighlightBackground": "#403838",
     "editor.rangeHighlightBorder": "#403838",
     "editor.selectionBackground": "#c3b7b866",
-    "editor.selectionHighlightBackground": "#fff1f366",
+    "editor.selectionHighlightBackground": "#fff1f340",
     "editor.selectionHighlightBorder": "#00000000",
     "editor.stackFrameHighlightBackground": "#c3b7b866",
     "editor.wordHighlightBackground": "#adda7840",
@@ -273,7 +273,7 @@
     "inlineChat.border": "#211c1c",
     "inlineChat.shadow": "#191515",
     "inlineChatDiff.inserted": "#adda7866",
-    "inlineChatDiff.removed": "#adda7866",
+    "inlineChatDiff.removed": "#fd688366",
     "input.background": "#403838",
     "input.border": "#8f8282",
     "input.foreground": "#fff1f3",
@@ -533,13 +533,13 @@
     "terminal.ansiBlack": "#baa6a6",
     "terminal.ansiBlue": "#f38d70",
     "terminal.ansiBrightBlack": "#d2c2c2",
-    "terminal.ansiBrightBlue": "#f38d70",
-    "terminal.ansiBrightCyan": "#85dacc",
-    "terminal.ansiBrightGreen": "#adda78",
-    "terminal.ansiBrightMagenta": "#a8a9eb",
-    "terminal.ansiBrightRed": "#fd6883",
+    "terminal.ansiBrightBlue": "#f5a08a",
+    "terminal.ansiBrightCyan": "#9ae2d6",
+    "terminal.ansiBrightGreen": "#bee38f",
+    "terminal.ansiBrightMagenta": "#b8b9f0",
+    "terminal.ansiBrightRed": "#fe7f99",
     "terminal.ansiBrightWhite": "#fff1f3",
-    "terminal.ansiBrightYellow": "#f9cc6c",
+    "terminal.ansiBrightYellow": "#fad683",
     "terminal.ansiCyan": "#85dacc",
     "terminal.ansiGreen": "#adda78",
     "terminal.ansiMagenta": "#a8a9eb",
@@ -724,7 +724,21 @@
     "customLiteral": "#a8a9eb",
     "newOperator": "#fd6883",
     "numberLiteral": "#a8a9eb",
-    "stringLiteral": "#f9cc6c"
+    "stringLiteral": "#f9cc6c",
+    "type": "#85dacc",
+    "class": "#85dacc",
+    "interface": { "foreground": "#85dacc", "fontStyle": "italic" },
+    "enum": "#f38d70",
+    "enumMember": "#a8a9eb",
+    "function": "#adda78",
+    "method": "#adda78",
+    "property": "#fff1f3",
+    "variable": "#fff1f3",
+    "variable.readonly": "#a8a9eb",
+    "parameter": { "foreground": "#f38d70", "fontStyle": "italic" },
+    "namespace": "#fff1f3",
+    "keyword": "#fd6883",
+    "comment": { "foreground": "#A1999A", "fontStyle": "italic" }
   },
   "tokenColors": [
     {
@@ -754,7 +768,7 @@
       "scope": "comment entity.name.type",
       "settings": {
         "name": "JSDoc entity name",
-        "foreground": "#92898a"
+        "foreground": "#948B8C"
       }
     },
     {
@@ -764,7 +778,7 @@
       ],
       "settings": {
         "name": "JSDoc variable",
-        "foreground": "#92898a"
+        "foreground": "#948B8C"
       }
     },
     {
@@ -775,14 +789,14 @@
       ],
       "settings": {
         "name": "PHPDoc keyword",
-        "foreground": "#92898a"
+        "foreground": "#948B8C"
       }
     },
     {
       "scope": "comment keyword.codetag.notation",
       "settings": {
         "name": "Comment TODO / FIXME (at least in VSCode Python)",
-        "foreground": "#8081b3"
+        "foreground": "#8889BE"
       }
     },
     {
@@ -803,7 +817,7 @@
       "scope": "comment.other.git-status.head",
       "settings": {
         "name": "Git status remote",
-        "foreground": "#605b5b"
+        "foreground": "#938B8B"
       }
     },
     {

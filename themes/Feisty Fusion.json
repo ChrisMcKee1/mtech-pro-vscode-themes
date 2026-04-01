@@ -278,7 +278,7 @@
     "inlineChat.border": "#1e1f2b",
     "inlineChat.shadow": "#161821",
     "inlineChatDiff.inserted": "#bad76166",
-    "inlineChatDiff.removed": "#bad76166",
+    "inlineChatDiff.removed": "#ff657a66",
     "input.background": "#3a3d4b",
     "input.border": "#8b92a8",
     "input.foreground": "#eaf2f1",
@@ -328,12 +328,12 @@
     "menubar.selectionBackground": "#3a3d4b",
     "menubar.selectionForeground": "#eaf2f1",
     "merge.border": "#282a3a",
-    "merge.commonContentBackground": "#bad76166",
-    "merge.commonHeaderBackground": "#ffd76d59",
-    "merge.currentContentBackground": "#bad76166",
-    "merge.currentHeaderBackground": "#ffd76d59",
-    "merge.incomingContentBackground": "#bad76166",
-    "merge.incomingHeaderBackground": "#ffd76d59",
+    "merge.commonContentBackground": "#eaf2f140",
+    "merge.commonHeaderBackground": "#eaf2f14d",
+    "merge.currentContentBackground": "#ff657a40",
+    "merge.currentHeaderBackground": "#ff657a4d",
+    "merge.incomingContentBackground": "#bad76140",
+    "merge.incomingHeaderBackground": "#bad7614d",
     "mergeEditor.change.background": "#bad76166",
     "mergeEditor.change.word.background": "#bad76166",
     "mergeEditor.conflict.handled.minimapOverViewRuler": "#bad761",
@@ -570,9 +570,9 @@
     "testing.iconSkipped": "#ff9b5e",
     "testing.iconUnset": "#bdc3cb",
     "testing.message.error.decorationForeground": "#ff657a",
-    "testing.message.error.lineBackground": "#bad76166",
+    "testing.message.error.lineBackground": "#ff657a26",
     "testing.message.info.decorationForeground": "#eaf2f1",
-    "testing.message.info.lineBackground": "#bad76166",
+    "testing.message.info.lineBackground": "#9cd1bb26",
     "testing.runAction": "#ffd76d",
     "textBlockQuote.background": "#3a3d4b",
     "textBlockQuote.border": "#3a3d4b",
@@ -692,6 +692,7 @@
     "editorOverviewRuler.commentDraftForeground": "#c39ac980",
     "minimap.chatEditHighlight": "#ffd76d59",
     "editorMinimap.inlineChatInserted": "#bad76166",
+    "editorMinimap.inlineChatRemoved": "#ff657a66",
     "statusBarItem.offlineHoverForeground": "#eaf2f1",
     "statusBarItem.offlineHoverBackground": "#3a3d4b",
     "git.blame.editorDecorationForeground": "#808491",
@@ -740,21 +741,21 @@
       "settings": {
         "name": "Comments and overrides inside comments",
         "fontStyle": "italic",
-        "foreground": "#84898f"
+        "foreground": "#8d9298"
       }
     },
     {
       "scope": "comment storage.type",
       "settings": {
         "name": "JSDoc storage type",
-        "foreground": "#888E96"
+        "foreground": "#8c929a"
       }
     },
     {
       "scope": "comment entity.name.type",
       "settings": {
         "name": "JSDoc entity name",
-        "foreground": "#868b8e"
+        "foreground": "#8d9295"
       }
     },
     {
@@ -764,7 +765,7 @@
       ],
       "settings": {
         "name": "JSDoc variable",
-        "foreground": "#868b8e"
+        "foreground": "#8d9295"
       }
     },
     {
@@ -775,7 +776,7 @@
       ],
       "settings": {
         "name": "PHPDoc keyword",
-        "foreground": "#868b8e"
+        "foreground": "#8d9295"
       }
     },
     {
@@ -803,7 +804,7 @@
       "scope": "comment.other.git-status.head",
       "settings": {
         "name": "Git status remote",
-        "foreground": "#585b5b"
+        "foreground": "#8f9292"
       }
     },
     {
@@ -1553,7 +1554,7 @@
       "scope": "punctuation.definition.comment",
       "settings": {
         "name": "Comment start / end",
-        "foreground": "#888E96"
+        "foreground": "#8c929a"
       }
     },
     {
@@ -2041,7 +2042,7 @@
       ],
       "settings": {
         "name": "comment support",
-        "foreground": "#888E96"
+        "foreground": "#8c929a"
       }
     },
     {

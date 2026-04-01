@@ -127,11 +127,11 @@
     "descriptionForeground": "#94A3B8",
     "diffEditor.diagonalFill": "#1E293B",
     "diffEditor.insertedLineBackground": "#10B98159",
-    "diffEditor.insertedTextBackground": "#10B98166",
+    "diffEditor.insertedTextBackground": "#10B98150",
     "diffEditor.move.border": "#7DD3FC66",
     "diffEditor.moveActive.border": "#7DD3FC",
     "diffEditor.removedLineBackground": "#EF444459",
-    "diffEditor.removedTextBackground": "#EF444466",
+    "diffEditor.removedTextBackground": "#EF444450",
     "diffEditor.unchangedCodeBackground": "#0F1629",
     "diffEditor.unchangedRegionBackground": "#0F1629",
     "diffEditor.unchangedRegionForeground": "#E0E7FF",
@@ -145,11 +145,11 @@
     "dropdown.foreground": "#94A3B8",
     "dropdown.listBackground": "#1E293B",
     "editor.background": "#020617",
-    "editor.findMatchBackground": "#10B9814D",
+    "editor.findMatchBackground": "#10B98166",
     "editor.findMatchBorder": "#7DD3FC",
     "editor.findMatchHighlightBackground": "#10B9814D",
     "editor.findMatchHighlightBorder": "#00000000",
-    "editor.findRangeHighlightBackground": "#10B98135",
+    "editor.findRangeHighlightBackground": "#10B98126",
     "editor.findRangeHighlightBorder": "#00000000",
     "editor.focusedStackFrameHighlightBackground": "#10B98120",
     "editor.foldBackground": "#0F162915",
@@ -193,9 +193,9 @@
     "editorGroupHeader.noTabsBackground": "#020617",
     "editorGroupHeader.tabsBackground": "#020617",
     "editorGroupHeader.tabsBorder": "#020617",
-    "editorGutter.addedBackground": "#8B5CF6",
+    "editorGutter.addedBackground": "#10B981",
     "editorGutter.background": "#020617",
-    "editorGutter.deletedBackground": "#EC4899",
+    "editorGutter.deletedBackground": "#EF4444",
     "editorGutter.foldingControlForeground": "#E0E7FF",
     "editorGutter.modifiedBackground": "#F59E0B",
     "editorHint.border": "#020617",
@@ -212,7 +212,7 @@
     "editorLightBulbAi.foreground": "#F59E0B",
     "editorLightBulbAutoFix.foreground": "#10B981",
     "editorLineNumber.activeForeground": "#E0E7FF",
-    "editorLineNumber.foreground": "#334155",
+    "editorLineNumber.foreground": "#64748B",
     "editorLink.activeForeground": "#3B82F6",
     "editorMarkerNavigation.background": "#1E293B",
     "editorMarkerNavigationError.background": "#EF4444",
@@ -237,7 +237,7 @@
     "editorStickyScroll.background": "#020617",
     "editorStickyScroll.border": "#1E293B",
     "editorStickyScroll.shadow": "#020617",
-    "editorStickyScrollHover.background": "#0F16290C",
+    "editorStickyScrollHover.background": "#0F162930",
     "editorSuggestWidget.background": "#1E293B",
     "editorSuggestWidget.border": "#0F1629",
     "editorSuggestWidget.foreground": "#E0E7FF",
@@ -422,7 +422,7 @@
     "scrollbarSlider.activeBackground": "#7C8CA180",
     "scrollbarSlider.background": "#4755694D",
     "scrollbarSlider.hoverBackground": "#7C8CA166",
-    "selection.background": "#334155026",
+    "selection.background": "#33415540",
     "settings.checkboxBackground": "#1E293B",
     "settings.checkboxBorder": "#334155",
     "settings.checkboxForeground": "#10B981",
@@ -556,7 +556,7 @@
     "terminal.ansiYellow": "#F59E0B",
     "terminal.background": "#1E293B",
     "terminal.foreground": "#F1F5F9",
-    "terminal.selectionBackground": "#3B82F626",
+    "terminal.selectionBackground": "#3B82F64D",
     "terminalCommandDecoration.defaultBackground": "#F1F5F9",
     "terminalCommandDecoration.errorBackground": "#EF4444",
     "terminalCommandDecoration.successBackground": "#10B981",
@@ -795,14 +795,14 @@
       "scope": "comment.git-status.header.local",
       "settings": {
         "name": "Git status local",
-        "foreground": "#0c8b61"
+        "foreground": "#10B981"
       }
     },
     {
       "scope": "comment.other.git-status.head",
       "settings": {
         "name": "Git status remote",
-        "foreground": "#5b5c5e"
+        "foreground": "#7C8CA1"
       }
     },
     {

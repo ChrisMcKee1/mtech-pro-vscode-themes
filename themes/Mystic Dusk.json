@@ -127,9 +127,9 @@
     "descriptionForeground": "#8B5CF6",
     "diffEditor.diagonalFill": "#2D1B69",
     "diffEditor.insertedLineBackground": "#34D39959",
-    "diffEditor.insertedTextBackground": "#34D39966",
+    "diffEditor.insertedTextBackground": "#34D39955",
     "diffEditor.removedLineBackground": "#F8717159",
-    "diffEditor.removedTextBackground": "#F8717166",
+    "diffEditor.removedTextBackground": "#F8717155",
     "diffEditor.unchangedCodeBackground": "#1E1B3A",
     "diffEditor.unchangedRegionBackground": "#1E1B3A",
     "diffEditor.unchangedRegionForeground": "#6366F1",
@@ -204,12 +204,12 @@
     "editorInfo.border": "#0F0D21",
     "editorInfo.foreground": "#60A5FA",
     "editorInlayHint.background": "#2D1B69",
-    "editorInlayHint.foreground": "#8B5CF6",
+    "editorInlayHint.foreground": "#A78BFA",
     "editorLightBulb.foreground": "#FBBF24",
     "editorLightBulbAi.foreground": "#E879F9",
     "editorLightBulbAutoFix.foreground": "#34D399",
     "editorLineNumber.activeForeground": "#C4B5FD",
-    "editorLineNumber.foreground": "#7C5FD5",
+    "editorLineNumber.foreground": "#8A6FDB",
     "editorLink.activeForeground": "#60A5FA",
     "editorMarkerNavigation.background": "#2D1B69",
     "editorMarkerNavigationError.background": "#F87171",
@@ -247,7 +247,7 @@
     "editorWhitespace.foreground": "#b7b0cc",
     "editorWidget.background": "#1E1B3A",
     "editorWidget.border": "#2D1B69",
-    "errorForeground": "#fc8181",
+    "errorForeground": "#F87171",
     "extensionBadge.remoteForeground": "#34D399",
     "extensionButton.background": "#7C3AED",
     "extensionButton.foreground": "#F3E8FF",
@@ -301,7 +301,7 @@
     "list.activeSelectionBackground": "#2D1B69",
     "list.activeSelectionForeground": "#F3E8FF",
     "list.dropBackground": "#2D1B69bf",
-    "list.errorForeground": "#fc8181",
+    "list.errorForeground": "#F87171",
     "list.focusBackground": "#0F0D21",
     "list.focusForeground": "#F3E8FF",
     "list.highlightForeground": "#E879F9",
@@ -393,14 +393,14 @@
     "pickerGroup.border": "#0F0D21",
     "pickerGroup.foreground": "#b7b0cc",
     "ports.iconRunningProcessForeground": "#34D399",
-    "problemsErrorIcon.foreground": "#fc8181",
+    "problemsErrorIcon.foreground": "#F87171",
     "problemsInfoIcon.foreground": "#60A5FA",
     "problemsWarningIcon.foreground": "#FB923C",
     "profileBadge.background": "#2D1B69",
     "profileBadge.foreground": "#C4B5FD",
     "progressBar.background": "#6366F1",
     "quickInput.background": "#1E1B3A",
-    "quickInput.foreground": "#8B5CF6",
+    "quickInput.foreground": "#9B74F8",
     "sash.hoverBorder": "#8B5CF6",
     "scmGraph.historyItemHoverLabelForeground": "#0F0D21",
     "scmGraph.foreground1": "#E879F9",
@@ -780,28 +780,28 @@
       "scope": "comment keyword.codetag.notation",
       "settings": {
         "name": "Comment TODO / FIXME",
-        "foreground": "#9063bd"
+        "foreground": "#9B74F8"
       }
     },
     {
       "scope": "comment.git-status.header.remote",
       "settings": {
         "name": "Git status remote",
-        "foreground": "#ae5bbb"
+        "foreground": "#C084FC"
       }
     },
     {
       "scope": "comment.git-status.header.local",
       "settings": {
         "name": "Git status local",
-        "foreground": "#487cbc"
+        "foreground": "#60A5FA"
       }
     },
     {
       "scope": "comment.other.git-status.head",
       "settings": {
         "name": "Git status head",
-        "foreground": "#5b5760"
+        "foreground": "#8278A0"
       }
     },
     {
@@ -1683,7 +1683,7 @@
       "scope": "region.whitish",
       "settings": {
         "name": "White for ST3 for non-colorized scheme",
-        "foreground": "#FFFFFF"
+        "foreground": "#F3E8FF"
       }
     },
     {

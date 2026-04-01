@@ -41,12 +41,12 @@
     "activityBar.background": "#161821",
     "activityBar.border": "#161821",
     "activityBar.foreground": "#b2b9bd",
-    "activityBar.inactiveForeground": "#535763",
+    "activityBar.inactiveForeground": "#636773",
     "activityBarBadge.background": "#ffd76d",
     "activityBarBadge.foreground": "#282a3a",
     "activityBarTop.background": "#1e1f2b",
     "activityBarTop.foreground": "#b2b9bd",
-    "activityBarTop.inactiveForeground": "#535763",
+    "activityBarTop.inactiveForeground": "#636773",
     "badge.background": "#ffd76d",
     "badge.foreground": "#282a3a",
     "banner.background": "#3a3d4b",
@@ -213,7 +213,7 @@
     "editorLightBulbAi.foreground": "#ffd76d",
     "editorLightBulbAutoFix.foreground": "#bad761",
     "editorLineNumber.activeForeground": "#b2b9bd",
-    "editorLineNumber.foreground": "#535763",
+    "editorLineNumber.foreground": "#6e7280",
     "editorLink.activeForeground": "#9cd1bb",
     "editorMarkerNavigation.background": "#3a3d4b",
     "editorMarkerNavigationError.background": "#ff657a",
@@ -278,7 +278,7 @@
     "inlineChat.border": "#1e1f2b",
     "inlineChat.shadow": "#161821",
     "inlineChatDiff.inserted": "#bad76166",
-    "inlineChatDiff.removed": "#bad76166",
+    "inlineChatDiff.removed": "#ff657a66",
     "input.background": "#3a3d4b",
     "input.border": "#8893a8",
     "input.foreground": "#eaf2f1",
@@ -303,7 +303,7 @@
     "keybindingLabel.bottomBorder": "#535763",
     "keybindingLabel.foreground": "#b2b9bd",
     "list.activeSelectionBackground": "#3a3d4b",
-    "list.activeSelectionForeground": "#EE9428",
+    "list.activeSelectionForeground": "#ffd76d",
     "list.dropBackground": "#1e1f2bbf",
     "list.errorForeground": "#ff8fa0",
     "list.focusBackground": "#282a3a",
@@ -313,7 +313,7 @@
     "list.hoverForeground": "#eaf2f1",
     "list.inactiveFocusBackground": "#282a3a",
     "list.inactiveSelectionBackground": "#b2b9bd0c",
-    "list.inactiveSelectionForeground": "#D58F4A",
+    "list.inactiveSelectionForeground": "#b2b9bd",
     "list.invalidItemForeground": "#ff657a",
     "list.warningForeground": "#ff9b5e",
     "listFilterWidget.background": "#282a3a",
@@ -668,7 +668,7 @@
     "commandCenter.inactiveBorder": "#1e1f2b",
     "editorGhostText.border": "#00000000",
     "editorGhostText.background": "#00000000",
-    "terminal.initialHintForeground": "#808892",
+    "terminal.initialHintForeground": "#8b939d",
     "terminalOverviewRuler.border": "#282a3a",
     "terminalCommandGuide.foreground": "#535763",
     "terminalStickyScroll.background": "#3a3d4b",
@@ -707,7 +707,7 @@
     "widget.border": "#1e1f2b",
     "activityBar.activeBackground": "#00000000",
     "terminal.selectionForeground": "#eaf2f1",
-    "gitDecoration.renamedResourceForeground": "#7cd5f1",
+    "gitDecoration.renamedResourceForeground": "#9cd1bb",
     "sideBarSectionHeader.border": "#161821",
     "tab.activeBorderTop": "#ffd76d",
     "editorGutter.commentGlyphForeground": "#abb0b7",
@@ -754,7 +754,7 @@
       "scope": "comment entity.name.type",
       "settings": {
         "name": "JSDoc entity name",
-        "foreground": "#868b8e"
+        "foreground": "#969b9e"
       }
     },
     {
@@ -764,7 +764,7 @@
       ],
       "settings": {
         "name": "JSDoc variable",
-        "foreground": "#868b8e"
+        "foreground": "#969b9e"
       }
     },
     {
@@ -775,7 +775,7 @@
       ],
       "settings": {
         "name": "PHPDoc keyword",
-        "foreground": "#868b8e"
+        "foreground": "#969b9e"
       }
     },
     {
@@ -803,7 +803,7 @@
       "scope": "comment.other.git-status.head",
       "settings": {
         "name": "Git status remote",
-        "foreground": "#585b5b"
+        "foreground": "#9FA4AB"
       }
     },
     {
@@ -1334,7 +1334,7 @@
       ],
       "settings": {
         "name": "Diff deleted",
-        "foreground": "#ff8fa3"
+        "foreground": "#ff8fa0"
       }
     },
     {
@@ -1685,7 +1685,7 @@
       "scope": "region.whitish",
       "settings": {
         "name": "White for ST3 for non-colorized scheme",
-        "foreground": "#FFFFFF"
+        "foreground": "#eaf2f1"
       }
     },
     {

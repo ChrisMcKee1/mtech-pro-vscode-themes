@@ -278,7 +278,7 @@
     "inlineChat.border": "#1d2528",
     "inlineChat.shadow": "#161b1e",
     "inlineChatDiff.inserted": "#a2e57b66",
-    "inlineChatDiff.removed": "#a2e57b66",
+    "inlineChatDiff.removed": "#ff6d7e66",
     "input.background": "#3a4449",
     "input.border": "#879295",
     "input.foreground": "#f2fffc",
@@ -546,13 +546,13 @@
     "terminal.ansiBrightCyan": "#7cd5f1",
     "terminal.ansiBrightGreen": "#a2e57b",
     "terminal.ansiBrightMagenta": "#baa0f8",
-    "terminal.ansiBrightRed": "#ff6d7e",
+    "terminal.ansiBrightRed": "#ff9eab",
     "terminal.ansiBrightWhite": "#f2fffc",
     "terminal.ansiBrightYellow": "#ffed72",
     "terminal.ansiCyan": "#7cd5f1",
     "terminal.ansiGreen": "#a2e57b",
     "terminal.ansiMagenta": "#baa0f8",
-    "terminal.ansiRed": "#ff6d7e",
+    "terminal.ansiRed": "#ff8f9e",
     "terminal.ansiWhite": "#f2fffc",
     "terminal.ansiYellow": "#ffed72",
     "terminal.background": "#3a4449",
@@ -754,7 +754,7 @@
       "scope": "comment entity.name.type",
       "settings": {
         "name": "JSDoc entity name",
-        "foreground": "#8a9392"
+        "foreground": "#909c9b"
       }
     },
     {
@@ -764,7 +764,7 @@
       ],
       "settings": {
         "name": "JSDoc variable",
-        "foreground": "#8a9392"
+        "foreground": "#909c9b"
       }
     },
     {
@@ -775,7 +775,7 @@
       ],
       "settings": {
         "name": "PHPDoc keyword",
-        "foreground": "#8a9392"
+        "foreground": "#909c9b"
       }
     },
     {
@@ -803,7 +803,7 @@
       "scope": "comment.other.git-status.head",
       "settings": {
         "name": "Git status remote",
-        "foreground": "#5b605f"
+        "foreground": "#8e999c"
       }
     },
     {

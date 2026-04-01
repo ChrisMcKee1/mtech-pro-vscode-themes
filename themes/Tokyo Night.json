@@ -145,9 +145,9 @@
     "dropdown.foreground": "#c5cfe5",
     "dropdown.listBackground": "#414868",
     "editor.background": "#24283b",
-    "editor.findMatchBackground": "#9ece6a4D",
+    "editor.findMatchBackground": "#9ece6a66",
     "editor.findMatchBorder": "#e0af68",
-    "editor.findMatchHighlightBackground": "#9ece6a4D",
+    "editor.findMatchHighlightBackground": "#9ece6a33",
     "editor.findMatchHighlightBorder": "#00000000",
     "editor.findRangeHighlightBackground": "#9ece6a35",
     "editor.findRangeHighlightBorder": "#00000000",
@@ -782,7 +782,7 @@
       "scope": "comment keyword.codetag.notation",
       "settings": {
         "name": "Comment TODO / FIXME",
-        "foreground": "#7A88B5"
+        "foreground": "#8A95BE"
       }
     },
     {

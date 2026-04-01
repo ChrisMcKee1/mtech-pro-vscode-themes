@@ -145,7 +145,7 @@
     "dropdown.foreground": "#9CA3AF",
     "dropdown.listBackground": "#374151",
     "editor.background": "#1C1512",
-    "editor.findMatchBackground": "#1DE9B64d",
+    "editor.findMatchBackground": "#1DE9B680",
     "editor.findMatchBorder": "#FFB84D",
     "editor.findMatchHighlightBackground": "#1DE9B64D",
     "editor.findMatchHighlightBorder": "#00000000",
@@ -278,7 +278,7 @@
     "inlineChat.border": "#111827",
     "inlineChat.shadow": "#0A0F1C",
     "inlineChatDiff.inserted": "#10B98166",
-    "inlineChatDiff.removed": "#10B98166",
+    "inlineChatDiff.removed": "#EF444466",
     "input.background": "#2A1F18",
     "input.border": "#787c87",
     "input.foreground": "#F9FAFB",
@@ -543,13 +543,13 @@
     "terminal.ansiBlue": "#FF8C42",
     "terminal.ansiBrightBlack": "#c4b8ae",
     "terminal.ansiBrightBlue": "#FF8C42",
-    "terminal.ansiBrightCyan": "#0046AD",
+    "terminal.ansiBrightCyan": "#22D3EE",
     "terminal.ansiBrightGreen": "#10B981",
     "terminal.ansiBrightMagenta": "#8B5CF6",
     "terminal.ansiBrightRed": "#EF4444",
     "terminal.ansiBrightWhite": "#F9FAFB",
     "terminal.ansiBrightYellow": "#FBBF24",
-    "terminal.ansiCyan": "#0046AD",
+    "terminal.ansiCyan": "#22D3EE",
     "terminal.ansiGreen": "#10B981",
     "terminal.ansiMagenta": "#8B5CF6",
     "terminal.ansiRed": "#EF4444",
@@ -694,7 +694,7 @@
     "editorMinimap.inlineChatInserted": "#10B98166",
     "statusBarItem.offlineHoverForeground": "#9CA3AF",
     "statusBarItem.offlineHoverBackground": "#374151",
-    "git.blame.editorDecorationForeground": "#8B5A2B99",
+    "git.blame.editorDecorationForeground": "#8B5A2BCC",
     "profiles.sashBorder": "#374151",
     "chatManagement.sashBorder": "#374151",
     "aiCustomizationManagement.sashBorder": "#374151",
@@ -721,9 +721,9 @@
   },
   "semanticHighlighting": true,
   "semanticTokenColors": {
-    "customLiteral": "#8B5CF6",
+    "customLiteral": "#A78BFA",
     "newOperator": "#EF4444",
-    "numberLiteral": "#8B5CF6",
+    "numberLiteral": "#A78BFA",
     "stringLiteral": "#FBBF24"
   },
   "tokenColors": [
@@ -782,7 +782,7 @@
       "scope": "comment keyword.codetag.notation",
       "settings": {
         "name": "Comment TODO / FIXME (at least in VSCode Python)",
-        "foreground": "#8069bf"
+        "foreground": "#9B84D8"
       }
     },
     {
@@ -803,7 +803,7 @@
       "scope": "comment.other.git-status.head",
       "settings": {
         "name": "Git status remote",
-        "foreground": "#5e5e5e"
+        "foreground": "#8B8280"
       }
     },
     {

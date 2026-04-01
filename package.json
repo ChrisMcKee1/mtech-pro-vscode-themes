@@ -1,402 +1,457 @@
 {
-	"name": "theme-m-tech-vscode",
-	"displayName": "M Tech Themes",
-	"description": "✨ Professional dark & light theme + icon pack, from the author of the original M Tech color scheme.",
-	"publisher": "M-Tech",
-	"version": "0.9.0",
-	"pricing": "Free",
-	"engines": {
-		"vscode": "^1.90.0"
-	},
-	"categories": [
-		"Themes"
-	],
-	"capabilities": {
-		"untrustedWorkspaces": {
-			"supported": true
-		}
-	},
-	"contributes": {
-		"commands": [
-			{
-				"command": "tech_pro.select_theme",
-				"title": "M Tech Themes: select theme"
-			},
-			{
-				"command": "tech_pro.activate_icons",
-				"title": "M Tech Themes: activate icons"
-			},
-			{
-				"command": "tech_pro.set_theme_and_icons",
-				"title": "M Tech Themes: set theme and icons"
-			},
-			{
-				"command": "tech_pro.report_issue",
-				"title": "M Tech Themes: report an issue"
-			}
-		],
-		"themes": [
-			{
-				"label": "Obsidian Moss",
-				"uiTheme": "vs-dark",
-				"path": "./themes/Obsidian Moss.json"
-			},
-			{
-				"label": "Graphite Bay",
-				"uiTheme": "vs-dark",
-				"path": "./themes/Graphite Bay.json"
-			},
-			{
-				"label": "Copper Bloom",
-				"uiTheme": "vs-dark",
-				"path": "./themes/Copper Bloom.json"
-			},
-			{
-				"label": "Chroma Void",
-				"uiTheme": "vs-dark",
-				"path": "./themes/Chroma Void.json"
-			},
-			{
-				"label": "Digital Aqua",
-				"uiTheme": "vs-dark",
-				"path": "./themes/Digital Aqua.json"
-			},
-			{
-				"label": "Sandstone Light",
-				"uiTheme": "vs",
-				"path": "./themes/Sandstone Light.json"
-			},
-			{
-				"label": "Cyberpunk Neon",
-				"uiTheme": "vs-dark",
-				"path": "./themes/Cyberpunk Neon.json"
-			},
-			{
-				"label": "Tokyo Night",
-				"uiTheme": "vs-dark",
-				"path": "./themes/Tokyo Night.json"
-			},
-			{
-				"label": "Tokyo Day",
-				"uiTheme": "vs",
-				"path": "./themes/Tokyo Day.json"
-			},
-			{
-				"label": "Arctic Nord",
-				"uiTheme": "vs-dark",
-				"path": "./themes/Arctic Nord.json"
-			},
-			{
-				"label": "Arctic Nord Light",
-				"uiTheme": "vs",
-				"path": "./themes/Arctic Nord Light.json"
-			},
-			{
-				"label": "OGE Dark",
-				"uiTheme": "vs-dark",
-				"path": "./themes/OGE Dark.json"
-			},
-			{
-				"label": "OGE Light",
-				"uiTheme": "vs",
-				"path": "./themes/OGE Light.json"
-			},
-			{
-				"label": "Feisty Fusion",
-				"uiTheme": "vs-dark",
-				"path": "./themes/Feisty Fusion.json"
-			},
-			{
-				"label": "Cosmic Void",
-				"uiTheme": "vs-dark",
-				"path": "./themes/Cosmic Void.json"
-			},
-			{
-				"label": "Enchanted Grove",
-				"uiTheme": "vs",
-				"path": "./themes/Enchanted Grove.json"
-			},
-			{
-				"label": "Enchanted Grove Dark",
-				"uiTheme": "vs-dark",
-				"path": "./themes/Enchanted Grove Dark.json"
-			},
-			{
-				"label": "Mystic Dusk",
-				"uiTheme": "vs-dark",
-				"path": "./themes/Mystic Dusk.json"
-			},
-			{
-				"label": "Morning Coffee",
-				"uiTheme": "vs",
-				"path": "./themes/Morning Coffee.json"
-			},
-			{
-				"label": "Evening Espresso",
-				"uiTheme": "vs-dark",
-				"path": "./themes/Evening Espresso.json"
-			},
-			{
-				"label": "Feisty Fusion Light",
-				"uiTheme": "vs",
-				"path": "./themes/Feisty Fusion Light.json"
-			},
-			{
-				"label": "Neon Pink Light",
-				"uiTheme": "vs",
-				"path": "./themes/Neon Pink Light.json"
-			},
-			{
-				"label": "Cosmic Void Light",
-				"uiTheme": "vs",
-				"path": "./themes/Cosmic Void Light.json"
-			}
-		],
-		"iconThemes": [
-			{
-				"label": "Obsidian Moss Icons",
-				"id": "Obsidian Moss Icons",
-				"path": "./icon-themes/Obsidian Moss icon-theme.json"
-			},
-			{
-				"label": "Obsidian Moss Monochrome Icons",
-				"id": "Obsidian Moss Monochrome Icons",
-				"path": "./icon-themes/Obsidian Moss monochrome icon-theme.json"
-			},
-			{
-				"label": "Graphite Bay Icons",
-				"id": "Graphite Bay Icons",
-				"path": "./icon-themes/Graphite Bay icon-theme.json"
-			},
-			{
-				"label": "Graphite Bay Monochrome Icons",
-				"id": "Graphite Bay Monochrome Icons",
-				"path": "./icon-themes/Graphite Bay monochrome icon-theme.json"
-			},
-			{
-				"label": "Copper Bloom Icons",
-				"id": "Copper Bloom Icons",
-				"path": "./icon-themes/Copper Bloom icon-theme.json"
-			},
-			{
-				"label": "Copper Bloom Monochrome Icons",
-				"id": "Copper Bloom Monochrome Icons",
-				"path": "./icon-themes/Copper Bloom monochrome icon-theme.json"
-			},
-			{
-				"label": "Chroma Void Icons",
-				"id": "Chroma Void Icons",
-				"path": "./icon-themes/Chroma Void icon-theme.json"
-			},
-			{
-				"label": "Chroma Void Monochrome Icons",
-				"id": "Chroma Void Monochrome Icons",
-				"path": "./icon-themes/Chroma Void monochrome icon-theme.json"
-			},
-			{
-				"label": "Digital Aqua Icons",
-				"id": "Digital Aqua Icons",
-				"path": "./icon-themes/Digital Aqua icon-theme.json"
-			},
-			{
-				"label": "Digital Aqua Monochrome Icons",
-				"id": "Digital Aqua Monochrome Icons",
-				"path": "./icon-themes/Digital Aqua monochrome icon-theme.json"
-			},
-			{
-				"label": "Light Icons",
-				"id": "Light Icons",
-				"path": "./icon-themes/Light icon-theme.json"
-			},
-			{
-				"label": "Light Monochrome Icons",
-				"id": "Light Monochrome Icons",
-				"path": "./icon-themes/Light monochrome icon-theme.json"
-			},
-			{
-				"label": "Sandstone Light Icons",
-				"id": "Sandstone Light Icons",
-				"path": "./icon-themes/Sandstone Light icon-theme.json"
-			},
-			{
-				"label": "Sandstone Light Monochrome Icons",
-				"id": "Sandstone Light Monochrome Icons",
-				"path": "./icon-themes/Sandstone Light monochrome icon-theme.json"
-			},
-			{
-				"label": "Arctic Nord Icons",
-				"id": "Arctic Nord Icons",
-				"path": "./icon-themes/Arctic Nord icon-theme.json"
-			},
-			{
-				"label": "Arctic Nord Light Icons",
-				"id": "Arctic Nord Light Icons",
-				"path": "./icon-themes/Arctic Nord Light icon-theme.json"
-			},
-			{
-				"label": "Arctic Nord Monochrome Icons",
-				"id": "Arctic Nord Monochrome Icons",
-				"path": "./icon-themes/Arctic Nord monochrome icon-theme.json"
-			},
-			{
-				"label": "OGE Icons",
-				"id": "OGE Icons",
-				"path": "./icon-themes/OGE icon-theme.json"
-			},
-			{
-				"label": "OGE Dark Icons",
-				"id": "OGE Dark Icons",
-				"path": "./icon-themes/OGE Dark icon-theme.json"
-			},
-			{
-				"label": "OGE Light Icons",
-				"id": "OGE Light Icons",
-				"path": "./icon-themes/OGE Light icon-theme.json"
-			},
-			{
-				"label": "Cyberpunk Neon Icons",
-				"id": "Cyberpunk Neon Icons",
-				"path": "./icon-themes/Cyberpunk Neon icon-theme.json"
-			},
-			{
-				"label": "Cyberpunk Neon Monochrome Icons",
-				"id": "Cyberpunk Neon Monochrome Icons",
-				"path": "./icon-themes/Cyberpunk Neon monochrome icon-theme.json"
-			},
-			{
-				"label": "Neon Pink Light Icons",
-				"id": "Neon Pink Light Icons",
-				"path": "./icon-themes/Neon Pink Light icon-theme.json"
-			},
-			{
-				"label": "Tokyo Night Icons",
-				"id": "Tokyo Night Icons",
-				"path": "./icon-themes/Tokyo Night icon-theme.json"
-			},
-			{
-				"label": "Tokyo Night Monochrome Icons",
-				"id": "Tokyo Night Monochrome Icons",
-				"path": "./icon-themes/Tokyo Night monochrome icon-theme.json"
-			},
-			{
-				"label": "Tokyo Day Icons",
-				"id": "Tokyo Day Icons",
-				"path": "./icon-themes/Tokyo Day icon-theme.json"
-			},
-			{
-				"label": "Feisty Fusion Icons",
-				"id": "Feisty Fusion Icons",
-				"path": "./icon-themes/Feisty Fusion icon-theme.json"
-			},
-			{
-				"label": "Feisty Fusion Light Icons",
-				"id": "Feisty Fusion Light Icons",
-				"path": "./icon-themes/Feisty Fusion Light icon-theme.json"
-			},
-			{
-				"label": "Feisty Fusion Monochrome Icons",
-				"id": "Feisty Fusion Monochrome Icons",
-				"path": "./icon-themes/Feisty Fusion monochrome icon-theme.json"
-			},
-			{
-				"label": "Cosmic Void Icons",
-				"id": "Cosmic Void Icons",
-				"path": "./icon-themes/Cosmic Void icon-theme.json"
-			},
-			{
-				"label": "Cosmic Void Light Icons",
-				"id": "Cosmic Void Light Icons",
-				"path": "./icon-themes/Cosmic Void Light icon-theme.json"
-			},
-			{
-				"label": "Cosmic Void Monochrome Icons",
-				"id": "Cosmic Void Monochrome Icons",
-				"path": "./icon-themes/Cosmic Void monochrome icon-theme.json"
-			},
-			{
-				"label": "Enchanted Grove Icons",
-				"id": "Enchanted Grove Icons",
-				"path": "./icon-themes/Enchanted Grove icon-theme.json"
-			},
-			{
-				"label": "Enchanted Grove Monochrome Icons",
-				"id": "Enchanted Grove Monochrome Icons",
-				"path": "./icon-themes/Enchanted Grove monochrome icon-theme.json"
-			},
-			{
-				"label": "Enchanted Grove Dark Icons",
-				"id": "Enchanted Grove Dark Icons",
-				"path": "./icon-themes/Enchanted Grove Dark icon-theme.json"
-			},
-			{
-				"label": "Mystic Dusk Icons",
-				"id": "Mystic Dusk Icons",
-				"path": "./icon-themes/Mystic Dusk icon-theme.json"
-			},
-			{
-				"label": "Morning Coffee Icons",
-				"id": "Morning Coffee Icons",
-				"path": "./icon-themes/Morning Coffee icon-theme.json"
-			},
-			{
-				"label": "Evening Espresso Icons",
-				"id": "Evening Espresso Icons",
-				"path": "./icon-themes/Evening Espresso icon-theme.json"
-			}
-		],
-		"configuration": {
-			"type": "object",
-			"title": "M Tech Themes Settings",
-			"properties": {
-				"techThemes.fileIconsMonochrome": {
-					"type": "boolean",
-					"default": false,
-					"description": "makes the file icons monochrome"
-				}
-			}
-		}
-	},
-	"extensionKind": [
-		"ui",
-		"workspace"
-	],
-	"homepage": "https://github.com/ChrisMcKee1/mtech-pro-vscode-themes",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/ChrisMcKee1/mtech-pro-vscode-themes.git"
-	},
-	"bugs": {
-		"url": "https://github.com/ChrisMcKee1/mtech-pro-vscode-themes/issues"
-	},
-	"sponsor": {
-		"url": "https://github.com/ChrisMcKee1"
-	},
-	"galleryBanner": {
-		"color": "#fdf9f3",
-		"theme": "light"
-	},
-	"icon": "icon.png",
-	"keywords": [
-		"beautiful functionality",
-		"focus",
-		"icons",
-		"dark",
-		"light"
-	],
-	"main": "./js/main",
-	"browser": "./js/browser",
-	"license": "SEE LICENSE IN LICENSE",
-	"scripts": {
-		"build": "npx @vscode/vsce package",
-		"build-extension": "npx @vscode/vsce package",
-		"package": "npx @vscode/vsce package",
-		"vsce-package": "vsce package"
-	},
-	"activationEvents": [],
-	"qna": false,
-	"__metadata": {
-		"installedTimestamp": 1748106711171,
-		"targetPlatform": "undefined",
-		"size": 719356
-	}
+  "name": "theme-m-tech-vscode",
+  "displayName": "M Tech Themes",
+  "description": "✨ Professional dark & light theme + icon pack, from the author of the original M Tech color scheme.",
+  "publisher": "M-Tech",
+  "version": "0.9.0",
+  "pricing": "Free",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    }
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "tech_pro.select_theme",
+        "title": "M Tech Themes: select theme"
+      },
+      {
+        "command": "tech_pro.activate_icons",
+        "title": "M Tech Themes: activate icons"
+      },
+      {
+        "command": "tech_pro.set_theme_and_icons",
+        "title": "M Tech Themes: set theme and icons"
+      },
+      {
+        "command": "tech_pro.report_issue",
+        "title": "M Tech Themes: report an issue"
+      }
+    ],
+    "themes": [
+      {
+        "label": "Obsidian Moss",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Obsidian Moss.json"
+      },
+      {
+        "label": "Graphite Bay",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Graphite Bay.json"
+      },
+      {
+        "label": "Copper Bloom",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Copper Bloom.json"
+      },
+      {
+        "label": "Chroma Void",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Chroma Void.json"
+      },
+      {
+        "label": "Digital Aqua",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Digital Aqua.json"
+      },
+      {
+        "label": "Sandstone Light",
+        "uiTheme": "vs",
+        "path": "./themes/Sandstone Light.json"
+      },
+      {
+        "label": "Cyberpunk Neon",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Cyberpunk Neon.json"
+      },
+      {
+        "label": "Tokyo Night",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Tokyo Night.json"
+      },
+      {
+        "label": "Tokyo Day",
+        "uiTheme": "vs",
+        "path": "./themes/Tokyo Day.json"
+      },
+      {
+        "label": "Arctic Nord",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Arctic Nord.json"
+      },
+      {
+        "label": "Arctic Nord Light",
+        "uiTheme": "vs",
+        "path": "./themes/Arctic Nord Light.json"
+      },
+      {
+        "label": "OGE Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/OGE Dark.json"
+      },
+      {
+        "label": "OGE Light",
+        "uiTheme": "vs",
+        "path": "./themes/OGE Light.json"
+      },
+      {
+        "label": "Feisty Fusion",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Feisty Fusion.json"
+      },
+      {
+        "label": "Cosmic Void",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Cosmic Void.json"
+      },
+      {
+        "label": "Enchanted Grove",
+        "uiTheme": "vs",
+        "path": "./themes/Enchanted Grove.json"
+      },
+      {
+        "label": "Enchanted Grove Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Enchanted Grove Dark.json"
+      },
+      {
+        "label": "Mystic Dusk",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Mystic Dusk.json"
+      },
+      {
+        "label": "Morning Coffee",
+        "uiTheme": "vs",
+        "path": "./themes/Morning Coffee.json"
+      },
+      {
+        "label": "Evening Espresso",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Evening Espresso.json"
+      },
+      {
+        "label": "Feisty Fusion Light",
+        "uiTheme": "vs",
+        "path": "./themes/Feisty Fusion Light.json"
+      },
+      {
+        "label": "Neon Pink Light",
+        "uiTheme": "vs",
+        "path": "./themes/Neon Pink Light.json"
+      },
+      {
+        "label": "Cosmic Void Light",
+        "uiTheme": "vs",
+        "path": "./themes/Cosmic Void Light.json"
+      }
+    ],
+    "iconThemes": [
+      {
+        "label": "Obsidian Moss Icons",
+        "id": "Obsidian Moss Icons",
+        "path": "./icon-themes/Obsidian Moss icon-theme.json"
+      },
+      {
+        "label": "Obsidian Moss Monochrome Icons",
+        "id": "Obsidian Moss Monochrome Icons",
+        "path": "./icon-themes/Obsidian Moss monochrome icon-theme.json"
+      },
+      {
+        "label": "Graphite Bay Icons",
+        "id": "Graphite Bay Icons",
+        "path": "./icon-themes/Graphite Bay icon-theme.json"
+      },
+      {
+        "label": "Graphite Bay Monochrome Icons",
+        "id": "Graphite Bay Monochrome Icons",
+        "path": "./icon-themes/Graphite Bay monochrome icon-theme.json"
+      },
+      {
+        "label": "Copper Bloom Icons",
+        "id": "Copper Bloom Icons",
+        "path": "./icon-themes/Copper Bloom icon-theme.json"
+      },
+      {
+        "label": "Copper Bloom Monochrome Icons",
+        "id": "Copper Bloom Monochrome Icons",
+        "path": "./icon-themes/Copper Bloom monochrome icon-theme.json"
+      },
+      {
+        "label": "Chroma Void Icons",
+        "id": "Chroma Void Icons",
+        "path": "./icon-themes/Chroma Void icon-theme.json"
+      },
+      {
+        "label": "Chroma Void Monochrome Icons",
+        "id": "Chroma Void Monochrome Icons",
+        "path": "./icon-themes/Chroma Void monochrome icon-theme.json"
+      },
+      {
+        "label": "Digital Aqua Icons",
+        "id": "Digital Aqua Icons",
+        "path": "./icon-themes/Digital Aqua icon-theme.json"
+      },
+      {
+        "label": "Digital Aqua Monochrome Icons",
+        "id": "Digital Aqua Monochrome Icons",
+        "path": "./icon-themes/Digital Aqua monochrome icon-theme.json"
+      },
+      {
+        "label": "Light Icons",
+        "id": "Light Icons",
+        "path": "./icon-themes/Light icon-theme.json"
+      },
+      {
+        "label": "Light Monochrome Icons",
+        "id": "Light Monochrome Icons",
+        "path": "./icon-themes/Light monochrome icon-theme.json"
+      },
+      {
+        "label": "Sandstone Light Icons",
+        "id": "Sandstone Light Icons",
+        "path": "./icon-themes/Sandstone Light icon-theme.json"
+      },
+      {
+        "label": "Sandstone Light Monochrome Icons",
+        "id": "Sandstone Light Monochrome Icons",
+        "path": "./icon-themes/Sandstone Light monochrome icon-theme.json"
+      },
+      {
+        "label": "Arctic Nord Icons",
+        "id": "Arctic Nord Icons",
+        "path": "./icon-themes/Arctic Nord icon-theme.json"
+      },
+      {
+        "label": "Arctic Nord Light Icons",
+        "id": "Arctic Nord Light Icons",
+        "path": "./icon-themes/Arctic Nord Light icon-theme.json"
+      },
+      {
+        "label": "Arctic Nord Light Monochrome Icons",
+        "id": "Arctic Nord Light Monochrome Icons",
+        "path": "./icon-themes/Arctic Nord Light monochrome icon-theme.json"
+      },
+      {
+        "label": "Arctic Nord Monochrome Icons",
+        "id": "Arctic Nord Monochrome Icons",
+        "path": "./icon-themes/Arctic Nord monochrome icon-theme.json"
+      },
+      {
+        "label": "OGE Icons",
+        "id": "OGE Icons",
+        "path": "./icon-themes/OGE icon-theme.json"
+      },
+      {
+        "label": "OGE Dark Icons",
+        "id": "OGE Dark Icons",
+        "path": "./icon-themes/OGE Dark icon-theme.json"
+      },
+      {
+        "label": "OGE Dark Monochrome Icons",
+        "id": "OGE Dark Monochrome Icons",
+        "path": "./icon-themes/OGE Dark monochrome icon-theme.json"
+      },
+      {
+        "label": "OGE Light Icons",
+        "id": "OGE Light Icons",
+        "path": "./icon-themes/OGE Light icon-theme.json"
+      },
+      {
+        "label": "OGE Light Monochrome Icons",
+        "id": "OGE Light Monochrome Icons",
+        "path": "./icon-themes/OGE Light monochrome icon-theme.json"
+      },
+      {
+        "label": "Cyberpunk Neon Icons",
+        "id": "Cyberpunk Neon Icons",
+        "path": "./icon-themes/Cyberpunk Neon icon-theme.json"
+      },
+      {
+        "label": "Cyberpunk Neon Monochrome Icons",
+        "id": "Cyberpunk Neon Monochrome Icons",
+        "path": "./icon-themes/Cyberpunk Neon monochrome icon-theme.json"
+      },
+      {
+        "label": "Neon Pink Light Icons",
+        "id": "Neon Pink Light Icons",
+        "path": "./icon-themes/Neon Pink Light icon-theme.json"
+      },
+      {
+        "label": "Neon Pink Light Monochrome Icons",
+        "id": "Neon Pink Light Monochrome Icons",
+        "path": "./icon-themes/Neon Pink Light monochrome icon-theme.json"
+      },
+      {
+        "label": "Tokyo Night Icons",
+        "id": "Tokyo Night Icons",
+        "path": "./icon-themes/Tokyo Night icon-theme.json"
+      },
+      {
+        "label": "Tokyo Night Monochrome Icons",
+        "id": "Tokyo Night Monochrome Icons",
+        "path": "./icon-themes/Tokyo Night monochrome icon-theme.json"
+      },
+      {
+        "label": "Tokyo Day Icons",
+        "id": "Tokyo Day Icons",
+        "path": "./icon-themes/Tokyo Day icon-theme.json"
+      },
+      {
+        "label": "Tokyo Day Monochrome Icons",
+        "id": "Tokyo Day Monochrome Icons",
+        "path": "./icon-themes/Tokyo Day monochrome icon-theme.json"
+      },
+      {
+        "label": "Feisty Fusion Icons",
+        "id": "Feisty Fusion Icons",
+        "path": "./icon-themes/Feisty Fusion icon-theme.json"
+      },
+      {
+        "label": "Feisty Fusion Light Icons",
+        "id": "Feisty Fusion Light Icons",
+        "path": "./icon-themes/Feisty Fusion Light icon-theme.json"
+      },
+      {
+        "label": "Feisty Fusion Light Monochrome Icons",
+        "id": "Feisty Fusion Light Monochrome Icons",
+        "path": "./icon-themes/Feisty Fusion Light monochrome icon-theme.json"
+      },
+      {
+        "label": "Feisty Fusion Monochrome Icons",
+        "id": "Feisty Fusion Monochrome Icons",
+        "path": "./icon-themes/Feisty Fusion monochrome icon-theme.json"
+      },
+      {
+        "label": "Cosmic Void Icons",
+        "id": "Cosmic Void Icons",
+        "path": "./icon-themes/Cosmic Void icon-theme.json"
+      },
+      {
+        "label": "Cosmic Void Light Icons",
+        "id": "Cosmic Void Light Icons",
+        "path": "./icon-themes/Cosmic Void Light icon-theme.json"
+      },
+      {
+        "label": "Cosmic Void Light Monochrome Icons",
+        "id": "Cosmic Void Light Monochrome Icons",
+        "path": "./icon-themes/Cosmic Void Light monochrome icon-theme.json"
+      },
+      {
+        "label": "Cosmic Void Monochrome Icons",
+        "id": "Cosmic Void Monochrome Icons",
+        "path": "./icon-themes/Cosmic Void monochrome icon-theme.json"
+      },
+      {
+        "label": "Enchanted Grove Icons",
+        "id": "Enchanted Grove Icons",
+        "path": "./icon-themes/Enchanted Grove icon-theme.json"
+      },
+      {
+        "label": "Enchanted Grove Monochrome Icons",
+        "id": "Enchanted Grove Monochrome Icons",
+        "path": "./icon-themes/Enchanted Grove monochrome icon-theme.json"
+      },
+      {
+        "label": "Enchanted Grove Dark Icons",
+        "id": "Enchanted Grove Dark Icons",
+        "path": "./icon-themes/Enchanted Grove Dark icon-theme.json"
+      },
+      {
+        "label": "Enchanted Grove Dark Monochrome Icons",
+        "id": "Enchanted Grove Dark Monochrome Icons",
+        "path": "./icon-themes/Enchanted Grove Dark monochrome icon-theme.json"
+      },
+      {
+        "label": "Mystic Dusk Icons",
+        "id": "Mystic Dusk Icons",
+        "path": "./icon-themes/Mystic Dusk icon-theme.json"
+      },
+      {
+        "label": "Mystic Dusk Monochrome Icons",
+        "id": "Mystic Dusk Monochrome Icons",
+        "path": "./icon-themes/Mystic Dusk monochrome icon-theme.json"
+      },
+      {
+        "label": "Morning Coffee Icons",
+        "id": "Morning Coffee Icons",
+        "path": "./icon-themes/Morning Coffee icon-theme.json"
+      },
+      {
+        "label": "Morning Coffee Monochrome Icons",
+        "id": "Morning Coffee Monochrome Icons",
+        "path": "./icon-themes/Morning Coffee monochrome icon-theme.json"
+      },
+      {
+        "label": "Evening Espresso Icons",
+        "id": "Evening Espresso Icons",
+        "path": "./icon-themes/Evening Espresso icon-theme.json"
+      },
+      {
+        "label": "Evening Espresso Monochrome Icons",
+        "id": "Evening Espresso Monochrome Icons",
+        "path": "./icon-themes/Evening Espresso monochrome icon-theme.json"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "M Tech Themes Settings",
+      "properties": {
+        "techThemes.fileIconsMonochrome": {
+          "type": "boolean",
+          "default": false,
+          "description": "makes the file icons monochrome"
+        }
+      }
+    }
+  },
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
+  "homepage": "https://github.com/ChrisMcKee1/mtech-pro-vscode-themes",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ChrisMcKee1/mtech-pro-vscode-themes.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ChrisMcKee1/mtech-pro-vscode-themes/issues"
+  },
+  "sponsor": {
+    "url": "https://github.com/ChrisMcKee1"
+  },
+  "galleryBanner": {
+    "color": "#fdf9f3",
+    "theme": "light"
+  },
+  "icon": "icon.png",
+  "keywords": [
+    "beautiful functionality",
+    "focus",
+    "icons",
+    "dark",
+    "light"
+  ],
+  "main": "./js/main",
+  "browser": "./js/browser",
+  "license": "SEE LICENSE IN LICENSE",
+  "scripts": {
+    "build": "npx @vscode/vsce package",
+    "build-extension": "npx @vscode/vsce package",
+    "package": "npx @vscode/vsce package",
+    "vsce-package": "vsce package"
+  },
+  "activationEvents": [],
+  "qna": false,
+  "__metadata": {
+    "installedTimestamp": 1748106711171,
+    "targetPlatform": "undefined",
+    "size": 719356
+  }
 }

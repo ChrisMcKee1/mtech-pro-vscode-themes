@@ -156,7 +156,7 @@
     "editor.foreground": "#fdfff1",
     "editor.hoverHighlightBackground": "#e6db744d",
     "editor.inactiveSelectionBackground": "#e6db744d",
-    "editor.inlineValuesBackground": "#57584f",
+    "editor.inlineValuesBackground": "#57584f80",
     "editor.inlineValuesForeground": "#c0c1b5",
     "editor.lineHighlightBackground": "#e6db7426",
     "editor.lineHighlightBorder": "#00000000",
@@ -463,7 +463,7 @@
     "simpleFindWidget.sashBorder": "#3b3c35",
     "statusBar.background": "#1d1e19",
     "statusBar.border": "#161613",
-    "statusBar.debuggingBackground": "#A3A199",
+    "statusBar.debuggingBackground": "#354530",
     "statusBar.debuggingBorder": "#1d1e19",
     "statusBar.debuggingForeground": "#fdfff1",
     "statusBar.focusBorder": "#3b3c35",
@@ -475,7 +475,7 @@
     "statusBarItem.errorBackground": "#272822",
     "statusBarItem.errorForeground": "#FF4D8A",
     "statusBarItem.focusBorder": "#A3A199",
-    "statusBarItem.hoverBackground": "#1d1e19",
+    "statusBarItem.hoverBackground": "#272822",
     "statusBarItem.hoverForeground": "#fdfff1",
     "statusBarItem.prominentBackground": "#3b3c35",
     "statusBarItem.prominentForeground": "#fdfff1",
@@ -555,7 +555,7 @@
     "terminal.ansiCyan": "#66d9ef",
     "terminal.ansiGreen": "#a6e22e",
     "terminal.ansiMagenta": "#BF95FF",
-    "terminal.ansiRed": "#FF6B9D",
+    "terminal.ansiRed": "#FF7BA8",
     "terminal.ansiWhite": "#fdfff1",
     "terminal.ansiYellow": "#e6db74",
     "terminal.background": "#3b3c35",
@@ -596,7 +596,7 @@
     "welcomePage.buttonHoverBackground": "#57584f",
     "welcomePage.buttonHoverForeground": "#fdfff1",
     "welcomePage.progress.background": "#A3A199",
-    "welcomePage.progress.foreground": "#919288",
+    "welcomePage.progress.foreground": "#272822",
     "welcomePage.tileBackground": "#3b3c35",
     "welcomePage.tileHoverBackground": "#57584f",
     "welcomePage.tileHoverForeground": "#fdfff1",
@@ -805,7 +805,7 @@
       "scope": "comment.other.git-status.head",
       "settings": {
         "name": "Git status remote",
-        "foreground": "#7c7d72"
+        "foreground": "#8e8f84"
       }
     },
     {

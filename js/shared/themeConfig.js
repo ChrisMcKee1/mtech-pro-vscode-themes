@@ -51,7 +51,18 @@ const ICON_THEMES = Object.freeze([
     "Enchanted Grove Dark Icons",
     "Mystic Dusk Icons",
     "Morning Coffee Icons",
-    "Evening Espresso Icons"
+    "Evening Espresso Icons",
+    "Arctic Nord Light Monochrome Icons",
+    "Cosmic Void Light Monochrome Icons",
+    "Enchanted Grove Dark Monochrome Icons",
+    "Evening Espresso Monochrome Icons",
+    "Feisty Fusion Light Monochrome Icons",
+    "Morning Coffee Monochrome Icons",
+    "Mystic Dusk Monochrome Icons",
+    "Neon Pink Light Monochrome Icons",
+    "OGE Dark Monochrome Icons",
+    "OGE Light Monochrome Icons",
+    "Tokyo Day Monochrome Icons"
 ]);
 
 const THEME_SET = new Set(THEMES);

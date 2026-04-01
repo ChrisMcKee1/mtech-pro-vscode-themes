@@ -143,11 +143,11 @@
     "dropdown.foreground": "#3E2723",
     "dropdown.listBackground": "#EDE4DB",
     "editor.background": "#FAF6F1",
-    "editor.findMatchBackground": "#35603C4D",
+    "editor.findMatchBackground": "#B8860B4D",
     "editor.findMatchBorder": "#B8860B",
-    "editor.findMatchHighlightBackground": "#35603C4D",
+    "editor.findMatchHighlightBackground": "#D2691E30",
     "editor.findMatchHighlightBorder": "#00000000",
-    "editor.findRangeHighlightBackground": "#35603C35",
+    "editor.findRangeHighlightBackground": "#D2691E20",
     "editor.findRangeHighlightBorder": "#00000000",
     "editor.focusedStackFrameHighlightBackground": "#FFD7804D",
     "editor.foldBackground": "#E5D5C326",
@@ -1161,7 +1161,7 @@
       "scope": "entity.name.lifetime.rust",
       "settings": {
         "name": "rust specific",
-        "foreground": "#CD9B4D"
+        "foreground": "#A07B2E"
       }
     },
     {
@@ -1176,7 +1176,7 @@
       "scope": "invalid.deprecated",
       "settings": {
         "name": "Invalid deprecated",
-        "foreground": "#CD9B4D",
+        "foreground": "#A07B2E",
         "fontStyle": "italic underline"
       }
     },
@@ -1350,7 +1350,7 @@
       ],
       "settings": {
         "name": "Diff changed",
-        "foreground": "#CD9B4D"
+        "foreground": "#A07B2E"
       }
     },
     {
@@ -1367,7 +1367,7 @@
       "scope": "markup.untracked",
       "settings": {
         "name": "Diff untracked",
-        "foreground": "#8FBC8F"
+        "foreground": "#528A52"
       }
     },
     {
@@ -1517,7 +1517,7 @@
       ],
       "settings": {
         "name": "rust specific",
-        "foreground": "#CD9B4D"
+        "foreground": "#A07B2E"
       }
     },
     {
@@ -1661,16 +1661,16 @@
       "scope": "region.yellowish",
       "settings": {
         "name": "region yellow color",
-        "foreground": "#CD9B4D",
-        "background": "#CD9B4D1A"
+        "foreground": "#A07B2E",
+        "background": "#A07B2E1A"
       }
     },
     {
       "scope": "region.greenish",
       "settings": {
         "name": "region green color",
-        "foreground": "#8FBC8F",
-        "background": "#8FBC8F1A"
+        "foreground": "#528A52",
+        "background": "#528A521A"
       }
     },
     {
@@ -1693,8 +1693,8 @@
       "scope": "region.pinkish",
       "settings": {
         "name": "region pink color",
-        "foreground": "#CD9B4D",
-        "background": "#CD9B4D1A"
+        "foreground": "#A07B2E",
+        "background": "#A07B2E1A"
       }
     },
     {

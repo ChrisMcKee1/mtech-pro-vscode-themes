@@ -638,7 +638,7 @@
     "tab.selectedBackground": "#E5E9F0",
     "tab.selectedForeground": "#2E3440",
     "tab.dragAndDropBorder": "#2F6B91",
-    "terminal.ansiBlack": "#D8DEE9",
+    "terminal.ansiBlack": "#2E3440",
     "terminal.ansiBlue": "#2F6B91",
     "terminal.ansiBrightBlack": "#4C566A",
     "terminal.ansiBrightBlue": "#2F6B91",

@@ -157,7 +157,7 @@
     "editor.background": "#3b4252",
     "editor.findMatchBackground": "#88c0d04d",
     "editor.findMatchBorder": "#88c0d0",
-    "editor.findMatchHighlightBackground": "#88c0d033",
+    "editor.findMatchHighlightBackground": "#88c0d040",
     "editor.findMatchHighlightBorder": "#00000000",
     "editor.findRangeHighlightBackground": "#88c0d035",
     "editor.findRangeHighlightBorder": "#00000000",
@@ -629,7 +629,7 @@
     "tab.unfocusedHoverForeground": "#2E3440",
     "tab.unfocusedInactiveForeground": "#ECEFF4",
     "tab.unfocusedInactiveModifiedBorder": "#434c5e",
-    "terminal.ansiBlack": "#616E88",
+    "terminal.ansiBlack": "#7B88A1",
     "terminal.ansiBlue": "#A3C5F0",
     "terminal.ansiBrightBlack": "#ECEFF4",
     "terminal.ansiBrightBlue": "#B8D4F5",
@@ -1168,7 +1168,7 @@
       "scope": "invalid",
       "settings": {
         "name": "Invalid",
-        "foreground": "#BF616A",
+        "foreground": "#D4717A",
         "fontStyle": "italic underline"
       }
     },

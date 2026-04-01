@@ -1,5 +1,34 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## [0.10.1] - 2026-04-01
+
+### Accessibility
+- Deep per-theme accessibility audit across all 23 themes with dedicated analysis per theme identity
+- Fixed invisible ANSI terminal colors in Arctic Nord (HIGH), Arctic Nord Light, Enchanted Grove, OGE Light, Sandstone Light, Tokyo Day
+- Fixed find match highlight opacity hierarchy in Cosmic Void, Neon Pink Light, Morning Coffee, Graphite Bay
+- Fixed invisible overlays (selections, hovers, folds) in Mystic Dusk, Cyberpunk Neon, Tokyo Night, Enchanted Grove Dark
+- Fixed critical autocomplete widget visibility in Feisty Fusion and Copper Bloom
+- Fixed unreadable find match text (dark-on-dark) in Mystic Dusk
+- Fixed ANSI blue mapped to wrong color (orange) in OGE Dark
+- Boosted indent guide, ruler, and structural line contrast across 6 themes
+- All 23 themes now pass with 0 Critical, 0 High, 0 Medium issues
+
+### Icon Themes
+- Added 11 missing monochrome icon theme variants (Arctic Nord Light, Cosmic Void Light, Enchanted Grove Dark, Evening Espresso, Feisty Fusion Light, Morning Coffee, Mystic Dusk, Neon Pink Light, OGE Dark, OGE Light, Tokyo Day)
+- All 23 themes now have both base and monochrome icon variants
+- Total icon themes: 49 (23 base + 23 monochrome + 3 legacy)
+
+### Configuration
+- Fixed themeConfig.js ICON_THEMES missing 14 entries (monochrome icons and legacy fallbacks)
+- Synchronized version across package.json and themeConfig.js
+- getMatchingIconTheme() now correctly resolves monochrome variants for all themes
+- Triple Source of Truth fully validated: package.json ↔ themeConfig.js ↔ disk files
+
+### Quality
+- 0 Critical, 0 High, 0 Medium accessibility issues across all 23 themes
+- 98 structure validations passing, 0 errors
+- All icon theme files exist and are properly registered
+
 ## [0.10.0] - 2026-04-01
 
 ### Accessibility

@@ -28,6 +28,7 @@ const THEMES = Object.freeze([
 ]);
 
 const ICON_THEMES = Object.freeze([
+    // Base icon themes (one per color theme + legacy fallbacks)
     "Obsidian Moss Icons",
     "Graphite Bay Icons",
     "Copper Bloom Icons",
@@ -52,17 +53,32 @@ const ICON_THEMES = Object.freeze([
     "Mystic Dusk Icons",
     "Morning Coffee Icons",
     "Evening Espresso Icons",
-    "Arctic Nord Light Monochrome Icons",
-    "Cosmic Void Light Monochrome Icons",
-    "Enchanted Grove Dark Monochrome Icons",
-    "Evening Espresso Monochrome Icons",
-    "Feisty Fusion Light Monochrome Icons",
-    "Morning Coffee Monochrome Icons",
-    "Mystic Dusk Monochrome Icons",
+    "Light Icons",
+    "Light Monochrome Icons",
+    // Monochrome icon themes
+    "Obsidian Moss Monochrome Icons",
+    "Graphite Bay Monochrome Icons",
+    "Copper Bloom Monochrome Icons",
+    "Chroma Void Monochrome Icons",
+    "Digital Aqua Monochrome Icons",
+    "Sandstone Light Monochrome Icons",
+    "Cyberpunk Neon Monochrome Icons",
     "Neon Pink Light Monochrome Icons",
+    "Tokyo Night Monochrome Icons",
+    "Tokyo Day Monochrome Icons",
+    "Arctic Nord Monochrome Icons",
+    "Arctic Nord Light Monochrome Icons",
     "OGE Dark Monochrome Icons",
     "OGE Light Monochrome Icons",
-    "Tokyo Day Monochrome Icons"
+    "Feisty Fusion Monochrome Icons",
+    "Feisty Fusion Light Monochrome Icons",
+    "Cosmic Void Monochrome Icons",
+    "Cosmic Void Light Monochrome Icons",
+    "Enchanted Grove Monochrome Icons",
+    "Enchanted Grove Dark Monochrome Icons",
+    "Mystic Dusk Monochrome Icons",
+    "Morning Coffee Monochrome Icons",
+    "Evening Espresso Monochrome Icons"
 ]);
 
 const THEME_SET = new Set(THEMES);
@@ -84,7 +100,7 @@ const THEME_CONFIG = Object.freeze({
     themes: THEMES,
     iconThemes: ICON_THEMES,
     description: "M Tech Themes and color scheme for Visual Studio Code",
-    version: "0.6.5",
+    version: "0.10.1",
     author: "tech"
 });
 

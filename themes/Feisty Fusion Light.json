@@ -1171,7 +1171,7 @@
       "scope": "invalid.deprecated",
       "settings": {
         "name": "Invalid deprecated",
-        "foreground": "#b57030",
+        "foreground": "#9B5E24",
         "fontStyle": "italic underline"
       }
     },
@@ -1636,7 +1636,7 @@
       "scope": "region.orangish",
       "settings": {
         "name": "region orange color",
-        "foreground": "#b57030",
+        "foreground": "#9B5E24",
         "background": "#ff9b5e59"
       }
     },

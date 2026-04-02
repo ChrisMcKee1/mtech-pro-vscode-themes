@@ -1,5 +1,10 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## [0.10.7] - 2026-04-02
+
+### Patch
+- Clean rebuild of v0.10.6 with matched icons command
+
 ## [0.10.6] - 2026-04-02
 
 ### New Command - Set Theme with Matched Icons

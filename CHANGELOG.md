@@ -1,5 +1,17 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## [0.10.4] - 2026-04-02
+
+### UI Chrome - Complete Header Theming
+- Title bar, command center, toolbar icons now use sidebar resting icon color across all 23 themes
+- Added 6 missing header properties: toolbar.hoverBackground, toolbar.activeBackground, toolbar.hoverOutline, menubar.selectionBorder, menu.selectionBorder, commandCenter.debuggingBackground
+- Set icon.foreground to match sidebar icons — controls back/forward arrows, layout toggles, all toolbar icons
+- Fixed inactive window state: title bar no longer dims when VS Code loses focus
+- Synced badge.background/foreground to theme accent colors for command center notifications
+- Brightened dim sidebar icons in Enchanted Grove Dark, Evening Espresso, Graphite Bay, Obsidian Moss
+- Darkened washed-out icons in Sandstone Light (was 1.85:1 contrast!), Feisty Fusion Light, Tokyo Day
+- All icon contrast ratios now ≥3.0:1 against both sidebar and title bar backgrounds
+
 ## [0.10.3] - 2026-04-02
 
 ### UI Chrome - Title Bar & Sidebar Icon Harmony

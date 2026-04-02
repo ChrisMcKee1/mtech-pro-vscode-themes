@@ -1,5 +1,20 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## [0.10.3] - 2026-04-02
+
+### UI Chrome - Title Bar & Sidebar Icon Harmony
+- Title bar (File, Edit, View, search bar, layout toggles) now uses each theme's sidebar icon accent color instead of neutral grays across 18 themes
+- Fixed Copper Bloom sidebar hover bug: icons no longer jump from pink to jarring orange/yellow — stays in warm pink family
+- Fixed jarring active border colors that clashed with icon hues in 5 themes:
+  - Cyberpunk Neon: cyan border → magenta (matches pink icons)
+  - Digital Aqua: yellow border/badge → cyan (matches aqua icons)
+  - Graphite Bay: yellow border/badge → silver/steel blue (matches cool neutral)
+  - Feisty Fusion: yellow border → mint (matches fusion palette)
+  - Obsidian Moss: yellow border → Monokai green (matches moss identity)
+- Fixed OGE Light active/inactive icons being identical — active now visually distinct
+- Fixed Arctic Nord active icon from plain white to Nord Snow (#ECEFF4) for frost-blue continuity
+- Aligned activityBar/activityBarTop consistency across 4 themes (Arctic Nord Light, Cosmic Void Light, Sandstone Light, Mystic Dusk)
+
 ## [0.10.2] - 2026-04-02
 
 ### Accessibility - Diff Editor Comment Contrast

@@ -746,21 +746,21 @@
       "settings": {
         "name": "Comments and overrides inside comments",
         "fontStyle": "italic",
-        "foreground": "#5A6978"
+        "foreground": "#4e5b69"
       }
     },
     {
       "scope": "comment storage.type",
       "settings": {
         "name": "JSDoc storage type",
-        "foreground": "#5A6978"
+        "foreground": "#4e5b69"
       }
     },
     {
       "scope": "comment entity.name.type",
       "settings": {
         "name": "JSDoc entity name",
-        "foreground": "#3B6B71"
+        "foreground": "#2d5a60"
       }
     },
     {
@@ -770,7 +770,7 @@
       ],
       "settings": {
         "name": "JSDoc variable",
-        "foreground": "#3B6B71"
+        "foreground": "#2d5a60"
       }
     },
     {
@@ -781,14 +781,14 @@
       ],
       "settings": {
         "name": "PHPDoc keyword",
-        "foreground": "#3B6B71"
+        "foreground": "#2d5a60"
       }
     },
     {
       "scope": "comment keyword.codetag.notation",
       "settings": {
         "name": "Comment TODO / FIXME",
-        "foreground": "#8C4F7A"
+        "foreground": "#7a3f68"
       }
     },
     {
@@ -802,14 +802,14 @@
       "scope": "comment.git-status.header.local",
       "settings": {
         "name": "Git status local",
-        "foreground": "#2F6B91"
+        "foreground": "#1e5a7e"
       }
     },
     {
       "scope": "comment.other.git-status.head",
       "settings": {
         "name": "Git status remote",
-        "foreground": "#5d6981"
+        "foreground": "#4b5870"
       }
     },
     {
@@ -819,7 +819,7 @@
       ],
       "settings": {
         "name": "Docstring",
-        "foreground": "#5A6978"
+        "foreground": "#4e5b69"
       }
     },
     {
@@ -1559,7 +1559,7 @@
       "scope": "punctuation.definition.comment",
       "settings": {
         "name": "Comment start / end",
-        "foreground": "#64728A"
+        "foreground": "#4e5b69"
       }
     },
     {
@@ -2032,7 +2032,7 @@
       ],
       "settings": {
         "name": "comment support",
-        "foreground": "#5A6978"
+        "foreground": "#4e5b69"
       }
     },
     {

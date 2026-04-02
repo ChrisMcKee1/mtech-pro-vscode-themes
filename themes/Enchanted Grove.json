@@ -744,7 +744,7 @@
       "settings": {
         "name": "Comments and overrides inside comments",
         "fontStyle": "italic",
-        "foreground": "#5E765E"
+        "foreground": "#576e57"
       }
     },
     {
@@ -758,7 +758,7 @@
       "scope": "comment entity.name.type",
       "settings": {
         "name": "JSDoc entity name",
-        "foreground": "#1A7A42"
+        "foreground": "#105f33"
       }
     },
     {
@@ -768,7 +768,7 @@
       ],
       "settings": {
         "name": "JSDoc variable",
-        "foreground": "#1A7A42"
+        "foreground": "#105f33"
       }
     },
     {
@@ -779,7 +779,7 @@
       ],
       "settings": {
         "name": "PHPDoc keyword",
-        "foreground": "#1A7A42"
+        "foreground": "#105f33"
       }
     },
     {
@@ -2030,7 +2030,7 @@
       ],
       "settings": {
         "name": "comment support",
-        "foreground": "#5E765E"
+        "foreground": "#576e57"
       }
     },
     {

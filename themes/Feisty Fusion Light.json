@@ -739,7 +739,7 @@
       "settings": {
         "name": "Comments and overrides inside comments",
         "fontStyle": "italic",
-        "foreground": "#697079"
+        "foreground": "#5d646c"
       }
     },
     {
@@ -753,7 +753,7 @@
       "scope": "comment entity.name.type",
       "settings": {
         "name": "JSDoc entity name",
-        "foreground": "#6a6f7f"
+        "foreground": "#565b69"
       }
     },
     {
@@ -763,7 +763,7 @@
       ],
       "settings": {
         "name": "JSDoc variable",
-        "foreground": "#6a6f7f"
+        "foreground": "#565b69"
       }
     },
     {
@@ -774,28 +774,28 @@
       ],
       "settings": {
         "name": "PHPDoc keyword",
-        "foreground": "#6a6f7f"
+        "foreground": "#565b69"
       }
     },
     {
       "scope": "comment keyword.codetag.notation",
       "settings": {
         "name": "Comment TODO / FIXME (at least in VSCode Python)",
-        "foreground": "#93529a"
+        "foreground": "#7d4284"
       }
     },
     {
       "scope": "comment.git-status.header.remote",
       "settings": {
         "name": "Git status remote",
-        "foreground": "#C4223D"
+        "foreground": "#a81b34"
       }
     },
     {
       "scope": "comment.git-status.header.local",
       "settings": {
         "name": "Git status local",
-        "foreground": "#3A7A67"
+        "foreground": "#2c6555"
       }
     },
     {

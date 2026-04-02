@@ -1,5 +1,16 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## [0.10.2] - 2026-04-02
+
+### Accessibility - Diff Editor Comment Contrast
+- Fixed comment text unreadable on Copilot/diff green (inserted) and red (removed) backgrounds across all 23 themes
+- 253 comment-family tokenColors scopes now achieve ≥3.5:1 contrast on all diff overlay backgrounds
+- Includes primary comments, JSDoc annotations, docstrings, TODO/FIXME markers, git-status headers, and comment punctuation
+- Dark themes: lightened comment colors + reduced diff overlay opacity (40%→31%, 35%→28%) for balanced readability
+- Light themes: darkened comment colors for improved contrast against tinted diff backgrounds
+- Each theme's palette identity preserved (hue maintained, only lightness adjusted)
+- Cross-referenced all 23 theme agents' findings to catch inconsistently handled secondary scopes
+
 ## [0.10.1] - 2026-04-01
 
 ### Accessibility

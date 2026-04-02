@@ -122,8 +122,8 @@
     "debugView.valueChangedHighlight": "#f9cc6c",
     "descriptionForeground": "#b7adae",
     "diffEditor.diagonalFill": "#403838",
-    "diffEditor.insertedLineBackground": "#adda7859",
-    "diffEditor.insertedTextBackground": "#adda7855",
+    "diffEditor.insertedLineBackground": "#adda7848",
+    "diffEditor.insertedTextBackground": "#adda7845",
     "diffEditor.move.border": "#a8a9eb80",
     "diffEditor.moveActive.border": "#a8a9eb",
     "diffEditor.removedLineBackground": "#fd688359",
@@ -728,7 +728,10 @@
     "stringLiteral": "#f9cc6c",
     "type": "#85dacc",
     "class": "#85dacc",
-    "interface": { "foreground": "#85dacc", "fontStyle": "italic" },
+    "interface": {
+      "foreground": "#85dacc",
+      "fontStyle": "italic"
+    },
     "enum": "#f38d70",
     "enumMember": "#a8a9eb",
     "function": "#adda78",
@@ -736,10 +739,16 @@
     "property": "#fff1f3",
     "variable": "#fff1f3",
     "variable.readonly": "#a8a9eb",
-    "parameter": { "foreground": "#f38d70", "fontStyle": "italic" },
+    "parameter": {
+      "foreground": "#f38d70",
+      "fontStyle": "italic"
+    },
     "namespace": "#fff1f3",
     "keyword": "#fd6883",
-    "comment": { "foreground": "#A1999A", "fontStyle": "italic" }
+    "comment": {
+      "foreground": "#b8b1b2",
+      "fontStyle": "italic"
+    }
   },
   "tokenColors": [
     {
@@ -754,21 +763,21 @@
       "settings": {
         "name": "Comments and overrides inside comments",
         "fontStyle": "italic",
-        "foreground": "#A1999A"
+        "foreground": "#b8b1b2"
       }
     },
     {
       "scope": "comment storage.type",
       "settings": {
         "name": "JSDoc storage type",
-        "foreground": "#A1999A"
+        "foreground": "#b8b1b2"
       }
     },
     {
       "scope": "comment entity.name.type",
       "settings": {
         "name": "JSDoc entity name",
-        "foreground": "#948B8C"
+        "foreground": "#b8b1b2"
       }
     },
     {
@@ -778,7 +787,7 @@
       ],
       "settings": {
         "name": "JSDoc variable",
-        "foreground": "#948B8C"
+        "foreground": "#b8b1b2"
       }
     },
     {
@@ -789,35 +798,35 @@
       ],
       "settings": {
         "name": "PHPDoc keyword",
-        "foreground": "#948B8C"
+        "foreground": "#b8b1b2"
       }
     },
     {
       "scope": "comment keyword.codetag.notation",
       "settings": {
         "name": "Comment TODO / FIXME (at least in VSCode Python)",
-        "foreground": "#8889BE"
+        "foreground": "#afafd6"
       }
     },
     {
       "scope": "comment.git-status.header.remote",
       "settings": {
         "name": "Git status remote",
-        "foreground": "#fd6883"
+        "foreground": "#fd93a3"
       }
     },
     {
       "scope": "comment.git-status.header.local",
       "settings": {
         "name": "Git status local",
-        "foreground": "#64a499"
+        "foreground": "#90c8be"
       }
     },
     {
       "scope": "comment.other.git-status.head",
       "settings": {
         "name": "Git status remote",
-        "foreground": "#938B8B"
+        "foreground": "#b8b1b2"
       }
     },
     {
@@ -827,7 +836,7 @@
       ],
       "settings": {
         "name": "Docstring",
-        "foreground": "#A1999A"
+        "foreground": "#b8b1b2"
       }
     },
     {
@@ -1567,7 +1576,7 @@
       "scope": "punctuation.definition.comment",
       "settings": {
         "name": "Comment start / end",
-        "foreground": "#A1999A"
+        "foreground": "#b8b1b2"
       }
     },
     {
@@ -2040,7 +2049,7 @@
       ],
       "settings": {
         "name": "comment support",
-        "foreground": "#A1999A"
+        "foreground": "#b8b1b2"
       }
     },
     {

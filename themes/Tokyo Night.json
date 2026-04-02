@@ -126,12 +126,12 @@
     "debugView.valueChangedHighlight": "#e0af68",
     "descriptionForeground": "#b5c0e0",
     "diffEditor.diagonalFill": "#414868",
-    "diffEditor.insertedLineBackground": "#9ece6a59",
-    "diffEditor.insertedTextBackground": "#9ece6a66",
+    "diffEditor.insertedLineBackground": "#9ece6a48",
+    "diffEditor.insertedTextBackground": "#9ece6a50",
     "diffEditor.move.border": "#7aa2f766",
     "diffEditor.moveActive.border": "#7aa2f7",
-    "diffEditor.removedLineBackground": "#f7768e59",
-    "diffEditor.removedTextBackground": "#f7768e66",
+    "diffEditor.removedLineBackground": "#f7768e48",
+    "diffEditor.removedTextBackground": "#f7768e50",
     "diffEditor.unchangedCodeBackground": "#1a1b66",
     "diffEditor.unchangedRegionBackground": "#1a1b66",
     "diffEditor.unchangedRegionForeground": "#c5cfe5",
@@ -739,21 +739,21 @@
       "settings": {
         "name": "Comments and overrides inside comments",
         "fontStyle": "italic",
-        "foreground": "#8A95BE"
+        "foreground": "#afb6d2"
       }
     },
     {
       "scope": "comment storage.type",
       "settings": {
         "name": "JSDoc storage type",
-        "foreground": "#8A95BE"
+        "foreground": "#afb6d2"
       }
     },
     {
       "scope": "comment entity.name.type",
       "settings": {
         "name": "JSDoc entity name",
-        "foreground": "#5e9bbf"
+        "foreground": "#8ec0d8"
       }
     },
     {
@@ -763,7 +763,7 @@
       ],
       "settings": {
         "name": "JSDoc variable",
-        "foreground": "#5e9bbf"
+        "foreground": "#8ec0d8"
       }
     },
     {
@@ -774,35 +774,35 @@
       ],
       "settings": {
         "name": "PHPDoc keyword",
-        "foreground": "#5e9bbf"
+        "foreground": "#8ec0d8"
       }
     },
     {
       "scope": "comment keyword.codetag.notation",
       "settings": {
         "name": "Comment TODO / FIXME",
-        "foreground": "#8A95BE"
+        "foreground": "#afb6d2"
       }
     },
     {
       "scope": "comment.git-status.header.remote",
       "settings": {
         "name": "Git status remote",
-        "foreground": "#f7768e"
+        "foreground": "#f99daf"
       }
     },
     {
       "scope": "comment.git-status.header.local",
       "settings": {
         "name": "Git status local",
-        "foreground": "#7aa2f7"
+        "foreground": "#a0bff9"
       }
     },
     {
       "scope": "comment.other.git-status.head",
       "settings": {
         "name": "Git status remote",
-        "foreground": "#9098b8"
+        "foreground": "#b5bbd2"
       }
     },
     {
@@ -812,7 +812,7 @@
       ],
       "settings": {
         "name": "Docstring",
-        "foreground": "#8A95BE"
+        "foreground": "#afb6d2"
       }
     },
     {
@@ -1552,7 +1552,7 @@
       "scope": "punctuation.definition.comment",
       "settings": {
         "name": "Comment start / end",
-        "foreground": "#8A95BE"
+        "foreground": "#afb6d2"
       }
     },
     {
@@ -2025,7 +2025,7 @@
       ],
       "settings": {
         "name": "comment support",
-        "foreground": "#8A95BE"
+        "foreground": "#afb6d2"
       }
     },
     {

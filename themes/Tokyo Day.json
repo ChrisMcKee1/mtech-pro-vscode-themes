@@ -741,21 +741,21 @@
       "settings": {
         "name": "Comments and overrides inside comments",
         "fontStyle": "italic",
-        "foreground": "#5D6D6E"
+        "foreground": "#536263"
       }
     },
     {
       "scope": "comment storage.type",
       "settings": {
         "name": "JSDoc storage type",
-        "foreground": "#5D6D6E"
+        "foreground": "#536263"
       }
     },
     {
       "scope": "comment entity.name.type",
       "settings": {
         "name": "JSDoc entity name",
-        "foreground": "#177A42"
+        "foreground": "#0d6535"
       }
     },
     {
@@ -765,7 +765,7 @@
       ],
       "settings": {
         "name": "JSDoc variable",
-        "foreground": "#177A42"
+        "foreground": "#0d6535"
       }
     },
     {
@@ -776,35 +776,35 @@
       ],
       "settings": {
         "name": "PHPDoc keyword",
-        "foreground": "#177A42"
+        "foreground": "#0d6535"
       }
     },
     {
       "scope": "comment keyword.codetag.notation",
       "settings": {
         "name": "Comment TODO / FIXME",
-        "foreground": "#8E52AE"
+        "foreground": "#7a4098"
       }
     },
     {
       "scope": "comment.git-status.header.remote",
       "settings": {
         "name": "Git status remote",
-        "foreground": "#C82355"
+        "foreground": "#a81d48"
       }
     },
     {
       "scope": "comment.git-status.header.local",
       "settings": {
         "name": "Git status local",
-        "foreground": "#1D6890"
+        "foreground": "#145878"
       }
     },
     {
       "scope": "comment.other.git-status.head",
       "settings": {
         "name": "Git status remote",
-        "foreground": "#4D6E8F"
+        "foreground": "#3d5d7d"
       }
     },
     {
@@ -814,7 +814,7 @@
       ],
       "settings": {
         "name": "Docstring",
-        "foreground": "#5D6D6E"
+        "foreground": "#536263"
       }
     },
     {
@@ -1554,7 +1554,7 @@
       "scope": "punctuation.definition.comment",
       "settings": {
         "name": "Comment start / end",
-        "foreground": "#5D6D6E"
+        "foreground": "#536263"
       }
     },
     {
@@ -2027,7 +2027,7 @@
       ],
       "settings": {
         "name": "comment support",
-        "foreground": "#5D6D6E"
+        "foreground": "#536263"
       }
     },
     {

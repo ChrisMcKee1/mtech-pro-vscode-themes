@@ -5,7 +5,7 @@
   "uuid": "5805b5b3-6bdd-55b1-a3f5-bb5b08d8cc9c",
   "colorSpaceName": "sRGB",
   "colors": {
-    "agentStatusIndicator.background": "#EAE1DB",
+    "agentStatusIndicator.background": "#eee5de",
     "activityBar.activeBorder": "#A83558",
     "activityBarTop.activeBorder": "#A83558",
     "activityErrorBadge.background": "#A83558",
@@ -287,10 +287,10 @@
     "input.border": "#d2c9c4",
     "input.foreground": "#2c232e",
     "input.placeholderForeground": "#948a8a",
-    "inputOption.activeBackground": "#beb5b3",
-    "inputOption.activeBorder": "#beb5b3",
-    "inputOption.activeForeground": "#2c232e",
-    "inputOption.hoverBackground": "#beb5b3",
+    "inputOption.activeBackground": "#A8355833",
+    "inputOption.activeBorder": "#A83558",
+    "inputOption.activeForeground": "#655B5B",
+    "inputOption.hoverBackground": "#A8355820",
     "inputValidation.errorBackground": "#d2c9c4",
     "inputValidation.errorBorder": "#A83558",
     "inputValidation.errorForeground": "#A83558",
@@ -726,7 +726,11 @@
     "toolbar.activeBackground": "#00000018",
     "toolbar.hoverOutline": "#00000000",
     "menubar.selectionBorder": "#00000000",
-    "menu.selectionBorder": "#00000000"
+    "menu.selectionBorder": "#00000000",
+    "checkbox.selectBackground": "#fdf7f3",
+    "checkbox.selectBorder": "#d2c9c4",
+    "checkbox.disabled.background": "#eee5de",
+    "checkbox.disabled.foreground": "#AAAAAA"
   },
   "semanticHighlighting": true,
   "semanticTokenColors": {

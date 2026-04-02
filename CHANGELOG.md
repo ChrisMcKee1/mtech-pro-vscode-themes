@@ -11,6 +11,10 @@
 - Brightened dim sidebar icons in Enchanted Grove Dark, Evening Espresso, Graphite Bay, Obsidian Moss
 - Darkened washed-out icons in Sandstone Light (was 1.85:1 contrast!), Feisty Fusion Light, Tokyo Day
 - All icon contrast ratios now ≥3.0:1 against both sidebar and title bar backgrounds
+- Fixed status bar hover white-on-white text in Arctic Nord, Cyberpunk Neon, Evening Espresso, Enchanted Grove (both), using transparent overlays
+- Audited all hover states across 10 property pairs — fixed 11 issues in 9 themes
+- Themed inputOption.active* toggle buttons (filter, regex, case toggles) with accent-tinted backgrounds
+- Added checkbox.selectBackground, checkbox.selectBorder, checkbox.disabled.* to all themes
 
 ## [0.10.3] - 2026-04-02
 

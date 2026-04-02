@@ -5,7 +5,7 @@
   "uuid": "feisty-fusion-light-uuid",
   "colorSpaceName": "sRGB",
   "colors": {
-    "agentStatusIndicator.background": "#F3EEE6",
+    "agentStatusIndicator.background": "#f5f2ef",
     "activityBar.activeBorder": "#b8860b",
     "activityBarTop.activeBorder": "#b8860b",
     "activityErrorBadge.background": "#C4223D",
@@ -283,10 +283,10 @@
     "input.border": "#d1d5db",
     "input.foreground": "#1f2937",
     "input.placeholderForeground": "#7a808a",
-    "inputOption.activeBackground": "#d1d5db",
-    "inputOption.activeBorder": "#d1d5db",
-    "inputOption.activeForeground": "#1f2937",
-    "inputOption.hoverBackground": "#d1d5db",
+    "inputOption.activeBackground": "#B8860B33",
+    "inputOption.activeBorder": "#b8860b",
+    "inputOption.activeForeground": "#6D727A",
+    "inputOption.hoverBackground": "#B8860B20",
     "inputValidation.errorBackground": "#e5e7eb",
     "inputValidation.errorBorder": "#C4223D",
     "inputValidation.errorForeground": "#C4223D",
@@ -722,7 +722,11 @@
     "toolbar.activeBackground": "#00000018",
     "toolbar.hoverOutline": "#00000000",
     "menubar.selectionBorder": "#00000000",
-    "menu.selectionBorder": "#00000000"
+    "menu.selectionBorder": "#00000000",
+    "checkbox.selectBackground": "#e5e7eb",
+    "checkbox.selectBorder": "#d1d5db",
+    "checkbox.disabled.background": "#f7f4f1",
+    "checkbox.disabled.foreground": "#AAAAAA"
   },
   "semanticHighlighting": true,
   "semanticTokenColors": {

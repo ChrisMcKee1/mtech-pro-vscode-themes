@@ -140,6 +140,7 @@ class ExtensionManager {
             "tech_pro.select_theme": () => this.selectTheme(),
             "tech_pro.activate_icons": () => this.activateIcons(),
             "tech_pro.set_theme_and_icons": () => this.setThemeAndIcons(),
+            "tech_pro.set_theme_with_icons": () => this.setThemeWithMatchedIcons(),
             "tech_pro.report_issue": () => this.reportIssue()
         };
 
@@ -347,6 +348,57 @@ class ExtensionManager {
                 vscode.window.showErrorMessage(`Failed to apply theme and icons: ${error.message}`);
             }
             
+            this.updateStatusBarItem();
+        }
+    }
+
+    async setThemeWithMatchedIcons() {
+        const categories = this.themeManager.getThemeCategories();
+        const allThemes = [];
+
+        Object.entries(categories).forEach(([category, themes]) => {
+            allThemes.push({
+                label: category,
+                kind: this.vscode.QuickPickItemKind.Separator
+            });
+
+            themes.forEach(theme => {
+                const isCurrentTheme = theme === this.themeManager.currentColorTheme;
+                const isLightTheme = category === "Light Themes";
+                const iconId = isLightTheme ? "light-bulb" : "circle-filled";
+                // Always use standard (non-monochrome) icons
+                const matchingIconTheme = resolveMatchingIconTheme(theme, { preferMonochrome: false });
+
+                allThemes.push({
+                    label: theme,
+                    description: isCurrentTheme ? "Current" : "",
+                    detail: `${this.getThemeDescription(theme)} • Icons: ${matchingIconTheme}`,
+                    iconPath: new this.vscode.ThemeIcon(iconId)
+                });
+            });
+        });
+
+        const selection = await this.vscode.window.showQuickPick(allThemes, {
+            title: "M Tech Themes - Set Theme + Matched Icons",
+            placeHolder: "Choose a theme (standard color icons will be applied)",
+            matchOnDescription: true,
+            matchOnDetail: true
+        });
+
+        if (selection && selection.label) {
+            const workbenchConfig = this.vscode.workspace.getConfiguration("workbench");
+            // Always use standard icons, ignoring monochrome preference
+            const iconTheme = resolveMatchingIconTheme(selection.label, { preferMonochrome: false });
+
+            try {
+                await workbenchConfig.update("colorTheme", selection.label, vscode.ConfigurationTarget.Global);
+                await workbenchConfig.update("iconTheme", iconTheme, vscode.ConfigurationTarget.Global);
+                this.themeManager.loadConfiguration();
+                vscode.window.setStatusBarMessage(`✨ Applied ${selection.label} with ${iconTheme}!`, 3000);
+            } catch (error) {
+                vscode.window.showErrorMessage(`Failed to apply theme and icons: ${error.message}`);
+            }
+
             this.updateStatusBarItem();
         }
     }

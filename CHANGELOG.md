@@ -1,5 +1,13 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## [0.10.6] - 2026-04-02
+
+### New Command - Set Theme with Matched Icons
+- Added new command "M Tech Themes: set theme with matched icons" (Ctrl+Shift+P)
+- Picks a theme AND applies the matching standard color icon pack in one step
+- Always uses the standard (non-monochrome) icons for a perfect family match
+- Existing "set theme and icons" command still respects the monochrome setting
+
 ## [0.10.5] - 2026-04-02
 
 ### Re-release

@@ -1,5 +1,10 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## [0.10.8] - 2026-04-02
+
+### Patch
+- Re-release of v0.10.7 for marketplace version compatibility
+
 ## [0.10.7] - 2026-04-02
 
 ### Patch

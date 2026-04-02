@@ -1,5 +1,10 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## [0.10.5] - 2026-04-02
+
+### Re-release
+- Clean rebuild of v0.10.4 to resolve stale artifact in prior release
+
 ## [0.10.4] - 2026-04-02
 
 ### UI Chrome - Complete Header Theming

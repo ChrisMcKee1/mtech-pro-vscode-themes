@@ -68,8 +68,8 @@ class ThemeManager {
                 vscode.window.setStatusBarMessage(`✨ Applied ${themeName} theme!`, 3000);
             }
 
-            // Update icon theme if needed and user has tech icons
-            if (isTechIconThemeName(currentIconTheme) && iconThemeName !== previousState.iconTheme && iconThemeName !== this.currentIconTheme) {
+            // Always apply matching icon theme when a tech color theme is selected
+            if (iconThemeName !== currentIconTheme) {
                 await workbenchConfig.update("iconTheme", iconThemeName, vscode.ConfigurationTarget.Global);
                 this.currentIconTheme = iconThemeName;
             }

@@ -3,7 +3,8 @@
 ## [0.10.7] - 2026-04-02
 
 ### Patch
-- Clean rebuild of v0.10.6 with matched icons command
+- "Set Color Theme" now always applies matching icons automatically — no need to set icons separately
+- Previously icons were only auto-applied if user already had tech icons active
 
 ## [0.10.6] - 2026-04-02
 

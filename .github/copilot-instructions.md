@@ -182,6 +182,26 @@ When evaluating or refactoring themes, we recognize two distinct paths:
 - Check diff views, terminal ANSI colors, and all UI panels
 - Validate scrollbar visibility in all states (rest/hover/active)
 
+### New UI Color Categories (VS Code 1.113–1.116)
+
+VS Code has added several new themeable UI areas. Themes that don't define these inherit VS Code defaults, which may clash with custom palettes. Key additions to watch:
+
+- **Agent Session colors**: `agentSessionReadIndicator.foreground`, `agentStatusIndicator.background`, `agentSessionSelectedBadge.border` — colors for the agent/Copilot session UI
+- **Chat colors expansion**: `chat.thinkingShimmer` (thinking state animation), `chat.requestBubbleBackground`, `chat.checkpointSeparator`, `chat.linesAddedForeground/linesRemovedForeground`, `chat.editedFileForeground`, `chatManagement.sashBorder`
+- **Inline Edit expansion**: `inlineEdit.tabWillAcceptModifiedBorder/tabWillAcceptOriginalBorder` — borders for Copilot inline acceptance
+- **Gauge colors**: `gauge.background/foreground/border`, `gauge.warningBackground/warningForeground`, `gauge.errorBackground/errorForeground` — new progress gauge component
+- **Markdown Alert colors**: `markdownAlert.note/tip/important/warning/caution.foreground` — GitHub-style alert blocks in markdown preview
+- **Tab selected variants**: `tab.selectedBorderTop`, `tab.selectedBackground`, `tab.selectedForeground`, `tab.dragAndDropBorder` — enhanced tab styling
+- **Activity bar badges**: `activityWarningBadge.*`, `activityErrorBadge.*` — warning/error badge variants beyond the standard badge
+- **Editor multi-cursor**: `editorMultiCursor.primary/secondary.foreground/background` — distinct colors for multi-cursor editing
+- **SCM Graph**: `scmGraph.foreground1-5`, `scmGraph.historyItem*` — source control graph lane colors
+- **Editor Action List**: `editorActionList.background/foreground/focusForeground/focusBackground` — lightbulb/action menu
+- **Testing badges**: `testing.coverCountBadgeBackground/Foreground`, `testing.message.error.badgeBackground/badgeBorder/badgeForeground`
+
+**Competitive context**: VS Code 1.113 shipped new default themes ("VS Code Light" and "VS Code Dark") that replaced the previous "Modern" defaults. These provide a fresh, modern baseline that third-party themes now compete against.
+
+**Priority for theme updates**: Agent Session, Chat, and Inline Edit tokens are the most user-visible of the new additions. Themes that define custom chat/AI panel colors will feel more polished as Copilot usage increases. Gauge, Markdown Alert, and SCM Graph colors are lower priority but prevent palette clashes.
+
 ## Recent Improvements (v0.5.17-0.5.19)
 
 ### Sidebar Icon Color Strategy

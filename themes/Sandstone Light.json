@@ -27,7 +27,7 @@
     "gauge.border": "#d2c9c4",
     "gauge.errorBackground": "#A83558",
     "gauge.errorForeground": "#f8efe7",
-    "gauge.foreground": "#b16803",
+    "gauge.foreground": "#8A5800",
     "gauge.warningBackground": "#B54623",
     "gauge.warningForeground": "#f8efe7",
     "quickInput.border": "#ded5d0",

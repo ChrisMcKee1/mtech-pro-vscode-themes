@@ -684,7 +684,7 @@
     "testing.uncoveredBranchBackground": "#f38d7040",
     "testing.message.error.badgeBackground": "#fd6883",
     "testing.message.error.badgeBorder": "#fd6883",
-    "testing.message.error.badgeForeground": "#fff1f3",
+    "testing.message.error.badgeForeground": "#2c2525",
     "panelTitleBadge.background": "#f9cc6c",
     "panelTitleBadge.foreground": "#2c2525",
     "panelTitle.border": "#403838",

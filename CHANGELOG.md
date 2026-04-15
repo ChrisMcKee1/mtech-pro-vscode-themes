@@ -1,5 +1,25 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## [0.10.9] - 2026-04-15
+
+### Patch — WCAG Contrast & New Token Audit
+
+Comprehensive per-theme audit and fix for VS Code v1.100–v1.114 new UI color tokens. Each theme individually reviewed for palette consistency, WCAG compliance, and new token coverage.
+
+**Contrast fixes across 14 themes (~50 color values):**
+- Fixed light-theme gauge contrast failures (Morning Coffee, Sandstone Light, Feisty Fusion Light, Cosmic Void Light, Neon Pink Light, Tokyo Day, Enchanted Grove)
+- Fixed illegible SCM Graph hover labels (Evening Espresso 1.65:1 → 7.68:1, Chroma Void 2.85:1 → 4.5:1)
+- Fixed markdown alert contrast on light backgrounds (Tokyo Day, Neon Pink Light, Cosmic Void Light, Enchanted Grove Dark)
+- Fixed testing badge contrast (Copper Bloom, Enchanted Grove Dark)
+- Replaced off-palette grays with tinted variants (Tokyo Night, Arctic Nord Light)
+- Deduplicated SCM Graph lane colors (Evening Espresso, Neon Pink Light)
+- Added missing tokens to Chroma Void (chat.requestBubbleForeground, editorMinimap.inlineChatRemoved, scmGraph.historyItemHoverLabelBackground)
+- Fixed Arctic Nord markdownAlert.caution and profileBadge contrast
+- Darkened Enchanted Grove Light chat/warning/scmGraph colors for AA compliance (12 properties)
+- Fixed Tokyo Day critical failures: gauge, chat lines, scmGraph lanes (11 properties)
+
+**9 themes confirmed clean** (no changes needed): Obsidian Moss, Digital Aqua, Graphite Bay, Mystic Dusk, Feisty Fusion, OGE Light, OGE Dark, Cosmic Void, Cyberpunk Neon
+
 ## [0.10.8] - 2026-04-02
 
 ### Patch

@@ -726,7 +726,7 @@
     "checkbox.selectBackground": "#414868",
     "checkbox.selectBorder": "#7080a8",
     "checkbox.disabled.background": "#1a1b66",
-    "checkbox.disabled.foreground": "#666666"
+    "checkbox.disabled.foreground": "#565f89"
   },
   "semanticHighlighting": true,
   "semanticTokenColors": {

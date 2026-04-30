@@ -1,5 +1,45 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## [0.11.0] - 2026-04-30
+
+### VS Code Property Audit & Modernization (all 23 themes)
+
+Comprehensive audit against the official VS Code Theme Color Reference (snapshot 2026-04-29) plus `microsoft/vscode` source registries (`colorRegistry.ts`, `chatColors.ts`, `inlineEditsViewColors.ts`, etc.). Engine target raised from `^1.90.0` to `^1.94.0` so Copilot-era tokens (chat bubble, inline-edit accept borders, agent session, thinking shimmer, etc.) take effect on user installs.
+
+**Audit deliverable:** `docs/VSCODE_PROPERTY_AUDIT.md` — full property catalogue (50+ areas), per-theme gap matrix, P0/P1/P2 priorities, per-theme palette persona briefs (Path A / Path B classification), and open risks. Source for all per-theme changes below.
+
+**Universal addition (all 23 themes):**
+- `testing.coverCountBadgeBackground` and `testing.coverCountBadgeForeground` — palette-derived per theme, ≥4.5:1 contrast.
+
+**Per-theme palette-fit re-tunes** of already-defined Copilot-era tokens (chat request/bubble/code/shimmer/checkpoint/edited/linesAdded/Removed, `chatManagement.sashBorder`, agent session/status, `aiCustomizationManagement.sashBorder`, inline-edit tab-accept/body/gutter, gauge family, markdown alerts, tab selected variants, activity warning/error badges, multi-cursor, SCM graph lanes, editor action list, testing message-error badges, chat minimap markers, profile badges, sticky-scroll). Each theme tuned to its individual persona — no programmatic fills.
+
+### Phase 3 Theme Property Modernization
+- Added OGE Light testing coverage count badge colors and retuned Copilot-era chat, agent, gauge, tab, SCM graph, multi-cursor, profile, sash, and sticky-scroll tokens to the cream-paper warm graphite, teal, and orange brand palette.
+- Added OGE Dark testing coverage count badge colors and retuned Copilot-era chat, agent, gauge, markdown alert, SCM graph, multi-cursor, profile, sash, and testing-error badge tokens to the safety-orange/mint corporate brand palette.
+- Added Neon Pink Light testing coverage count badge colors and retuned Copilot-era chat, agent, inline edit, gauge warning, tab, minimap, profile, and sash tokens to its hot-pink-on-pearl palette.
+- Added Enchanted Grove testing coverage count badge colors and retuned Copilot-era chat, agent status, inline edit, and sash tokens to its minimalist sage/forest light palette.
+- Added Enchanted Grove Dark testing coverage count badge colors and retuned Copilot-era chat, agent, gauge, inline edit, markdown alert, SCM graph, and profile badge tokens to its minimalist deep-forest palette.
+- Added Mystic Dusk testing coverage count badge colors and retuned Copilot-era chat, agent, inline edit, tab, SCM graph, multi-cursor, and chat minimap tokens to its lavender-violet and mint twilight palette.
+- Added Morning Coffee testing coverage count badge colors and retuned Copilot-era chat, agent, inline edit, markdown alert, SCM graph, profile, and action-list tokens to its espresso/mocha/caramel light palette.
+- Added Obsidian Moss testing coverage count badge colors and retuned Copilot chat, agent status, gauge, and sash tokens to its Monokai cyan/chartreuse palette.
+- Added Feisty Fusion Light testing coverage count badge colors and retuned Copilot-era chat, agent, gauge, activity warning, SCM graph, multi-cursor, profile, and sash tokens to its cream paper warm/cool palette.
+
+### Phase 2 Theme Property Modernization
+- Added Evening Espresso testing coverage count badge colors and retuned chat user, agent active indicator, checkpoint, and chat code-border tokens to its amber/cyan coffee palette.
+- Added Feisty Fusion testing coverage count badge colors and retuned chat request bubbles, agent indicators, gauge foreground, and thinking shimmer to its cool cyan / warm-orange contrast palette.
+- Added Cyberpunk Neon testing coverage count badge colors and retuned high-saturation chat, agent status, gauge warning, profile badge, and chat border tokens to the synthwave magenta/cyan/lime palette.
+- Added Arctic Nord Light testing coverage count badge colors and retuned Copilot-era chat, agent, inline edit, gauge, markdown alert, SCM graph, multi-cursor, minimap, and sash tokens to the Snow Storm Nord light palette.
+- Added Arctic Nord testing coverage count badge colors and retuned Copilot-era chat bubble, agent status, and gauge warning tokens to the canonical Nord Frost overlay palette.
+- Added Digital Aqua testing coverage count badge colors and retuned chat, agent indicator, profile badge, and chat code-border tokens to the canonical aqua/lime Monokai-Pro Aqua palette.
+- Added Copper Bloom testing coverage count badge colors and retuned Copilot-era chat, agent session, gauge, tab, SCM graph, and chat minimap tokens to its warm copper-rose, sage, and mint palette.
+- Added Cosmic Void Light testing coverage count badge colors and retuned Copilot-era chat, agent, inline edit, gauge, tab, SCM graph, multi-cursor, minimap, profile, sash, and sticky-scroll tokens to the cool slate/indigo light palette.
+- Added Cosmic Void testing coverage count badge colors and retuned Copilot-era chat, agent, inline edit, markdown alert, SCM graph, profile, and sash tokens to its emerald/sky deep-space palette.
+- Added Chroma Void testing coverage count badge colors and retuned Copilot-era chat, agent, inline edit, gauge, markdown alert, tab, SCM graph, multi-cursor, minimap, profile, and sash tokens to the strict-accessibility ROYGBIV spectrum palette.
+- Added Graphite Bay testing coverage count badge colors and retuned Copilot-era chat, agent, inline edit, markdown alert, tab, SCM graph, minimap, profile, and sash tokens to the cool slate-blue Fusion palette.
+- Added Sandstone Light testing coverage count badge colors and retuned Copilot-era chat, agent, inline edit, gauge, markdown alert, tab, SCM graph, multi-cursor, minimap, profile, and sash tokens to the desert sandstone palette.
+- Added Tokyo Night testing coverage count badge colors and retuned Copilot-era chat, agent session, inline edit, multi-cursor, SCM graph, sticky scroll, and badge tokens to canonical Tokyo Night palette values.
+- Added Tokyo Day testing coverage count badge colors and retuned Copilot-era chat, agent, inline edit, gauge, markdown alert, tab, SCM graph, minimap, profile, sash, and badge tokens to its soft daylight Tokyo palette.
+
 ## [0.10.9] - 2026-04-15
 
 ### Patch — WCAG Contrast & New Token Audit

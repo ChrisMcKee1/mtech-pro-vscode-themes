@@ -1,37 +1,49 @@
-# Development files
-.vscode/
-.gitignore
-.git/
-.DS_Store
+# Repo-only directories (never shipped to Marketplace)
+.agents/**
+.github/**
+.vscode/**
+.copilot/**
+docs/**
+tests/**
+node_modules/**
+out/**
+src/**
+.tmp/**
+temp/**
+temp-extract/**
+logs/**
+.venv/**
+.idea/**
 
-# Test files
-tests/
-
-# Log files
-logs/
-*.log
-
-# Development and build artifacts
-node_modules/
-out/
-src/
-tsconfig.json
+# Dev/config files
+**/.gitignore
+**/.gitattributes
+**/.editorconfig
+**/.prettierrc*
+**/.eslintrc*
+**/eslint.config.*
+tsconfig*.json
 webpack.config.js
-.eslintrc.json
+package-lock.json
+skills-lock.json
 
-# Temporary files
-.tmp/
-temp/
-*.tmp
-temp-extract/
+# Build/packaging artifacts
+*.vsix
+.vsixmanifest
+[Content_Types].xml
+**/*.map
 
-# OS generated files
+# Per-version planning/audit docs (KEEP README, CHANGELOG, LICENSE, SECURITY)
+IMPROVEMENTS_*.md
+COFFEE_THEMES_DEEP_EVAL_REPORT.md
+CONTRIBUTING.md
+
+# OS / editor noise
+.DS_Store
 Thumbs.db
 *.swp
 *.swo
 *~
-
-# IDE files
-.idea/
-*.code-workspace 
-.venv/**
+*.log
+*.tmp
+*.code-workspace

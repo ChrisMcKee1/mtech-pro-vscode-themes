@@ -7,32 +7,48 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-      
-      - name: Install dependencies
+
+      - name: Install vsce
         run: npm install -g @vscode/vsce
-      
-      - name: Publish to Marketplace
+
+      - name: Package VSIX
+        run: vsce package --out theme-m-tech-vscode.vsix
+
+      - name: Publish to Marketplace (with retry)
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
         run: |
-          echo "Publishing version $(node -p "require('./package.json').version")"
-          npx @vscode/vsce publish -p $VSCE_PAT
-      
+          VERSION=$(node -p "require('./package.json').version")
+          echo "Publishing version $VERSION"
+          for attempt in 1 2 3; do
+            echo "==> Publish attempt $attempt of 3..."
+            if vsce publish --packagePath theme-m-tech-vscode.vsix --skip-duplicate -p "$VSCE_PAT"; then
+              echo "==> Published successfully on attempt $attempt."
+              exit 0
+            fi
+            if [ $attempt -lt 3 ]; then
+              echo "==> Attempt $attempt failed. Waiting 60 seconds before retry..."
+              sleep 60
+            fi
+          done
+          echo "==> All 3 publish attempts failed."
+          exit 1
+
       - name: Notify success
         if: success()
         run: |
           VERSION=$(node -p "require('./package.json').version")
           echo "✅ Successfully published M Tech Themes v$VERSION to VS Code Marketplace"
-      
+
       - name: Notify failure
         if: failure()
         run: |

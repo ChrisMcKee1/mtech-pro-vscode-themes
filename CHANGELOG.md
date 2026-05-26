@@ -1,5 +1,12 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## [0.12.1] - 2026-05-26
+
+### Packaging & CI (no theme content changes)
+
+- **Slimmed VSIX (~380 KB removed)** — added a comprehensive `.vscodeignore` that excludes repo-only assets (`.agents/`, `.github/`, `docs/`, `tests/`, `skills-lock.json`, per-version `IMPROVEMENTS_*.md`, audit reports, `.vsixmanifest`, dev configs) that were being shipped to the Marketplace by accident. Runtime assets (`themes/`, `icon-themes/`, `js/`, `icon.png`) and the canonical metadata files (`README.md`, `CHANGELOG.md`, `LICENSE`, `SECURITY.md`, `package.json`) are preserved. Result: faster downloads/installs with zero functional change vs 0.12.0.
+- **Hardened Marketplace publish workflow** — `publish-marketplace.yml` now pre-packages the VSIX once with `vsce package`, then publishes via `--packagePath` inside a 3-attempt retry loop with 60 s backoff and `--skip-duplicate`. This survives transient `Request timeout: /_apis/gallery` failures from the Marketplace gallery API (which previously caused three consecutive publish failures for 0.12.0).
+
 ## [0.12.0] - 2026-05-26
 
 ### VS Code 1.97 → 1.116 Sync (all 23 themes)

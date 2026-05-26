@@ -1,5 +1,25 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## [0.12.0] - 2026-05-26
+
+### VS Code 1.97 → 1.116 Sync (all 23 themes)
+
+Second-pass synchronization with the official `microsoft/vscode` color registry covering everything introduced between January 2025 and May 2026 (post-1.96 deltas). Research delta verified against `extensions/theme-defaults/themes/*`, `src/vs/platform/theme/common/colors/*`, `chatColors.ts`, `inlineEdits/theme.ts`, `scmHistory.ts`, and `miscColors.ts`.
+
+**76 new color keys identified, ~30–40 added per theme**, palette-tuned to each theme's persona — no programmatic fills. Coverage areas:
+
+- **Inline Edits (NES) family** — `inlineEdit.originalBackground/Border`, `modifiedBackground/Border`, `tabWillAcceptOriginal/Modified*`, gutter indicator (`primaryBackground/Border`, `secondaryBackground/Border`).
+- **Chat / Copilot UI** — `chat.thinkingShimmer`, `chat.requestBubbleBackground`, `chat.checkpointSeparator`, `chat.editedFileForeground`, `chat.linesAddedForeground/linesRemovedForeground`, `chat.inputWorkingBorderColor1/2/3` (animated gradient stroke).
+- **Activity badges** — `activityWarningBadge.background/foreground`, `activityErrorBadge.background/foreground` (diagnostic severity dots).
+- **Testing** — `testing.message.error.badgeBackground/Foreground/Border`, `testing.coveredMinimapBackground`, `testing.uncoveredMinimapBackground`.
+- **Quick pick / suggest widget** — `quickInputList.focusHighlightForeground`, `editorSuggestWidget.selectedForeground/selectedIconForeground`.
+- **Source Control Graph** — `scmGraph.historyItemHoverDefaultLabel*` chips.
+- **Misc** — `scrollbar.background`, `textPreformat.border`, `minimap.chatEditHighlight`, `chart.line/axis/guide` family.
+
+Skipped: `agents.*` namespace (Agent Sessions shell only — not part of standard workbench).
+
+All themes pass structure validation (`tests/run-tests.cmd --quick`). Each theme tuned to its individual persona (Arctic Nord, Cyberpunk Neon, Tokyo Night, Enchanted Grove, etc.).
+
 ## [0.11.0] - 2026-04-30
 
 ### VS Code Property Audit & Modernization (all 23 themes)

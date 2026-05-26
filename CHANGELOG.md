@@ -1,5 +1,9 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## [0.12.2] - 2026-05-26
+
+- No user-facing changes — republish to refresh in-extension changelog only.
+
 ## [0.12.1] - 2026-05-26
 
 - Smaller download — installation package size reduced by ~22% with no change to themes or icons.

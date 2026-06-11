@@ -1,5 +1,31 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## [0.13.0] - 2026-06-11
+
+### VS Code token modernization — full color-surface unification (all 23 themes)
+
+Third-pass synchronization against the official VS Code Theme Color Reference and the current `microsoft/vscode` color registries (covering deltas through VS Code 1.124). Every theme now exposes an identical **942-key** color surface, with each value derived from that theme's own palette — no blanket fills, so additions match each theme's persona (Arctic Nord, Cyberpunk Neon, Tokyo Night, Enchanted Grove, etc.).
+
+**164 tokens added to every theme**, plus 42 partial-coverage tokens normalized so they're now defined consistently across all themes. Coverage areas:
+
+- **Terminal suggest icons** — full `terminalSymbolIcon.*` family (alias, branch, commit, file, folder, method, tag, pull-request, and more) plus terminal find/hover/drop tokens (`terminal.findMatchBackground/Border`, `terminal.findMatchHighlight*`, `terminal.dropBackground`, `terminal.hoverHighlightBackground`, overview-ruler cursor/find-match).
+- **Indent & bracket-pair guides** — numbered `editorIndentGuide.background1–6` / `activeBackground1–6` (replacing the deprecated singular keys) and `editorBracketPairGuide.background1–6` / `activeBackground1–6`.
+- **Testing** — coverage backgrounds/borders/gutters, peek headers/borders, and retired state icons.
+- **Notebooks** — focused/selected cell backgrounds & borders, output container colors, dedicated notebook scrollbar slider states.
+- **Merge editor (3-way)** — change-base and conflict input backgrounds.
+- **Editor extras** — symbol-highlight, word-highlight-text, overview-ruler comment/content tokens, inlay-hint parameter/type colors, unicode-highlight, unnecessary-code border.
+- **Chat / Copilot** — `chat.inputWorkingBorderColor3` (third animated-stroke stop).
+- **Charts** — new `chart.line/axis/guide` component family.
+- **Workbench chrome** — status-bar error/warning hover, side-bar title, activity-bar-top, editor-group drop prompts, minimap slider states, diff-editor borders, settings editor focus rows, panel sections, list/tree extras, welcome page, window active/inactive borders, and `strongForeground`.
+
+### Removed (deprecated)
+
+- `editorIndentGuide.background` and `editorIndentGuide.activeBackground` — superseded by the numbered `background1–6` / `activeBackground1–6` variants (added before removal so indent guides render unchanged).
+
+### Accessibility
+
+- Bumped diff removed-line opacity in Chroma Void and Cyberpunk Neon to clear WCAG visibility thresholds. All 23 themes pass structure validation and contrast analysis with **0 critical and 0 high** issues.
+
 ## [0.12.2] - 2026-05-26
 
 - No user-facing changes — republish to refresh in-extension changelog only.

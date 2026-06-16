@@ -2,7 +2,7 @@
 name: Theme-Analyst
 description: Researches color palettes, theme trends, and analyzes existing themes by reading workspace files or gathering knowledge.
 argument-hint: Ask this agent to audit a color palette, retrieve design histories, review current codebase themes, or conceptualize a new palette.
-model: Claude Opus 4.6 (1M context)(Internal only) (copilot)
+model: Claude Opus 4.8
 tools: [vscode, execute, read, agent, browser, 'microsoftdocs/mcp/*', edit, search, web, 'github/*', vscode.mermaid-chat-features/renderMermaidDiagram, ms-azuretools.vscode-containers/containerToolsConfig, todo]
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: UI-UX-Expert
 description: Analyzes UI/UX, accessibility, and contrast ratios for themes by running automated scripts.
-model: Claude Opus 4.6 (1M context)(Internal only) (copilot)
+model: Claude Opus 4.8
 tools: [vscode, execute, read, agent, browser, 'microsoftdocs/mcp/*', edit, search, web, 'github/*', vscode.mermaid-chat-features/renderMermaidDiagram, ms-azuretools.vscode-containers/containerToolsConfig, todo]
 argument-hint: Provide a theme file path. Ask to audit accessibility, analyze WCAG contrast failures, or recommend optimal opacity/alpha channels.
 ---

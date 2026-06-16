@@ -2,19 +2,20 @@
 
 ## Overview
 
-This VS Code extension provides 21 professional color themes with matching icon packs, distributed as VSIX via GitHub releases. These instructions help AI agents understand the codebase architecture, maintain consistency, and follow accessibility best practices when modifying or creating themes.
+This VS Code extension provides 23 professional color themes with matching icon packs, distributed as VSIX via GitHub releases. These instructions help AI agents understand the codebase architecture, maintain consistency, and follow accessibility best practices when modifying or creating themes.
 
 **Purpose**: Guide AI coding agents to be immediately productive in this codebase by providing essential knowledge about architecture patterns, critical workflows, and project-specific conventions that aren't obvious from file inspection alone.
 
 ## Quick Reference
 
 **Key Files**: `package.json`, `js/main.js`, `js/browser.js`, `themes/*.json`, `icon-themes/*.json`  
-**Current Version**: 0.5.19  
+**Current Version**: 0.12.2  
+**VS Code Token Baseline**: 1.124 (engine target `^1.94.0`)  
 **Test Command**: `cd tests && .\run-tests.cmd [--quick|--contrast|--status|--full]`  
 **Theme Preview**: F1 → "Developer: Reload Window"  
 **Repository**: [mtech-pro-vscode-themes](../README.md)  
 **Test Documentation**: `tests/TEST_SUITE_DOCUMENTATION.md`  
-**Latest Improvements**: `IMPROVEMENTS_v0.5.17.md` (v0.5.17-0.5.19)
+**Latest Improvements**: `IMPROVEMENTS_v0.11.0.md`
 
 ## Critical Architecture Patterns
 
@@ -182,25 +183,34 @@ When evaluating or refactoring themes, we recognize two distinct paths:
 - Check diff views, terminal ANSI colors, and all UI panels
 - Validate scrollbar visibility in all states (rest/hover/active)
 
-### New UI Color Categories (VS Code 1.113–1.116)
+### New UI Color Tokens (VS Code baseline 1.124)
 
-VS Code has added several new themeable UI areas. Themes that don't define these inherit VS Code defaults, which may clash with custom palettes. Key additions to watch:
+All 23 themes are validated against the **VS Code 1.124** Theme Color Reference. The token groups below are **already defined across all 23 themes** — do NOT re-research them as "missing"; only adjust their values if a palette clash is reported:
 
-- **Agent Session colors**: `agentSessionReadIndicator.foreground`, `agentStatusIndicator.background`, `agentSessionSelectedBadge.border` — colors for the agent/Copilot session UI
-- **Chat colors expansion**: `chat.thinkingShimmer` (thinking state animation), `chat.requestBubbleBackground`, `chat.checkpointSeparator`, `chat.linesAddedForeground/linesRemovedForeground`, `chat.editedFileForeground`, `chatManagement.sashBorder`
-- **Inline Edit expansion**: `inlineEdit.tabWillAcceptModifiedBorder/tabWillAcceptOriginalBorder` — borders for Copilot inline acceptance
-- **Gauge colors**: `gauge.background/foreground/border`, `gauge.warningBackground/warningForeground`, `gauge.errorBackground/errorForeground` — new progress gauge component
-- **Markdown Alert colors**: `markdownAlert.note/tip/important/warning/caution.foreground` — GitHub-style alert blocks in markdown preview
-- **Tab selected variants**: `tab.selectedBorderTop`, `tab.selectedBackground`, `tab.selectedForeground`, `tab.dragAndDropBorder` — enhanced tab styling
-- **Activity bar badges**: `activityWarningBadge.*`, `activityErrorBadge.*` — warning/error badge variants beyond the standard badge
-- **Editor multi-cursor**: `editorMultiCursor.primary/secondary.foreground/background` — distinct colors for multi-cursor editing
-- **SCM Graph**: `scmGraph.foreground1-5`, `scmGraph.historyItem*` — source control graph lane colors
-- **Editor Action List**: `editorActionList.background/foreground/focusForeground/focusBackground` — lightbulb/action menu
-- **Testing badges**: `testing.coverCountBadgeBackground/Foreground`, `testing.message.error.badgeBackground/badgeBorder/badgeForeground`
+- **Agent Session**: `agentSessionReadIndicator.foreground`, `agentStatusIndicator.*`, `agentSessionSelectedBadge.border`
+- **Chat expansion**: `chat.thinkingShimmer`, `chat.requestBubbleBackground`, `chat.checkpointSeparator`, `chat.linesAddedForeground/linesRemovedForeground`, `chat.editedFileForeground`, `chatManagement.sashBorder`
+- **Inline Edit**: `inlineEdit.tabWillAcceptModifiedBorder/tabWillAcceptOriginalBorder`
+- **Gauge**: `gauge.background/foreground/border`, `gauge.warning*`, `gauge.error*`
+- **Markdown Alerts**: `markdownAlert.note/tip/important/warning/caution.foreground`
+- **Tab selected variants**: `tab.selectedBorderTop/selectedBackground/selectedForeground/dragAndDropBorder`
+- **Activity bar badges**: `activityWarningBadge.*`, `activityErrorBadge.*`
+- **Editor multi-cursor**: `editorMultiCursor.primary/secondary.foreground/background`
+- **SCM Graph**: `scmGraph.foreground1-5`, `scmGraph.historyItem*`
+- **Editor Action List**: `editorActionList.background/foreground/focusForeground/focusBackground`
+- **Testing badges**: `testing.coverCountBadge*`, `testing.message.error.badge*`
 
-**Competitive context**: VS Code 1.113 shipped new default themes ("VS Code Light" and "VS Code Dark") that replaced the previous "Modern" defaults. These provide a fresh, modern baseline that third-party themes now compete against.
+#### Tokens added in the 1.124 modernization pass
 
-**Priority for theme updates**: Agent Session, Chat, and Inline Edit tokens are the most user-visible of the new additions. Themes that define custom chat/AI panel colors will feel more polished as Copilot usage increases. Gauge, Markdown Alert, and SCM Graph colors are lower priority but prevent palette clashes.
+The following groups were added to **all 23 themes**, each value sourced from the same theme's existing palette so colors stay on-brand:
+
+- **`terminalSymbolIcon.*`** (19 tokens) — terminal IntelliSense / suggest-widget icons. Mapping convention: `method/argument/option*` ← `symbolIcon.*` syntax hues; `branch/commit/tag/pullRequest*/remote/stash` ← `gitDecoration.*` / `charts.*` accent family; `file/folder/symbolicLink*` ← `symbolIcon.file/folderForeground`; `symbolText/inlineSuggestion` ← `editorGhostText.foreground` (muted).
+- **`sideBarTitle.background` / `sideBarTitle.border`** — side bar title-bar chrome. Map to `sideBar.background` / `sideBar.border`.
+- **`chart.line` / `chart.axis` / `chart.guide`** (singular new chart component) — map `chart.line` ← `charts.lines`; `axis`/`guide` ← `editorIndentGuide.background`.
+- **Stragglers**: `editorOverviewRuler.commentForeground/commentUnresolvedForeground` (no theme defines `editorGutter.commentRangeForeground`, so these fall back to `charts.blue` / `charts.orange`), `actionBar.toggledBackground` ← `inputOption.activeBackground`, `tree.tableColumnsBorder` ← `tree.indentGuidesStroke`, `tree.tableOddRowsBackground` ← `list.hoverBackground`, `list.dropBetweenBackground` ← `list.dropBackground`.
+
+**Workbench selection note (issue #5)**: the VS Code **Search view** and other workbench input fields use the workbench-wide `selection.background`, NOT `editor.selectionBackground`. Keep `selection.background` alpha visible — **dark themes ≥ ~35% (`0x59`), light themes ≥ ~30% (`0x4D`)** — or text selection in Search becomes invisible. Values below ~25% (`0x40`) are a FAIL.
+
+**Future-research guidance**: before adding "new" tokens, diff the [Theme Color Reference](https://code.visualstudio.com/api/references/theme-color) against a representative theme (e.g. `themes/Tokyo Night.json`) with grep — most of the modern surface is already covered.
 
 ## Recent Improvements (v0.5.17-0.5.19)
 

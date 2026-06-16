@@ -1,9 +1,20 @@
 # M Tech Themes for Visual Studio Code Changelog
 
-## [0.12.3] - 2026-06-16
+## [0.13.1] - 2026-06-16
 
 - Fixed selection highlight visibility in the Search view — selecting text now shows a clearly visible highlight across all affected themes (Arctic Nord, Arctic Nord Light, Cosmic Void, Cosmic Void Light, Enchanted Grove, Feisty Fusion Light, Neon Pink Light, Obsidian Moss, OGE Dark, OGE Light, Tokyo Day).
 - Added full VS Code 1.124 color coverage to all 23 themes: terminal IntelliSense suggestion icons, side bar title styling, and chart colors now match each theme's palette instead of falling back to defaults.
+
+## [0.13.0] - 2026-06-11
+
+### VS Code Token Modernization — all 23 themes
+
+Every theme now exposes a unified, fully up-to-date color surface, with each new value tuned to that theme's own palette.
+
+- 164 new tokens added per theme — terminal suggest icons, testing coverage & peek, notebook cells, merge editor, inlay hints, charts, numbered indent & bracket-pair guides, status-bar hovers, panel sections, welcome page, and more.
+- 42 partial-coverage tokens normalized so they're defined consistently everywhere.
+- Removed deprecated indent-guide keys (replaced by the current numbered variants).
+- 0 critical / 0 high accessibility issues across all themes.
 
 ## [0.12.2] - 2026-05-26
 

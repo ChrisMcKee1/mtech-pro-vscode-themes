@@ -1,5 +1,10 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## [0.13.2] - 2026-06-16
+
+- Fixed text selection still being hard to see in the Search view on Cosmic Void and Tokyo Night — selections now use each theme's bright accent so they're clearly visible.
+- Systematic highlight-visibility pass across all 23 themes: text selection, find/word-occurrence highlights, selected rows in the sidebar / Command Palette / peek views, terminal selection, and bracket matches are now reliably visible against each theme's background — fixing cases where a highlight blended into the surface. Selected code text remains readable.
+
 ## [0.13.1] - 2026-06-16
 
 - Fixed selection highlight visibility in the Search view — selecting text now shows a clearly visible highlight across all affected themes (Arctic Nord, Arctic Nord Light, Cosmic Void, Cosmic Void Light, Enchanted Grove, Feisty Fusion Light, Neon Pink Light, Obsidian Moss, OGE Dark, OGE Light, Tokyo Day).

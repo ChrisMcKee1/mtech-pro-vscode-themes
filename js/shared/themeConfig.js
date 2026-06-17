@@ -4,6 +4,8 @@
 const THEMES = Object.freeze([
     "America250 Dark",
     "America250 Light",
+    "Hurricanes Dark",
+    "Hurricanes Light",
     "Obsidian Moss",
     "Graphite Bay",
     "Copper Bloom",
@@ -37,6 +39,8 @@ const ICON_THEMES = Object.freeze([
     // Base icon themes (one per color theme + legacy fallbacks)
     "America250 Dark Icons",
     "America250 Light Icons",
+    "Hurricanes Dark Icons",
+    "Hurricanes Light Icons",
     "Obsidian Moss Icons",
     "Graphite Bay Icons",
     "Copper Bloom Icons",

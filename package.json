@@ -3,7 +3,7 @@
   "displayName": "M Tech Themes",
   "description": "✨ Professional dark & light theme + icon pack, from the author of the original M Tech color scheme.",
   "publisher": "M-Tech",
-  "version": "0.14.0",
+  "version": "0.14.1",
   "pricing": "Free",
   "engines": {
     "vscode": "^1.94.0"
@@ -49,6 +49,16 @@
         "label": "America250 Light",
         "uiTheme": "vs",
         "path": "./themes/America250 Light.json"
+      },
+      {
+        "label": "Hurricanes Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Hurricanes Dark.json"
+      },
+      {
+        "label": "Hurricanes Light",
+        "uiTheme": "vs",
+        "path": "./themes/Hurricanes Light.json"
       },
       {
         "label": "Obsidian Moss",
@@ -196,6 +206,16 @@
         "label": "America250 Light Icons",
         "id": "America250 Light Icons",
         "path": "./icon-themes/America250 Light icon-theme.json"
+      },
+      {
+        "label": "Hurricanes Dark Icons",
+        "id": "Hurricanes Dark Icons",
+        "path": "./icon-themes/Hurricanes Dark icon-theme.json"
+      },
+      {
+        "label": "Hurricanes Light Icons",
+        "id": "Hurricanes Light Icons",
+        "path": "./icon-themes/Hurricanes Light icon-theme.json"
       },
       {
         "label": "Obsidian Moss Icons",

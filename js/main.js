@@ -241,6 +241,9 @@ class ExtensionManager {
             // America250 (USA 250th anniversary)
             "America250 Dark": "USA 250th commemoration, federal blue on deep navy (dark)",
             "America250 Light": "USA 250th commemoration, ink navy on warm cream (light)",
+            // Hurricanes (2026 Stanley Cup Championship)
+            "Hurricanes Dark": "Carolina Hurricanes 2026 Stanley Cup Championship, red on charcoal black (dark)",
+            "Hurricanes Light": "Carolina Hurricanes 2026 Stanley Cup Championship, red on white and silver (light)",
             // Signature darks
             "Obsidian Moss": "Volcanic obsidian with mossy green accents (dark)",
             "Graphite Bay": "Cool graphite greys with bay-blue accents (dark)",

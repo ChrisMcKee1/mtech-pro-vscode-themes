@@ -1,5 +1,12 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## [0.14.1] - 2026-06-17
+
+### New themes (2) — now 31 total
+
+- **Hurricanes** (Dark & Light) — a special edition celebrating the Carolina Hurricanes' 2026 Stanley Cup Championship. **Hurricanes Dark (Home)** is team red over a charcoal-black editor with aggressively red-forward syntax; **Hurricanes Light (Away)** is red over white and silver. Both ship with matching icon themes.
+- Validated against the official VS Code Theme Color Reference (no unsupported keys) with 0 critical / 0 high accessibility issues.
+
 ## [0.14.0] - 2026-06-17
 
 ### New themes (6) — now 29 total

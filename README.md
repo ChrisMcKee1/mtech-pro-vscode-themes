@@ -1,6 +1,6 @@
 # M Tech Themes for Visual Studio Code
 
-**29 professional color themes + matching icon packs** engineered for beautiful functionality. Born from modern UI/UX color science, M Tech Themes delivers accessible, distraction-free coding environments with WCAG-compliant contrast ratios. The collection is led by **America250**, a commemoration of the 2026 United States Semiquincentennial, whose bracket-pair colors flow red, white, and blue like the official "250" ribbon. Includes dark themes (America250 Dark, Tokyo Night, Grove Night, Crimson Night, Ember Night, Sapphire Night, Obsidian Moss, Graphite Bay, Copper Bloom, Chroma Void, Digital Aqua, Mystic Dusk, Cyberpunk Neon, Arctic Nord, OGE Dark, Feisty Fusion, Cosmic Void, Enchanted Grove Dark, Evening Espresso) and light variants (America250 Light, Sandstone Light, Tokyo Day, Arctic Nord Light, OGE Light, Feisty Fusion Light, Cosmic Void Light, Enchanted Grove, Neon Pink Light, Morning Coffee) optimized for any lighting condition.
+**31 professional color themes + matching icon packs** engineered for beautiful functionality. Born from modern UI/UX color science, M Tech Themes delivers accessible, distraction-free coding environments with WCAG-compliant contrast ratios. The collection is led by **America250**, a commemoration of the 2026 United States Semiquincentennial, whose bracket-pair colors flow red, white, and blue like the official "250" ribbon, joined by the **Hurricanes** pair celebrating the Carolina Hurricanes 2026 Stanley Cup Championship in team red, black, white, and silver. Includes dark themes (America250 Dark, Hurricanes Dark, Tokyo Night, Grove Night, Crimson Night, Ember Night, Sapphire Night, Obsidian Moss, Graphite Bay, Copper Bloom, Chroma Void, Digital Aqua, Mystic Dusk, Cyberpunk Neon, Arctic Nord, OGE Dark, Feisty Fusion, Cosmic Void, Enchanted Grove Dark, Evening Espresso) and light variants (America250 Light, Hurricanes Light, Sandstone Light, Tokyo Day, Arctic Nord Light, OGE Light, Feisty Fusion Light, Cosmic Void Light, Enchanted Grove, Neon Pink Light, Morning Coffee) optimized for any lighting condition.
 
 > 👀 **Live preview:** browse every theme interactively at **[vscodethemes.com](https://vscodethemes.com/e/M-Tech.theme-m-tech-vscode/)**.
 
@@ -36,7 +36,17 @@ The collection leads with our United States 250th anniversary theme. Red, white,
 #### America250 Light
 ![America250 Light theme preview](images/themes/America250_Light.png)
 
-### 🌃 Night collection
+### � Hurricanes (2026 Stanley Cup Championship)
+
+A special edition celebrating the Carolina Hurricanes' 2026 Stanley Cup Championship — team red over charcoal black (home) and red over white and silver (away), with aggressively red-forward syntax and matching icon packs.
+
+#### Hurricanes Dark (Home)
+![Hurricanes Dark theme preview](images/themes/Hurricanes_Dark.png)
+
+#### Hurricanes Light (Away)
+![Hurricanes Light theme preview](images/themes/Hurricanes_Light.png)
+
+### �🌃 Night collection
 
 #### Tokyo Night
 ![Tokyo Night theme preview](images/themes/Tokyo_Night.png)

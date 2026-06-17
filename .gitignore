@@ -1,5 +1,14 @@
 /logs
 tests/*.txt
+contrast-out.txt
 /issues
 
 *.vsix
+
+# Screenshot tooling artifacts
+**/node_modules/
+tools/theme-shots/out/
+tools/theme-shots/out-local/
+tools/theme-shots/sample/.vscode/
+tools/theme-shots/.vscode-test-web/
+

@@ -33,17 +33,24 @@ if "%TEST_MODE%"=="--quick" (
     echo Mode: QUICK [Structure Validation]
     echo ----------------------------------------
     echo.
-    echo [1/2] Command Functionality Tests...
+    echo [1/3] Command Functionality Tests...
     node test-command-functionality.js
     if !ERRORLEVEL! neq 0 (
         echo ERROR: Command tests failed
         exit /b 1
     )
     echo.
-    echo [2/2] Mapping Validation Tests...
+    echo [2/3] Mapping Validation Tests...
     node test-mapping-validation.js
     if !ERRORLEVEL! neq 0 (
         echo ERROR: Mapping tests failed
+        exit /b 1
+    )
+    echo.
+    echo [3/3] Workbench Key Validation...
+    node validate-keys.js
+    if !ERRORLEVEL! neq 0 (
+        echo ERROR: Invalid VS Code color keys found
         exit /b 1
     )
     echo.
@@ -92,31 +99,38 @@ if "%TEST_MODE%"=="--full" (
     echo Mode: FULL SUITE [All Tests]
     echo ----------------------------------------
     echo.
-    echo [1/4] Command Functionality Tests...
+    echo [1/5] Command Functionality Tests...
     node test-command-functionality.js
     if !ERRORLEVEL! neq 0 (
         echo ERROR: Command tests failed
         exit /b 1
     )
     echo.
-    echo [2/4] Mapping Validation Tests...
+    echo [2/5] Mapping Validation Tests...
     node test-mapping-validation.js
     if !ERRORLEVEL! neq 0 (
         echo ERROR: Mapping tests failed
         exit /b 1
     )
     echo.
-    echo [3/4] Contrast Analysis...
+    echo [3/5] Contrast Analysis...
     node test-contrast-analysis.js
     if !ERRORLEVEL! neq 0 (
         echo ERROR: Contrast analysis failed
         exit /b 1
     )
     echo.
-    echo [4/4] Refactor Status...
+    echo [4/5] Refactor Status...
     node test-refactor-status.js
     if !ERRORLEVEL! neq 0 (
         echo ERROR: Status tracker failed
+        exit /b 1
+    )
+    echo.
+    echo [5/5] Workbench Key Validation...
+    node validate-keys.js
+    if !ERRORLEVEL! neq 0 (
+        echo ERROR: Invalid VS Code color keys found
         exit /b 1
     )
     echo.

@@ -2,6 +2,8 @@
 
 // Centralized theme metadata shared across Node and web extension hosts.
 const THEMES = Object.freeze([
+    "America250 Dark",
+    "America250 Light",
     "Obsidian Moss",
     "Graphite Bay",
     "Copper Bloom",
@@ -22,6 +24,10 @@ const THEMES = Object.freeze([
     "Cosmic Void Light",
     "Enchanted Grove",
     "Enchanted Grove Dark",
+    "Grove Night",
+    "Sapphire Night",
+    "Ember Night",
+    "Crimson Night",
     "Mystic Dusk",
     "Morning Coffee",
     "Evening Espresso"
@@ -29,6 +35,8 @@ const THEMES = Object.freeze([
 
 const ICON_THEMES = Object.freeze([
     // Base icon themes (one per color theme + legacy fallbacks)
+    "America250 Dark Icons",
+    "America250 Light Icons",
     "Obsidian Moss Icons",
     "Graphite Bay Icons",
     "Copper Bloom Icons",
@@ -50,6 +58,10 @@ const ICON_THEMES = Object.freeze([
     "Cosmic Void Light Icons",
     "Enchanted Grove Icons",
     "Enchanted Grove Dark Icons",
+    "Grove Night Icons",
+    "Sapphire Night Icons",
+    "Ember Night Icons",
+    "Crimson Night Icons",
     "Mystic Dusk Icons",
     "Morning Coffee Icons",
     "Evening Espresso Icons",
@@ -76,6 +88,10 @@ const ICON_THEMES = Object.freeze([
     "Cosmic Void Light Monochrome Icons",
     "Enchanted Grove Monochrome Icons",
     "Enchanted Grove Dark Monochrome Icons",
+    "Grove Night Monochrome Icons",
+    "Sapphire Night Monochrome Icons",
+    "Ember Night Monochrome Icons",
+    "Crimson Night Monochrome Icons",
     "Mystic Dusk Monochrome Icons",
     "Morning Coffee Monochrome Icons",
     "Evening Espresso Monochrome Icons"

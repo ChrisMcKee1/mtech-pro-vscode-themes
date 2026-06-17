@@ -9,11 +9,12 @@ const path = require('path');
 
 const themesDir = path.join(__dirname, '..', 'themes');
 
-// Load the three representative theme files
+// Load the representative theme files
 const themes = {
   'Tokyo Night': JSON.parse(fs.readFileSync(path.join(themesDir, 'Tokyo Night.json'), 'utf8')),
   'Cyberpunk Neon': JSON.parse(fs.readFileSync(path.join(themesDir, 'Cyberpunk Neon.json'), 'utf8')),
-  'Sandstone Light': JSON.parse(fs.readFileSync(path.join(themesDir, 'Sandstone Light.json'), 'utf8'))
+  'Sandstone Light': JSON.parse(fs.readFileSync(path.join(themesDir, 'Sandstone Light.json'), 'utf8')),
+  'Grove Night': JSON.parse(fs.readFileSync(path.join(themesDir, 'Grove Night.json'), 'utf8'))
 };
 
 // Critical new properties to check - grouped by UI area

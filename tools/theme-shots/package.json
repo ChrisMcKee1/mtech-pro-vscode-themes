@@ -1,0 +1,16 @@
+{
+  "name": "mtech-theme-shots",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Screenshots every M Tech theme via the vscode.dev theme-preview deep link + Playwright.",
+  "scripts": {
+    "setup": "npm install && npx playwright install chromium",
+    "capture": "node capture.mjs",
+    "capture-local": "node capture-local.mjs"
+  },
+  "devDependencies": {
+    "@vscode/test-web": "^0.0.80",
+    "playwright": "^1.48.0"
+  }
+}

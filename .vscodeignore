@@ -5,6 +5,7 @@
 .copilot/**
 docs/**
 tests/**
+tools/**
 node_modules/**
 out/**
 src/**

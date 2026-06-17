@@ -1,5 +1,20 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## [0.14.0] - 2026-06-17
+
+### New themes (6) — now 29 total
+
+- **America250 Dark** & **America250 Light** — a red/white/blue theme commemorating the 2026 United States Semiquincentennial, with bracket-pair colors that flow like the official "250" ribbon. Includes matching icon themes.
+- **Grove Night** — a deep, near-black green editor theme — plus three hue-swapped siblings: **Crimson Night**, **Ember Night**, and **Sapphire Night**. Each ships with matching standard and monochrome icon themes.
+
+### Fixes & quality
+
+- Validated every theme against VS Code's official Theme Color Reference and removed 800+ unsupported color keys that VS Code was silently ignoring — all 29 themes are now spec-compliant with no dead entries.
+- Fixed the Welcome page tile hover making text unreadable on several themes (Grove Night, Enchanted Grove, Enchanted Grove Dark, Crimson Night, Ember Night, Sapphire Night, Evening Espresso, Cyberpunk Neon) — the hover state now uses an on-palette shade with clearly readable text.
+- Improved deleted-line visibility in the diff view on Chroma Void and Cyberpunk Neon.
+- Command Palette matched-letter highlighting now uses the supported `list.focusHighlightForeground` key so highlighted letters render reliably.
+- 0 critical / 0 high accessibility issues across all 29 themes.
+
 ## [0.13.2] - 2026-06-16
 
 - Fixed text selection still being hard to see in the Search view on Cosmic Void and Tokyo Night — selections now use each theme's bright accent so they're clearly visible.

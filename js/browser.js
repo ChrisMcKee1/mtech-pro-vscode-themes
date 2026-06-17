@@ -32,7 +32,6 @@ class ThemeManager {
 
         const techConfig = this.vscode.workspace.getConfiguration("techThemes");
         this.fileIconsMonochrome = techConfig.get("fileIconsMonochrome", false);
-        this.minimal = techConfig.get("minimal", false);
     }
 
     getState() {
@@ -239,44 +238,45 @@ class ExtensionManager {
 
     getThemeDescription(themeName) {
         const descriptions = {
-            // Classic
-            "Classic": "Original M Tech dark theme with balanced syntax colors",
-            
-            // Arctic Nord variants
-            "Arctic Nord": "Cool Nordic-inspired winter palette (dark)",
-            "Arctic Nord Light": "Cool Nordic-inspired winter palette (light)",
-            
-            // Cyberpunk variants
+            // America250 (USA 250th anniversary)
+            "America250 Dark": "USA 250th commemoration, federal blue on deep navy (dark)",
+            "America250 Light": "USA 250th commemoration, ink navy on warm cream (light)",
+            // Signature darks
+            "Obsidian Moss": "Volcanic obsidian with mossy green accents (dark)",
+            "Graphite Bay": "Cool graphite greys with bay-blue accents (dark)",
+            "Copper Bloom": "Warm copper and patina tones (dark)",
+            "Chroma Void": "High-chroma accents on deep void black (dark)",
+            "Digital Aqua": "Aqua and teal digital glow (dark)",
+            "Mystic Dusk": "Twilight purples and dusky blues (dark)",
+            "Evening Espresso": "Rich espresso browns after dark (dark)",
+            // Night family
+            "Tokyo Night": "Urban night atmosphere with neon accents (dark)",
+            "Grove Night": "Green grove chrome over a near-black editor (dark)",
+            "Sapphire Night": "Royal sapphire blue chrome over deep night (dark)",
+            "Ember Night": "Warm ember orange chrome over deep night (dark)",
+            "Crimson Night": "Deep crimson red chrome over deep night (dark)",
+            // Cyberpunk
             "Cyberpunk Neon": "Vibrant neon cyber colors for dark environments",
             "Neon Pink Light": "Hot pink neon aesthetics for light environments",
-            
-            // Tokyo variants
-            "Tokyo Night": "Urban night atmosphere with neon accents",
-            "Tokyo Day": "Bright urban daytime clarity",
-            
-            // Enchanted Grove variants
-            "Enchanted Grove": "Nature-inspired mystical forest (light)",
-            "Enchanted Grove Dark": "Dark mystical forest atmosphere",
-            
-            // Cosmic Void variants
-            "Cosmic Void": "Deep space exploration theme (dark)",
-            "Cosmic Void Light": "Deep space theme for light environments",
-            
-            // Feisty Fusion variants
+            // Nord
+            "Arctic Nord": "Cool Nordic-inspired winter palette (dark)",
+            "Arctic Nord Light": "Cool Nordic-inspired winter palette (light)",
+            // OGE
+            "OGE Dark": "Oil, Gas and Energy industry theme (dark)",
+            "OGE Light": "Oil, Gas and Energy industry theme (light)",
+            // Feisty Fusion
             "Feisty Fusion": "Energetic warm color fusion (dark)",
             "Feisty Fusion Light": "Energetic warm color fusion (light)",
-            
-            // Filter series
-            "Filter Octagon": "Balanced industrial precision (dark)",
-            "Filter Ristretto": "Concentrated espresso-inspired tones (dark)",
-            "Filter Spectrum": "Full rainbow spectrum engineering (dark)",
-            "Filter Machine": "Mechanical precision aesthetics (dark)",
-            "Filter Moon": "Cool moonlit industrial tones (dark)",
-            "Filter Sun": "Bright sunny professional atmosphere (light)",
-            
-            // OGE variants
-            "OGE Dark": "Oil, Gas & Energy industry theme (dark)",
-            "OGE Light": "Oil, Gas & Energy industry theme (light)"
+            // Cosmic Void
+            "Cosmic Void": "Deep space exploration theme (dark)",
+            "Cosmic Void Light": "Deep space theme for light environments",
+            // Enchanted Grove
+            "Enchanted Grove": "Nature-inspired mystical forest (light)",
+            "Enchanted Grove Dark": "Dark mystical forest atmosphere",
+            // Warm and bright lights
+            "Tokyo Day": "Bright urban daytime clarity (light)",
+            "Sandstone Light": "Warm sandstone neutrals for bright rooms (light)",
+            "Morning Coffee": "Warm coffee and cream light roast (light)"
         };
         return descriptions[themeName] || "Professional theme variant";
     }

@@ -1,5 +1,14 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## [0.14.2] - 2026-06-25
+
+### VS Code token coverage refresh — all 31 themes
+
+- Brought every theme up to VS Code's current color surface (through the 1.106–1.116 cycle), adding ~163–180 newly themeable keys per theme so each one is exactly 923 valid keys with no missing entries. Newly covered areas include the Copilot/agent chat panels (`chat.*`, `agentSession*`, inline-edit accept borders), the new gauge component, GitHub-style markdown alert blocks, SCM graph lanes, multi-cursor primary/secondary colors, editor action list, sticky-scroll shadow, minimap foreground, and the expanded testing badges.
+- Every added value is derived from each theme's own palette anchors, so the new surfaces stay true to each theme's persona rather than falling back to VS Code defaults.
+- Removed the deprecated singular indent-guide keys (`editorIndentGuide.background`, `editorIndentGuide.activeBackground`) now that the numbered `background1-6` / `activeBackground1-6` variants are in place.
+- 0 critical / 0 high accessibility issues; structure, mapping, and key-validation tests pass. Spot-checked dark, light, and high-saturation personas in the local web render harness.
+
 ## [0.14.1] - 2026-06-17
 
 ### New themes (2) — now 31 total

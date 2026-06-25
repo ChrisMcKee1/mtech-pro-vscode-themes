@@ -27,6 +27,12 @@ function series(prefix, from, to, suffix = '') {
 
 // ─── Complete official workbench color allowlist (VS Code Theme Color Reference) ───
 const VALID_KEYS = new Set([
+  // Recently added VS Code tokens (registerColor, current source)
+  'agentsMobileDiff.addedForeground', 'agentsMobileDiff.deletedForeground', 'agentsMobileDiff.modifiedForeground',
+  'browser.border', 'strongForeground', 'minimap.foreground', 'editorStickyScroll.scrollbarShadow',
+  'chat.inputWorkingBorderColor1', 'chat.inputWorkingBorderColor2', 'chat.inputWorkingBorderColor3',
+  'editorCommentsWidget.clearForeground', 'editorCommentsWidget.rangeActiveBorder', 'editorCommentsWidget.rangeBorder',
+  'testing.coveredMinimapBackground', 'testing.uncoveredMinimapBackground',
   // Contrast colors
   'contrastActiveBorder', 'contrastBorder',
   // Base colors

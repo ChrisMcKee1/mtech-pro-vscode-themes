@@ -411,6 +411,17 @@ const VALID_KEYS = new Set([
   // Agent Session colors
   'agentSessionReadIndicator.foreground', 'agentSessionSelectedBadge.border', 'agentSessionSelectedUnfocusedBadge.border',
   'agentStatusIndicator.background', 'aiCustomizationManagement.sashBorder',
+  // Agent Sessions window shell (VS Code main / 1.128-dev, src/vs/sessions/common/theme.ts)
+  'agents.background', 'agentsPanel.background', 'agentsPanel.foreground', 'agentsPanel.border',
+  'agentsGradient.tintColor', 'agentFeedbackEditorWidget.background', 'agentFeedbackEditorWidget.border',
+  'agentFeedbackInputWidget.border', 'agentsUpdateButton.downloadingBackground', 'agentsUpdateButton.downloadedBackground',
+  'agentsChatInput.background', 'agentsChatInput.foreground', 'agentsChatInput.border', 'agentsChatInput.focusBorder',
+  'agentsChatInput.placeholderForeground', 'agentsNewSessionButton.background', 'agentsNewSessionButton.foreground',
+  'agentsNewSessionButton.border', 'agentsNewSessionButton.hoverBackground', 'agentsBadge.background', 'agentsBadge.foreground',
+  'agentsUnreadBadge.background', 'agentsUnreadBadge.foreground', 'activeSessionView.background', 'inactiveSessionView.background',
+  'activeSessionView.foreground', 'inactiveSessionView.foreground',
+  // Agents voice speaking indicator (VS Code main, src/vs/workbench/contrib/agentsVoice/common/agentsVoiceColors.ts)
+  'agentsVoice.speakingForeground', 'agentsVoice.speakingBackground',
 ]);
 
 function auditThemes() {

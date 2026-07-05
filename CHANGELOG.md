@@ -1,5 +1,14 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## [0.14.3] - 2026-07-05
+
+### VS Code token coverage refresh — agent sessions & voice (all 31 themes)
+
+- Added 29 newly themeable keys per theme (952 valid keys total) covering VS Code's latest agent surfaces, sourced directly from the `registerColor()` definitions on `microsoft/vscode` `main` (ahead of the published reference doc). New coverage: the **Agents window shell** (`agents.background`, `agentsPanel.*`, `agentsGradient.tintColor`, `agentFeedbackEditorWidget.*`, `agentFeedbackInputWidget.border`, `agentsUpdateButton.*`, `agentsChatInput.*`, `agentsNewSessionButton.*`, `agentsBadge.*`, `agentsUnreadBadge.*`, `activeSessionView.*`, `inactiveSessionView.*`) and the **agent voice indicator** (`agentsVoice.speakingForeground`, `agentsVoice.speakingBackground`).
+- Every value is derived from each theme's own palette anchors (the same source key VS Code references — e.g. `agentsPanel.background` → each theme's `sideBar.background`, `agentsBadge.background` → its `activityBarBadge.background`, voice accent → its `textLink.foreground`), so all 899 additions stay unique to and true to each theme's persona.
+- Audited against VS Code 1.127 (full parity with the documented color reference — only the intentionally-removed deprecated singular indent-guide keys differ) plus a source-level `registerColor` sweep of `microsoft/vscode` `main` to catch these post-1.127 additions.
+- 0 critical / 0 high accessibility issues; structure, mapping, command, and key-validation tests pass.
+
 ## [0.14.2] - 2026-06-25
 
 ### VS Code token coverage refresh — all 31 themes

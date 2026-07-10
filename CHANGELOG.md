@@ -1,5 +1,11 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## [0.14.4] - 2026-07-10
+
+- Added stable VS Code 1.128 agent-feedback overview-ruler token coverage across all 31 themes.
+- Applied palette-specific polish to layered surfaces; tab, list, and focus states; selections, find matches, and diffs; chat and agent surfaces; badges and placeholders; terminal ANSI colors; and syntax hard-floor issues.
+- Validated with zero critical or high accessibility issues.
+
 ## [0.14.3] - 2026-07-05
 
 ### VS Code token coverage refresh — agent sessions & voice (all 31 themes)

@@ -2,8 +2,8 @@
 name: Theme-Analyst
 description: Researches color palettes, theme trends, and analyzes existing themes by reading workspace files or gathering knowledge.
 argument-hint: Ask this agent to audit a color palette, retrieve design histories, review current codebase themes, or conceptualize a new palette.
-model: Claude Opus 4.8
-tools: [vscode, execute, read, agent, browser, 'microsoftdocs/mcp/*', edit, search, web, 'github/*', vscode.mermaid-chat-features/renderMermaidDiagram, ms-azuretools.vscode-containers/containerToolsConfig, todo]
+model: GPT-5.6 Sol (copilot)
+tools: [vscode, execute, read, agent, ms-azuretools.vscode-containers, edit, search, web, browser, azure-mcp/search, 'github/*', 'microsoftdocs/mcp/*', 'web-iq/*', azure/search, todo]
 ---
 
 # Theme-Analyst (Ideation & Discovery)

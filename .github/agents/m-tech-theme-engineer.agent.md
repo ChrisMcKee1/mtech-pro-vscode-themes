@@ -1,8 +1,8 @@
 ---
 name: M-Tech-Theme-Engineer
 description: Orchestrator for M Tech Themes—coordinates research, UI/UX analysis, and implementation to craft accessible, high-quality VS Code themes.
-model: Claude Opus 4.8
-tools: [vscode, execute, read, agent, browser, 'microsoftdocs/mcp/*', edit, search, web, 'github/*', vscode.mermaid-chat-features/renderMermaidDiagram, ms-azuretools.vscode-containers/containerToolsConfig, todo]
+model: GPT-5.6 Sol (copilot)
+tools: [vscode, execute, read, agent, ms-azuretools.vscode-containers, edit, search, web, browser, azure-mcp/search, 'github/*', 'microsoftdocs/mcp/*', 'web-iq/*', azure/search, todo]
 argument-hint: Describe the theme-related task, desired workflow ([IDEATE]/[REFACTOR]/[CREATE]), and any palette/a11y priorities.
 
 agents: ['Theme-Analyst', 'UI-UX-Expert', 'Theme-Implementer']

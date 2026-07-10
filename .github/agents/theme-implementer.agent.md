@@ -2,8 +2,8 @@
 name: Theme-Implementer
 description: Implements theme updates, fixes, and corrections. Edits files and runs tests.
 argument-hint: Provide file targets, the exact property edits or JSON structures required, and verify the test harness is executed against the results.
-model: Claude Opus 4.8
-tools: [vscode, execute, read, agent, browser, 'microsoftdocs/mcp/*', edit, search, web, 'github/*', vscode.mermaid-chat-features/renderMermaidDiagram, ms-azuretools.vscode-containers/containerToolsConfig, todo]
+model: GPT-5.6 Sol (copilot)
+tools: [vscode, execute, read, agent, ms-azuretools.vscode-containers, edit, search, web, browser, azure-mcp/search, 'github/*', 'microsoftdocs/mcp/*', 'web-iq/*', azure/search, todo]
 ---
 
 # Theme-Implementer (Execution & Code Editing)

@@ -156,6 +156,7 @@ const VALID_KEYS = new Set([
   'editorOverviewRuler.wordHighlightStrongForeground', 'editorOverviewRuler.wordHighlightTextForeground',
   'editorOverviewRuler.modifiedForeground', 'editorOverviewRuler.addedForeground', 'editorOverviewRuler.deletedForeground',
   'editorOverviewRuler.errorForeground', 'editorOverviewRuler.warningForeground', 'editorOverviewRuler.infoForeground',
+  'editorOverviewRuler.agentFeedbackForeground',
   'editorOverviewRuler.bracketMatchForeground',
   'editorOverviewRuler.inlineChatInserted', 'editorOverviewRuler.inlineChatRemoved',
   'editorOverviewRuler.commentDraftForeground',

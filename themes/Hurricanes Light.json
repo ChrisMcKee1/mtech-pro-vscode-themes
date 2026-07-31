@@ -791,9 +791,6 @@
     "editorBracketPairGuide.background4": "#5e7e3c40",
     "editorBracketPairGuide.background5": "#8a541040",
     "editorBracketPairGuide.background6": "#b3121740",
-    "editorCommentsWidget.clearForeground": "#5e7e3c",
-    "editorCommentsWidget.rangeActiveBorder": "#c8102e99",
-    "editorCommentsWidget.rangeBorder": "#c8102e66",
     "editorCommentsWidget.replyInputBackground": "#e8eaed",
     "editorGroup.dropIntoPromptBackground": "#e8eaed",
     "editorGroup.dropIntoPromptBorder": "#4a4b4e",
@@ -826,7 +823,6 @@
     "editorOverviewRuler.bracketMatchForeground": "#c8102e",
     "editorOverviewRuler.commonContentForeground": "#e0888d26",
     "editorOverviewRuler.wordHighlightTextForeground": "#e0888d26",
-    "editorStickyScroll.scrollbarShadow": "#d2d5d9",
     "editorSuggestWidget.focusHighlightForeground": "#c8102e",
     "editorSuggestWidgetStatus.foreground": "#3a3b3e",
     "editorUnicodeHighlight.background": "#a86b1a26",
@@ -848,7 +844,6 @@
     "mergeEditor.conflict.input2.background": "#7c9a4e19",
     "mergeEditor.conflictingLines.background": "#c8102e4d",
     "minimap.background": "#fbfbfc",
-    "minimap.foreground": "#1b1c1e99",
     "minimap.foregroundOpacity": "#000000c0",
     "minimapSlider.activeBackground": "#d63a48cc",
     "minimapSlider.background": "#4a4b4e4d",
@@ -958,6 +953,7 @@
     "activeSessionView.foreground": "#3a3b3e",
     "inactiveSessionView.foreground": "#3a3b3e",
     "agentsVoice.speakingForeground": "#c8102e",
+    "chat.dictationActiveMicGlow": "#c8102e",
     "agentsVoice.speakingBackground": "#c8102e14"
   },
   "tokenColors": [

@@ -87,6 +87,12 @@ class ContrastAnalyzer {
         const isMinimalist = isMinimalistTheme(results.name);
         const hasTradeoff = hasLightTradeoff(results.name);
         const designNote = getDesignNote(results.name);
+
+        // Comments compete with code only relative to body text, not at an absolute ratio
+        const editorFg = theme.colors?.['editor.foreground'];
+        const bodyContrast = editorFg && editorFg.startsWith('#')
+            ? analyzeContrast(editorFg, background).contrast
+            : null;
         
         // Scope categorization (research-based)
         const gitStatusScopes = ['comment.git-status', 'comment.other.git-status'];
@@ -141,15 +147,20 @@ class ContrastAnalyzer {
                     this.stats.criticalIssues++;
                 }
                 
-                if (analysis.contrast > 6.0 && isMainComment) {
+                // Only a comment nearly as prominent as body text actually competes with code
+                const competesWithCode = bodyContrast !== null
+                    && analysis.contrast >= bodyContrast * 0.9;
+
+                if (isMainComment && competesWithCode && analysis.contrast > 6.0) {
+                    const ceiling = Math.max(4.5, bodyContrast * 0.75);
                     results.issues.push({
                         severity: 'medium',
                         category: 'syntax',
                         scope: scope.substring(0, 40),
                         color: fg,
                         contrast: analysis.contrast.toFixed(2),
-                        message: `Comment too vivid (competes with code)`,
-                        fix: `Lighten comment color to 4.0-5.0:1 range for de-emphasis`
+                        message: `Comment not de-emphasized vs body text (${analysis.contrast.toFixed(1)}:1 vs ${bodyContrast.toFixed(1)}:1)`,
+                        fix: `Reduce comment contrast toward ${ceiling.toFixed(1)}:1, never below 4.5:1 (WCAG AA text floor)`
                     });
                     this.stats.mediumIssues++;
                 }

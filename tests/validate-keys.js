@@ -29,9 +29,8 @@ function series(prefix, from, to, suffix = '') {
 const VALID_KEYS = new Set([
   // Recently added VS Code tokens (registerColor, current source)
   'agentsMobileDiff.addedForeground', 'agentsMobileDiff.deletedForeground', 'agentsMobileDiff.modifiedForeground',
-  'browser.border', 'strongForeground', 'minimap.foreground', 'editorStickyScroll.scrollbarShadow',
+  'browser.border', 'strongForeground',
   'chat.inputWorkingBorderColor1', 'chat.inputWorkingBorderColor2', 'chat.inputWorkingBorderColor3',
-  'editorCommentsWidget.clearForeground', 'editorCommentsWidget.rangeActiveBorder', 'editorCommentsWidget.rangeBorder',
   'testing.coveredMinimapBackground', 'testing.uncoveredMinimapBackground',
   // Contrast colors
   'contrastActiveBorder', 'contrastBorder',
@@ -201,7 +200,7 @@ const VALID_KEYS = new Set([
   'chat.avatarBackground', 'chat.avatarForeground', 'chat.editedFileForeground',
   'chat.linesAddedForeground', 'chat.linesRemovedForeground', 'chat.requestCodeBorder',
   'chat.requestBubbleBackground', 'chat.requestBubbleHoverBackground', 'chat.checkpointSeparator',
-  'chat.thinkingShimmer', 'chatManagement.sashBorder',
+  'chat.thinkingShimmer', 'chat.dictationActiveMicGlow', 'chatManagement.sashBorder',
   // Inline Chat colors
   'inlineChat.background', 'inlineChat.foreground', 'inlineChat.border', 'inlineChat.shadow',
   'inlineChatInput.border', 'inlineChatInput.focusBorder', 'inlineChatInput.placeholderForeground', 'inlineChatInput.background',

@@ -1,5 +1,12 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## [0.14.5] - 2026-07-30
+
+- Added the new VS Code 1.131 dictation microphone glow color (`chat.dictationActiveMicGlow`) to all 31 themes, matched to each theme's own voice accent color.
+- Removed 5 color keys that are not real VS Code color IDs and were silently ignored across all 31 themes.
+- Validated all 31 themes against the VS Code 1.131 color reference, with zero critical, high, or medium accessibility issues.
+- Corrected the contrast analyzer's comment check, which measured comments against a fixed ratio and so mistakenly flagged high-contrast themes. It now measures how prominent a comment is relative to body text, and no longer advises reducing contrast below the WCAG AA 4.5:1 floor.
+
 ## [0.14.4] - 2026-07-10
 
 - Added stable VS Code 1.128 agent-feedback overview-ruler token coverage across all 31 themes.

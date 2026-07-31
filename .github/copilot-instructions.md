@@ -2,15 +2,16 @@
 
 ## Overview
 
-This VS Code extension provides 23 professional color themes with matching icon packs, distributed as VSIX via GitHub releases. These instructions help AI agents understand the codebase architecture, maintain consistency, and follow accessibility best practices when modifying or creating themes.
+This VS Code extension provides 31 professional color themes with matching icon packs, distributed as VSIX via GitHub releases. These instructions help AI agents understand the codebase architecture, maintain consistency, and follow accessibility best practices when modifying or creating themes.
 
 **Purpose**: Guide AI coding agents to be immediately productive in this codebase by providing essential knowledge about architecture patterns, critical workflows, and project-specific conventions that aren't obvious from file inspection alone.
 
 ## Quick Reference
 
 **Key Files**: `package.json`, `js/main.js`, `js/browser.js`, `themes/*.json`, `icon-themes/*.json`  
-**Current Version**: 0.12.2  
-**VS Code Token Baseline**: 1.124 (engine target `^1.94.0`)  
+**Current Version**: 0.14.5  
+**VS Code Token Baseline**: 1.131 (engine target `^1.94.0`)  
+**Theme count**: 31 color themes / 61 icon themes / 949 color keys per theme (uniform)  
 **Test Command**: `cd tests && .\run-tests.cmd [--quick|--contrast|--status|--full]`  
 **Theme Preview**: F1 → "Developer: Reload Window"  
 **Repository**: [mtech-pro-vscode-themes](../README.md)  
@@ -183,9 +184,9 @@ When evaluating or refactoring themes, we recognize two distinct paths:
 - Check diff views, terminal ANSI colors, and all UI panels
 - Validate scrollbar visibility in all states (rest/hover/active)
 
-### New UI Color Tokens (VS Code baseline 1.124)
+### New UI Color Tokens (VS Code baseline 1.131)
 
-All 23 themes are validated against the **VS Code 1.124** Theme Color Reference. The token groups below are **already defined across all 23 themes** — do NOT re-research them as "missing"; only adjust their values if a palette clash is reported:
+All 31 themes are validated against the **VS Code 1.131** Theme Color Reference. The token groups below are **already defined across all 31 themes** — do NOT re-research them as "missing"; only adjust their values if a palette clash is reported:
 
 - **Agent Session**: `agentSessionReadIndicator.foreground`, `agentStatusIndicator.*`, `agentSessionSelectedBadge.border`
 - **Chat expansion**: `chat.thinkingShimmer`, `chat.requestBubbleBackground`, `chat.checkpointSeparator`, `chat.linesAddedForeground/linesRemovedForeground`, `chat.editedFileForeground`, `chatManagement.sashBorder`
@@ -201,7 +202,7 @@ All 23 themes are validated against the **VS Code 1.124** Theme Color Reference.
 
 #### Tokens added in the 1.124 modernization pass
 
-The following groups were added to **all 23 themes**, each value sourced from the same theme's existing palette so colors stay on-brand:
+The following groups were added to **all themes**, each value sourced from the same theme's existing palette so colors stay on-brand:
 
 - **`terminalSymbolIcon.*`** (19 tokens) — terminal IntelliSense / suggest-widget icons. Mapping convention: `method/argument/option*` ← `symbolIcon.*` syntax hues; `branch/commit/tag/pullRequest*/remote/stash` ← `gitDecoration.*` / `charts.*` accent family; `file/folder/symbolicLink*` ← `symbolIcon.file/folderForeground`; `symbolText/inlineSuggestion` ← `editorGhostText.foreground` (muted).
 - **`sideBarTitle.background` / `sideBarTitle.border`** — side bar title-bar chrome. Map to `sideBar.background` / `sideBar.border`.
@@ -211,6 +212,22 @@ The following groups were added to **all 23 themes**, each value sourced from th
 **Workbench selection note (issue #5)**: the VS Code **Search view** and other workbench input fields use the workbench-wide `selection.background`, NOT `editor.selectionBackground`. Keep `selection.background` alpha visible — **dark themes ≥ ~35% (`0x59`), light themes ≥ ~30% (`0x4D`)** — or text selection in Search becomes invisible. Values below ~25% (`0x40`) are a FAIL.
 
 **Future-research guidance**: before adding "new" tokens, diff the [Theme Color Reference](https://code.visualstudio.com/api/references/theme-color) against a representative theme (e.g. `themes/Tokyo Night.json`) with grep — most of the modern surface is already covered.
+
+#### 1.125 → 1.131 sync pass (v0.14.5)
+
+Releases 1.125–1.131 were Agent Host / Agents-window releases and shipped **no "Theming" sections**. The entire net theming surface across those seven releases was one token:
+
+- **`chat.dictationActiveMicGlow`** (new in 1.131) — accent glow on the mic while dictation is listening. Registered in `src/vs/workbench/contrib/chat/common/widget/chatColors.ts`. Mapped in every theme to that theme's existing `agentsVoice.speakingForeground` so the dictation accent matches the voice accent.
+
+**Five keys were removed** as confirmed-invalid (not registered anywhere in `microsoft/vscode`, silently ignored by VS Code): `minimap.foreground` (real token is `minimap.foregroundOpacity`), `editorCommentsWidget.clearForeground`, `editorCommentsWidget.rangeActiveBorder`, `editorCommentsWidget.rangeBorder` (the real pair is `rangeBackground` / `rangeActiveBackground`), and `editorStickyScroll.scrollbarShadow` (real token is `editorStickyScroll.shadow`, which the themes already define).
+
+⚠️ **`strongForeground` is REAL** — it is registered in `src/vs/platform/theme/common/colors/baseColors.ts` and is simply absent from the docs page. Do not "clean it up".
+
+⚠️ **Indent guides are already migrated.** All themes define `editorIndentGuide.background1-6` / `activeBackground1-6` and deliberately omit the deprecated `editorIndentGuide.background` / `activeBackground`. Do not re-add the deprecated pair.
+
+**The `agents*` / `activeSessionView*` / `inactiveSessionView*` / `agentFeedback*` / `browser.border` families are unverifiable** against `microsoft/vscode` — they appear to belong to a separate agent-sessions surface. VS Code ignores unknown keys silently, so they are harmless. **Leave them alone** unless you can positively confirm they are dead.
+
+**Validator drift warning**: `tests/validate-keys.js` uses a **hardcoded** `VALID_KEYS` allowlist, not the live reference. It reported PASS for a year while five fake keys sat in all themes. When you add or remove a color key, you MUST update that allowlist too, or the test is meaningless.
 
 ## Recent Improvements (v0.5.17-0.5.19)
 

@@ -31,6 +31,8 @@ const VALID_KEYS = new Set([
   'agentsMobileDiff.addedForeground', 'agentsMobileDiff.deletedForeground', 'agentsMobileDiff.modifiedForeground',
   'browser.border', 'strongForeground',
   'chat.inputWorkingBorderColor1', 'chat.inputWorkingBorderColor2', 'chat.inputWorkingBorderColor3',
+  'chat.voiceGlowBaseColor', 'chat.voiceListeningGlow', 'chat.voiceSpeakingGlow',
+  'chat.findMatchHighlightBackground', 'chat.findMatchBackground',
   'testing.coveredMinimapBackground', 'testing.uncoveredMinimapBackground',
   // Contrast colors
   'contrastActiveBorder', 'contrastBorder',

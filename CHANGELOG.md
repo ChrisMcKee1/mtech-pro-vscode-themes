@@ -1,5 +1,11 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## [0.14.6] - 2026-08-18
+
+- Added the VS Code 1.132 and 1.133 Voice Mode glow colors for listening, speaking, and the shared base accent to all 31 themes. Each glow was matched to its theme's own voice palette so listening and speaking are easy to tell apart.
+- Added chat search-match highlight colors so finding text in a chat transcript now matches the editor's find colors.
+- Confirmed that VS Code 1.132 and 1.133 introduced no other new theme colors.
+
 ## [0.14.5] - 2026-07-30
 
 - Added the new VS Code 1.131 dictation microphone glow color (`chat.dictationActiveMicGlow`) to all 31 themes, matched to each theme's own voice accent color.

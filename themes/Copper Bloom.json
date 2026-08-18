@@ -953,6 +953,11 @@
     "inactiveSessionView.foreground": "#b7adae",
     "agentsVoice.speakingForeground": "#f9cc6c",
     "chat.dictationActiveMicGlow": "#f9cc6c",
+    "chat.voiceGlowBaseColor": "#f9cc6c",
+    "chat.voiceListeningGlow": "#8f8282",
+    "chat.voiceSpeakingGlow": "#f9cc6c",
+    "chat.findMatchHighlightBackground": "#adda784D",
+    "chat.findMatchBackground": "#adda7880",
     "agentsVoice.speakingBackground": "#f9cc6c14"
   },
   "semanticHighlighting": true,

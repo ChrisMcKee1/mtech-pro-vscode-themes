@@ -103,6 +103,10 @@ const ICON_THEMES = Object.freeze([
 
 const THEME_SET = new Set(THEMES);
 const ICON_THEME_SET = new Set(ICON_THEMES);
+const FALLBACK_ICON_THEMES = Object.freeze({
+    normal: "Obsidian Moss Icons",
+    monochrome: "Obsidian Moss Monochrome Icons"
+});
 const LIGHT_THEME_HINTS = new Set([
     "Sandstone Light",
     "Tokyo Day",
@@ -132,6 +136,10 @@ function isTechIconThemeName(iconTheme = "") {
     return ICON_THEME_SET.has(iconTheme);
 }
 
+function getFallbackIconTheme(options = {}) {
+    return options.preferMonochrome ? FALLBACK_ICON_THEMES.monochrome : FALLBACK_ICON_THEMES.normal;
+}
+
 function getMatchingIconTheme(themeName, options = {}) {
     const preferMonochrome = Boolean(options.preferMonochrome);
     const baseIconTheme = `${themeName} Icons`;
@@ -141,7 +149,7 @@ function getMatchingIconTheme(themeName, options = {}) {
         return monochromeIconTheme;
     }
 
-    return ICON_THEME_SET.has(baseIconTheme) ? baseIconTheme : "Classic Icons";
+    return ICON_THEME_SET.has(baseIconTheme) ? baseIconTheme : getFallbackIconTheme(options);
 }
 
 function getThemeCategories() {
@@ -165,6 +173,7 @@ function getThemeCategories() {
 
 module.exports = {
     THEME_CONFIG,
+    getFallbackIconTheme,
     getMatchingIconTheme,
     getThemeCategories,
     isTechIconThemeName,

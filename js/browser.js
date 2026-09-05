@@ -3,6 +3,7 @@
 const vscode = require("vscode");
 const {
     THEME_CONFIG,
+    getFallbackIconTheme: resolveFallbackIconTheme,
     getMatchingIconTheme: resolveMatchingIconTheme,
     getThemeCategories: buildThemeCategories,
     isTechIconThemeName,
@@ -291,7 +292,9 @@ class ExtensionManager {
         if (this.themeManager.istechTheme) {
             iconTheme = this.themeManager.getMatchingIconTheme(this.themeManager.currentColorTheme);
         } else {
-            iconTheme = "Classic Icons";
+            iconTheme = resolveFallbackIconTheme({
+                preferMonochrome: this.themeManager.fileIconsMonochrome
+            });
         }
         
         try {

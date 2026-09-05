@@ -2,30 +2,52 @@
   "name": "OGE Icons",
   "iconDefinitions": {
     "_folder_dark": {
-      "iconPath": "../js/folder.svg"
+      "fontCharacter": "\\F11B",
+      "fontId": "tech_pro_icons"
     },
     "_folder_light": {
-      "iconPath": "../js/folder.svg"
+      "fontCharacter": "\\F11B",
+      "fontId": "tech_pro_icons"
     },
     "_file_dark": {
-      "iconPath": "../js/file.svg"
+      "fontCharacter": "\\F114",
+      "fontId": "tech_pro_icons"
     },
     "_file_light": {
-      "iconPath": "../js/file.svg"
+      "fontCharacter": "\\F114",
+      "fontId": "tech_pro_icons"
     },
     "_root_folder": {
-      "iconPath": "../js/folder.svg"
+      "fontCharacter": "\\F11D",
+      "fontId": "tech_pro_icons"
     },
     "_root_folder_open": {
-      "iconPath": "../js/folder-open.svg"
+      "fontCharacter": "\\F11E",
+      "fontId": "tech_pro_icons"
     },
     "_folder_open": {
-      "iconPath": "../js/folder-open.svg"
+      "fontCharacter": "\\F11C",
+      "fontId": "tech_pro_icons"
     },
     "_folder_open_build": {
-      "iconPath": "../js/folder-open.svg"
+      "fontCharacter": "\\F11C",
+      "fontId": "tech_pro_icons"
     }
   },
+  "fonts": [
+    {
+      "id": "tech_pro_icons",
+      "src": [
+        {
+          "path": "./tech_pro_icons.woff",
+          "format": "woff"
+        }
+      ],
+      "weight": "normal",
+      "style": "normal",
+      "size": "123%"
+    }
+  ],
   "folderNames": {
     "node_modules": "_folder_dark",
     ".vscode": "_folder_dark",

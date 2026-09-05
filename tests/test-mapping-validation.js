@@ -13,10 +13,71 @@
  */
 
 const path = require('path');
+const fs = require('fs');
+const assert = require('node:assert/strict');
 const { printHeader, printSection, printSuccess, printWarning, printError, printInfo, printStats, printTiming } = require('./lib/terminal-output');
 const { loadPackageJson, loadBothConfigs, fileExists, getAllThemeNames, getAllIconThemeNames } = require('./lib/config-loader');
-const { getMatchingIconTheme } = require('./lib/theme-utils');
+const { getMatchingIconTheme, getFallbackIconTheme } = require('../js/shared/themeConfig');
 const colors = require('./lib/terminal-colors');
+
+function validateIconResources(theme, owningPath, counts) {
+    const definitions = theme.iconDefinitions;
+    assert.ok(definitions && typeof definitions === 'object', `${owningPath}: missing iconDefinitions`);
+    const checkResource = resource => {
+        assert.ok(typeof resource === 'string' && resource.length > 0, `${owningPath}: empty resource path`);
+        const resolved = path.resolve(path.dirname(owningPath), resource);
+        assert.ok(fs.existsSync(resolved), `Missing resource: ${resolved}`);
+        const stat = fs.statSync(resolved);
+        assert.ok(stat.isFile() && stat.size > 0, `Empty or invalid resource: ${resolved}`);
+    };
+    const fonts = theme.fonts || [];
+    const fontIds = new Set();
+    for (const font of fonts) {
+        assert.ok(font.id && !fontIds.has(font.id), `${owningPath}: invalid or duplicate font ID`);
+        fontIds.add(font.id);
+        assert.ok(Array.isArray(font.src) && font.src.length > 0, `${owningPath}: missing font sources`);
+        for (const source of font.src) {
+            checkResource(source.path);
+            counts.fontSources++;
+        }
+    }
+    for (const [id, definition] of Object.entries(definitions)) {
+        if (definition.iconPath !== undefined) {
+            checkResource(definition.iconPath);
+            counts.images++;
+        }
+        if (definition.fontId !== undefined || definition.fontCharacter !== undefined) {
+            assert.ok(fontIds.has(definition.fontId ?? fonts[0]?.id), `${owningPath}: invalid font reference in ${id}`);
+        }
+        if (definition.fontCharacter !== undefined) {
+            assert.ok(typeof definition.fontCharacter === 'string' && definition.fontCharacter.length > 0,
+                `${owningPath}: empty glyph in ${id}`);
+            counts.glyphs++;
+        }
+    }
+    const defaults = ['file', 'folder', 'folderExpanded', 'rootFolder', 'rootFolderExpanded'];
+    const mappings = ['fileExtensions', 'fileNames', 'languageIds', 'folderNames',
+        'folderNamesExpanded', 'rootFolderNames', 'rootFolderNamesExpanded'];
+    const checkTarget = (target, location) => {
+        assert.ok(typeof target === 'string' && Object.hasOwn(definitions, target),
+            `${owningPath}: invalid association ${location} -> ${target}`);
+        counts.associations++;
+    };
+    const visit = (associations, prefix = '') => {
+        for (const key of defaults) {
+            if (Object.hasOwn(associations, key)) checkTarget(associations[key], `${prefix}${key}`);
+        }
+        for (const key of mappings) {
+            for (const [name, target] of Object.entries(associations[key] || {})) {
+                checkTarget(target, `${prefix}${key}.${name}`);
+            }
+        }
+        for (const variant of ['light', 'highContrast']) {
+            if (associations[variant]) visit(associations[variant], `${prefix}${variant}.`);
+        }
+    };
+    visit(theme);
+}
 
 class ThemeMappingValidator {
     constructor() {
@@ -72,6 +133,7 @@ class ThemeMappingValidator {
         }
 
         const packageIcons = this.packageJson.contributes.iconThemes;
+        const counts = { jsons: 0, images: 0, glyphs: 0, fontSources: 0, associations: 0 };
         
         packageIcons.forEach(icon => {
             const iconLabel = icon.label;
@@ -82,12 +144,34 @@ class ThemeMappingValidator {
                 printError(`Icon file missing: ${iconPath} for "${iconLabel}"`, `Create icon-themes/${path.basename(iconPath)}`);
                 this.errors.push(`Icon file missing: ${iconPath}`);
             } else {
+                try {
+                    const owningPath = path.resolve(__dirname, '..', iconPath);
+                    const theme = JSON.parse(fs.readFileSync(owningPath, 'utf8'));
+                    // Negative fixtures change only this parsed in-memory copy.
+                    if (icon.id === 'OGE Icons') {
+                        if (process.argv.includes('--negative-fixture=missing-resource')) {
+                            theme.fonts[0].src[0].path = './missing-icon-repair-fixture.woff';
+                        }
+                        if (process.argv.includes('--negative-fixture=invalid-font')) {
+                            theme.iconDefinitions._file_dark.fontId = 'missing-font';
+                        }
+                        if (process.argv.includes('--negative-fixture=invalid-association')) {
+                            theme.highContrast = { light: { file: '_missing_icon' } };
+                        }
+                    }
+                    validateIconResources(theme, owningPath, counts);
+                    counts.jsons++;
+                } catch (error) {
+                    printError(error.message);
+                    this.errors.push(error.message);
+                }
                 if (process.argv.includes('--verbose')) {
                     printSuccess(`Icon file exists: ${iconLabel}`, iconPath);
                 }
                 this.successes.push(`✓ Icon file exists: ${iconLabel} → ${iconPath}`);
             }
         });
+        printInfo(`Icon resources: ${counts.jsons} JSONs, ${counts.glyphs} glyphs, ${counts.fontSources} font sources, ${counts.images} images, ${counts.associations} association references`);
     }
 
     validateJavaScriptConfigs() {
@@ -150,7 +234,7 @@ class ThemeMappingValidator {
                 }
                 this.successes.push(`✓ ${themeName} → ${expectedNormalIcon}`);
             } else {
-                const fallbackIcon = getMatchingIconTheme(themeName, false, iconThemes);
+                const fallbackIcon = getMatchingIconTheme(themeName, { preferMonochrome: false });
                 printWarning(`${themeName} → fallback to ${fallbackIcon}`, null);
                 this.warnings.push(`⚠ ${themeName} → fallback to ${fallbackIcon} (expected: ${expectedNormalIcon})`);
             }
@@ -159,6 +243,14 @@ class ThemeMappingValidator {
             if (!iconThemes.includes(expectedMonochromeIcon)) {
                 printInfo(`${themeName} → no monochrome icons (optional feature)`);
                 this.warnings.push(`⚠ ${themeName} → no monochrome variant (${expectedMonochromeIcon})`);
+            }
+            try {
+                assert.equal(getMatchingIconTheme(themeName), expectedNormalIcon);
+                assert.equal(getMatchingIconTheme(themeName, { preferMonochrome: true }),
+                    iconThemes.includes(expectedMonochromeIcon) ? expectedMonochromeIcon : expectedNormalIcon);
+            } catch (error) {
+                printError(error.message);
+                this.errors.push(error.message);
             }
         });
     }
@@ -210,6 +302,18 @@ class ThemeMappingValidator {
         // Compare package.json themes with JavaScript config
         const packageThemeLabels = this.packageJson?.contributes?.themes?.map(t => t.label) || [];
         const jsThemes = this.mainJs?.themes || [];
+        try {
+            const registeredIcons = this.packageJson.contributes.iconThemes.map(icon => icon.id);
+            assert.deepEqual([...registeredIcons].sort(), [...this.mainJs.iconThemes].sort());
+            assert.equal(new Set(registeredIcons).size, registeredIcons.length, 'Duplicate icon registrations');
+            for (const preferMonochrome of [false, true]) {
+                assert.ok(registeredIcons.includes(getFallbackIconTheme({ preferMonochrome })),
+                    'Fallback icon theme must be registered');
+            }
+        } catch (error) {
+            printError(error.message);
+            this.errors.push(error.message);
+        }
         
         const packageSet = new Set(packageThemeLabels);
         const jsSet = new Set(jsThemes);

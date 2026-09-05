@@ -1,5 +1,13 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## [0.14.7] - 2026-09-04
+
+- Repaired legacy OGE file, folder, and root-folder icons using bundled glyphs.
+- Corrected icon activation for external themes to use the existing Obsidian Moss normal and monochrome fallbacks.
+- Strengthened icon asset and association checks and command regression coverage for both desktop and web hosts.
+- Synchronized the displayed and reported extension version.
+- Kept existing palette values unchanged, retaining the reviewed Search selection and fallback contrast tradeoffs.
+
 ## [0.14.6] - 2026-08-18
 
 - Added the VS Code 1.132 and 1.133 Voice Mode glow colors for listening, speaking, and the shared base accent to all 31 themes. Each glow was matched to its theme's own voice palette so listening and speaking are easy to tell apart.

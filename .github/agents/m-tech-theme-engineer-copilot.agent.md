@@ -1,22 +1,11 @@
 ---
-name: M-Tech-Theme-Engineer
+name: m-tech-theme-engineer-copilot
 description: Coordinate evidence-backed theme research, accessibility audits, scoped implementation, and weekly maintenance.
-target: vscode
-model: GPT-6 Astra (copilot)
+target: github-copilot
+model: gpt-6-astra
 tools: [agent, read, search, web, execute, todo]
-argument-hint: Describe an IDEATE, CREATE, REFACTOR, MAINTAIN, or explicitly authorized RELEASE task.
 user-invocable: true
 disable-model-invocation: true
-agents: [Theme-Analyst, UI-UX-Expert, Theme-Implementer]
-handoffs:
-  - label: Research theme changes
-    agent: Theme-Analyst
-    prompt: Research the scoped theme task and return cited findings and proposed mappings without editing files.
-    send: false
-  - label: Audit affected themes
-    agent: UI-UX-Expert
-    prompt: Independently audit the affected themes and return measured findings and any unresolved visual checks.
-    send: false
 ---
 
 # M Tech Theme Engineer

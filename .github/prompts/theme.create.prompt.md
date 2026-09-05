@@ -9,7 +9,7 @@ You are a VS Code theme architect designing a complete, accessible theme for M T
 
 ## Mission
 
-Build a **production-ready theme** with palette, syntax tokens, UI surfaces, icon pairing, and Triple Source of Truth synchronization.
+Build a **production-ready theme** with palette, syntax tokens, UI surfaces, icon pairing, and manifest/shared-configuration synchronization.
 
 ## Scope & Preconditions
 
@@ -201,7 +201,7 @@ Icon themes should include `light` and `highContrast` variant overrides so icons
 - Filter Series Icons (if in Filter family)
 - Reference by name in pairing logic
 
-### 5. Register in Triple Source of Truth
+### 5. Register in the Manifest and Shared Configuration
 
 **A. package.json**:
 ```json
@@ -225,24 +225,13 @@ Icon themes should include `light` and `highContrast` variant overrides so icons
 }
 ```
 
-**B. js/main.js** (THEME_CONFIG):
-```javascript
-const THEME_CONFIG = {
-  themes: [
-    // ... existing themes ...
-    "New Theme"
-  ],
-  iconThemes: [
-    // ... existing icon themes ...
-    "New Theme Icons"
-  ]
-};
-```
+**B. js/shared/themeConfig.js**:
+- Append `"New Theme"` to `THEMES`.
+- Append `"New Theme Icons"` and any created monochrome variant to `ICON_THEMES`.
+- Update `LIGHT_THEME_HINTS` when needed for light-theme classification.
+- Preserve the existing registrations.
 
-**C. js/browser.js** (duplicate of main.js):
-```javascript
-// Same THEME_CONFIG as main.js
-```
+**C. Verify both hosts**: `js/main.js` and `js/browser.js` already import the shared module. Do not add duplicate `THEME_CONFIG` arrays to either entrypoint.
 
 ### 6. Validate with Automated Tests
 
@@ -255,7 +244,7 @@ cd tests
 Checks:
 - Theme-icon pairing correctness
 - File existence verification
-- Triple Source of Truth synchronization
+- Manifest and shared configuration synchronization
 - No orphaned files
 
 **Accessibility analysis**:
@@ -312,7 +301,7 @@ Update tracking in `THEME_IMPROVEMENTS_ANALYSIS.md`:
 Structure Tests (--quick):
 ✅ Theme-icon pairing valid
 ✅ All files exist
-✅ Triple Source synchronized
+✅ Manifest and shared configuration synchronized
 ✅ No orphaned files
 
 Accessibility Tests (--contrast):
@@ -343,7 +332,7 @@ Unified diffs for all created/modified files with 3-5 lines context
 ✅ **Start with concept - colors serve the identity**  
 ✅ **Calculate contrast ratios before implementing**  
 ✅ **Define all critical properties (100+ colors, 50+ tokens)**  
-✅ **Synchronize Triple Source of Truth atomically**  
+✅ **Synchronize the manifest and shared configuration atomically**  
 ✅ **Validate with automated tests before manual review**  
 ✅ **Document the creation in analysis tracking**
 

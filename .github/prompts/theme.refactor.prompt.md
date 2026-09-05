@@ -724,17 +724,18 @@ Even with automated validation, you MUST manually test:
 
 Icon themes should include `light` and `highContrast` overrides so icons remain visible when users switch VS Code appearance modes.
 
-### Step 4: Triple Source of Truth Sync (Only When Needed)
+### Step 4: Manifest and Shared Configuration Sync (Only When Needed)
 
 **Update when**:
 - Adding new theme
 - Renaming theme
 - Changing theme pairing logic
 
-**Files** (all three required):
+**Registration sources**:
 - `package.json` → `contributes.themes[]` and `contributes.iconThemes[]`
-- `js/main.js` → `THEME_CONFIG.themes` and `THEME_CONFIG.iconThemes`
-- `js/browser.js` → duplicate of `THEME_CONFIG`
+- `js/shared/themeConfig.js` → `THEMES`, `ICON_THEMES`, and light-theme classification
+
+Verify that `js/main.js` and `js/browser.js` still consume the shared module. Do not introduce duplicate lists in the entrypoints. Color-only refactors do not need registration changes.
 
 See [copilot-instructions.md](../copilot-instructions.md) for detailed sync requirements.
 
@@ -1062,7 +1063,7 @@ Token Inspector: ✅ All scopes correctly styled
 - [ ] Colors replaced (surgical or batch with verification)
 - [ ] Opacity adjustments applied (30/40/50 rule)
 - [ ] Icon theme synced (if palette changed)
-- [ ] Triple Source of Truth synced (if needed)
+- [ ] Manifest and shared configuration synced (if needed)
 
 ### Validation Phase
 - [ ] `.\run-tests.cmd --quick` passes

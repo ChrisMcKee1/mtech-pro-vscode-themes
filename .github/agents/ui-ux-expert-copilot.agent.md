@@ -1,13 +1,11 @@
 ---
-name: UI-UX-Expert
+name: ui-ux-expert-copilot
 description: Independently measure theme accessibility, overlay readability, and visual regressions without changing production files.
-target: vscode
-model: GPT-6 Astra (copilot)
-tools: [read, search, web, execute, browser]
-argument-hint: Provide affected themes, proposed mappings or a diff, baseline findings, and required visual surfaces.
+target: github-copilot
+model: gpt-6-astra
+tools: [read, search, web, execute]
 user-invocable: true
 disable-model-invocation: false
-agents: []
 ---
 
 # Theme Accessibility Auditor

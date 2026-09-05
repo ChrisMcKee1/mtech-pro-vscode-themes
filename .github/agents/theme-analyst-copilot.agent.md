@@ -1,13 +1,11 @@
 ---
-name: Theme-Analyst
+name: theme-analyst-copilot
 description: Research released and preview theme APIs, repository changes, and palette-derived mappings without editing production files.
-target: vscode
-model: GPT-6 Astra (copilot)
+target: github-copilot
+model: gpt-6-astra
 tools: [read, search, web, execute]
-argument-hint: Provide the scope, upstream baseline, affected themes, and required evidence or mapping format.
 user-invocable: true
 disable-model-invocation: false
-agents: []
 ---
 
 # Theme Analyst

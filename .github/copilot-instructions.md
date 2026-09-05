@@ -8,15 +8,44 @@ This VS Code extension provides 31 professional color themes with matching icon 
 
 ## Quick Reference
 
-**Key Files**: `package.json`, `js/main.js`, `js/browser.js`, `themes/*.json`, `icon-themes/*.json`  
-**Current Version**: 0.14.5  
-**VS Code Token Baseline**: 1.131 (engine target `^1.94.0`)  
-**Theme count**: 31 color themes / 61 icon themes / 949 color keys per theme (uniform)  
+**Key Files**: `package.json`, `js/shared/themeConfig.js`, `js/main.js`, `js/browser.js`, `themes/*.json`, `icon-themes/*.json`  
+**Last committed theme refresh**: 0.14.6; read `package.json` for the current version  
+**Last reviewed VS Code stable baseline**: 1.133, with two separately tracked preview chat-find keys (engine target `^1.94.0`)  
+**Theme snapshot at 0.14.6**: 31 color themes / 61 icon themes / 954 color keys per theme; recompute full key sets for each maintenance run  
 **Test Command**: `cd tests && .\run-tests.cmd [--quick|--contrast|--status|--full]`  
 **Theme Preview**: F1 → "Developer: Reload Window"  
 **Repository**: [mtech-pro-vscode-themes](../README.md)  
 **Test Documentation**: `tests/TEST_SUITE_DOCUMENTATION.md`  
 **Latest Improvements**: `IMPROVEMENTS_v0.11.0.md`
+
+## Custom Agent Runtime Contract
+
+The four roles have separate host-targeted profiles in `.github/agents`. Keep each pair's Markdown body identical; only the host-specific frontmatter should differ.
+
+| Host | Profile files | Target | Model spelling |
+| --- | --- | --- | --- |
+| VS Code Local | Original `*.agent.md` files without the `-copilot` suffix | `vscode` | `GPT-6 Astra (copilot)` |
+| Copilot CLI/app/cloud | `*-copilot.agent.md` | `github-copilot` | `gpt-6-astra` |
+
+Use `M-Tech-Theme-Engineer` in the VS Code Local picker and `m-tech-theme-engineer-copilot` for the app automation or CLI. The Copilot specialists are `theme-analyst-copilot`, `ui-ux-expert-copilot`, and `theme-implementer-copilot`. A Copilot/Agent Host session inside VS Code is not the Local harness; select the profile for the executing runtime, not merely the window hosting it.
+
+For CLI selection, use the filename stem, for example `copilot --agent m-tech-theme-engineer-copilot --model gpt-6-astra`. The weekly app workflow must also set `model: gpt-6-astra` and select that coordinator. Explicit per-call and user-level subagent overrides can outrank profile settings: request Astra for delegated calls where supported, report conflicting routing, and never substitute another model family to get an unattended run working.
+
+VS Code Local resolves model display/qualified names, not the CLI's canonical ID. These profiles intentionally use a single model string: CLI 1.0.83 added model lists and `model-policy: required` on September 4, but an app's bundled runtime or the cloud service may differ. Do not add version-gated fields to every profile or claim a portable fail-closed model policy.
+
+The coordinator is explicitly selectable but not automatically inferred as a subagent. Specialists remain manually selectable and available for delegation. VS Code's `agents` allowlist and non-submitting handoffs are Local metadata; Copilot profiles instead use the documented common fields and a bounded routing contract. Specialists have no delegation tool. Do not rely on unverified CLI enforcement of VS Code-only attributes.
+
+Tool lists use scoped capabilities rather than user-specific Azure/MCP installations. VS Code's auditor additionally enables its `browser` tools. GitHub cloud currently does not map the `web` and `todo` aliases; use permitted read-only source retrieval via execution or a concise checklist when needed. Unavailable tools are not automatically installed. Shell access is not an enforceable read-only boundary, even for a profile without `edit`.
+
+Before unattended use, inspect the loaded file origins, available tools, and model selection in VS Code's customizations diagnostics or the corresponding host. Restart CLI sessions to discover new profiles; do not assume an existing session hot-reloads them. YAML parsing confirms structure, not runtime model entitlement, effective overrides, or successful execution. Report those limits honestly.
+
+References reviewed September 4, 2026:
+- [VS Code custom agents](https://code.visualstudio.com/docs/agent-customization/custom-agents)
+- [VS Code subagents](https://code.visualstudio.com/docs/agents/run/subagents)
+- [GitHub custom agent configuration](https://docs.github.com/en/copilot/reference/custom-agents-configuration)
+- [Copilot CLI agent selection and reload](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/create-custom-agents-for-cli)
+- [CLI release changes](https://github.com/github/copilot-cli/blob/main/changelog.md)
+- [VS Code model-name resolver at the reviewed source revision](https://github.com/microsoft/vscode/blob/167a0e8fe5c84676e8f500481394808abc4ce545/src/vs/workbench/contrib/chat/common/languageModels.ts)
 
 ## Critical Architecture Patterns
 
@@ -27,27 +56,29 @@ Every theme MUST have a matching icon theme via naming convention:
 - Monochrome variant → `"Tokyo Night Monochrome Icons"`
 - Fallback → `"Classic Icons"` (when specific icons don't exist)
 
-**Implementation in `js/main.js`**:
+**Implementation in `js/shared/themeConfig.js`**, consumed by both extension hosts:
 ```javascript
-getMatchingIconTheme(themeName) {
+function getMatchingIconTheme(themeName, options = {}) {
+    const preferMonochrome = Boolean(options.preferMonochrome);
     const baseIconTheme = `${themeName} Icons`;
     const monochromeIconTheme = `${themeName} Monochrome Icons`;
-    
-    if (this.fileIconsMonochrome && hasMonochrome) {
+
+    if (preferMonochrome && ICON_THEME_SET.has(monochromeIconTheme)) {
         return monochromeIconTheme;
     }
-    return baseIconTheme || "Classic Icons";
+    return ICON_THEME_SET.has(baseIconTheme) ? baseIconTheme : "Classic Icons";
 }
 ```
 
-### 2. Triple Source of Truth (Critical Synchronization)
+### 2. Manifest and Shared Configuration (Critical Synchronization)
 
-Theme lists MUST stay synchronized across THREE locations:
+Theme registrations MUST stay synchronized between:
 1. `package.json` → `contributes.themes[]` and `contributes.iconThemes[]`
-2. `js/main.js` → `THEME_CONFIG.themes` and `THEME_CONFIG.iconThemes`
-3. `js/browser.js` → duplicate of main.js config (for browser context)
+2. `js/shared/themeConfig.js` → `THEMES`, `ICON_THEMES`, and light-theme classification
 
-**When adding themes**: Update all three files + create JSON files in `themes/` and `icon-themes/`
+Both `js/main.js` and `js/browser.js` import this shared module. Verify both consumers; do not introduce duplicate configuration arrays into either entrypoint.
+
+**When adding or removing themes**: Update the manifest and shared metadata together with the corresponding JSON files. Color-only changes do not require registration changes.
 
 ### 3. File Naming Convention (Case-Sensitive)
 
@@ -85,7 +116,7 @@ cd tests
 - **`--quick`** (default): Fast structure validation
   - Theme-icon pairing correctness
   - File existence verification
-  - Triple Source of Truth synchronization
+  - Manifest and shared configuration synchronization
   - Orphaned file detection
   - Command functionality simulation
 
@@ -105,6 +136,17 @@ cd tests
 - **`--full`**: Comprehensive pre-release validation
   - Runs all tests sequentially
   - Use before packaging VSIX
+
+### Unattended Audit Gates
+
+- On Windows, run the modes above from `tests`. On other hosts, run the existing Node entrypoints from that same directory: `node test-command-functionality.js`, `node test-mapping-validation.js`, and `node validate-keys.js` for structure; `node test-contrast-analysis.js` for contrast; add `node test-refactor-status.js` for the full suite. Stop on a failed command; do not install a new runner merely to execute these scripts.
+- The current contrast CLI prints findings but does not set a failing exit code for them. Read the actual critical/high counts and require every intended theme to be analyzed. Exit code zero, sample output in a prompt, or a historical PASS is not evidence of accessibility compliance.
+- For targeted measurements, reuse the exported `ContrastAnalyzer` in `tests/test-contrast-analysis.js` and the existing loaders/helpers in `tests/lib`. `tests/analyze-theme-properties.js` does not exist.
+- Parse complete JSON objects, check duplicate keys, and compare key sets rather than line counts. `tests/validate-keys.js` uses a static allowlist; it neither discovers new upstream keys nor proves complete theme coverage. Update it with verified key changes.
+- Legacy audit catalogs can be stale: `tests/comprehensive-property-audit.js` still lists the intentionally omitted singular indent-guide keys. Do not automatically implement every reported gap.
+- Do not weaken thresholds or expand palette exemptions to clear a failure. Separate a reproducible analyzer defect from a theme defect. Missing execution, incomplete source coverage, or unavailable required visual evidence must remain explicit blockers.
+- Screenshot tooling lives in `tools/theme-shots`. Its local capture script writes sample settings and does not expose Copilot chat. Scope those writes explicitly and never claim it reviewed an unavailable surface.
+- Before release, require current structure, contrast, and affected-surface evidence. Scheduled maintenance does not authorize commits, pushes, merges, version bumps, publishing, credential changes, or deletion of releases. Read-only release checks must compare the actual Marketplace version with the expected release, accounting for bounded indexing delay; `--skip-duplicate` success is not publication proof.
 
 ### Building VSIX
 No build step required for theme JSON. Manual VSIX creation via:
@@ -287,8 +329,8 @@ Releases 1.125–1.131 were Agent Host / Agents-window releases and shipped **no
    {"label": "New Theme", "uiTheme": "vs-dark", "path": "./themes/New Theme.json"}
    {"label": "New Theme Icons", "id": "New Theme Icons", "path": "./icon-themes/New Theme icon-theme.json"}
    ```
-4. Add `"New Theme"` to `THEME_CONFIG.themes` in **both** `js/main.js` and `js/browser.js`
-5. Add `"New Theme Icons"` to `THEME_CONFIG.iconThemes` in both files
+4. Add `"New Theme"` to `THEMES` in `js/shared/themeConfig.js`; update light-theme classification if needed
+5. Add `"New Theme Icons"` to `ICON_THEMES` in that same module; verify both host entrypoints still consume the shared configuration
 6. **Validate with automated tests**:
    ```bash
    cd tests
@@ -414,10 +456,10 @@ File associations via `fileExtensions`, `fileNames`, and `languageIds` maps.
 
 ## Gotchas & Common Pitfalls
 
-**Dual File Synchronization**:
-- `main.js` and `browser.js` have identical `THEME_CONFIG`
-- Keep both updated when adding/removing themes
-- Browser.js is for web-based VS Code environments
+**Shared Configuration**:
+- `main.js` and `browser.js` import the same `THEME_CONFIG` from `js/shared/themeConfig.js`.
+- Keep the manifest and shared metadata synchronized when adding/removing themes.
+- `browser.js` is the web extension host; do not recreate a separate theme list there.
 
 **Naming Issues**:
 - Icon file suffix: `icon-theme.json` NOT `Icon-Theme.json`

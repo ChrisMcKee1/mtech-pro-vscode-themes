@@ -1,5 +1,12 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## [0.14.8] - 2026-10-01
+
+- Synced all 31 themes with VS Code 1.134 through 1.140: added 38 new color keys for the modern tabs, activity bar, panels and window frame, the Agents panes, chat status and session-state borders, the Working progress icons, the MCP compatibility warning, and the word-wrap indicator. Every value is taken from that theme's own palette.
+- Tuned tab, hover and progress-icon colors in 24 themes so labels stay readable and hover feedback stays visible, including a calmer Tokyo Night tab hover and warmer OGE Light tabs.
+- Added a new accessibility check for the modern UI colors that fails the build on regressions.
+- Known limitation: in 21 themes the MCP compatibility warning text cannot be readable in every selected and hovered row state because VS Code applies one color to all of them. Those themes keep their current warning color.
+- Reviewed with two independent AI models that cross-checked each other's color choices. The new surfaces have not been checked in a live VS Code window yet.
 ## [0.14.7] - 2026-09-04
 
 - Repaired legacy OGE file, folder, and root-folder icons using bundled glyphs.

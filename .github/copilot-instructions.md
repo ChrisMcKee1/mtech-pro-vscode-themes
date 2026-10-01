@@ -10,8 +10,8 @@ This VS Code extension provides 31 professional color themes with matching icon 
 
 **Key Files**: `package.json`, `js/shared/themeConfig.js`, `js/main.js`, `js/browser.js`, `themes/*.json`, `icon-themes/*.json`  
 **Last committed theme refresh**: 0.14.6; read `package.json` for the current version  
-**Last reviewed VS Code stable baseline**: 1.133, with two separately tracked preview chat-find keys (engine target `^1.94.0`)  
-**Theme snapshot at 0.14.6**: 31 color themes / 61 icon themes / 954 color keys per theme; recompute full key sets for each maintenance run  
+**Last reviewed VS Code stable baseline**: 1.140 (engine target `^1.94.0`)  
+**Theme snapshot at 0.14.8 (1.140 sync)**: 31 color themes / 61 icon themes / 992 color keys per theme; recompute full key sets for each maintenance run  
 **Test Command**: `cd tests && .\run-tests.cmd [--quick|--contrast|--status|--full]`  
 **Theme Preview**: F1 → "Developer: Reload Window"  
 **Repository**: [mtech-pro-vscode-themes](../README.md)  
@@ -271,6 +271,22 @@ Releases 1.125–1.131 were Agent Host / Agents-window releases and shipped **no
 
 **Validator drift warning**: `tests/validate-keys.js` uses a **hardcoded** `VALID_KEYS` allowlist, not the live reference. It reported PASS for a year while five fake keys sat in all themes. When you add or remove a color key, you MUST update that allowlist too, or the test is meaningless.
 
+#### 1.134 → 1.140 sync pass (v0.14.8)
+
+Seven stable releases (1.134–1.140) had no "Theming" sections, but the pinned source diff (1.133.0 → 1.140.0) added **45 color keys, removed none**. Chat-find (`chat.findMatchBackground` / `chat.findMatchHighlightBackground`, first in stable at 1.134) was already covered. **38 keys were added to every theme** (954 → 992), each derived from that theme's own anchors, and the same IDs were added to `tests/validate-keys.js`:
+
+- **Modern tabs / activity bar / shell**: `modernTab.*`, `modernEditorTab.*`, `modernActivityBar.{background,inactiveBackground,border}`, `modernActivityBarItem.*`, `modernPanel.border`, `modernUI.{shellBackground,inactiveShellBackground}`, `modernSash.gripForeground`, `editor.border`, `editorGroupHeader.connectedTabsBackground`.
+- **Agents / chat**: `agentsCard.border`, `agentsBottomPanel.border`, `agentsDetail.background`, `chat.statusBackground`, `chat.sessionStateIndicator.{inProgress,unvisited,needsInput}Border`, `chat.workingProgress{Stable,Insiders}IconForeground`, `chat.mcpCompatibilityWarningForeground`, `editorWordWrapIndicator.foreground`.
+
+**Do NOT add**: the deprecated `modernActivityBar.{activeBackground,activeForeground,hoverBackground,hoverForeground}` (replaced by `modernActivityBarItem.*`) or `statusBar.inactiveBackground` (default is null and intentionally inherited). `surface.background/foreground/border` are older omissions that remain unmapped.
+
+**Transparency rules**: `modernEditorTab.inactiveBackground` must stay alpha `00`; the four `modernEditorTab.*ActionBackground` keys must stay opaque; `chat.statusBackground` is `foreground` at alpha `14`; `modernSash.gripForeground` is `foreground` at alpha `66` (upstream's deliberately low-contrast resting grip, below 3:1 in 24 themes).
+
+**State rules from the audit**: upstream applies `activeForeground` (not `hoverForeground`) on an active+hover tab, so `modernEditorTab.activeHoverBackground` must read with the active label. `chat.mcpCompatibilityWarningForeground` colors small text and needs 4.5:1. Raw anchor copies failed contrast or erased active/hover separation in about 24 themes, so those values were adjusted to existing same-theme palette colors; do not "re-derive" them mechanically from anchors.
+
+The contrast CLI does not analyze these new pairs, so `tests/test-modern-ui-colors.js` (wired into `--contrast` and `--full`, nonzero exit) gates them: tab labels 4.5:1, activity icons and borders 3:1, MCP text 4.5:1 across six list states and the 0.85 builtin opacity. Sash grips and detached inactive tab labels are report-only. The colors were cross-reviewed by GPT-6 Astra and GPT-6.1 Sol; no interactive rendering of these surfaces has been done.
+
+**MCP warning limitation**: `chat.mcpCompatibilityWarningForeground` is one color painted over editor, hover, selection and focus backgrounds (selection does not override it). 21 themes cannot pass every state, so they are pinned as `KNOWN_LIMITATIONS` in that test and keep their current value; the test fails if a listed theme starts passing or an unlisted one fails. Fixing them needs upstream state-aware styling, not a looser threshold.
 ## Recent Improvements (v0.5.17-0.5.19)
 
 ### Sidebar Icon Color Strategy

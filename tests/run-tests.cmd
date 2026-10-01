@@ -71,6 +71,12 @@ if "%TEST_MODE%"=="--contrast" (
         exit /b 1
     )
     echo.
+    node test-modern-ui-colors.js
+    if !ERRORLEVEL! neq 0 (
+        echo ERROR: Modern UI color tests failed
+        goto modern_ui_failed
+    )
+    echo.
     echo ========================================================
     echo   CONTRAST ANALYSIS COMPLETE
     echo ========================================================
@@ -99,35 +105,42 @@ if "%TEST_MODE%"=="--full" (
     echo Mode: FULL SUITE [All Tests]
     echo ----------------------------------------
     echo.
-    echo [1/5] Command Functionality Tests...
+    echo [1/6] Command Functionality Tests...
     node test-command-functionality.js
     if !ERRORLEVEL! neq 0 (
         echo ERROR: Command tests failed
         exit /b 1
     )
     echo.
-    echo [2/5] Mapping Validation Tests...
+    echo [2/6] Mapping Validation Tests...
     node test-mapping-validation.js
     if !ERRORLEVEL! neq 0 (
         echo ERROR: Mapping tests failed
         exit /b 1
     )
     echo.
-    echo [3/5] Contrast Analysis...
+    echo [3/6] Contrast Analysis...
     node test-contrast-analysis.js
     if !ERRORLEVEL! neq 0 (
         echo ERROR: Contrast analysis failed
         exit /b 1
     )
     echo.
-    echo [4/5] Refactor Status...
+    echo [4/6] Modern UI Color Tests...
+    node test-modern-ui-colors.js
+    if !ERRORLEVEL! neq 0 (
+        echo ERROR: Modern UI color tests failed
+        goto modern_ui_failed
+    )
+    echo.
+    echo [5/6] Refactor Status...
     node test-refactor-status.js
     if !ERRORLEVEL! neq 0 (
         echo ERROR: Status tracker failed
         exit /b 1
     )
     echo.
-    echo [5/5] Workbench Key Validation...
+    echo [6/6] Workbench Key Validation...
     node validate-keys.js
     if !ERRORLEVEL! neq 0 (
         echo ERROR: Invalid VS Code color keys found
@@ -143,4 +156,8 @@ if "%TEST_MODE%"=="--full" (
 
 echo ERROR: Unknown test mode "%TEST_MODE%"
 echo Run "run-tests.cmd --help" for usage information
-exit /b 1 
+exit /b 1
+
+:: Preserve the native cmd exit code outside parenthesized mode blocks.
+:modern_ui_failed
+exit /b 1

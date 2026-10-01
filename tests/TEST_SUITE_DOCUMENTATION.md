@@ -52,6 +52,7 @@ cd tests
 - Terminal ANSI color traps (ansiBlack in dark, ansiWhite in light)
 - Semantic highlighting enabled (`semanticHighlighting: true`)
 - Bracket highlight levels (6 levels, 3:1 minimum each)
+- Modern UI color gates, alpha invariants, and MCP state checks (`test-modern-ui-colors.js`; hard failures exit nonzero)
 
 **Output**:
 - Critical issues: Syntax tokens failing 4.5:1 readability
@@ -96,7 +97,9 @@ cd tests
 1. Command functionality tests
 2. Mapping validation tests
 3. Contrast analysis
-4. Refactor status tracking
+4. Modern UI color gates
+5. Refactor status tracking
+6. Workbench key validation
 
 **When to use**: Before releasing new VSIX, major refactoring milestones
 
@@ -182,6 +185,24 @@ Automated WCAG contrast analysis for accessibility compliance.
 - **HIGH**: Critical >= 2 OR high >= 4
 - **MEDIUM**: Critical >= 1 OR high >= 2 OR medium >= 5
 - **LOW**: Minor issues only
+
+### `test-modern-ui-colors.js`
+
+Runs in `--contrast` and `--full`, or directly with `node test-modern-ui-colors.js`. Checks all 31 registered themes and exits nonzero on any hard failure; the runner propagates that exit.
+
+**Hard gates**:
+- All 38 modern UI keys are present with valid colors. Inactive editor tabs have alpha `00`; active editor-tab fills and all four action backgrounds are opaque; chat status and sash grip alpha remain `14` and `66`.
+- Modern tab labels meet 4.5:1 over sidebar and panel hosts. Modern editor-tab active, hover, and active-hover labels meet 4.5:1 over the editor; active-hover uses `activeForeground`.
+- Modern activity-bar icons meet 3:1 over the activity bar. Chat session-state borders and the word-wrap indicator meet 3:1 over the editor. Both progress icons meet 3:1 over editor, sidebar, panel, and editor-widget backgrounds.
+- MCP compatibility text meets 4.5:1 on E (editor), H (hover), S (active selection), I (inactive selection), F (focus), and U (inactive focus), both at full opacity and exactly 0.85 builtin opacity. Missing optional state backgrounds are skipped with a note.
+
+Background alpha is flattened over the specified host **before** foreground compositing, using the existing contrast helpers. Ratios are tested before display rounding; thresholds and existing analyzer exemptions are unchanged.
+
+**Known limitations**: The test pins 21 themes with upstream MCP state-styling limitations in `KNOWN_LIMITATIONS`. Each prints `WARN` with its worst state, opacity, and ratio. An unlisted MCP failure is hard-failing, as is a listed theme that now passes every available state (stale list). These warnings are not accessibility passes.
+
+**Report-only**: Sash grip versus shell (upstream intentionally faint), detached inactive labels (50% `foreground`) versus editor, and active/hover fill distinctness. These diagnostics never fail the test. Output includes hard-failure, warning, analyzed-theme, and skipped-state counts.
+
+**Pinned source semantics**: VS Code [1.140.0 modern tabs CSS](https://github.com/microsoft/vscode/blob/1.140.0/src/vs/workbench/contrib/modernUI/browser/media/tabs.css) retains active labels during active-hover and uses 50% foreground for detached inactive tabs. [MCP CSS](https://github.com/microsoft/vscode/blob/1.140.0/src/vs/workbench/contrib/chat/browser/aiCustomization/media/aiCustomizationManagement.css) uses a fixed compatibility foreground and 0.85 builtin opacity. The six-state matrix and pinned limitations track the reconciled audit; affected-surface rendering remains necessary.
 
 ### `test-refactor-status.js` (NEW)
 Tracks refactor progress by parsing docs/ACCESSIBILITY_FRAMEWORK.md.

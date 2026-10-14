@@ -1,5 +1,11 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## [0.14.9] - 2026-10-14
+
+- Synced all 31 themes with VS Code 1.141 and 1.142: added the new `tab.divider` color key across all 31 themes, matched to each theme's own `tab.border` palette anchor.
+- Confirmed zero removed, renamed, or newly deprecated color keys across VS Code 1.141.0 through 1.142.0.
+- Validated all 31 themes and 61 icon themes (993 color keys per theme) with zero critical, high, or medium accessibility issues.
+
 ## [0.14.8] - 2026-10-01
 
 - Synced all 31 themes with VS Code 1.134 through 1.140: added 38 new color keys for the modern tabs, activity bar, panels and window frame, the Agents panes, chat status and session-state borders, the Working progress icons, the MCP compatibility warning, and the word-wrap indicator. Every value is taken from that theme's own palette.

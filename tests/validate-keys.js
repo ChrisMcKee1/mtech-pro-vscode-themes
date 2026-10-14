@@ -121,7 +121,7 @@ const VALID_KEYS = new Set([
   'editorGroupHeader.tabsBackground', 'editorGroupHeader.tabsBorder', 'editorGroupHeader.border',
   'editorGroup.emptyBackground', 'editorGroup.focusedEmptyBorder',
   'editorGroup.dropIntoPromptForeground', 'editorGroup.dropIntoPromptBackground', 'editorGroup.dropIntoPromptBorder',
-  'tab.activeBackground', 'tab.unfocusedActiveBackground', 'tab.activeForeground', 'tab.border', 'tab.activeBorder',
+  'tab.activeBackground', 'tab.unfocusedActiveBackground', 'tab.activeForeground', 'tab.border', 'tab.divider', 'tab.activeBorder',
   'tab.selectedBorderTop', 'tab.selectedBackground', 'tab.selectedForeground', 'tab.dragAndDropBorder',
   'tab.unfocusedActiveBorder', 'tab.activeBorderTop', 'tab.unfocusedActiveBorderTop', 'tab.lastPinnedBorder',
   'tab.inactiveBackground', 'tab.unfocusedInactiveBackground', 'tab.inactiveForeground',

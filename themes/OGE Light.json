@@ -546,6 +546,7 @@
     "tab.activeForeground": "#B45309",
     "tab.activeModifiedBorder": "#CBD5E4",
     "tab.border": "#FFFFFF",
+    "tab.divider": "#FFFFFF",
     "tab.hoverBackground": "#FFFFFF",
     "tab.hoverBorder": "#CBD5E1",
     "tab.hoverForeground": "#0F172A",

@@ -2,7 +2,6 @@
 name: Theme-Implementer
 description: Apply approved theme and icon mappings within an explicit file scope, then run the existing validation commands.
 target: vscode
-model: GPT-6 Astra (copilot)
 tools: [edit, read, search, execute]
 argument-hint: Provide owned paths, exact old/new values and source anchors, exclusions, and acceptance criteria.
 user-invocable: true

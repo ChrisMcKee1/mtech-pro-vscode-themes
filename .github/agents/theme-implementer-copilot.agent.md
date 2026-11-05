@@ -2,7 +2,6 @@
 name: theme-implementer-copilot
 description: Apply approved theme and icon mappings within an explicit file scope, then run the existing validation commands.
 target: github-copilot
-model: gpt-6-astra
 tools: [edit, read, search, execute]
 user-invocable: true
 disable-model-invocation: false

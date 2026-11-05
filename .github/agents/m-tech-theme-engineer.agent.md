@@ -2,7 +2,7 @@
 name: M-Tech-Theme-Engineer
 description: Coordinate evidence-backed theme research, accessibility audits, scoped implementation, and weekly maintenance.
 target: vscode
-model: GPT-6 Astra (copilot)
+model: GPT-6.1 Sol (copilot)
 tools: [agent, read, search, web, execute, todo]
 argument-hint: Describe an IDEATE, CREATE, REFACTOR, MAINTAIN, or explicitly authorized RELEASE task.
 user-invocable: true

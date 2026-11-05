@@ -2,7 +2,6 @@
 name: ui-ux-expert-copilot
 description: Independently measure theme accessibility, overlay readability, and visual regressions without changing production files.
 target: github-copilot
-model: gpt-6-astra
 tools: [read, search, web, execute]
 user-invocable: true
 disable-model-invocation: false

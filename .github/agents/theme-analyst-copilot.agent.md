@@ -2,10 +2,7 @@
 name: theme-analyst-copilot
 description: Research released and preview theme APIs, repository changes, and palette-derived mappings without editing production files.
 target: github-copilot
-model: gpt-6-astra
 tools: [read, search, web, execute]
-user-invocable: true
-disable-model-invocation: false
 ---
 
 # Theme Analyst

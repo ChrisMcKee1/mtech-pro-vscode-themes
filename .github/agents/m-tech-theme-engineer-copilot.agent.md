@@ -2,10 +2,7 @@
 name: m-tech-theme-engineer-copilot
 description: Coordinate evidence-backed theme research, accessibility audits, scoped implementation, and weekly maintenance.
 target: github-copilot
-model: gpt-6-astra
 tools: [agent, read, search, web, execute, todo]
-user-invocable: true
-disable-model-invocation: true
 ---
 
 # M Tech Theme Engineer

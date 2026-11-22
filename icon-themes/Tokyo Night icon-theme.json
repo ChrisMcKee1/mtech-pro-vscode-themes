@@ -576,7 +576,12 @@
     "sublime-snippet": "_sublime",
     "sublime-syntax": "_sublime",
     "twig": "_twig",
-    "vue": "_vue"
+    "vue": "_vue",
+    "mts": "_typescript",
+    "cts": "_typescript",
+    "agent.md": "_markdown",
+    "prompt.md": "_markdown",
+    "instructions.md": "_markdown"
   },
   "fileNames": {
     ".adonisrc.json": "_adonisjs",
@@ -750,7 +755,9 @@
     ".yarnrc.yml": "_yarn",
     "yarn.lock": "_yarn",
     "yarnw.cmd": "_yarn",
-    "yarnw": "_yarn"
+    "yarnw": "_yarn",
+    "biome.json": "_json",
+    "biome.jsonc": "_json"
   },
   "languageIds": {
     "abap": "_default",
@@ -846,7 +853,10 @@
     "vue-html": "_vue",
     "xml": "_markup",
     "xsl": "_default",
-    "yaml": "_yaml"
+    "yaml": "_yaml",
+    "chatagent": "_markdown",
+    "prompt": "_markdown",
+    "instructions": "_markdown"
   },
   "light": {
     "iconDefinitions": {

@@ -39,7 +39,9 @@ const REQUIRED_KEYS = Object.freeze([
     'chat.workingProgressInsidersIconForeground',
     'editorWordWrapIndicator.foreground',
     'chat.mcpCompatibilityWarningForeground',
-    'editorGroupHeader.connectedTabsBackground'
+    'editorGroupHeader.connectedTabsBackground',
+    'agentSessionNeedsInput.foreground',
+    'editorCommentsWidget.rangeBorder'
 ]);
 
 // Pin upstream state-styling limitations, not palette exemptions; passing entries must be removed.
@@ -51,8 +53,7 @@ const KNOWN_LIMITATIONS = Object.freeze([
     'Copper Bloom', 'Tokyo Night', 'Cosmic Void', 'Hurricanes Dark', 'OGE Dark'
 ]);
 
-const MCP_STATES = Object.freeze({
-    E: 'editor.background',
+const MCP_LIST_STATES = Object.freeze({
     H: 'list.hoverBackground',
     S: 'list.activeSelectionBackground',
     I: 'list.inactiveSelectionBackground',
@@ -93,8 +94,8 @@ function run({ loadTheme = loadThemeFile, log = console.log } = {}) {
         summary.hardFailures++;
         log(`FAIL ${message}`);
     };
-    const checkRatio = (group, label, value, background, threshold) => {
-        const ratio = foregroundContrast(value, background);
+    const checkRatio = (group, label, value, background, threshold, opacity = 1) => {
+        const ratio = foregroundContrast(value, background, opacity);
         if (!minima.has(group) || ratio < minima.get(group).ratio) {
             minima.set(group, { ratio, label });
         }
@@ -103,7 +104,7 @@ function run({ loadTheme = loadThemeFile, log = console.log } = {}) {
         }
     };
 
-    log('Modern UI color gates (VS Code 1.140.0; MCP E/H/S/I/F/U at 1.0 and exactly 0.85 opacity)');
+    log('Modern UI color gates (VS Code 1.147.0; MCP E/H/S/I/F/U at 1.0 and exactly 0.85 opacity)');
     const registrations = loadPackageJson()?.contributes?.themes;
     const names = getAllThemeNames();
     const registeredNames = Array.isArray(registrations) ? registrations.map(theme => theme.label) : [];
@@ -195,8 +196,22 @@ function run({ loadTheme = loadThemeFile, log = console.log } = {}) {
             checkRatio('editorWordWrapIndicator', `${name}: editorWordWrapIndicator.foreground on editor.background`,
                 colors['editorWordWrapIndicator.foreground'], editor, 3);
 
+            const needsInput = 'agentSessionNeedsInput.foreground';
+            checkRatio(`${needsInput} on editor.background`, `${name}: ${needsInput} on editor.background`,
+                colors[needsInput], editor, 4.5);
+            checkRatio(`${needsInput} on sideBar.background`, `${name}: ${needsInput} on sideBar.background`,
+                colors[needsInput], hosts.get('sideBar.background'), 3);
+            const commentRange = 'editorCommentsWidget.rangeBorder';
+            checkRatio(commentRange, `${name}: ${commentRange} on editor.background`, colors[commentRange], editor, 3);
+
+            const mcpWarning = colors['chat.mcpCompatibilityWarningForeground'];
+            for (const opacity of [1, 0.85]) {
+                checkRatio('MCP resting editor', `${name}: MCP E (editor.background) at opacity ${opacity}`,
+                    mcpWarning, editor, 4.5, opacity);
+            }
+
             const measurements = [];
-            for (const [state, key] of Object.entries(MCP_STATES)) {
+            for (const [state, key] of Object.entries(MCP_LIST_STATES)) {
                 if (!Object.hasOwn(colors, key)) {
                     summary.skippedStates++;
                     log(`NOTE ${name}: MCP ${state} skipped (${key} absent)`);
@@ -204,7 +219,7 @@ function run({ loadTheme = loadThemeFile, log = console.log } = {}) {
                 }
                 const background = flattenBackground(colors[key], editor, key);
                 for (const opacity of [1, 0.85]) {
-                    const ratio = foregroundContrast(colors['chat.mcpCompatibilityWarningForeground'], background, opacity);
+                    const ratio = foregroundContrast(mcpWarning, background, opacity);
                     measurements.push({ state, key, opacity, ratio });
                 }
             }
@@ -212,7 +227,7 @@ function run({ loadTheme = loadThemeFile, log = console.log } = {}) {
             const detail = `${name}: MCP worst ${worst.state} (${worst.key}) at opacity ${worst.opacity}: ${worst.ratio.toFixed(3)}:1`;
             if (KNOWN_LIMITATIONS.includes(name)) {
                 if (worst.ratio >= 4.5) {
-                    fail(`${detail}; stale KNOWN_LIMITATIONS entry now passes all available states`);
+                    fail(`${detail}; stale KNOWN_LIMITATIONS entry now passes all available list states`);
                 } else {
                     summary.warnings++;
                     log(`WARN ${detail} < 4.5:1; pinned upstream state-styling limitation`);

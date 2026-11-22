@@ -1,17 +1,5 @@
 #!/usr/bin/env node
-/**
- * M Tech Themes - Workbench Key Validator (reverse validation)
- *
- * Validates that EVERY key in each theme's `colors{}` block is a real VS Code
- * workbench color key, as published in the official Theme Color Reference:
- *   https://code.visualstudio.com/api/references/theme-color
- *
- * Unlike comprehensive-property-audit.js (which checks for MISSING keys), this
- * script catches INVALID / dead / typo'd keys that VS Code silently ignores.
- *
- * Scope: only the `colors{}` object. `tokenColors` (TextMate) and
- * `semanticTokenColors` are NOT workbench keys and are intentionally skipped.
- */
+// Validate workbench colors against the VS Code Theme Color Reference and the supported key set.
 
 const fs = require('fs');
 const path = require('path');
@@ -27,11 +15,14 @@ function series(prefix, from, to, suffix = '') {
 
 // ─── Complete official workbench color allowlist (VS Code Theme Color Reference) ───
 const VALID_KEYS = new Set([
+  // VS Code 1.144-1.147
+  'agentSessionNeedsInput.foreground', 'agentsWindowGraphic.orange',
+  ...series('confetti.color', 1, 6), 'editorCommentsWidget.rangeBorder',
   // Recently added VS Code tokens (registerColor, current source)
   'agentsMobileDiff.addedForeground', 'agentsMobileDiff.deletedForeground', 'agentsMobileDiff.modifiedForeground',
   'browser.border', 'strongForeground',
   'chat.inputWorkingBorderColor1', 'chat.inputWorkingBorderColor2', 'chat.inputWorkingBorderColor3',
-  'chat.voiceGlowBaseColor', 'chat.voiceListeningGlow', 'chat.voiceSpeakingGlow',
+  'chat.voiceGlowBaseColor', 'chat.voiceListeningGlow',
   'chat.findMatchHighlightBackground', 'chat.findMatchBackground',
   'testing.coveredMinimapBackground', 'testing.uncoveredMinimapBackground',
   'agentsCard.border', 'agentsBottomPanel.border', 'agentsDetail.background',
@@ -154,7 +145,6 @@ const VALID_KEYS = new Set([
   'editor.rangeHighlightBackground', 'editor.rangeHighlightBorder',
   'editor.symbolHighlightBackground', 'editor.symbolHighlightBorder',
   'editorWhitespace.foreground',
-  'editorIndentGuide.background', 'editorIndentGuide.activeBackground',
   ...series('editorIndentGuide.background', 1, 6), ...series('editorIndentGuide.activeBackground', 1, 6),
   'editorInlayHint.background', 'editorInlayHint.foreground', 'editorInlayHint.typeForeground', 'editorInlayHint.typeBackground',
   'editorInlayHint.parameterForeground', 'editorInlayHint.parameterBackground',
@@ -440,52 +430,85 @@ const VALID_KEYS = new Set([
   'agentsVoice.speakingForeground', 'agentsVoice.speakingBackground',
 ]);
 
+function findDuplicateColorKeys(source) {
+  // JSON.parse has already validated the syntax but silently keeps the last duplicate.
+  const tokens = source.matchAll(/("(?:\\.|[^"\\])*")(\s*:)?|[{}\[\]]/g);
+  const seen = new Set();
+  const duplicates = new Set();
+  let depth = 0;
+  let inColors = false;
+  let seenColors = false;
+
+  for (const [token, quoted, colon] of tokens) {
+    if (quoted !== undefined) {
+      if (!colon) continue;
+      if (depth === 1) {
+        inColors = JSON.parse(quoted) === 'colors';
+        if (inColors) {
+          if (seenColors) duplicates.add('colors (top-level property)');
+          seenColors = true;
+        }
+      } else if (depth === 2 && inColors) {
+        const key = JSON.parse(quoted);
+        if (seen.has(key)) duplicates.add(key);
+        seen.add(key);
+      }
+    } else {
+      depth += token === '{' || token === '[' ? 1 : -1;
+    }
+  }
+  return duplicates;
+}
+
 function auditThemes() {
   const themeFiles = fs.readdirSync(THEMES_DIR).filter(f => f.endsWith('.json')).sort();
-  const offenders = {}; // key -> [themes]
-  let totalInvalid = 0;
+  let totalIssues = 0;
   let themesWithIssues = 0;
 
-  console.log('============================================================');
-  console.log('  WORKBENCH KEY VALIDATION (official VS Code reference)');
-  console.log('============================================================\n');
+  console.log('WORKBENCH KEY VALIDATION (official VS Code reference)');
+  if (VALID_KEYS.size !== 1001) {
+    console.log(`  RESULT: FAIL - expected 1001 allowlisted keys, found ${VALID_KEYS.size}.`);
+    return 1;
+  }
 
   for (const file of themeFiles) {
-    let theme;
+    const issues = [];
     try {
-      theme = JSON.parse(fs.readFileSync(path.join(THEMES_DIR, file), 'utf8'));
-    } catch (e) {
-      console.log(`  PARSE ERROR: ${file} -> ${e.message}`);
-      totalInvalid++;
-      continue;
-    }
-    const colors = theme.colors || {};
-    const invalid = Object.keys(colors).filter(k => !VALID_KEYS.has(k));
-    if (invalid.length) {
-      themesWithIssues++;
-      console.log(`  ${file}`);
-      for (const k of invalid) {
-        console.log(`     INVALID: ${k}`);
-        (offenders[k] = offenders[k] || []).push(file);
-        totalInvalid++;
+      const source = fs.readFileSync(path.join(THEMES_DIR, file), 'utf8');
+      const theme = JSON.parse(source);
+      const colors = theme?.colors;
+      if (!colors || typeof colors !== 'object' || Array.isArray(colors)) {
+        issues.push('INVALID: colors must be an object');
+      } else {
+        for (const [key, value] of Object.entries(colors)) {
+          if (!VALID_KEYS.has(key)) issues.push(`INVALID KEY: ${key}`);
+          if (typeof value !== 'string' || !/^#(?:[\da-f]{3,4}|[\da-f]{6}|[\da-f]{8})$/i.test(value)) {
+            issues.push(`INVALID HEX: ${key} = ${JSON.stringify(value)}`);
+          }
+        }
+        for (const key of VALID_KEYS) {
+          if (!Object.hasOwn(colors, key)) issues.push(`MISSING: ${key}`);
+        }
       }
-      console.log('');
+      for (const key of findDuplicateColorKeys(source)) issues.push(`DUPLICATE: ${key}`);
+      if (theme?.semanticHighlighting !== true) issues.push('INVALID: semanticHighlighting must be true');
+    } catch (e) {
+      issues.push(`PARSE ERROR: ${e.message}`);
+    }
+    if (issues.length) {
+      themesWithIssues++;
+      totalIssues += issues.length;
+      console.log(`  ${file}`);
+      for (const issue of issues) console.log(`     ${issue}`);
     }
   }
 
-  console.log('------------------------------------------------------------');
-  if (totalInvalid === 0) {
-    console.log('  RESULT: PASS - all colors keys are valid VS Code keys.');
+  if (totalIssues === 0) {
+    console.log(`  RESULT: PASS - ${themeFiles.length} themes, ${VALID_KEYS.size} valid, unique color keys per theme; semantic highlighting enabled.`);
   } else {
-    console.log(`  RESULT: FAIL - ${totalInvalid} invalid key occurrence(s) in ${themesWithIssues} theme(s).`);
-    console.log('\n  Invalid keys (by occurrence count):');
-    Object.entries(offenders)
-      .sort((a, b) => b[1].length - a[1].length)
-      .forEach(([k, files]) => console.log(`     ${k}  ->  ${files.length} theme(s)`));
+    console.log(`  RESULT: FAIL - ${totalIssues} issue(s) in ${themesWithIssues} theme(s).`);
   }
-  console.log('------------------------------------------------------------');
-
-  return totalInvalid;
+  return totalIssues;
 }
 
 const code = auditThemes();

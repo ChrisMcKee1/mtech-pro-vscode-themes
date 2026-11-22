@@ -10,9 +10,11 @@ const LIGHT_THEMES = [
     'Light',
     'Tokyo Day',
     'Enchanted Grove',
+    'America250 Light',
     'Arctic Nord Light',
     'Cosmic Void Light',
     'Feisty Fusion Light',
+    'Hurricanes Light',
     'Neon Pink Light',
     'OGE Light',
     'Morning Coffee',
@@ -212,11 +214,7 @@ function getDesignNote(themeName) {
     if (isMinimalistTheme(themeName)) {
         return 'Minimalist design - softer contrast is intentional';
     }
-    
-    if (hasLightTradeoff(themeName)) {
-        return 'Light theme trade-off - documented design decision';
-    }
-    
+
     return '';
 }
 

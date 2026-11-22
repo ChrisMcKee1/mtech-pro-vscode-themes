@@ -1,5 +1,13 @@
 # M Tech Themes for Visual Studio Code Changelog
 
+## [0.15.0] - 2026-11-22
+
+- Synced all 31 themes with VS Code 1.143 through 1.147.0 (1,001 color keys per theme): added 9 new palette-matched keys (`agentsWindowGraphic.orange`, `confetti.color1`–`confetti.color6`, `agentSessionNeedsInput.foreground`, and `editorCommentsWidget.rangeBorder`), retired the deprecated `chat.voiceSpeakingGlow` key, and updated `chat.voiceGlowBaseColor`, `chat.voiceListeningGlow`, and `minimap.findMatchHighlight` to match current VS Code transparency requirements.
+- Completed a multi-model WCAG AA accessibility and visual hierarchy pass across all 31 themes: improved contrast and readability across light-theme syntax and semantic tokens, selection and find/word-highlight overlays, secondary Settings and Agents Chat inputs, inline-edit gutter indicators, `terminalSymbolIcon.*`, `markdownAlert.*`, `gauge.foreground`, status-bar states, and peek/list selections, plus full `#F8FAFC` / `#F1F5F9` / `#E2E8F0` canvas alignment in Cosmic Void Light.
+- Expanded all 60 full icon packs with file and language associations for `.mts`, `.cts`, `biome.json`, `biome.jsonc`, `.agent.md`, `.prompt.md`, and `.instructions.md`, and improved archive icon contrast in Tokyo Day and Arctic Nord Light.
+- Aligned VS Code Web theme switching (`js/browser.js`) with desktop (`js/main.js`) so reselecting the active color theme repairs its matching icon pack.
+- Validated all 31 color themes and 61 icon themes across structure, mapping, host-parity, modern UI, and contrast suites with zero critical, high, or medium accessibility issues.
+
 ## [0.14.9] - 2026-10-14
 
 - Synced all 31 themes with VS Code 1.141 and 1.142: added the new `tab.divider` color key across all 31 themes, matched to each theme's own `tab.border` palette anchor.

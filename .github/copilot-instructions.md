@@ -9,9 +9,9 @@ This VS Code extension provides 31 professional color themes with matching icon 
 ## Quick Reference
 
 **Key Files**: `package.json`, `js/shared/themeConfig.js`, `js/main.js`, `js/browser.js`, `themes/*.json`, `icon-themes/*.json`  
-**Last committed theme refresh**: 0.14.9; read `package.json` for the current version  
-**Last reviewed VS Code stable baseline**: 1.142 (engine target `^1.94.0`)  
-**Theme snapshot at 0.14.9 (1.142 sync)**: 31 color themes / 61 icon themes / 993 color keys per theme; recompute full key sets for each maintenance run  
+**Last committed theme refresh**: 0.15.0; read `package.json` for the current version  
+**Last reviewed VS Code stable baseline**: 1.147.0 (engine target `^1.94.0`)  
+**Theme snapshot at 0.15.0 (1.147.0 sync)**: 31 color themes / 61 icon themes / 1,001 color keys per theme; recompute full key sets for each maintenance run  
 **Test Command**: `cd tests && .\run-tests.cmd [--quick|--contrast|--status|--full]`  
 **Theme Preview**: F1 → "Developer: Reload Window"  
 **Repository**: [mtech-pro-vscode-themes](../README.md)  
@@ -22,30 +22,45 @@ This VS Code extension provides 31 professional color themes with matching icon 
 
 The four roles have separate host-targeted profiles in `.github/agents`. Keep each pair's Markdown body identical; only the host-specific frontmatter should differ.
 
-| Host | Profile files | Target | Model spelling |
+| Host / Harness | Profile files | Target | Approved models (`model-policy: required`) |
 | --- | --- | --- | --- |
-| VS Code Local | Original `*.agent.md` files without the `-copilot` suffix | `vscode` | `GPT-6 Astra (copilot)` |
-| Copilot CLI/app/cloud | `*-copilot.agent.md` | `github-copilot` | `gpt-6-astra` |
+| Copilot harness (VS Code Chat/Agents window, GitHub Copilot app, Copilot CLI, cloud) | `*-copilot.agent.md` | `github-copilot` | `gpt-6.2-sol`, `gemini-4-carbon`, `mai-code-2` |
+| VS Code Local (deprecated; removal scheduled February 2027) | Original `*.agent.md` files without the `-copilot` suffix | `vscode` | `GPT-6.2 Sol (copilot)`, `Gemini 4 Carbon (copilot)`, `MAI Code 2 (copilot)` |
 
-Use `M-Tech-Theme-Engineer` in the VS Code Local picker and `m-tech-theme-engineer-copilot` for the app automation or CLI. The Copilot specialists are `theme-analyst-copilot`, `ui-ux-expert-copilot`, and `theme-implementer-copilot`. A Copilot/Agent Host session inside VS Code is not the Local harness; select the profile for the executing runtime, not merely the window hosting it.
+### Approved Model, Reasoning, and Context Matrix
 
-For CLI selection, use the filename stem, for example `copilot --agent m-tech-theme-engineer-copilot --model gpt-6-astra`. The weekly app workflow must also set `model: gpt-6-astra` and select that coordinator. Explicit per-call and user-level subagent overrides can outrank profile settings: request Astra for delegated calls where supported, report conflicting routing, and never substitute another model family to get an unattended run working.
+Only these three models are authorized across the coordinator and specialists, with `MAI Code 2` ordered last as the third fallback:
 
-VS Code Local resolves model display/qualified names, not the CLI's canonical ID. These profiles intentionally use a single model string: CLI 1.0.83 added model lists and `model-policy: required` on September 4, but an app's bundled runtime or the cloud service may differ. Do not add version-gated fields to every profile or claim a portable fail-closed model policy.
+| Model | `target: github-copilot` ID | `target: vscode` display name | Required reasoning effort | Context configuration |
+| --- | --- | --- | --- | --- |
+| **GPT-6.2 Sol** | `gpt-6.2-sol` | `GPT-6.2 Sol (copilot)` | `xhigh` | `long_context` (`--context long_context`, `context_tier: "long_context"` in `task`, or model picker context size) |
+| **Gemini 4 Carbon** | `gemini-4-carbon` | `Gemini 4 Carbon (copilot)` | `high` | `long_context` (`--context long_context`, `context_tier: "long_context"` in `task`, or model picker context size) |
+| **MAI Code 2** | `mai-code-2` | `MAI Code 2 (copilot)` | `max` | Full default context window (`mai-code-2` does not use tiered `long_context`; omit `context_tier` or use `default`) |
 
-The coordinator is explicitly selectable but not automatically inferred as a subagent. Specialists remain manually selectable and available for delegation. VS Code's `agents` allowlist and non-submitting handoffs are Local metadata; Copilot profiles instead use the documented common fields and a bounded routing contract. Specialists have no delegation tool. Do not rely on unverified CLI enforcement of VS Code-only attributes.
+`M-Tech-Theme-Engineer`, `Theme-Analyst`, and `Theme-Implementer` default to **GPT-6.2 Sol** (`reasoning-effort: xhigh`), while `UI-UX-Expert` defaults to **Gemini 4 Carbon** (`reasoning-effort: high`) so independent audits cross-check proposals on a complementary model by default. All eight profiles set `model-policy: required` over the three-model list.
 
-Tool lists use scoped capabilities rather than user-specific Azure/MCP installations. VS Code's auditor additionally enables its `browser` tools. GitHub cloud currently does not map the `web` and `todo` aliases; use permitted read-only source retrieval via execution or a concise checklist when needed. Unavailable tools are not automatically installed. Shell access is not an enforceable read-only boundary, even for a profile without `edit`.
+Use `m-tech-theme-engineer-copilot` for the GitHub Copilot app, Copilot CLI, and VS Code's **Copilot** harness (both the Chat view and the Agents window); its specialists are `theme-analyst-copilot`, `ui-ux-expert-copilot`, and `theme-implementer-copilot`. Use `M-Tech-Theme-Engineer` only in VS Code's legacy **Local** harness (for example, legacy `.prompt.md` workflows before migration). Select the profile for the executing harness, not merely the application window hosting it.
 
-Before unattended use, inspect the loaded file origins, available tools, and model selection in VS Code's customizations diagnostics or the corresponding host. Restart CLI sessions to discover new profiles; do not assume an existing session hot-reloads them. YAML parsing confirms structure, not runtime model entitlement, effective overrides, or successful execution. Report those limits honestly.
+For CLI selection, use the filename stem with explicit effort and context tier: `copilot --agent m-tech-theme-engineer-copilot --model gpt-6.2-sol --reasoning-effort xhigh --context long_context`. Custom agent YAML frontmatter supports `model`, `model-policy`, and `reasoning-effort`, while context window tier is a session/delegation parameter rather than an `.agent.md` frontmatter field. When delegating via the Copilot `task` tool, explicitly pass the matching `model`, `reasoning_effort`, and (for `gpt-6.2-sol` or `gemini-4-carbon`) `context_tier: "long_context"` so subagents honor this repository's persistent model policy. Never substitute an unapproved model to force an unattended run through.
 
-References reviewed September 4, 2026:
+Copilot subagents do not receive repository custom instructions by default when spawned via `task`; all `*-copilot.agent.md` profiles set `include-custom-instructions: true` for Copilot CLI/app runs and also link directly to this contract in their Markdown bodies because VS Code's SDK conversion does not forward `include-custom-instructions` or runtime-wide `model-policy`.
+
+The coordinator sets `user-invocable: true` and `disable-model-invocation: true` so it is manually selectable but never auto-delegated as a subagent. Specialists remain both selectable and delegatable (`disable-model-invocation: false`) and omit the `agent` tool so they cannot recursively delegate. `agents` allowlists, `argument-hint`, and `handoffs` (with target `model` hints) remain exclusively on the `target: vscode` profiles so neither schema emits unsupported-attribute diagnostics.
+
+Tool lists remain strictly role-scoped (`edit` only on `Theme-Implementer`; no `edit` on the coordinator, analyst, or auditor; `browser` on VS Code's auditor; `'github/*'` on Copilot coordinator/analyst and `'playwright/*'` on Copilot's auditor). GitHub cloud ignores `web` and `todo` aliases cleanly; use permitted read-only source retrieval via execution or a concise checklist when needed. Shell access is not an enforceable read-only boundary, even for a profile without `edit`.
+
+Before unattended use, inspect the loaded file origins, available tools, and model selection in VS Code's customizations diagnostics or `/subagents` in the CLI. Restart CLI sessions to discover new or edited profiles; do not assume a running session hot-reloads `.agent.md` changes. YAML validation confirms schema compliance, not account model entitlement or effective user overrides. Report those limits honestly.
+
+References reviewed November 22, 2026:
 - [VS Code custom agents](https://code.visualstudio.com/docs/agent-customization/custom-agents)
+- [VS Code custom agent file reference](https://code.visualstudio.com/docs/agents/reference/custom-agent-file-reference)
+- [VS Code language models, thinking effort, and context size](https://code.visualstudio.com/docs/agent-customization/language-models)
 - [VS Code subagents](https://code.visualstudio.com/docs/agents/run/subagents)
+- [Move from the Local to the Copilot harness](https://code.visualstudio.com/docs/agents/run/move-to-copilot)
 - [GitHub custom agent configuration](https://docs.github.com/en/copilot/reference/custom-agents-configuration)
-- [Copilot CLI agent selection and reload](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/create-custom-agents-for-cli)
-- [CLI release changes](https://github.com/github/copilot-cli/blob/main/changelog.md)
-- [VS Code model-name resolver at the reviewed source revision](https://github.com/microsoft/vscode/blob/167a0e8fe5c84676e8f500481394808abc4ce545/src/vs/workbench/contrib/chat/common/languageModels.ts)
+- [Copilot CLI custom agents](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/create-custom-agents-for-cli)
+- [Copilot CLI command and custom agents reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference#custom-agents-reference)
+- [Customizing the GitHub Copilot app](https://docs.github.com/en/copilot/how-tos/github-copilot-app/customize-github-copilot-app)
 
 ## Critical Architecture Patterns
 
@@ -261,7 +276,7 @@ Releases 1.125–1.131 were Agent Host / Agents-window releases and shipped **no
 
 - **`chat.dictationActiveMicGlow`** (new in 1.131) — accent glow on the mic while dictation is listening. Registered in `src/vs/workbench/contrib/chat/common/widget/chatColors.ts`. Mapped in every theme to that theme's existing `agentsVoice.speakingForeground` so the dictation accent matches the voice accent.
 
-**Five keys were removed** as confirmed-invalid (not registered anywhere in `microsoft/vscode`, silently ignored by VS Code): `minimap.foreground` (real token is `minimap.foregroundOpacity`), `editorCommentsWidget.clearForeground`, `editorCommentsWidget.rangeActiveBorder`, `editorCommentsWidget.rangeBorder` (the real pair is `rangeBackground` / `rangeActiveBackground`), and `editorStickyScroll.scrollbarShadow` (real token is `editorStickyScroll.shadow`, which the themes already define).
+**Five keys were removed in 1.131** as unregistered at the time: `minimap.foreground` (real token is `minimap.foregroundOpacity`), `editorCommentsWidget.clearForeground`, `editorCommentsWidget.rangeActiveBorder`, `editorCommentsWidget.rangeBorder` *(later officially registered in VS Code 1.147.0 and restored below — keep `rangeBorder`, do not re-add `rangeActiveBorder`)*, and `editorStickyScroll.scrollbarShadow` (real token is `editorStickyScroll.shadow`, which the themes already define).
 
 ⚠️ **`strongForeground` is REAL** — it is registered in `src/vs/platform/theme/common/colors/baseColors.ts` and is simply absent from the docs page. Do not "clean it up".
 
@@ -291,6 +306,20 @@ The contrast CLI does not analyze these new pairs, so `tests/test-modern-ui-colo
 #### 1.141 → 1.142 sync pass (v0.14.9)
 
 **`tab.divider`** (registered in `src/vs/workbench/common/theme.ts:110`, first in 1.141.0, defaulting to `tab.border`) was added to all 31 themes using each theme's own `tab.border` palette anchor (992 → 993 keys) and to `tests/validate-keys.js`. Across 1.141.0–1.142.0, **0 color keys were removed or renamed**.
+
+#### 1.143 → 1.147 sync and multi-model accessibility pass (v0.15.0)
+
+Pinned source review from `1.142.0` (`d956e8a6ac5d904486557eea07e1d6bd62a4d36f`) through **`1.147.0`** (`8a14f0cc1b08d531eb83255ea3764ae22aa932b5`, released November 18, 2026) found **13 net-new registrations, 0 removed/renamed baseline IDs, and 1 newly deprecated key**:
+
+- **Added 9 stable keys** across all 31 themes (993 − 1 + 9 = **1,001 keys**) and `tests/validate-keys.js`:
+  - `agentsWindowGraphic.orange` (`1.144.0`, `agentsColors.ts`)
+  - `confetti.color1`–`confetti.color6` (`1.145.0`, `confettiColors.ts`, palette-anchored to each theme's `charts.*` hues)
+  - `agentSessionNeedsInput.foreground` (`1.147.0`, `agentsColors.ts`, gated at 4.5:1 editor/reminder text and 3:1 sidebar icon in `tests/test-modern-ui-colors.js`)
+  - `editorCommentsWidget.rangeBorder` (`1.147.0`, `commentColors.ts`, newly registered for floating-thread outlines and gated at 3:1)
+- **Intentionally inherited (4 keys, do NOT add)**: `chat.fusionBadgeGradientStart` / `chat.fusionBadgeGradientEnd` (masked stroke gradient) and `agentsActivityBar.background` / `agentsActivityBar.border` (both `Color.transparent` so the docked Session Activity Bar matches the shell).
+- **Retired 1 deprecated key**: `chat.voiceSpeakingGlow` (deprecated and unused since `1.144.0`, `chatColors.ts`), plus removed the 2 stale `editorIndentGuide.background`/`activeBackground` allowlist entries so `VALID_KEYS` matches the 1,001 theme keys 1:1.
+- **Upgraded 3 existing keys**: `chat.voiceGlowBaseColor` and `chat.voiceListeningGlow` (`FE` alpha for `needsTransparency: true`) and `minimap.findMatchHighlight` (`CC` 80% alpha search highlight anchor per `1.145.0`).
+- **Accessibility, icon, and validator hardening** (tri-model audit across GPT-6.2 Sol, Gemini 4 Carbon, and MAI Code 2): resolved inline-edit pill, debugging/remote status-bar, workbench `selection.background`, `Cosmic Void Light` `#F8FAFC` base, semantic/TextMate drift, `terminalSymbolIcon.*`, `markdownAlert.*`, `gauge.foreground`, and `_archive` icon contrast defects; added `.mts`, `.cts`, `biome.json`, `biome.jsonc`, `.agent.md`, `.prompt.md`, and `.instructions.md` associations across all 60 full icon themes; synchronized `js/browser.js` active-theme icon repair with `js/main.js`; and removed the false Path A light-theme downgrade in `tests/lib/theme-utils.js` (0 Critical, 0 High, 0 Medium across all 31 themes).
 
 ## Recent Improvements (v0.5.17-0.5.19)
 

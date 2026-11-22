@@ -2,6 +2,12 @@
 name: Theme-Implementer
 description: Apply approved theme and icon mappings within an explicit file scope, then run the existing validation commands.
 target: vscode
+model:
+  - GPT-6.2 Sol (copilot)
+  - Gemini 4 Carbon (copilot)
+  - MAI Code 2 (copilot)
+model-policy: required
+reasoning-effort: xhigh
 tools: [edit, read, search, execute]
 argument-hint: Provide owned paths, exact old/new values and source anchors, exclusions, and acceptance criteria.
 user-invocable: true
@@ -11,7 +17,7 @@ agents: []
 
 # Theme Implementer
 
-Execute the approved change packet, not an open-ended redesign. Read the [repository contract](../copilot-instructions.md) and applicable file instructions. Use `vscode-theme-engineer` when available, GPT-6 Astra, and the appropriate host profile.
+Execute the approved change packet, not an open-ended redesign. Read the [repository contract](../copilot-instructions.md) and applicable file instructions. Use `vscode-theme-engineer` when available, an approved repository model (**GPT-6.2 Sol** at `xhigh` + `long_context`, **Gemini 4 Carbon** at `high` + `long_context`, or **MAI Code 2** at `max` + its full default context window), and the appropriate host profile.
 
 ## Before editing
 
@@ -30,7 +36,7 @@ Execute the approved change packet, not an open-ended redesign. Read the [reposi
 
 ## Validate and return
 
-From `tests`, run `.\run-tests.cmd --quick` on Windows. On other hosts run `node test-command-functionality.js`, `node test-mapping-validation.js`, and `node validate-keys.js`, stopping on failure. For changed colors also run the existing contrast analysis and inspect issue counts; exit code zero is insufficient.
+From `tests`, run `.\run-tests.cmd --quick` on Windows. On other hosts run `node test-command-functionality.js`, `node test-mapping-validation.js`, and `node validate-keys.js`, stopping on failure. For changed colors also run `.\run-tests.cmd --contrast` on Windows or `node test-contrast-analysis.js` and `node test-modern-ui-colors.js` on other hosts, and inspect issue counts; exit code zero is insufficient.
 
 Check the complete changed key sets and exact old/new mappings, not line-count arithmetic. Report pre-existing failures separately from new ones and never claim an unavailable command passed. Request the auditor's independent affected-surface review rather than self-certifying visual quality.
 

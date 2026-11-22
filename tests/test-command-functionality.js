@@ -178,6 +178,7 @@ function validateResolvers() {
 
 async function validateHostCommands() {
     let cases = 0;
+    let sameThemeCases = 0;
     for (const host of ['main.js', 'browser.js']) {
         const filename = path.join(__dirname, '..', 'js', host);
         const source = fs.readFileSync(filename, 'utf8');
@@ -196,6 +197,8 @@ async function validateHostCommands() {
                 const vscode = {
                     ConfigurationTarget: { Global: 1 },
                     StatusBarAlignment: { Left: 1 },
+                    QuickPickItemKind: { Separator: -1 },
+                    ThemeIcon: class {},
                     workspace: {
                         getConfiguration: section => ({
                             get: (key, fallback) => settings[section][key] ?? fallback,
@@ -217,6 +220,11 @@ async function validateHostCommands() {
                     },
                     window: {
                         createStatusBarItem: () => ({ show() {}, hide() {}, dispose() {} }),
+                        showQuickPick: async items => {
+                            const active = items.find(item => item.label === theme && item.description === 'Current');
+                            assert.ok(active, `${host}: active theme was not offered in the picker`);
+                            return active;
+                        },
                         setStatusBarMessage() {},
                         showErrorMessage: message => errors.push(message)
                     }
@@ -265,13 +273,28 @@ async function validateHostCommands() {
                 assert.equal(settings.workbench.colorTheme, theme);
                 assert.equal(settings.techThemes.fileIconsMonochrome, preferMonochrome);
                 assert.deepEqual(storageWrites, []);
+                if (sharedConfig.THEME_CONFIG.themes.includes(theme)) {
+                    writes.length = 0;
+                    settings.workbench.iconTheme = 'external-icons';
+                    await fire('workbench.iconTheme');
+                    assert.deepEqual(writes, [], `${host}: changing only the icon theme must not write`);
+                    const setThemeAndIcons = handlers.get('tech_pro.set_theme_and_icons');
+                    assert.equal(typeof setThemeAndIcons, 'function');
+                    await setThemeAndIcons();
+                    const label = `${host}: re-select ${theme}, monochrome=${preferMonochrome}`;
+                    assert.ok(writes.some(write => write.section === 'workbench' && write.key === 'iconTheme' &&
+                        write.value === expected && write.target === 1), `${label}: missing matching icon update`);
+                    assert.equal(settings.workbench.iconTheme, expected, label);
+                    assert.equal(settings.workbench.colorTheme, theme, label);
+                    sameThemeCases++;
+                }
                 assert.deepEqual(errors, []);
                 exports.deactivate();
                 cases++;
             }
         }
     }
-    console.log(`✅ Actual host commands: ${cases} cases; preference events, automatic guards and icon-only writes`);
+    console.log(`✅ Actual host commands: ${cases} icon-only cases; ${sameThemeCases} active-theme icon repair cases`);
 }
 
 // Run all tests

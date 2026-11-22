@@ -12,6 +12,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { getThemeType } = require('./lib/theme-utils');
 
 // ANSI color codes
 const colors = {
@@ -175,10 +176,8 @@ class RefactorStatusTracker {
         console.log(`${colors.bold}${colors.yellow}⏳ PENDING REFACTOR:${colors.reset}\n`);
         
         // Group by category
-        const lightThemes = this.pending.filter(t => 
-            t.includes('Light') || t === 'Filter Sun' || t === 'Tokyo Day'
-        );
-        const darkThemes = this.pending.filter(t => !lightThemes.includes(t));
+        const lightThemes = this.pending.filter(theme => getThemeType(theme) === 'light');
+        const darkThemes = this.pending.filter(theme => getThemeType(theme) === 'dark');
         
         if (darkThemes.length > 0) {
             console.log(`  ${colors.bold}Dark Themes (${darkThemes.length}):${colors.reset}`);

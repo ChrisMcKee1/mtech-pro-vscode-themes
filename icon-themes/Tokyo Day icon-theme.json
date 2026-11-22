@@ -32,7 +32,7 @@
     },
     "_archive": {
       "fontCharacter": "\\F105",
-      "fontColor": "#FFD700"
+      "fontColor": "#B8600E"
     },
     "_astro": {
       "fontCharacter": "\\F106",
@@ -610,7 +610,9 @@
     ".yarnrc.yml": "_yarn",
     "yarn.lock": "_yarn",
     "yarnw.cmd": "_yarn",
-    "yarnw": "_yarn"
+    "yarnw": "_yarn",
+    "biome.json": "_json",
+    "biome.jsonc": "_json"
   },
   "fileExtensions": {
     "edge": "_adonisjs",
@@ -752,7 +754,12 @@
     "twig": "_twig",
     "vue": "_vue",
     "webpack": "_webpack",
-    "yarn": "_yarn"
+    "yarn": "_yarn",
+    "mts": "_typescript",
+    "cts": "_typescript",
+    "agent.md": "_markdown",
+    "prompt.md": "_markdown",
+    "instructions.md": "_markdown"
   },
   "languageIds": {
     "abap": "_default",
@@ -848,6 +855,9 @@
     "vue-html": "_vue",
     "xml": "_markup",
     "xsl": "_default",
-    "yaml": "_yaml"
+    "yaml": "_yaml",
+    "chatagent": "_markdown",
+    "prompt": "_markdown",
+    "instructions": "_markdown"
   }
 }

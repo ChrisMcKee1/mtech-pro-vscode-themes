@@ -341,7 +341,7 @@ class ExtensionManager {
             matchOnDetail: true
         });
 
-        if (selection && selection.label && selection.label !== this.themeManager.currentColorTheme) {
+        if (selection && selection.label) {
             const workbenchConfig = this.vscode.workspace.getConfiguration("workbench");
             const iconTheme = this.themeManager.getMatchingIconTheme(selection.label);
             

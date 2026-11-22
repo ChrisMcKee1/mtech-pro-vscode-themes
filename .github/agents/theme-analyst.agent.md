@@ -2,6 +2,12 @@
 name: Theme-Analyst
 description: Research released and preview theme APIs, repository changes, and palette-derived mappings without editing production files.
 target: vscode
+model:
+  - GPT-6.2 Sol (copilot)
+  - Gemini 4 Carbon (copilot)
+  - MAI Code 2 (copilot)
+model-policy: required
+reasoning-effort: xhigh
 tools: [read, search, web, execute]
 argument-hint: Provide the scope, upstream baseline, affected themes, and required evidence or mapping format.
 user-invocable: true
@@ -11,7 +17,7 @@ agents: []
 
 # Theme Analyst
 
-Research and propose; do not implement. Read the [repository contract](../copilot-instructions.md) and use `vscode-theme-engineer` when available. Work only within the delegated scope, using GPT-6 Astra and the appropriate host profile.
+Research and propose; do not implement. Read the [repository contract](../copilot-instructions.md) and use `vscode-theme-engineer` when available. Work only within the delegated scope, using an approved repository model (**GPT-6.2 Sol** at `xhigh` + `long_context`, **Gemini 4 Carbon** at `high` + `long_context`, or **MAI Code 2** at `max` + its full default context window) and the appropriate host profile.
 
 ## Boundaries
 

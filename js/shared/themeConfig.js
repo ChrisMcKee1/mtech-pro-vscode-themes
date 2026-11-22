@@ -124,7 +124,7 @@ const THEME_CONFIG = Object.freeze({
     themes: THEMES,
     iconThemes: ICON_THEMES,
     description: "M Tech Themes and color scheme for Visual Studio Code",
-    version: "0.14.9",
+    version: "0.15.0",
     author: "tech"
 });
 
